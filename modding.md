@@ -2,7 +2,7 @@
 title: Modding
 description: Modding Homepage
 published: true
-date: 2024-05-22T18:52:53.911Z
+date: 2024-05-22T20:08:10.803Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-20T13:07:51.217Z
@@ -14,8 +14,8 @@ There are two main types of modding in Ground Branch Runtime and SDK
 
 -   Mission Editor
 -   GameMode
--   Patches
 -   [Lua-API](/modding/Lua-API)
+-   [Patches](/modding/patches)
 
 ## SDK
 
