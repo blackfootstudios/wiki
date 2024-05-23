@@ -8,9 +8,9 @@ editor: markdown
 dateCreated: 2023-07-10T14:11:32.161Z
 ---
 
-# Ground Branch Wiki Home Page
-
-WIP
+**Ground Branch Wiki Home Page**
 
 * [Modding Homepage](/modding)
 * [Community Homepage](/community)
+
+Note: You can add/edit pages via pull request on [GitHub](https://github.com/blackfootstudios/wiki).
