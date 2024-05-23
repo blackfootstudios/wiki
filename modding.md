@@ -2,7 +2,7 @@
 title: Modding
 description: Modding Homepage
 published: true
-date: 2024-05-23T20:51:17.175Z
+date: 2024-05-23T20:52:52.479Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-20T13:07:51.217Z
@@ -21,7 +21,7 @@ Runtime modding (aka. non-asset modding) does not require the Unreal SDK.
 
 ## SDK
 
-Runtime modding does not require the GROUND BRANCH Unreal SDK.
+Runtime modding does require the GROUND BRANCH Unreal SDK.
 
 -   [Creating a mod](/modding/sdk/creating-a-mod)
 -   [Making an example mod](/modding/sdk/making-an-example-mod)
