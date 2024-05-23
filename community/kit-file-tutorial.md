@@ -1,6 +1,11 @@
 ---
 title: Kit file tutorial
+description: 
+published: true
+date: 2024-05-23T15:30:38.637Z
+tags: 
 editor: markdown
+dateCreated: 2024-05-23T15:12:26.347Z
 ---
 
 The following describes how to customize the main menu guys.
