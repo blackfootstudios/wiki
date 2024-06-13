@@ -1,9 +1,9 @@
 ---
 title: Patches
-description: This page how to create custom patches.
+description: How to create custom patches.
 published: true
-date: 2024-05-22T20:06:33.262Z
-tags: non-asset
+date: 2024-06-13T15:10:57.150Z
+tags: runtime
 editor: markdown
 dateCreated: 2024-05-22T20:00:56.528Z
 ---
