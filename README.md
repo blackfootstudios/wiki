@@ -6,7 +6,7 @@ title: HOWTO Edit
 
 ## Editing existing pages
 
-Just edit and create a pull request.
+Just edit and create a [pull request](https://github.com/blackfootstudios/wiki/pulls).
 
 ## Creating a new page 
 
@@ -21,5 +21,5 @@ Step 1: Create `/community/kit-file-tutorial.md`
 
     Markdown of the article here
 
-Step 2: Create a pull request. If you want to add screenshot/images
+Step 2: Create a [pull request](https://github.com/blackfootstudios/wiki/pulls). If you want to add screenshot/images
 attach them to pull request as PNG images.
