@@ -2,17 +2,17 @@
 title: Modding
 description: Modding Homepage
 published: true
-date: 2024-06-21T23:55:14.584Z
+date: 2024-06-21T23:59:21.068Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-20T13:07:51.217Z
 ---
 
-There are two main types of modding in Ground Branch: non-asset based (Quick Create) and asset based (Mod Kit / SDK).
+There are two main types of modding in Ground Branch: **non-asset based** (Quick Create) and **asset based** (Mod Kit / SDK), which are described in more detail below.
 
 *The term 'asset' has a particular meaning within the Unreal Engine 4. Any file which is viewable within the Unreal Engine content browser is an 'asset'. With some limited exceptions (e.g. map files, .umap), Unreal Engine assets all have the .uasset file extension.*
 
-## Non-asset based mods (Quick Create)
+## Non-Asset Based Mods (Quick Create)
 
 Non-asset based mods are manually assembled by the modder within a 'staged mod' folder, and are packaged and uploaded within the game via the Modding->Quick Create menu.
 
@@ -21,13 +21,16 @@ With the exception of Mission files, non-asset files are readable and editable u
 The Quick Create system allows non-asset based mods to be made simply and quickly, and without having to download or use the Ground Branch Mod Kit / SDK.
 
 -   List of non-asset file types
--   Mission Editor guide
--   GameMode
--   [Lua-API](/modding/Lua-API)
--   [Patches](/modding/patches)
--   [Quick Create](/modding/quick-create)
+-   [Quick Create menu](/modding/quick-create)
 
-## Asset based mods (Mod Kit / SDK)
+### Game mode mods
+-   Game mode modding overview
+-   Ground Branch Mission Editor guide
+-   [Ground Branch Lua Library guide](/modding/Lua-API)
+### Patch mods
+-   [Patch image specification](/modding/patches)
+
+## Asset Based Mods (Mod Kit / SDK)
 
 The Ground Branch Mod Kit or SDK ("Software Development Kit") is used to create more advanced mods combining native Unreal Engine 4 elements such as textures, materials, static meshes, skeletal meshes, sounds, and so on.
 
