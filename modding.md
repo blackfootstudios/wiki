@@ -2,7 +2,7 @@
 title: Modding
 description: Modding Homepage
 published: true
-date: 2024-05-23T20:52:52.479Z
+date: 2024-06-21T11:19:09.829Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-20T13:07:51.217Z
@@ -18,6 +18,7 @@ Runtime modding (aka. non-asset modding) does not require the Unreal SDK.
 -   GameMode
 -   [Lua-API](/modding/Lua-API)
 -   [Patches](/modding/patches)
+-   [Quick Create](/modding/quick-create)
 
 ## SDK
 
