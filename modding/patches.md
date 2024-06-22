@@ -2,7 +2,7 @@
 title: Patches
 description: How to create custom patches.
 published: true
-date: 2024-06-22T12:27:43.840Z
+date: 2024-06-22T13:01:58.669Z
 tags: runtime
 editor: markdown
 dateCreated: 2024-05-22T20:00:56.528Z
@@ -12,19 +12,23 @@ dateCreated: 2024-05-22T20:00:56.528Z
 Once you have followed the instructions to create a Staged Mod folder (see [quick-create](/modding/quick-create)), there will now exist a GroundBranch/Patches folder inside the Staged Mod folder:
 
 <fig>
-  <img src="/images/patches/patches_patchfolder.jpg" width="100%" alt="Screenshot"/>
-  <figcaption>Location of the Patches folder</figcaption>
+<img src="/images/patches/patches_patchfolder.jpg" width="80%" alt="Screenshot"/>
+<figcaption>Location of the Patches folder</figcaption>
 </fig>
 
 Inside this folder, you can create a subfolder corresponding to the category of patch you are adding. This can be an existing category (e.g. Morale) or a new one:
 
-![patches_patchtype.jpg](/images/patches/patches_patchtype.jpg)
-(caption)Specifying a patch category
+<fig>
+<img src="/images/patches/patches_patchtype.jpg" width="80%" alt="Screenshot"/>
+<figcaption>Specifying a patch category</figcaption>
+</fig>
 
 You then place your new patch files inside this folder (the patch image files being created according to the specification below):
 
-![patches_thepatch.jpg](/images/patches/patches_thepatch.jpg)
-(caption)The patch itself
+<fig>
+<img src="/images/patches/patches_thepatch.jpg" width="80%" alt="Screenshot"/>
+<figcaption>The patch itself</figcaption>
+</fig>
 
 All that remains now is to create the mod using the Quick Create system mentioned above.
 
@@ -38,8 +42,10 @@ The patch author name should be placed in parentheses at the start of the file n
 
 A default normal map is used to display patches, unless a second image file is present, with the same name as the first but with a "\_N" suffix. The standard Unreal Engine 4 normal map format should be used. This is an example of a combination of a patch image file and its corresponding normal map image:
 
-![patches_mainandnormal.jpg](/images/patches/patches_mainandnormal.jpg)
-(caption)A patch image and its corresponding normal map
+<fig>
+<img src="/images/patches/patches_mainandnormal.jpg" width="50%" alt="Screenshot"/>
+<figcaption>A patch image and its corresponding normal map</figcaption>
+</fig>
 
 The creation of normal maps is outside the scope of this document, but there exist many programs which will generate an estimated normal map based on an arbitrary source image, for example. Better results will be obtained by generating the source image and normal map in the same process, for example using custom patch generator scripts in Substance 3D and suchlike.
 
