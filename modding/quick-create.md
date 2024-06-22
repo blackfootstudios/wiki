@@ -2,7 +2,7 @@
 title: Quick Create
 description: 
 published: true
-date: 2024-06-22T00:41:29.649Z
+date: 2024-06-22T00:41:47.077Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-21T11:19:50.133Z
@@ -27,7 +27,7 @@ When you create a Staged Mod folder, it will (for your convenience) also auto-cr
 
 It is then up to you to create and/or place all desired non-asset files (such as game mode scripts, mission files, localisation files, patch files, AI kit files, and so on) in thet appropriate places in the Staged Mod folder.
 
-You can test your new mod in-game at any point. It will be shown as Mod #0.
+You can test your new mod in-game at any point. It will be shown as Mod ID #0.
 
 When you are satisfied with the performance of your new mod in-game, you can create it and upload it to the workshop using the final stage of the Quick Create screen.
 
