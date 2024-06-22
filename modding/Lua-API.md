@@ -2,13 +2,14 @@
 title: Lua API
 description: For GameMode and Mutator Modding
 published: true
-date: 2024-06-22T13:30:44.467Z
+date: 2024-06-22T13:38:26.088Z
 tags: lua, runtime
 editor: markdown
 dateCreated: 2023-07-20T12:57:12.749Z
 ---
 
 <mark>Note: This is a placeholder</mark>
+
 
 # 3 Standard game mode functions
 
@@ -18,7 +19,8 @@ There are a number of functions in game mode scripts that are referenced (and ca
 
 This function is called when the game mode script is loaded, giving the game mode a chance to find particular actors and update settings based on these before actors are replicated via the game state. If you’re reading that and not sure what it means, you should probably just use PostInit().
 
-## 3.2 PostInit ()
+
+## 3.2 PostInit () <span class=new>New in v1031</span> 
 
 This function is called after PreInit() has been called and after some further initialisation of the game mode. In the context of a game mode, it is essentially an initialisation function approximately equivalent to a c++ constructor. The purpose of PostInit() is to set up the properties of the game mode and inform the Ground Branch code of the same. Activities like spawning enemies and setting up the level for a new round occurs later, typically via the OnRoundStageSet() function (see below).
 
