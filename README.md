@@ -1,5 +1,11 @@
 ---
 title: HOWTO Edit
+description: 
+published: true
+date: 2024-06-22T12:49:37.049Z
+tags: 
+editor: markdown
+dateCreated: 2024-06-13T15:06:09.020Z
 ---
 
 # Markdown files for the wiki. 
@@ -23,3 +29,7 @@ Step 1: Create `/community/kit-file-tutorial.md`
 
 Step 2: Create a [pull request](https://github.com/blackfootstudios/wiki/pulls). If you want to add screenshot/images
 attach them to pull request as PNG images.
+
+## Markdown syntax
+
+The supported syntax is described at https://docs.requarks.io/en/editors/markdown.
