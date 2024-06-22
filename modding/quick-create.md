@@ -2,7 +2,7 @@
 title: Quick Create
 description: In-game tool for making a non-asset based mod
 published: true
-date: 2024-06-22T13:10:50.619Z
+date: 2024-06-22T21:01:24.896Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-21T11:19:50.133Z
@@ -13,21 +13,21 @@ The Quick Create menu allows the creation of non-asset based mods from within th
 *(see [modding](/modding) for an overview of "non-asset based mods" and "asset based mods").*
 
 <figure>
-<img src="/images/quick-create/quickcreate_mainpage.jpg" width="80%" alt="Screenshot"/>
+<img src="/images/quick-create/quickcreate_mainpage.jpg" width="90%" alt="Screenshot"/>
 <figcaption>The in-game Quick Create menu</figcaption>
 </figure>
 
 To create a non-asset based mod (hereafter a "Quick Create mod"), simply follow the steps in sequence. It is recommended to use the default Staged Mod location, unless this is not functioning (it seems that user names including non-standard unicode characters will break the Steam uploader, for example).
 
 <figure>
-<img src="/images/quick-create/quickcreate_selectstagedmodfolder.jpg" width="80%" alt="Screenshot"/>
+<img src="/images/quick-create/quickcreate_selectstagedmodfolder.jpg" width="60%" alt="Screenshot"/>
 <figcaption>Dialog for selecting a different Staged Mod folder</figcaption>
 </figure>
 
 When you create a Staged Mod folder, it will (for your convenience) also auto-create the subfolders where non-asset files may be located. It is fine to delete these or leave these empty as you wish:
 
 <figure>
-<img src="/images/quick-create/quickcreate_stagedmodcontents.jpg" width="80%" alt="Screenshot"/>
+<img src="/images/quick-create/quickcreate_stagedmodcontents.jpg" width="60%" alt="Screenshot"/>
 <figcaption>The folder tree created automatically when you make a new Staged Mod folder</figcaption>
 </figure>
 
