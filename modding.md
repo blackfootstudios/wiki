@@ -2,7 +2,7 @@
 title: Modding
 description: Modding Homepage
 published: true
-date: 2024-06-21T23:59:21.068Z
+date: 2024-06-22T00:01:04.983Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-20T13:07:51.217Z
@@ -28,7 +28,7 @@ The Quick Create system allows non-asset based mods to be made simply and quickl
 -   Ground Branch Mission Editor guide
 -   [Ground Branch Lua Library guide](/modding/Lua-API)
 ### Patch mods
--   [Patch image specification](/modding/patches)
+-   [Patch modding overview](/modding/patches)
 
 ## Asset Based Mods (Mod Kit / SDK)
 
