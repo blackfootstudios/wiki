@@ -2,7 +2,7 @@
 title: Quick Create
 description: In-game tool for making a non-asset based mod
 published: true
-date: 2024-06-22T00:43:12.789Z
+date: 2024-06-22T13:10:50.619Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-21T11:19:50.133Z
@@ -12,18 +12,24 @@ The Quick Create menu allows the creation of non-asset based mods from within th
 
 *(see [modding](/modding) for an overview of "non-asset based mods" and "asset based mods").*
 
-![quickcreate_mainpage.jpg](/images/quick-create/quickcreate_mainpage.jpg)
-(caption)The in-game Quick Create menu
+<figure>
+<img src="/images/quick-create/quickcreate_mainpage.jpg" width="80%" alt="Screenshot"/>
+<figcaption>The in-game Quick Create menu</figcaption>
+</figure>
 
 To create a non-asset based mod (hereafter a "Quick Create mod"), simply follow the steps in sequence. It is recommended to use the default Staged Mod location, unless this is not functioning (it seems that user names including non-standard unicode characters will break the Steam uploader, for example).
 
-![quickcreate_selectstagedmodfolder.jpg](/images/quick-create/quickcreate_selectstagedmodfolder.jpg)
-(caption)Dialog for selecting a different Staged Mod folder
+<figure>
+<img src="/images/quick-create/quickcreate_selectstagedmodfolder.jpg" width="80%" alt="Screenshot"/>
+<figcaption>Dialog for selecting a different Staged Mod folder</figcaption>
+</figure>
 
 When you create a Staged Mod folder, it will (for your convenience) also auto-create the subfolders where non-asset files may be located. It is fine to delete these or leave these empty as you wish:
 
-![quickcreate_stagedmodcontents.jpg](/images/quick-create/quickcreate_stagedmodcontents.jpg)
-(caption)The folder tree created automatically when you make a new Staged Mod folder
+<figure>
+<img src="/images/quick-create/quickcreate_stagedmodcontents.jpg" width="80%" alt="Screenshot"/>
+<figcaption>The folder tree created automatically when you make a new Staged Mod folder</figcaption>
+</figure>
 
 It is then up to you to create and/or place all desired non-asset files (such as game mode scripts, mission files, localisation files, patch files, AI kit files, and so on) in thet appropriate places in the Staged Mod folder.
 
