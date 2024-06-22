@@ -2,12 +2,15 @@
 title: Patches
 description: How to create custom patches.
 published: true
-date: 2024-06-13T15:10:57.150Z
+date: 2024-06-22T00:00:25.686Z
 tags: runtime
 editor: markdown
 dateCreated: 2024-05-22T20:00:56.528Z
 ---
 
+## How to Create a Patch
+
+## Patch Image File Specification
 * Create a 512x256 PNG file: `(Author)Name.png`. Spaces should be replaced with underscore (`_`).
 * Optionaly create a 512x256 PNG file containing the normal map: `(Author)Name_N.png`
 * Put the file(s) into `Documents/GroundBranch/StagedMod/GroundBranch/Patches/<CATEGORY>/`.
