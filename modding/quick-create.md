@@ -1,8 +1,8 @@
 ---
 title: Quick Create
-description: 
+description: In-game tool for making a non-asset based mod
 published: true
-date: 2024-06-22T00:41:47.077Z
+date: 2024-06-22T00:43:12.789Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-21T11:19:50.133Z
