@@ -2,7 +2,7 @@
 title: Patches
 description: How to create custom patches.
 published: true
-date: 2024-06-22T13:04:45.353Z
+date: 2024-06-22T21:03:01.638Z
 tags: runtime
 editor: markdown
 dateCreated: 2024-05-22T20:00:56.528Z
@@ -12,21 +12,21 @@ dateCreated: 2024-05-22T20:00:56.528Z
 Once you have followed the instructions to create a Staged Mod folder (see [quick-create](/modding/quick-create)), there will now exist a GroundBranch/Patches folder inside the Staged Mod folder:
 
 <figure>
-<img src="/images/patches/patches_patchfolder.jpg" width="80%" alt="Screenshot"/>
+<img src="/images/patches/patches_patchfolder.jpg" width="60%" alt="Screenshot"/>
 <figcaption>Location of the Patches folder</figcaption>
 </figure>
 
 Inside this folder, you can create a subfolder corresponding to the category of patch you are adding. This can be an existing category (e.g. Morale) or a new one:
 
 <figure>
-<img src="/images/patches/patches_patchtype.jpg" width="80%" alt="Screenshot"/>
+<img src="/images/patches/patches_patchtype.jpg" width="60%" alt="Screenshot"/>
 <figcaption>Specifying a patch category</figcaption>
 </figure>
 
 You then place your new patch files inside this folder (the patch image files being created according to the specification below):
 
 <figure>
-<img src="/images/patches/patches_thepatch.jpg" width="80%" alt="Screenshot"/>
+<img src="/images/patches/patches_thepatch.jpg" width="60%" alt="Screenshot"/>
 <figcaption>The patch itself</figcaption>
 </figure>
 
@@ -43,7 +43,7 @@ The patch author name should be placed in parentheses at the start of the file n
 A default normal map is used to display patches, unless a second image file is present, with the same name as the first but with a "\_N" suffix. The standard Unreal Engine 4 normal map format should be used. This is an example of a combination of a patch image file and its corresponding normal map image:
 
 <figure>
-<img src="/images/patches/patches_mainandnormal.jpg" width="50%" alt="Screenshot"/>
+<img src="/images/patches/patches_mainandnormal.jpg" width="40%" alt="Screenshot"/>
 <figcaption>A patch image and its corresponding normal map</figcaption>
 </figure>
 
