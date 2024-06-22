@@ -2,7 +2,7 @@
 title: Patches
 description: How to create custom patches.
 published: true
-date: 2024-06-22T00:44:43.244Z
+date: 2024-06-22T12:27:43.840Z
 tags: runtime
 editor: markdown
 dateCreated: 2024-05-22T20:00:56.528Z
@@ -11,8 +11,10 @@ dateCreated: 2024-05-22T20:00:56.528Z
 ## Creating a New Patch
 Once you have followed the instructions to create a Staged Mod folder (see [quick-create](/modding/quick-create)), there will now exist a GroundBranch/Patches folder inside the Staged Mod folder:
 
-![patches_patchfolder.jpg](/images/patches/patches_patchfolder.jpg)
-(caption)Location of the Patches folder
+<fig>
+  <img src="/images/patches/patches_patchfolder.jpg" width="100%" alt="Screenshot"/>
+  <figcaption>Location of the Patches folder</figcaption>
+</fig>
 
 Inside this folder, you can create a subfolder corresponding to the category of patch you are adding. This can be an existing category (e.g. Morale) or a new one:
 
