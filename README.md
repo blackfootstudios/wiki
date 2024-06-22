@@ -2,7 +2,7 @@
 title: HOWTO Edit
 description: 
 published: true
-date: 2024-06-22T13:27:02.499Z
+date: 2024-06-22T13:58:19.418Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-13T15:06:09.020Z
@@ -45,4 +45,9 @@ For figures with captions we use HTML `<figure>`:
 For keyboard keys, like <kbd>F12</kbd>, we use HTML `<kbd>`: 
 ```html
 Press <kbd>F12</kbd>
+```
+
+For new features, there's a custom class:
+```html
+<span class="new">New in v1034.x</span>
 ```
