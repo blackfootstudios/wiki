@@ -2,11 +2,13 @@
 title: Lua API
 description: For GameMode and Mutator Modding
 published: true
-date: 2024-05-22T19:14:50.235Z
-tags: lua, non-asset
+date: 2024-06-22T13:30:44.467Z
+tags: lua, runtime
 editor: markdown
 dateCreated: 2023-07-20T12:57:12.749Z
 ---
+
+<mark>Note: This is a placeholder</mark>
 
 # 3 Standard game mode functions
 
