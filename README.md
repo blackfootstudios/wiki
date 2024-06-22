@@ -2,7 +2,7 @@
 title: HOWTO Edit
 description: 
 published: true
-date: 2024-06-22T13:25:20.100Z
+date: 2024-06-22T13:27:02.499Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-13T15:06:09.020Z
@@ -42,7 +42,7 @@ For figures with captions we use HTML `<figure>`:
 </figure>
 ```
 
-For keyboard keys, like <kbd>F12</kbd> we use HTML `<kbd>`: 
+For keyboard keys, like <kbd>F12</kbd>, we use HTML `<kbd>`: 
 ```html
 Press <kbd>F12</kbd>
 ```
