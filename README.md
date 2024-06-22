@@ -2,7 +2,7 @@
 title: HOWTO Edit
 description: 
 published: true
-date: 2024-06-22T12:55:20.822Z
+date: 2024-06-22T13:21:53.801Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-13T15:06:09.020Z
@@ -16,7 +16,7 @@ Just edit and create a [pull request](https://github.com/blackfootstudios/wiki/p
 
 ## Creating a new page 
 
-For example if we want to create the page `kit-file-tutorial`:
+For example <kbd>Ctrl</kbd>+<kbd>C</kbd> if we want to create the page `kit-file-tutorial`:
 
 Step 1: Create `/community/kit-file-tutorial.md`
 
@@ -33,3 +33,16 @@ attach them to pull request as PNG images.
 ## Markdown syntax
 
 The supported syntax is described at https://docs.requarks.io/en/editors/markdown.
+
+For figures with captions we use HTML `<figure>`:
+```html
+<figure>
+<img src="/path/to/image.png" alt="alt-text"/>
+<figcaption>The caption of the figure</figcaption>
+</figure>
+```
+
+For keyboard keys, like <kbd>F12</kbd> we use HTML `<kbd>`: 
+```html
+Press <kbd>F12</kbd>
+```
