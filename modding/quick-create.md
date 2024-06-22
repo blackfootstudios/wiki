@@ -2,7 +2,7 @@
 title: Quick Create
 description: In-game tool for making a non-asset based mod
 published: true
-date: 2024-06-22T21:01:24.896Z
+date: 2024-06-22T21:01:52.107Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-21T11:19:50.133Z
@@ -13,7 +13,7 @@ The Quick Create menu allows the creation of non-asset based mods from within th
 *(see [modding](/modding) for an overview of "non-asset based mods" and "asset based mods").*
 
 <figure>
-<img src="/images/quick-create/quickcreate_mainpage.jpg" width="90%" alt="Screenshot"/>
+<img src="/images/quick-create/quickcreate_mainpage.jpg" width="100%" alt="Screenshot"/>
 <figcaption>The in-game Quick Create menu</figcaption>
 </figure>
 
