@@ -2,7 +2,7 @@
 title: Patches
 description: How to create custom patches.
 published: true
-date: 2024-06-22T00:20:18.980Z
+date: 2024-06-22T00:25:54.084Z
 tags: runtime
 editor: markdown
 dateCreated: 2024-05-22T20:00:56.528Z
@@ -31,7 +31,11 @@ Please note that although patch textures are saved with a 2:1 aspect ratio, they
 
 The patch author name should be placed in parentheses at the start of the file name. Spaces should be replaced with underscore characters (\_).
 
-A default normal map is used to display patches, unless a second image file is present, with the same name as the first but with a "\_N" suffix. The standard Unreal Engine 4 normal map format should be used.
+A default normal map is used to display patches, unless a second image file is present, with the same name as the first but with a "\_N" suffix. The standard Unreal Engine 4 normal map format should be used. This is an example of a combination of a patch image file and its corresponding normal map image:
+
+![patches_mainandnormal.jpg](/images/patches/patches_mainandnormal.jpg)
+
+The creation of normal maps is outside the scope of this document, but there exist many programs which will generate an estimated normal map based on an arbitrary source image, for example. Better results will be obtained by generating the source image and normal map in the same process, for example using custom patch generator scripts in Substance 3D and suchlike.
 
 To summarise the requirements:
 
