@@ -54,7 +54,7 @@ for MyKey, MyValue in ipairs(self.MyArray) do
 end
 ```
 
-In this case the loop reads off each pair of key and value from the table. It can be a quicker way to access the values \<MyValue\> and avoid any problems caused by ‘holes’ in the table.
+In this case the loop reads off each pair of key and value from the table. It can be a quicker way to access the values <var>MyValue</var> and avoid any problems caused by ‘holes’ in the table.
 
 - As mentioned above, Lua has a *function* data type which is treated as any other type. Lua functions are defined as function data elements in a container table. You may recall from above that a.x is treated as a\[“x”\]. So functions in Lua can have the surface appearance of C++ object oriented shenanigans, but they are not really the same. So you will see game mode scripts begin with something of the form…
 
@@ -646,7 +646,7 @@ end
 
 ## PlayerInsertionPointChanged ( PlayerState, InsertionPoint )
 
-This function is called when a player selects or changes an insertion point on the ops board. The insertion point \<InsertionPoint\> is set to `nil` if the insertion point has been de-selected. The InsertionPoint variable is not directly usable but can be passed to the GetInsertionPointName() function mentioned in Section 6.2.28 below to extract the name of the insertion point.
+This function is called when a player selects or changes an insertion point on the ops board. The insertion point <var>InsertionPoint</var> is set to `nil` if the insertion point has been de-selected. The InsertionPoint variable is not directly usable but can be passed to the GetInsertionPointName() function mentioned in Section 6.2.28 below to extract the name of the insertion point.
 
 The following code is usually executed for typical game modes:
 
@@ -1040,7 +1040,7 @@ end
 
 ## PostLoadoutCreated ( PlayerState, LoadoutName )
 
-This function is called when a player has created or updated the loadout of name \<LoadoutName\>. The Hostage Rescue game mode uses this as a cue to create a Hostage variant of the loadout, if it doesn’t already exist, for example. See Section 4 and Section 6.9 below for more information.
+This function is called when a player has created or updated the loadout of name <var>LoadoutName</var>. The Hostage Rescue game mode uses this as a cue to create a Hostage variant of the loadout, if it doesn’t already exist, for example. See Section 4 and Section 6.9 below for more information.
 
 ## GetPlayerLoadoutName ( PlayerState )
 
@@ -1364,9 +1364,9 @@ Function list:
 
 ### gameplaystatics.GetAllActorsOfClass ( Class )
 
-Returns an array of pointers to actors (AActor \*) of class \<Class\>.
+Returns an array of pointers to actors (`AActor*`) of class <var>Class</var>.
 
-\<Class\> should be a string of the form 'GroundBranch.GBInsertionPoint' (for C++-originating classes) or of the form `'/Game/GroundBranch/Props/Electronics/MilitaryLaptop/BP_Laptop_Usable.BP_Laptop_Usable_C'` for UE4 blueprint classes and other UE4 assets.
+<var>Class</var> should be a string of the form 'GroundBranch.GBInsertionPoint' (for C++-originating classes) or of the form `'/Game/GroundBranch/Props/Electronics/MilitaryLaptop/BP_Laptop_Usable.BP_Laptop_Usable_C'` for UE4 blueprint classes and other UE4 assets.
 
 Example:
 
@@ -1376,23 +1376,23 @@ local AllInsertionPoints = gameplaystatics.GetAllActorsOfClass('GroundBranch.GBI
 
 ### gameplaystatics.GetAllActorsWithTag ( Tag )
 
-Returns an array of pointers to actors (AActor \*) having a tag equal to \<Tag\>.
+Returns an array of pointers to actors (`AActor*`) having a tag equal to <var>Tag</var>.
 
 Tags may be of the form “Defenders” or “Attackers”, for example. They are often used to label/identify particular spawns or other game objects within the same class of object.
 
 ### gameplaystatics.GetAllActorsOfClassWithTag ( Class, Tag )
 
-Returns an array of pointers to actors (AActor \*) of class \<Class\> and having a tag equal to \<Tag\>.
+Returns an array of pointers to actors (`AActor*`) of class <var>Class</var> and having a tag equal to <var>Tag</var>.
 
 This is essentially a combination of GetAllActorsOfClass() and GetAllActorsWithTag() – see above.
 
 ### gameplaystatics.GetValidatedSpawnLocation ( SpawnLocation, CapsuleHalfHeight, CapsuleRadius )
 
-This function tries to find a validated spawn location based on a proposed spawn location \<SpawnLocation\>. It returns a table with two fields: `bValid` (`true` if a valid location was found, `false` otherwise) and `ValidatedSpawnLocation` with the location for the spawn. This validated location can be used in conjunction with the `GetSpawnInfo()` function (see section 3.10 above).
+This function tries to find a validated spawn location based on a proposed spawn location <var>SpawnLocation</var>. It returns a table with two fields: `bValid` (`true` if a valid location was found, `false` otherwise) and `ValidatedSpawnLocation` with the location for the spawn. This validated location can be used in conjunction with the `GetSpawnInfo()` function (see section 3.10 above).
 
 ### gameplaystatics.PlaceItemAt ( ItemClass, Location, Rotation )
 
-This function places an item of class \<ItemClass\> at the specified location and rotation. `Location` is expected to be a table containing fields `x`, `y`, `z`, and `Rotation` is expected to be a table containing fields `yaw`, `pitch` and `roll`. This function is really a special case for placing the flag at the end of the initial flag placement round in the DTAS game mode.
+This function places an item of class <var>ItemClass</var> at the specified location and rotation. `Location` is expected to be a table containing fields `x`, `y`, `z`, and `Rotation` is expected to be a table containing fields `yaw`, `pitch` and `roll`. This function is really a special case for placing the flag at the end of the initial flag placement round in the DTAS game mode.
 
 Otherwise there does not exist a mechanism for tracking and removing any items placed with this function, so it is of limited/no current use for other game modes. Certainly, some actions/items currently work using this function, but it is not advised and may not remain backwards-compatible.
 
@@ -1481,13 +1481,13 @@ This function resets the round stage time to zero, and prevents the OnRoundStage
 
 ### gamemode.SetTeamAttitude ( Team, OtherTeam, Attitude )
 
-This function sets the attitude of one (AI) team \<Team\> towards another team \<OtherTeam\> (e.g. a player team). The attitude parameter \<Attitude\> is a string selected from `Friendly`, `Neutral` and `Hostile`. AI characters and AI teams default to hostile towards individual players and player teams. Reportedly the function is not case sensitive and these exact strings must be used. This only takes effect before AI is spawned; it does not (it is believed) currently affect existing AI. It may not work terribly well in any case - it is not really used by official modes and is not well tested.
+This function sets the attitude of one (AI) team <var>Team</var> towards another team <var>OtherTeam</var> (e.g. a player team). The attitude parameter <var>Attitude</var> is a string selected from `Friendly`, `Neutral` and `Hostile`. AI characters and AI teams default to hostile towards individual players and player teams. Reportedly the function is not case sensitive and these exact strings must be used. This only takes effect before AI is spawned; it does not (it is believed) currently affect existing AI. It may not work terribly well in any case - it is not really used by official modes and is not well tested.
 
 ### gamemode.BroadcastGameMessage ( GameMessageId, Type, Duration )
 
-This function sends the message \<GameMessageId\> to every human player alive in the play area. The message is displayed on screen at a location defined by display type \<Type\> for \<Duration\> seconds. Messages will normally be queued. Alternatively, specifying a negative duration will cause all current messages to be flushed. Specifying a duration of 0 will display the message indefinitely (until another message flushes the display, or the round stage ends).
+This function sends the message <var>GameMessageId</var> to every human player alive in the play area. The message is displayed on screen at a location defined by display type <var>Type</var> for <var>Duration</var> seconds. Messages will normally be queued. Alternatively, specifying a negative duration will cause all current messages to be flushed. Specifying a duration of 0 will display the message indefinitely (until another message flushes the display, or the round stage ends).
 
-Possible \<Types\> (corresponding to screen locations) are: `Engine` (top left, small orange text), `Upper`, `Centre`, `Lower`.
+Possible <var>Types</var> (corresponding to screen locations) are: `Engine` (top left, small orange text), `Upper`, `Centre`, `Lower`.
 
 `Player.ShowGameMessage()` can be used to send messages to individual players (see section 6.5.13 below).
 
@@ -1505,11 +1505,11 @@ This function sends all players who have a DeclaredReady or WaitingToReadyUp sta
 
 ### gamemode.EnterReadyRoom ( Target )
 
-This function sends a specified player to the Ready Room. The target \<Target\> is a player state. A player state can be obtained from player.GetPlayerState() (see Section 6.5.7 below).
+This function sends a specified player to the Ready Room. The target <var>Target</var> is a player state. A player state can be obtained from player.GetPlayerState() (see Section 6.5.7 below).
 
 ### gamemode.EnterPlayArea ( Target )
 
-This function sends a specified player to the play area. The target \<Target\> is a player state. A player state can be obtained from player.GetPlayerState() (see Section 6.5.7 below).
+This function sends a specified player to the play area. The target <var>Target</var> is a player state. A player state can be obtained from player.GetPlayerState() (see Section 6.5.7 below).
 
 Example from the Uplink game mode:
 
@@ -1531,7 +1531,7 @@ end
 
 ### gamemode.GetPlayerCount ( ExcludeBots )
 
-This function returns an integer equal to the number of players on the server (excluding bots or not, in dependence on the Boolean \<ExcludeBots\>). It is typically used to determine when all players have readied up (in which case the countdown is aborted and everyone proceeds directly to the round proper). Please note that bots are not currently used (except via console command) and AI (enemies) are distinct from bots and not included in this count. Example from the Uplink game mode:
+This function returns an integer equal to the number of players on the server (excluding bots or not, in dependence on the Boolean <var>ExcludeBots</var>). It is typically used to determine when all players have readied up (in which case the countdown is aborted and everyone proceeds directly to the round proper). Please note that bots are not currently used (except via console command) and AI (enemies) are distinct from bots and not included in this count. Example from the Uplink game mode:
 
 ``` lua
 if DefendersReady > 0 and AttackersReady > 0 then
@@ -1545,7 +1545,7 @@ end
 
 ### gamemode.GetReadyPlayerTeamCounts ( ExcludeBots )
 
-This function returns a table (array) including totals of ready players in each team excluding bots or not in dependence on the Boolean \<ExcludeBots\>. Typically if all team entries are non-zero (that is, at least one person from each team has selected an insertion point), the pre-round countdown will begin.
+This function returns a table (array) including totals of ready players in each team excluding bots or not in dependence on the Boolean <var>ExcludeBots</var>. Typically if all team entries are non-zero (that is, at least one person from each team has selected an insertion point), the pre-round countdown will begin.
 
 Example from the Uplink game mode:
 
@@ -1557,7 +1557,7 @@ local AttackersReady = ReadyPlayerTeamCounts[self.AttackingTeamId]
 
 ### gamemode.GetPlayerList ( TeamId, ExcludeBots )
 
-This function returns a table (array) of players (corresponding to C++ type `AGBPlayerState*`) matching the criteria of team Id \<TeamId\> and human or not \<ExcludeBots\>. **This selects all players on a team, whether or not in the play area** (excepting spectators). This is not usually what you want in game modes. To select all players actually in play, see the function gamemode.GetPlayerListWithLives() below.
+This function returns a table (array) of players (corresponding to C++ type `AGBPlayerState*`) matching the criteria of team Id <var>TeamId</var> and human or not <var>ExcludeBots</var>. **This selects all players on a team, whether or not in the play area** (excepting spectators). This is not usually what you want in game modes. To select all players actually in play, see the function gamemode.GetPlayerListWithLives() below.
 
 Example from the Uplink game mode, sending all players an appropriate message about swapping roles:
 
@@ -1579,7 +1579,7 @@ Example from the Uplink game mode, sending all players an appropriate message ab
 
 ### gamemode.GetPlayerListByLives ( TeamId, MinLives, ExcludeBots )
 
-This function returns a table (array) of players (corresponding to C++ type `AGBPlayerState*`) matching the criteria of team Id \<TeamId\> and human or not \<ExcludeBots\>, and having a minimum number of lives \<MinLives\>. This selects all players on a team, also filtering out to select only players with a Readied-up status of `DeclaredReady`, only players with Ready Room status of `InPlayArea`, and only non-spectators. This is usually the starting point of processing players in play.
+This function returns a table (array) of players (corresponding to C++ type `AGBPlayerState*`) matching the criteria of team Id <var>TeamId</var> and human or not <var>ExcludeBots</var>, and having a minimum number of lives <var>MinLives</var>. This selects all players on a team, also filtering out to select only players with a Readied-up status of `DeclaredReady`, only players with Ready Room status of `InPlayArea`, and only non-spectators. This is usually the starting point of processing players in play.
 
 If you need to get a list of AI in a level, you have to use AI.GetControllers() instead (see 6.4.5 below).
 
@@ -1624,9 +1624,9 @@ end
 
 ### gamemode.AddGameObjective ( TeamId, Name, Type )
 
-This function adds a game objective having description \<Name\> (typically looked up in the string table) for the team specified with numeric Id \<TeamId\>. The type \<Type\> is set to 1 if the objective is a primary objective. Otherwise, it will be treated as a secondary objective. The convention (which you should please adhere to in setting your victory conditions) is that primary objectives must be completed in order to achieve a win condition. Secondary objectives can be completed for the purpose of bragging rights, scoring and perfectionism.
+This function adds a game objective having description <var>Name</var> (typically looked up in the string table) for the team specified with numeric Id <var>TeamId</var>. The type <var>Type</var> is set to 1 if the objective is a primary objective. Otherwise, it will be treated as a secondary objective. The convention (which you should please adhere to in setting your victory conditions) is that primary objectives must be completed in order to achieve a win condition. Secondary objectives can be completed for the purpose of bragging rights, scoring and perfectionism.
 
-As also explained in section 2.6 above, the objective description is looked up in the string table using the format `“objective_”` + \<Name\>. The Uplink game mode, for example, has objectives DefendObjective and CaptureObjective, which are stored as follows in the `Uplink.csv` string table:
+As also explained in section 2.6 above, the objective description is looked up in the string table using the format `“objective_”` + <var>Name</var>. The Uplink game mode, for example, has objectives DefendObjective and CaptureObjective, which are stored as follows in the `Uplink.csv` string table:
 
 ![screenshot](/images/lua-api/csv1.png)
 
@@ -1654,7 +1654,7 @@ This function clears all current game objectives. The uplink game mode, for exam
 
 ### gamemode.AddSearchLocation ( TeamId, Name, Type )
 
-This function adds a text search location (e.g. “Red House”, “Deck 3”), for modes similar to Intel Retrieval, to be displayed typically in conjunction with graphical search markers set using gamemode.AddObjectiveMarker below. The search location text is supplied as \<Name\> and the \<Type\> is 1 for primary, or 2 for secondary.
+This function adds a text search location (e.g. “Red House”, “Deck 3”), for modes similar to Intel Retrieval, to be displayed typically in conjunction with graphical search markers set using gamemode.AddObjectiveMarker below. The search location text is supplied as <var>Name</var> and the <var>Type</var> is 1 for primary, or 2 for secondary.
 
 ### gamemode.ClearSearchLocations ()
 
@@ -1662,9 +1662,9 @@ This function clears all currently set text search locations.
 
 ### gamemode.AddObjectiveMarker ( Location, TeamId, Name, MarkerType, Active ) <span class="new"></span>
 
-This function creates an objective marker, which has no physical presence in the map but which marks a location for use with other functions such as `player.ShowWorldPrompt()` (see section 6.5.10 below). The location \<Location\> is a vector (a Lua *table* type containing fields `x`, `y` and `z`). The team Id \<TeamId\> identifies the team that the marker is intended for (for example as an exfiltration marker), though all teams will see the marker. The marker is given the name \<Name\>. The marker is turned on or off in dependence on the Boolean \<Active\>.
+This function creates an objective marker, which has no physical presence in the map but which marks a location for use with other functions such as `player.ShowWorldPrompt()` (see section 6.5.10 below). The location <var>Location</var> is a vector (a Lua *table* type containing fields `x`, `y` and `z`). The team Id <var>TeamId</var> identifies the team that the marker is intended for (for example as an exfiltration marker), though all teams will see the marker. The marker is given the name <var>Name</var>. The marker is turned on or off in dependence on the Boolean <var>Active</var>.
 
-The function returns a reference to the objective marker, which can be stored for later use (for example to make it active). Current available types of objective marker are `Extraction` (green exfil markers), `MissionLocation` (translucent red circles to indicate intel search areas and the like) or `Hotspot` (red rectangle corresponding to an AI hotspot volume). See the TerrroristHunt.lua game mode script to see usage relating to hotspots. The hotspot markers are special cases where the game’s UI searches for hotspots matching the given \<Name\> and ignores the specified location. To avoid replication problems, **it is recommended you activate or deactivate objective markers in a single pass**, rather than change the state of markers twice in a row (for example, deactivate all then activate some).
+The function returns a reference to the objective marker, which can be stored for later use (for example to make it active). Current available types of objective marker are `Extraction` (green exfil markers), `MissionLocation` (translucent red circles to indicate intel search areas and the like) or `Hotspot` (red rectangle corresponding to an AI hotspot volume). See the TerrroristHunt.lua game mode script to see usage relating to hotspots. The hotspot markers are special cases where the game’s UI searches for hotspots matching the given <var>Name</var> and ignores the specified location. To avoid replication problems, **it is recommended you activate or deactivate objective markers in a single pass**, rather than change the state of markers twice in a row (for example, deactivate all then activate some).
 
 Example from the Intel game mode, setting up the markers for all of the extraction points, in the `PreInit()` function (and setting each marker to be inactive):
 
@@ -1745,7 +1745,7 @@ self.RandomLaptop = PossibleLaptops[umath.random(#PossibleLaptops)]
 
 See section 2.9 above for an overview of the different watch modes.
 
-The tactical watch is set to the mode \<WatchMode\> (currently one of: `Time`, `ObjectiveFinder` and `IntelRetrieval`). If \<DisplayBearing\> is true, a bearing is displayed to the current objective location (if set). If \<DisplayDistance\> is true, an approximate distance is displayed to the current objective location (if set). If \<DisplayUpDown\> is true, an indicator is given if the current objective location (if set) is above or below the player. If \<Measure2D\> is set, the displayed distance is calculated only in a horizontal direction and ignores height differences.
+The tactical watch is set to the mode <var>WatchMode</var> (currently one of: `Time`, `ObjectiveFinder` and `IntelRetrieval`). If <var>DisplayBearing</var> is true, a bearing is displayed to the current objective location (if set). If <var>DisplayDistance</var> is true, an approximate distance is displayed to the current objective location (if set). If <var>DisplayUpDown</var> is true, an indicator is given if the current objective location (if set) is above or below the player. If <var>Measure2D</var> is set, the displayed distance is calculated only in a horizontal direction and ignores height differences.
 
 Typically this function is called only once when a game mode initialises.
 
@@ -1766,9 +1766,9 @@ See section 2.9 above for an overview of the different watch modes. This functio
 
 ### gamemode.SetCaptureZone ( CaptureRadius, CaptureHeight, DefenderTeamId, ZoneIsSpherical )
 
-This function sets the properties of the capture zone which is used by tactical watch to display in-range alerts. A \<CaptureRadius\> of 0 will disable any in-range alerts. If \<ZoneIsSpherical\> is true, an in-range event will be generated if the player is within \<CaptureRadius\> of the centre of the zone as defined by the current objective location (see below). Otherwise, a cylindrical zone is defined of horizontal radius \<CaptureRadius\> and height \<CaptureHeight\> from top to bottom, centred around the current objective location.
+This function sets the properties of the capture zone which is used by tactical watch to display in-range alerts. A <var>CaptureRadius</var> of 0 will disable any in-range alerts. If <var>ZoneIsSpherical</var> is true, an in-range event will be generated if the player is within <var>CaptureRadius</var> of the centre of the zone as defined by the current objective location (see below). Otherwise, a cylindrical zone is defined of horizontal radius <var>CaptureRadius</var> and height <var>CaptureHeight</var> from top to bottom, centred around the current objective location.
 
-Any players having a Team Id equal to \<DefenderTeamId\> will get a green alert when in-range. Otherwise amber alerts are generated for in-range events. Setting DefenderTeamId to an invalid team number will prevent anyone getting a green alert.
+Any players having a Team Id equal to <var>DefenderTeamId</var> will get a green alert when in-range. Otherwise amber alerts are generated for in-range events. Setting DefenderTeamId to an invalid team number will prevent anyone getting a green alert.
 
 Here is an example from the Intel Retrieval mode of setting up a watch mode and capture zone to register a proximity alert when within `LaptopProximityAlertRadius` metres from the laptop (currently 5m):
 
@@ -1785,11 +1785,11 @@ end
 
 ### gamemode.SetObjectiveLocation ( ObjectiveLocation )
 
-\<ObjectiveLocation\> is a vector (a Lua *table* type containing fields `x`, `y` and `z`) which defines the location of an arbitrary thing (such as a static object, or a player, in which case repeated calls to SetObjectiveLocation will be required). This location is used by the tactical watch to determine ranges, bearings, and whether in-range alerts should be generated. Any updates to the objective location should be done sparingly (typically on a generous timer) so as not to generate too much network traffic keeping player watches updated.
+<var>ObjectiveLocation</var> is a vector (a Lua *table* type containing fields `x`, `y` and `z`) which defines the location of an arbitrary thing (such as a static object, or a player, in which case repeated calls to SetObjectiveLocation will be required). This location is used by the tactical watch to determine ranges, bearings, and whether in-range alerts should be generated. Any updates to the objective location should be done sparingly (typically on a generous timer) so as not to generate too much network traffic keeping player watches updated.
 
 ### gamemode.SetCaptureState( IsCapturing )
 
-\<IsCapturing\> lets the tactical watch know whether any players who are in-range of the objective location (as set with gamemode.SetObjectiveLocation() above) should be given a Capturing alert (yes if `true`, no if `false`).
+<var>IsCapturing</var> lets the tactical watch know whether any players who are in-range of the objective location (as set with gamemode.SetObjectiveLocation() above) should be given a Capturing alert (yes if `true`, no if `false`).
 
 ### gamemode.SetTeamScoreTypes( ScoreTypeTable )
 
@@ -1809,7 +1809,7 @@ This function sets all player scores to zero (but does not erase the score struc
 
 ### gamemode.AwardTeamScore ( TeamId, ScoreName, ScoreMultiple )
 
-This function awards \<ScoreMultiple\> times the score type \<ScoreName\> to the team with Id \<TeamId\>. The \<ScoreMultiple\> parameter is ignored if the `OneOff` property for the specified score type is `true`.
+This function awards <var>ScoreMultiple</var> times the score type <var>ScoreName</var> to the team with Id <var>TeamId</var>. The <var>ScoreMultiple</var> parameter is ignored if the `OneOff` property for the specified score type is `true`.
 
 Here is a complicated example from the DTAS game mode of awarding team and player scores:
 
@@ -1915,23 +1915,23 @@ gamemode.BroadcastGameMessage(KilledText, "Lower", 3.0)
 
 ### gamemode.AddBots ( Count, TeamId )
 
-This function adds the `number` type \<Count\> of bots to the play area (with total number of bots currently capped at 16) and places them in team \<TeamId\>. By default, bots are friendly towards members of their own team, and hostile towards others. The available bots are defined within the mission editor. Note the distinction between AI players (using AI spawns and not having player states associated with them) and Bots (essentially computer-controlled replicas of player pawns, which show up in player team lists and so on).
+This function adds the `number` type <var>Count</var> of bots to the play area (with total number of bots currently capped at 16) and places them in team <var>TeamId</var>. By default, bots are friendly towards members of their own team, and hostile towards others. The available bots are defined within the mission editor. Note the distinction between AI players (using AI spawns and not having player states associated with them) and Bots (essentially computer-controlled replicas of player pawns, which show up in player team lists and so on).
 
 ### gamemode.RemoveBots ( Count, TeamId)
 
-This function removes the `number` type \<Count\> of bots from team \<TeamId\>, if possible.
+This function removes the `number` type <var>Count</var> of bots from team <var>TeamId</var>, if possible.
 
 ### gamemode.FreezeBots ( TeamId )
 
-This function freezes all bots in team \<TeamId\>.
+This function freezes all bots in team <var>TeamId</var>.
 
 ### gamemode.UnFreezeBots ( TeamId )
 
-This function unfreezes all bots in team \<TeamId\>.
+This function unfreezes all bots in team <var>TeamId</var>.
 
 ### gamemode.BalanceTeams ( AttackingTeamId, DefendingTeamId, IdealTeamSizeDifference, BalancingAggression )
 
-This function centralises and expands the team balancing function previously included in the DTAS game mode. Players are automatically moved from attacker team to defender team, or vice versa, to pursue the ideal team size difference \<IdealTeamSizeDifference\> with an aggression defined by \<BalancingAggression\>. For symmetric modes like Team Elimination, the ideal size difference would be 0, for example. For DTAS, the ideal size difference is 1 (that is, ideally there is one more attacker than defender). For Hostage Rescue, the ideal difference is 2 (since one attacker is taken out of the attack as a hostage), and so on.
+This function centralises and expands the team balancing function previously included in the DTAS game mode. Players are automatically moved from attacker team to defender team, or vice versa, to pursue the ideal team size difference <var>IdealTeamSizeDifference</var> with an aggression defined by <var>BalancingAggression</var>. For symmetric modes like Team Elimination, the ideal size difference would be 0, for example. For DTAS, the ideal size difference is 1 (that is, ideally there is one more attacker than defender). For Hostage Rescue, the ideal difference is 2 (since one attacker is taken out of the attack as a hostage), and so on.
 
 The balancing aggression is a `number` (integer) type corresponding to one of the following:
 
@@ -1959,7 +1959,7 @@ This call clears all volunteer status for all players. Volunteer statuses can be
 
 ### gamemode.GetVolunteerList ( TeamId, ExcludeBots ) <span class="new">New in v1034</span>
 
-This call returns a list (can be zero length) of PlayerIDs of players who have volunteered, e.g. to be flag carrier. It checks all players on team \<TeamId\> (a TeamId of 255 will check all teams). This call doesn't care about lives or whether the player is in the play area, because it is typically called before round start. Bots can be volunteered by admins.
+This call returns a list (can be zero length) of PlayerIDs of players who have volunteered, e.g. to be flag carrier. It checks all players on team <var>TeamId</var> (a TeamId of 255 will check all teams). This call doesn't care about lives or whether the player is in the play area, because it is typically called before round start. Bots can be volunteered by admins.
 
 ### gamemode.GetVolunteerListByLives ( TeamId, MinLives, ExcludeBots ) <span class="new">New in v1034</span>
 
@@ -1967,7 +1967,7 @@ This is an analogue of GetPlayerListByLives() (see section 6.2.18) for volunteer
 
 ### gamemode.GetVolunteerListByStatus ( TeamId, ReadyStatus, ExcludeBots ) <span class="new">New in v1034</span>
 
-This function returns a list of players of team \<TeamId\> (or 255 for all teams) having the specified ready status. See section 6.5.18 for a list of possible ready statuses.
+This function returns a list of players of team <var>TeamId</var> (or 255 for all teams) having the specified ready status. See section 6.5.18 for a list of possible ready statuses.
 
 ### gamemode.GetCurrentMissionTags () <span class="new">New in v1034</span>
 
@@ -1985,7 +1985,7 @@ Function list:
 
 ### actor.HasTag ( Actor, Tag )
 
-Returns a Boolean that is *true* if the specified actor \<Actor\> has the specified tag \<Tag\>, *false* otherwise.
+Returns a Boolean that is *true* if the specified actor <var>Actor</var> has the specified tag <var>Tag</var>, *false* otherwise.
 
 Example:
 
@@ -2001,7 +2001,7 @@ end
 
 ### actor.AddTag ( Actor, Tag )
 
-Adds the tag \<Tag\> to the actor \<Actor\>.
+Adds the tag <var>Tag</var> to the actor <var>Actor</var>.
 
 Example:
 
@@ -2019,21 +2019,21 @@ end
 
 ### actor.RemoveTag ( Actor, Tag )
 
-Removes the tag \<Tag\> from the actor \<Actor\>. Does nothing if tag not present. See AddTag() above for an example.
+Removes the tag <var>Tag</var> from the actor <var>Actor</var>. Does nothing if tag not present. See AddTag() above for an example.
 
 ### actor.GetTags ( Actor )
 
-Returns a table (array) of strings corresponding to all of the gameplay tags associated with actor \<Actor\>.
+Returns a table (array) of strings corresponding to all of the gameplay tags associated with actor <var>Actor</var>.
 
 ### actor.GetTag ( Actor, Index )
 
-Returns the \<Index\>th gameplay tag associated with actor \<Actor\>. The return result is `nil` if the index is invalid.
+Returns the <var>Index</var>th gameplay tag associated with actor <var>Actor</var>. The return result is `nil` if the index is invalid.
 
 At this time, it appears that the mission editor starts indexing tags for some types of actors at index 0, and for other types of actors at index 1. It is hoped to fix this in due course, but for now please check how the tags are indexed for particular types of actors.
 
 ### actor.GetTeamId ( Actor )
 
-Returns the Team ID associated with the actor \<Actor\> as a number in the range 0-255. By convention, AI is assigned Team ID 100. Team ID 255 is a wildcard (that is: any query based on Team ID will match all teams if Team ID is set to 255).
+Returns the Team ID associated with the actor <var>Actor</var> as a number in the range 0-255. By convention, AI is assigned Team ID 100. Team ID 255 is a wildcard (that is: any query based on Team ID will match all teams if Team ID is set to 255).
 
 Example:
 
@@ -2044,7 +2044,7 @@ function uplink:PlayerEnteredPlayArea(PlayerState)
 
 ### actor.SetTeamId ( Actor, TeamId )
 
-Sets the team Id for actor \<Actor\> to \<TeamId\>. Actors other than players can have a Team Id associated with them, such as spawn protection volumes. In a PVP mode, both teams may switch roles (such as attacker/defender) and therefore may switch spawns. Therefore the Team Id of spawn protection volumes may need to be changed manually.
+Sets the team Id for actor <var>Actor</var> to <var>TeamId</var>. Actors other than players can have a Team Id associated with them, such as spawn protection volumes. In a PVP mode, both teams may switch roles (such as attacker/defender) and therefore may switch spawns. Therefore the Team Id of spawn protection volumes may need to be changed manually.
 
 Example:
 
@@ -2057,7 +2057,7 @@ end
 
 ### actor.GetLocation ( Actor )
 
-Returns a vector (a Lua *table* type having fields `x`, `y`, `z`) corresponding to the specified actor \<Actor\>’s world location.
+Returns a vector (a Lua *table* type having fields `x`, `y`, `z`) corresponding to the specified actor <var>Actor</var>’s world location.
 
 Example from the Deathmatch game mode, scoring a player start based on how close it is to current players:
 
@@ -2078,23 +2078,23 @@ end
 
 ### actor.GetRotation ( Actor )
 
-Returns a rotator (a Lua *table* type having fields `yaw`, `pitch` and `roll)` corresponding to the specified actor \<Actor\>’s world rotation.
+Returns a rotator (a Lua *table* type having fields `yaw`, `pitch` and `roll)` corresponding to the specified actor <var>Actor</var>’s world rotation.
 
 ### actor.SetHidden ( Actor, Hidden )
 
-Sets the actor \<Actor\> to be hidden or not depending on the Boolean value \<Hidden\>. Spectators are normally hidden, for example, as well as having collision turned off. Game objects may also need to be hidden or unhidden during the course of a round.
+Sets the actor <var>Actor</var> to be hidden or not depending on the Boolean value <var>Hidden</var>. Spectators are normally hidden, for example, as well as having collision turned off. Game objects may also need to be hidden or unhidden during the course of a round.
 
 ### actor.SetEnableCollision ( Actor, Enabled )
 
-This function enables or disables player collisions depending on the value of \<Enabled\> (for example to allow free spectate, or spectate bounded by geometry).
+This function enables or disables player collisions depending on the value of <var>Enabled</var> (for example to allow free spectate, or spectate bounded by geometry).
 
 ### actor.IsActive ( Actor )
 
-Returns Boolean to indicate whether the specified actor \<Actor\> is active. Ground Branch objects have an `active` property which can be read via this function. Certain objects implement certain behaviours depending on whether or not they are active. Extraction point markers, for example, will spawn smoke (only) when active.
+Returns Boolean to indicate whether the specified actor <var>Actor</var> is active. Ground Branch objects have an `active` property which can be read via this function. Certain objects implement certain behaviours depending on whether or not they are active. Extraction point markers, for example, will spawn smoke (only) when active.
 
 ### actor.SetActive ( Actor, NewActive )
 
-This function sets the active property of a Ground Branch game object actor \<Actor\> to Boolean value \<Active\>.
+This function sets the active property of a Ground Branch game object actor <var>Actor</var> to Boolean value <var>Active</var>.
 
 Example:
 
@@ -2109,11 +2109,11 @@ end
 
 ### actor.IsOverlapping ( Actor, OtherActor )
 
-Returns a Boolean value indicating whether or not the first actor \<Actor\> is overlapping the second actor \<OtherActor\>.
+Returns a Boolean value indicating whether or not the first actor <var>Actor</var> is overlapping the second actor <var>OtherActor</var>.
 
 ### actor.GetOverlaps ( Actor, Class )
 
-Returns a table (array) of all actors of class \<Class\> that are overlapped by actor \<Actor\>.
+Returns a table (array) of all actors of class <var>Class</var> that are overlapped by actor <var>Actor</var>.
 
 ``` lua
 local Overlaps = actor.GetOverlaps(self.ExtractionPoints[self.ExtractionPointIndex], 'GroundBranch.GBCharacter')
@@ -2155,7 +2155,7 @@ Function list:
 
 ### AI.CleanUp ( AIControllerTag )
 
-This function deletes all AI having the AI controller tag \<AIControllerTag\>. Typically this function is called on entry to the `WaitingForReady` round stage, which is typically the first round stage reached after the end of a previous round.
+This function deletes all AI having the AI controller tag <var>AIControllerTag</var>. Typically this function is called on entry to the `WaitingForReady` round stage, which is typically the first round stage reached after the end of a previous round.
 
 Example:
 
@@ -2168,11 +2168,11 @@ function intel:OnRoundStageSet(RoundStage)
 
 ### AI.Create ( SpawnPoint, AIControllerTag, FreezeTime )
 
-This function spawns an AI character at the spawnpoint \<SpawnPoint\> with the attached AI controller tag \<AIControllerTag\> and with an initial freeze time of \<FreezeTime\>.
+This function spawns an AI character at the spawnpoint <var>SpawnPoint</var> with the attached AI controller tag <var>AIControllerTag</var> and with an initial freeze time of <var>FreezeTime</var>.
 
 ### AI.CreateOverDuration ( Duration, Count, OrderedSpawnPoints, AIControllerTag )
 
-This function spawns a number \<Count\> of AI characters at the spawn points \<OrderedSpawnPoints\> over the course of the duration \<Duration\> seconds. The \<OrderedSpawnPoints\> table is cycled through in order, and is cycled repeatedly if the spawn count is larger than the table size.
+This function spawns a number <var>Count</var> of AI characters at the spawn points <var>OrderedSpawnPoints</var> over the course of the duration <var>Duration</var> seconds. The <var>OrderedSpawnPoints</var> table is cycled through in order, and is cycled repeatedly if the spawn count is larger than the table size.
 
 Example:
 
@@ -2192,7 +2192,7 @@ end
 
 ### AI.CreateWithTransform ( VirtualSpawnPoint, SpawnTransform, AIControllerTag, FreezeTime )
 
-This is a variant of AI.Create which uses a virtual AI spawn point to provide the properties of the AI (such as loadout, orders, and so on) but spawns the AI at the specified location and rotation in \<SpawnTransform\>. To use this function, a number of prototype AI spawns need to be provided. The location of these spawns is unimportant.
+This is a variant of AI.Create which uses a virtual AI spawn point to provide the properties of the AI (such as loadout, orders, and so on) but spawns the AI at the specified location and rotation in <var>SpawnTransform</var>. To use this function, a number of prototype AI spawns need to be provided. The location of these spawns is unimportant.
 
 <u>Known issue</u>: in v1033, this function can ignore changes made to the team ID of the actor before they spawn in.
 
@@ -2224,7 +2224,7 @@ end
 
 ### AI.GetControllers ( Class, Tag, TeamId, SquadId )
 
-Returns a table (array) of AI controller object pointers (of type `AGBAIController*`) matching the specified AI controller class \<Class\>, AI controller tag \<Tag\>, Team Id \<TeamId\> and Squad Id \<SquadId\>.
+Returns a table (array) of AI controller object pointers (of type `AGBAIController*`) matching the specified AI controller class <var>Class</var>, AI controller tag <var>Tag</var>, Team Id <var>TeamId</var> and Squad Id <var>SquadId</var>.
 
 ### AI.GetMaxCount ()
 
@@ -2247,11 +2247,11 @@ self.MaxOpforCount = math.min(ai.GetMaxCount(), self.MaxOpforCount)
 
 ### AI.CheckLocationReachable ( StartLocation, EndLocation ) <span class="new">Changed in v1034</span>
 
-This function tests whether vector \<EndLocation\> is reachable from vector \<StartLocation\> via the navmesh in the level. The function returns `true` if the location is reachable, and `false` otherwise. The \<IsPartialOk\> parameter has been removed in v1034 as it is not meaningful after the update to Kythera AI middleware. This function is used by DTAS to determine if a candidate spawn location is reachable from a regular spawn point (if not, this is suggestive that it is out of bounds of the level in some way). This function should be used sparingly as it can take a while to run a query.
+This function tests whether vector <var>EndLocation</var> is reachable from vector <var>StartLocation</var> via the navmesh in the level. The function returns `true` if the location is reachable, and `false` otherwise. The <var>IsPartialOk</var> parameter has been removed in v1034 as it is not meaningful after the update to Kythera AI middleware. This function is used by DTAS to determine if a candidate spawn location is reachable from a regular spawn point (if not, this is suggestive that it is out of bounds of the level in some way). This function should be used sparingly as it can take a while to run a query.
 
 ### AI.GetRandomReachablePointInRadius ( Origin, Radius )
 
-This function is essentially a wrapper for the UE4 function which finds a random point on the navmesh within \<Radius\> distance (measured in cm) from the vector Origin (a Lua *table* type having fields `x`, `y`, `z)`. This is used for finding locations close to team mates in Team Elimination respawn modes, for example.
+This function is essentially a wrapper for the UE4 function which finds a random point on the navmesh within <var>Radius</var> distance (measured in cm) from the vector Origin (a Lua *table* type having fields `x`, `y`, `z)`. This is used for finding locations close to team mates in Team Elimination respawn modes, for example.
 
 ### AI.ProjectPointToNavigation ( Point, QueryExtent )
 
@@ -2279,27 +2279,27 @@ This function returns the current squad orders for the specified `AIController`.
 
 ### AI.SetSquadOrders ( Class, Tag, TeamId, SquadId, SquadOrders )
 
-This function sets the squad orders (one of `Guard`, `Idle`, `Patrol` and `Search`) for the squad \<SquadId\> in team \<TeamId\> (usually 100 for AI) for AI controllers of class \<Class\> (usually `GroundBranch.GBAIController`) with the AI controller tag \<Tag\> (`nil` for all/any).
+This function sets the squad orders (one of `Guard`, `Idle`, `Patrol` and `Search`) for the squad <var>SquadId</var> in team <var>TeamId</var> (usually 100 for AI) for AI controllers of class <var>Class</var> (usually `GroundBranch.GBAIController`) with the AI controller tag <var>Tag</var> (`nil` for all/any).
 
 ### AI.SetSquadOrdersForAIController ( AIController, SquadOrders )
 
-This function sets the squad orders for the single AI controller identified by the \<AIController\> reference.
+This function sets the squad orders for the single AI controller identified by the <var>AIController</var> reference.
 
 ### AI.SetSearchTarget ( AIController, TargetLocation, SearchTime )
 
-This function sets the current search target for the AI controller \<AIController\> to the location \<TargetLocation\>, for a search time of \<SearchTime\> seconds. This will only take effect if the AI controller has `Search` orders, for example set by AI.SetSquadOrders() and so on. If the AI is not near the search region, it will move towards it, subject to any navigation pathing issues, and so on.
+This function sets the current search target for the AI controller <var>AIController</var> to the location <var>TargetLocation</var>, for a search time of <var>SearchTime</var> seconds. This will only take effect if the AI controller has `Search` orders, for example set by AI.SetSquadOrders() and so on. If the AI is not near the search region, it will move towards it, subject to any navigation pathing issues, and so on.
 
 ### AI.SetSquadSearchTarget ( Class, Tag, TeamId, SquadId, TargetLocation, SearchTime )
 
-This function sets the search target for an AI squad identified by \<Class\>, \<Tag\> and \<SquadId\>.
+This function sets the search target for an AI squad identified by <var>Class</var>, <var>Tag</var> and <var>SquadId</var>.
 
 ### AI.IsSpawnPointInHotspot ( AISpawnPoint, AIHotspot )
 
-This function returns `true` if the AI spawn point referenced by \<AISpawnPoint\> is within the AI hotspot references by \<AIHotspot\>, and `false` otherwise. Returns `nil` if there is an error with the parameters.
+This function returns `true` if the AI spawn point referenced by <var>AISpawnPoint</var> is within the AI hotspot references by <var>AIHotspot</var>, and `false` otherwise. Returns `nil` if there is an error with the parameters.
 
 ### AI.GetAIHotspotName ( AIHotspot )
 
-This function returns the name of the AI hotspot referenced by \<AIHotspot\>, or `nil` if not found.
+This function returns the name of the AI hotspot referenced by <var>AIHotspot</var>, or `nil` if not found.
 
 ### AI.IsAI ( AIController, AIControllerTag ) <span class="new">New in v1034</span>
 
@@ -2345,11 +2345,11 @@ This function returns the insertion point selected by the player, as a *userdata
 
 ### player.SetInsertionPoint ( Player, NewInsertionPoint )
 
-This function sets a new insertion point for the player using the given Insertion Point object \<NewInsertionPoint\>.
+This function sets a new insertion point for the player using the given Insertion Point object <var>NewInsertionPoint</var>.
 
 ### player.FreezePlayer ( Player, Duration )
 
-This function freezes the player in place for \<Duration\> seconds. Usually this is called just after players are spawned into the play area at the start of the `PreRoundWait` game round.
+This function freezes the player in place for <var>Duration</var> seconds. Usually this is called just after players are spawned into the play area at the start of the `PreRoundWait` game round.
 
 ### player.GetPlayerState ( Player )
 
@@ -2381,7 +2381,7 @@ Returns a Boolean which is `true` if the player is alive, `false` if dead (or sp
 
 ### player.ShowWorldPrompt ( Player, Location, Tag, Duration )
 
-This function causes an object to become visible for \<Duration\> seconds, with the supplied text tag (which will be looked up in the string table in the usual way) displayed on screen in the appropriate place (regardless of whether the location is visible from the player’s position). This is used in the Uplink game mode, for example, to
+This function causes an object to become visible for <var>Duration</var> seconds, with the supplied text tag (which will be looked up in the string table in the usual way) displayed on screen in the appropriate place (regardless of whether the location is visible from the player’s position). This is used in the Uplink game mode, for example, to
 
 show the location of the laptop to the Defenders at the start of a round:
 
@@ -2397,7 +2397,7 @@ Returns a table of inventory items. The items cannot be directly manipulated wit
 
 ### player.HasItemWithTag ( Player, Tag )
 
-Returns a Boolean which is `true` if the player \<Player\> possesses an item with the gameplay tag \<Tag\>, and `false` otherwise.
+Returns a Boolean which is `true` if the player <var>Player</var> possesses an item with the gameplay tag <var>Tag</var>, and `false` otherwise.
 
 Example from the Intel game mode:
 
@@ -2416,7 +2416,7 @@ end
 
 ### player.ShowGameMessage ( Player, Message, Type, Duration )
 
-This function displays a message on the player \<Player\>’s screen, with the specified message \<Message\>, for the specified duration \<Duration\>. The message \<Message\> is looked up in the string table(s) using the format `“gamemessage_”` + \<Message\>.
+This function displays a message on the player <var>Player</var>’s screen, with the specified message <var>Message</var>, for the specified duration <var>Duration</var>. The message <var>Message</var> is looked up in the string table(s) using the format `“gamemessage_”` + <var>Message</var>.
 
 For example, the message “TeamExfil” in the Intel game mode matches the following entry in the Intel.csv string table:
 
@@ -2431,7 +2431,7 @@ elseif not self.TeamExfilWarning then
 end
 ```
 
-See gamemode.BroadcastGameMessage (see 6.2.9 above) for more info on the \<Type\> and \<Duration\> parameters.
+See gamemode.BroadcastGameMessage (see 6.2.9 above) for more info on the <var>Type</var> and <var>Duration</var> parameters.
 
 ### player.GiveItem ( Player, ItemClass, bEquip )
 
@@ -2439,11 +2439,11 @@ This is a specialist function for giving a player a flag in DTAS.
 
 ### player.AddIgnoreUseInputReason ( Player, Reason )
 
-This call prevents a user using weapons for a given reason \<Reason\> that is an identifier used to allow multiple overlapping restrictions if need be. This is used by DTAS to prevent either team shooting (but not moving/running) during the flag placement phase at the start of a round.
+This call prevents a user using weapons for a given reason <var>Reason</var> that is an identifier used to allow multiple overlapping restrictions if need be. This is used by DTAS to prevent either team shooting (but not moving/running) during the flag placement phase at the start of a round.
 
 ### player.RemoveIgnoreUseInputReason ( Player, Reason )
 
-This call removes the restriction for reason \<Reason\> imposed by player.AddIgnoreUseInputReason().
+This call removes the restriction for reason <var>Reason</var> imposed by player.AddIgnoreUseInputReason().
 
 ### player.ClearAllIgnoreUseInputReasons ( Player )
 
@@ -2463,7 +2463,7 @@ This function returns the current player name as a string. There may be issues w
 
 ### player.AwardPlayerScore ( Player, ScoreName, ScoreMultiple )
 
-This function awards the specified score type \<ScoreName\> a multiple \<ScoreMultiple\> of times (unless the relevant score type has a OneOff property of `true`). Player scores must have been set up via gamemode.SetPlayerScoreTypes() first (see 6.2.35 above).
+This function awards the specified score type <var>ScoreName</var> a multiple <var>ScoreMultiple</var> of times (unless the relevant score type has a OneOff property of `true`). Player scores must have been set up via gamemode.SetPlayerScoreTypes() first (see 6.2.35 above).
 
 ### player.ResetPlayerScores ( Player )
 
@@ -2471,7 +2471,7 @@ This function zeroes all player scores but keeps the scoring structure intact.
 
 ### player.GetPlayerStat ( Player, Key )
 
-This function returns the current value of the player stat \<Key\>.
+This function returns the current value of the player stat <var>Key</var>.
 
 An example from the Deathmatch game mode, which tracks how many kills a player has:
 
@@ -2509,7 +2509,7 @@ Returns a `string` type containing the referenced player’s (usually 3 letter) 
 
 ### player.CheckCallSignProfanity ( CallSign )
 
-Returns `true` if the supplied \<CallSign\> `string` type is considered to correspond to a profanity (or thereabouts).
+Returns `true` if the supplied <var>CallSign</var> `string` type is considered to correspond to a profanity (or thereabouts).
 
 ### player.IsABot ( Player )
 
@@ -2521,7 +2521,7 @@ An experimental feature that may be broken. Use with caution.
 
 ### player.HasGameplayTag ( Player, TagName )
 
-Returns `true` if the referenced player has the specified \<TagName\> gameplay tag. Used in Hostage Rescue currently. The gameplay tag is not the same thing as an actor tag. It is an internal token that can indicate various player statuses.
+Returns `true` if the referenced player has the specified <var>TagName</var> gameplay tag. Used in Hostage Rescue currently. The gameplay tag is not the same thing as an actor tag. It is an internal token that can indicate various player statuses.
 
 ### player.GetVolunteerStatus( PlayerIdOrObject ) <span class="new">New in v1034</span>
 
@@ -2537,7 +2537,7 @@ This function will kill the specified player (if alive), bypassing any and all d
 
 ### player.Damage (PlayerIdOrObject, DamageAmount, DamageType ) <span class="new">New in v1034</span>
 
-This function will damage the specified player by the specified \<DamageAmount\> of \<DamageType\> damage. This will not bypass damage reduction/prevention; for example, players who are frozen at the start of a round will take no damage from this call. Players usually start with 100 health. Damage type is not currently supported and can take any String value.
+This function will damage the specified player by the specified <var>DamageAmount</var> of <var>DamageType</var> damage. This will not bypass damage reduction/prevention; for example, players who are frozen at the start of a round will take no damage from this call. Players usually start with 100 health. Damage type is not currently supported and can take any String value.
 
 ### player.SpawnEffectAtPlayer( PlayerIdOrObject, EffectClass) <span class="new">New in v1034</span>
 
@@ -2551,7 +2551,7 @@ Function list:
 
 ### timer.Set ( InTimerHandle, InTable, InFunction, InRate, InLoop )
 
-This function sets up a timer with handle \<InTimerHandle\> to call the function \<InFunction\> in table (module/class) \<InTable\> after \<InRate\> seconds have elapsed. If Boolean \<InLoop\> is true, then the timer repeats every \<InRate\> seconds. \<InTable\> is usually a reference to the game mode package/name (i.e. self).
+This function sets up a timer with handle <var>InTimerHandle</var> to call the function <var>InFunction</var> in table (module/class) <var>InTable</var> after <var>InRate</var> seconds have elapsed. If Boolean <var>InLoop</var> is true, then the timer repeats every <var>InRate</var> seconds. <var>InTable</var> is usually a reference to the game mode package/name (i.e. self).
 
 **If a timer already exists for the same handle, it will be reset with the new values and the old timer will effectively be cancelled**. If you try to set a timer with the same handle but a different function… don’t.
 
@@ -2564,7 +2564,7 @@ if self.Settings.TeamExfil.Value == 1 then
 
 ### timer.Clear ( InTimerHandle )
 
-This function clears any timer associated with the handle \<InTimerHandle\>.
+This function clears any timer associated with the handle <var>InTimerHandle</var>.
 
 Example from Intel Retrieval game mode:
 
@@ -2597,9 +2597,9 @@ Function list:
 
 ### umath.random ( Max )
 
-If \<Max\> is an integer, returns a random integer between 1 and \<Max\>.
+If <var>Max</var> is an integer, returns a random integer between 1 and <var>Max</var>.
 
-If \<Max\> is a float, returns a random float between 1.0f and \<Max\>.
+If <var>Max</var> is a float, returns a random float between 1.0f and <var>Max</var>.
 
 Example from Uplink game mode, which uses `umath.random()` to pick a random insertion point:
 
@@ -2618,9 +2618,9 @@ end
 
 ### umath.randomrange ( Min, Max )
 
-If \<Max\> is an integer, returns a random integer between \<Min\> and \<Max\>.
+If <var>Max</var> is an integer, returns a random integer between <var>Min</var> and <var>Max</var>.
 
-If \<Max\> is a float, returns a random float between \<Min\> and \<Max\>.
+If <var>Max</var> is a float, returns a random float between <var>Min</var> and <var>Max</var>.
 
 ## Vector (GBLuaVectorPackage.h)
 
@@ -2693,41 +2693,41 @@ After a loadout has been manipulated in lua form, it can be converted back to JS
 
 ### inventory.GetCustomKitAsTable (KitFileName, SplitItemField )
 
-The function attempts to load the file with name \<KitFileName\> from the GroundBranch/CustomKit folder, and returns the result as a lua table encoding the stored kit, in the same format as the returned table in GetPlayerLoadoutAsTable (Section 6.9.1 above). If `SplitItemField` is true, then `Item` fields will be returned as separate `ItemType` and `ItemValue` fields, as above. Custom kit types should be monolithic kit lists with any references to custom item builds replaced with the constituent parts expanded out.
+The function attempts to load the file with name <var>KitFileName</var> from the GroundBranch/CustomKit folder, and returns the result as a lua table encoding the stored kit, in the same format as the returned table in GetPlayerLoadoutAsTable (Section 6.9.1 above). If `SplitItemField` is true, then `Item` fields will be returned as separate `ItemType` and `ItemValue` fields, as above. Custom kit types should be monolithic kit lists with any references to custom item builds replaced with the constituent parts expanded out.
 
 The purpose of custom kits is to allow the loading in of loadout fragments or whole loadouts, to simplify modifications of player inventories. For example, in the Hostage Rescue mode, a hostage loadout is loaded in and merged with other aspects of a player loadout. In practice, this applies player head types and patches and so on to the stored hostage kit.
 
 ### inventory.GetItemDisplayName ( ItemType, ItemAssetPath )
 
-This function returns as `string` type the display name for the referenced asset. \<ItemType\> is the asset type, corresponding to the ItemType field returned by GetPlayerLoadoutAsTable() and the like (e.g. “PrimaryFirearm”, “Sidearm”, “Scope”, etc). The \<ItemAssetPath\> field is misleading named, as it is the asset file name (not full path), which is usually the internal name of the relevant blueprint (i.e. “BP_PMAG556_Magazine”). So a call with \<ItemType\> of “`Magazine`” and \<ItemAssetPath\> of “`BP_PMAG556_Magazine`” would return the string “`PMAG 30rd [5.56 NATO]`”. The display names are defined internally and cannot be modified externally.
+This function returns as `string` type the display name for the referenced asset. <var>ItemType</var> is the asset type, corresponding to the ItemType field returned by GetPlayerLoadoutAsTable() and the like (e.g. “PrimaryFirearm”, “Sidearm”, “Scope”, etc). The <var>ItemAssetPath</var> field is misleading named, as it is the asset file name (not full path), which is usually the internal name of the relevant blueprint (i.e. “BP_PMAG556_Magazine”). So a call with <var>ItemType</var> of “`Magazine`” and <var>ItemAssetPath</var> of “`BP_PMAG556_Magazine`” would return the string “`PMAG 30rd [5.56 NATO]`”. The display names are defined internally and cannot be modified externally.
 
 ### inventory.RemoveItemTypesFromLoadoutTable ( ItemTypesToRemove, LoadoutTable, SplitItemField )
 
-This function is essentially a shortcut to remove particular item types from a lua table version of a loadout. \<NewItemTypesToRemove\> may be a table of strings, and each of those strings corresponds to an item type that is removed. \<NewItemTypesToRemove\> may alternatively be a `string` type, and that single item type is then removed. The value for \<SplitItemField\> should be the same as that used to generate the table in the first place.
+This function is essentially a shortcut to remove particular item types from a lua table version of a loadout. <var>NewItemTypesToRemove</var> may be a table of strings, and each of those strings corresponds to an item type that is removed. <var>NewItemTypesToRemove</var> may alternatively be a `string` type, and that single item type is then removed. The value for <var>SplitItemField</var> should be the same as that used to generate the table in the first place.
 
 ### inventory.AddCustomKitTableToLoadoutTable ( CustomKitTable, LoadoutTable )
 
-This function takes a custom kit list, such as would be returned by GetCustomKitAsTable() (see Section 6.9.2 above), and merges it with the lua loadout table referenced by \<LoadoutTable\>. If an item type in the custom kit list already exists in the loadout, the custom kit item will be added rather than replace the loadout version. This will probably break most things.
+This function takes a custom kit list, such as would be returned by GetCustomKitAsTable() (see Section 6.9.2 above), and merges it with the lua loadout table referenced by <var>LoadoutTable</var>. If an item type in the custom kit list already exists in the loadout, the custom kit item will be added rather than replace the loadout version. This will probably break most things.
 
 ### inventory.CreateLoadoutFromTable ( Player, LoadoutName, LoadoutTable, SplitItemField )
 
-This function carries out the reverse process of GetPlayerLoadoutAsTable() (see Section 6.9.1 above) and creates a JSON version of the kit list in the \<LoadoutTable\> lua table, and then stores that as a new or amended loadout for the player \<Player\>, using loadout name \<LoadoutName\>. The value of \<SplitItemField\> should be the same as that used originally to generate the lua table.
+This function carries out the reverse process of GetPlayerLoadoutAsTable() (see Section 6.9.1 above) and creates a JSON version of the kit list in the <var>LoadoutTable</var> lua table, and then stores that as a new or amended loadout for the player <var>Player</var>, using loadout name <var>LoadoutName</var>. The value of <var>SplitItemField</var> should be the same as that used originally to generate the lua table.
 
 The default loadout names are “NoTeam” for PvE, and “Blue” and “Red” for PvP. The Hostage Rescue game mode creates a new loadout with name “Hostage”, for example, to hold the hostage version of the loadout for all players.
 
 ### inventory.VerifyLoadoutExists ( Player, LoadoutName )
 
-This function returns `true` if a loadout by the name \<LoadoutName\> exists already for the player \<Player\>, and `false` otherwise.
+This function returns `true` if a loadout by the name <var>LoadoutName</var> exists already for the player <var>Player</var>, and `false` otherwise.
 
 The next two functions operate on Loadout Reference Objects which are USERDATA references that are unique parameters for the OnPreLoadoutChanged() function described in Section 5.4.6 above. In essence, these objects are edited on the c++ side rather than converted into tables and edited on the lua side (to avoid lots of inventory conversions that are rarely needed):
 
 ### inventory.ClearItemField ( LoadoutReferenceObject, ItemType )
 
-The present function clears out any items of type \<ItemType\> from the selected loadout. This function is used by the WeaponRestriction mutator, for example, to remove primaries or secondaries from loadouts (i.e. for ‘pistols only’ rounds).
+The present function clears out any items of type <var>ItemType</var> from the selected loadout. This function is used by the WeaponRestriction mutator, for example, to remove primaries or secondaries from loadouts (i.e. for ‘pistols only’ rounds).
 
 ### inventory.LimitSupplies ( LoadoutReferenceObject, FragsLimit, SmokesLimit, FlashbangsLimit, BreachChargeLimit )
 
-This function cycles through the loadout referenced by \<LoadoutReferenceObject\> (as passed to OnPreLoadoutChanged() ) and removes as many items as necessary to comply with the specified item count. If a parameter is set to 0 or above, that is the limit for those items (`0` to completely remove). If a parameter is set to `-1`, the items are left unchanged. So, for example, calling the function with a FragsLimit of 3 and all other parameters set to -1 will remove any grenades beyond the 3<sup>rd</sup> from the loadout, and leave all other items unchanged. This is used by the WeaponRestriction mutator to limit supplies.
+This function cycles through the loadout referenced by <var>LoadoutReferenceObject</var> (as passed to OnPreLoadoutChanged() ) and removes as many items as necessary to comply with the specified item count. If a parameter is set to 0 or above, that is the limit for those items (`0` to completely remove). If a parameter is set to `-1`, the items are left unchanged. So, for example, calling the function with a FragsLimit of 3 and all other parameters set to -1 will remove any grenades beyond the 3<sup>rd</sup> from the loadout, and leave all other items unchanged. This is used by the WeaponRestriction mutator to limit supplies.
 
 # Miscellaneous Other Things
 
