@@ -2,7 +2,7 @@
 title: Kit file tutorial
 description: Kit file tutorial by Bob/AT
 published: true
-date: 2024-05-23T15:38:24.668Z
+date: 2024-05-23T15:38:28.167Z
 tags: 
 editor: markdown
 dateCreated: 2024-05-23T15:12:26.347Z
