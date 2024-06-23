@@ -8,15 +8,7 @@ editor: markdown
 dateCreated: 2023-07-20T12:57:12.749Z
 ---
 
-**Ground Branch Lua Library Reference**
-
-A reference of Ground Branch Lua library calls
-
-available to Lua-based game modes in Ground Branch
-
-(work in progress)
-
-Revision date: 22 June 2024 (game version 1034.4)
+_Revision date: 22 June 2024 (game version 1034.4)_
 
 # Introduction
 
@@ -120,7 +112,7 @@ There are also some useful functions in the `string` and `table` library, amongs
 
 Each game mode is provided in the form of a single Lua script stored in the GroundBranch/GameMode folder within the Ground Branch content directory:
 
-<img src="media/image1.png" style="width:3.75625in;height:2.84444in" />
+![Screenshot](/images/lua-api/folder.png)
 
 Game mode scripts need to implement a number of standard functions that are called by the main Ground Branch program at certain times, in order to set up the game mode functionality. An example of such a function is `PostInit()`. There are also now optional Validation functions for each game mode, called `<GameMode>Validate.lua`. These are called by the mission editor when validating a level.
 
@@ -134,7 +126,16 @@ The Ground Branch Lua libraries will be described below. First, the structure of
 
 A key concept for game modes is the round stage. The normal round stages are as follows:
 
-TODOTABLE
+| **Round stage**  | **Description**                                                       | **What initiates stage?**                                   |
+|------------------|-----------------------------------------------------------------------|-------------------------------------------------------------|
+| WaitingForReady  | Players in ready room, selecting loadouts, etc.                       | Previous game ends                                          |
+| ReadyCountdown   | Players in ready room, game is about to begin                         | A player selects a spawn location                           |
+| PreRoundWait     | Players moved to level, movement is frozen                            | Countdown ends                                              |
+| InProgress       | Players are in the level playing the game                             | Pre round wait countdown ends                               |
+| PostRoundWait    | Players are all spectating, with post round info displayed on screen  | Game mode determines a win and/or loss condition            |
+| TimeLimitReached | Players are all spectating, with post round info displayed on screen? | Time runs out without a win/loss condition being determined |
+| MatchEnded       | Countdown to new mission after match ends                             | Match ended conditions being met                            |
+
 
 Round stages can be added by game mode scripts if needed. The Uplink mode, for example, adds new `BlueDefenderSetup` and `RedDefenderSetup` round stages.
 
@@ -146,13 +147,21 @@ Players have a number of different statuses maintained within Ground Branch. The
 
 ### Readied-up status
 
-TODOTABLE
+| **Readied-up Status** | **Meaning**                                                                          |
+|-----------------------|--------------------------------------------------------------------------------------|
+| NotReady              | Player is not in the Ops Room                                                        |
+| WaitingToReadyUp      | Player is in the Ops Room but has not clicked on the Ops Board to indicate readiness |
+| DeclaredReady         | Player has clicked Ops Board and is in Ops Room ready to spawn in                    |
 
 Players with NotReady status will be left in the Ready Room when a round starts. Players who have a WaitingToReadyUp status will be assigned an insertion point automatically (if appropriate) and pulled into the round when the ready up timer expires.
 
 ### Ready Room status
 
-TODOTABLE
+| **Ready Room Status** | **Meaning**                                                              |
+|-----------------------|--------------------------------------------------------------------------|
+| Unknown               | Player’s position is temporarily unknown (usually an error state)        |
+| InReadyRoom           | Player is in the ready room (team room or lobby)                         |
+| InPlayArea            | Player is in the play area (in the main part of the map, during a round) |
 
 Game modes do not normally deal with these statuses directly, but they are relevant to various functions below. Only players with status of InPlayArea are shown as blips on the map tablet, for example.
 
@@ -166,7 +175,20 @@ Another key concept for game modes is game rules. These are essentially internal
 
 The current list of available game rules (at the time of writing) is as follows:
 
-TODOTABLE
+| **Game rule**             | **Meaning**                                                                                 | **Default** |
+|---------------------------|---------------------------------------------------------------------------------------------|-------------|
+| UseReadyRoom              | Initially spawn players into the ready room                                                 | true        |
+| UseRounds                 | Have discrete rounds rather than continuous play                                            | true        |
+| AllowCheats               | Allow entry of console commands to enable god mode, etc.                                    | false\*     |
+| SpectateFreeCam           | Allow spectators to move freely rather than be locked to friendly team members              | false\*     |
+| SpectateEnemies           | Allow spectators to spectate from the point of view of enemy team members                   | false\*     |
+| SpectateForceFirstPerson  | Force spectators into first person view instead of allowing third person (or free) movement | false       |
+| UseTeamRestrictions       |                                                                                             | false       |
+| AllowDeadChat             | Let live players see chat from dead players                                                 | false       |
+| AllowUnrestrictedVoice    |                                                                                             | false       |
+| AllowUnrestrictedRadio    |                                                                                             | false       |
+| AllowEnemyNPCMinimapBlips | Show AI blips on spectator minimap in PVE                                                   | true        |
+| UseFriendlyNameTags       | Display friendly name tags in-game (up close)                                               | false       |
 
 \* defaults to *true* if playing solo or in editor
 
@@ -349,7 +371,17 @@ In this case, the game mode name has a look-up (“Uplink” / “Uplink”) bas
 
 There are some additional conventions to help provide unique game mode customisation:
 
-TODOTABLE
+| **Key syntax**                                                                              | **Encodes…**                                                                                 |
+|---------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| “objective\_” + Objective Name                                                              | Objective name                                                                               |
+| “summary\_” + Summary Name                                                                  | Summary text                                                                                 |
+| “roundstage\_” + Round stage name + “\_” + Team number                                      | Text displayed at start of new round stage \<Round stage name\> to team \<Team number\>      |
+| “gamemessage\_” + Game message text                                                         | Any message output to gamemode.BroadcastPlayerMessage or player.ShowGameMessage and the like |
+| “missionsetting\_” + Mission setting name (**LOWER CASE**!)                                 | Mission setting name displayed on Ops Board and the like                                     |
+| “missionsetting\_” + Mission setting name (**LOWER CASE**!) + “\_” + Mission setting number | The text displayed for mission setting entry \<Mission setting number\>                      |
+| “gamemode\_” + Game mode name (lower case)                                                  | The full name of the gamemode, e.g. DTAS -\> “Dynamic Take And Secure”                       |
+| “gamemode_description\_” + Game mode name (lower case)                                      | A description of the game mode for display in mission selection screens                      |
+
 
 ## Player scores
 
@@ -469,7 +501,7 @@ The watch worn by the player has several different modes, which can be selected 
 
 **Time of day / Compass orientation)**
 
-TODOIMAGE <img src="media/image2.jpeg" style="width:2.375in;height:2.25in" />
+![Screenshot](/images/lua-api/watch1.jpeg)
 
 This watch mode is selected by default.
 
@@ -477,15 +509,18 @@ This watch mode is selected by default.
 
 **Range / Height difference / Bearing / Compass orientation / In-range indicators**
 
-TODOIMAGE <img src="media/image3.jpeg" style="width:1.875in;height:1.6875in" /> <img src="media/image4.jpeg" style="width:1.9375in;height:1.6875in" />
-
-TODOIMAGE <img src="media/image5.jpeg" style="width:1.93056in;height:1.6875in" /> <img src="media/image6.jpeg" style="width:1.84722in;height:1.69444in" /> <img src="media/image7.jpeg" style="width:1.69444in;height:1.69444in" />
+![Screenshot](/images/lua-api/watch2.jpeg)
+![Screenshot](/images/lua-api/watch3.jpeg)
+![Screenshot](/images/lua-api/watch4.jpeg)
+![Screenshot](/images/lua-api/watch5.jpeg)
+![Screenshot](/images/lua-api/watch6.jpeg)
 
 ### “IntelRetrieval” watch mode
 
 **(time of day / compass orientation / proximity alert)**
 
-TODOIMAGE <img src="media/image2.jpeg" style="width:2.69444in;height:2.54861in" /> <img src="media/image8.jpeg" style="width:2.61806in;height:2.55556in" />
+![Screenshot](/images/lua-api/watch1.jpeg)
+![Screenshot](/images/lua-api/watch7.jpeg)
 
 The watch modes are configured using the gamemode.SetWatchMode() function (see 6.2.29 below) and SetCaptureZone() function (see 6.2.31 below).
 
@@ -504,8 +539,6 @@ As of v1032, players are assigned to one of four ‘elements’ (Alpha, Bravo, C
 ## Patches
 
 As of v1033, various items of clothing and gear (tops and vests) and headgear (caps and helmets) may have designated positions for displaying patches, divided into six regions (head left, centre, right and body left, centre and right). Patches are selected in the character customisation screen and are stored as part of the player loadout. Some limited manipulation of player patches may be possible via the inventory system (see Section 4 below).
-
-## 
 
 # Standard game mode functions
 
@@ -1595,7 +1628,7 @@ This function adds a game objective having description \<Name\> (typically looke
 
 As also explained in section 2.6 above, the objective description is looked up in the string table using the format `“objective_”` + \<Name\>. The Uplink game mode, for example, has objectives DefendObjective and CaptureObjective, which are stored as follows in the `Uplink.csv` string table:
 
-<img src="media/image9.png" style="width:4.61458in;height:0.43056in" />
+![screenshot](/images/lua-api/csv1.png)
 
 The `uplink:SetupRound()` function includes the following code:
 
@@ -1613,7 +1646,7 @@ gamemode.AddGameObjective(self.PlayerTeams.BluFor.TeamId, "ExfiltrateBluFor", 1)
 
 These objectives have the following entries in the `intel.csv` string table:
 
-<img src="media/image10.png" style="width:4.33333in;height:0.46458in" />
+![screenshot](/images/lua-api/csv2.png)
 
 ### gamemode.ClearGameObjectives ()
 
@@ -2387,7 +2420,7 @@ This function displays a message on the player \<Player\>’s screen, with the s
 
 For example, the message “TeamExfil” in the Intel game mode matches the following entry in the Intel.csv string table:
 
-<img src="media/image11.png" style="width:4.125in;height:0.32986in" />
+![screenshot](/images/lua-api/csv3.png)
 
 As used in this part of the Intel game mode script:
 
