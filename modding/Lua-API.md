@@ -1,5 +1,5 @@
 ---
-title: Ground Branch Lua Library Reference
+title: Lua Library Reference
 description: Lua Function Library For GameMode and Mutator Modding
 published: true
 date: 2024-06-22T21:04:18.365Z
@@ -8,11 +8,11 @@ editor: markdown
 dateCreated: 2023-07-20T12:57:12.749Z
 ---
 
-_Revision date: 22 June 2024 (game version 1034.4)_
+Revision date: 22 June 2024 (game version 1034.4)
 
 # Introduction
 
-New or modified game modes can now be ‘modded into’ Ground Branch. This is a guide to the functions and coding conventions you will need to know in order to start modding your own game modes into Ground Branch. You will also probably want to look at the unofficial mission editor guide – pinned in the GB Modding channel in the Ground Branch Discord server.)*
+New or modified game modes can now be ‘modded into’ Ground Branch. This is a guide to the functions and coding conventions you will need to know in order to start modding your own game modes into Ground Branch. You will also probably want to look at the [Ground Branch Mission Editor guide](/modding/mission-editor).
 
 Game modes are now implemented using Lua script, which is an interpreted language that is executed substantially in real time (as opposed to languages like C++ which must be compiled before being executed). This has some advantages, such as being able to debug and modify Lua code while the game is running (and indeed, within the game itself). This guide assumes an at least basic knowledge of Lua. Typically only a few basic features of Lua are needed to implement the game modes. For more information, see <http://www.lua.org/>.
 
