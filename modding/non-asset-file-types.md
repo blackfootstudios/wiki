@@ -2,7 +2,7 @@
 title: Non asset file types
 description: Types of files which can be used with the Quick Create system
 published: true
-date: 2024-06-24T12:05:39.289Z
+date: 2024-06-24T12:05:42.851Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-24T11:40:08.606Z

@@ -2,7 +2,7 @@
 title: Weapon Master Blueprints
 description: Master blueprints you may choose to use for specific types of weapon mods
 published: true
-date: 2024-06-24T14:01:17.623Z
+date: 2024-06-24T14:01:21.270Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-24T13:46:52.595Z
