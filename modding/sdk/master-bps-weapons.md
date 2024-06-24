@@ -2,15 +2,16 @@
 title: Weapon Master Blueprints
 description: Master blueprints you may choose to use for specific types of weapon mods
 published: true
-date: 2024-06-24T13:46:52.595Z
+date: 2024-06-24T14:01:17.623Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-24T13:46:52.595Z
 ---
 
-# Weapon master blueprints
+# Primary (weapon) Master Blueprints
 
-### Primary:
+Derive a blueprint from one of the following master blueprints to create a new weapon type:
+
 | Subcategory | Type | Base Class |
 | --- | --- | --- |
 | Assault Rifle | Generic Assault Rifle | `BP_AR15_Master` |
@@ -33,8 +34,3 @@ dateCreated: 2024-06-24T13:46:52.595Z
 | | M24 | `BP_M24_Master` |
 | | SVD | `BP_SVD_Master` |
 
-
-### Sidearm:
-|  Type | Base Class |
-|  --- | --- |
-|  Generic Handgun | `BP_Handgun_Master` |
