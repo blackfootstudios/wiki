@@ -2,13 +2,13 @@
 title: Condensed file references
 description: The naming scheme used for accessing non asset files in Ground Branch
 published: true
-date: 2024-06-24T14:51:51.944Z
+date: 2024-06-24T14:52:27.828Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-24T14:51:51.944Z
 ---
 
-# Condensed File References in Ground Branch
+# Non Asset File References in Ground Branch
 
 There is a specific naming convention for non asset files (such as missions, patches, and so on) and others within Ground Branch. You should be aware of this convention when providing a reference to your own modded files, for example when typing in the location of a lua script for a laptop in a mission.
 
