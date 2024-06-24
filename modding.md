@@ -2,7 +2,7 @@
 title: Modding
 description: Making mods in Ground Branch
 published: true
-date: 2024-06-24T13:29:32.639Z
+date: 2024-06-24T13:44:14.008Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-20T13:07:51.217Z
@@ -25,7 +25,7 @@ The Quick Create system allows non-asset based mods to be made simply and quickl
 
 ### Game mode mods
 
--   Game mode modding overview
+-   [Game mode modding overview](/modding/gamemode-modding)
 -   [Ground Branch Mission Editor guide](/modding/mission-editor)
 -   [Ground Branch Lua Library guide](/modding/Lua-API)
 
