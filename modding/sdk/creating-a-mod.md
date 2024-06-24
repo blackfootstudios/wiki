@@ -2,7 +2,7 @@
 title: Creating a mod
 description: This will take you through the steps of creating a new mod
 published: true
-date: 2024-05-22T19:16:07.076Z
+date: 2024-06-24T17:17:18.709Z
 tags: guide, unreal
 editor: markdown
 dateCreated: 2024-01-24T13:44:38.179Z
