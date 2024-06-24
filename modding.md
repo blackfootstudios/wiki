@@ -2,7 +2,7 @@
 title: Modding
 description: Making mods in Ground Branch
 published: true
-date: 2024-06-24T11:35:46.806Z
+date: 2024-06-24T11:43:07.275Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-20T13:07:51.217Z
@@ -20,7 +20,7 @@ With the exception of Mission files, non-asset files are readable and editable u
 
 The Quick Create system allows non-asset based mods to be made simply and quickly, and without having to download or use the Ground Branch Mod Kit / SDK.
 
--   List of non-asset file types
+-   [List of non-asset file types](/modding/non-asset-file-types)
 -   [Quick Create menu](/modding/quick-create)
 
 ### Game mode mods
