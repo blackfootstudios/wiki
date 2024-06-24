@@ -1,8 +1,8 @@
 ---
-title: Condensed file references
+title: Non asset file references
 description: The naming scheme used for accessing non asset files in Ground Branch
 published: true
-date: 2024-06-24T14:52:27.828Z
+date: 2024-06-24T14:52:48.139Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-24T14:51:51.944Z
