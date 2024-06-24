@@ -2,7 +2,7 @@
 title: Mod Kit overview
 description: The main features of the Ground Branch Mod Kit / SDK
 published: true
-date: 2024-06-24T13:03:49.505Z
+date: 2024-06-24T13:04:19.332Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-24T12:18:22.135Z
@@ -74,17 +74,17 @@ At the right hand of the button bar, you will find some buttons specific to Grou
 
 #### Create Mod
 
-The Create Mod button will initialise a plugin directory (locally) and create a blank Workshop item (remotely), after which you can create, import and tweak your mod contents. See [creating-a-mod](/modding/sdk/creating-a-mod) for more details.
+The Create Mod button will initialise a plugin directory (locally) and create a blank Workshop item (remotely), after which you can create, import and tweak your mod contents. See [Creating mods](/modding/sdk/creating-a-mod) for more details.
 
 #### Package Mod
 
 The Package Mod button will 'cook' all the files in your mod and combine them in a package (.pak file) ready for uploading. It is a necessary step before uploading, but it will also check all your files and give you a comprehensive run-down of any errors detected when compiling/packaging.
 
-See [packaging-a-mod](/modding/sdk/packaging-a-mod) for more details.
+See [Updating mods](/modding/sdk/packaging-a-mod) for more details.
 
 #### Upload Mod
 
-See [uploading-a-mod](/modding/sdk/uploading-a-mod) for more details.
+See [Uploading mods](/modding/sdk/uploading-a-mod) for more details.
 
 #### Open Wiki
 
