@@ -2,7 +2,7 @@
 title: Modding
 description: Making mods in Ground Branch
 published: true
-date: 2024-06-24T12:22:05.090Z
+date: 2024-06-24T13:29:32.639Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-20T13:07:51.217Z
@@ -43,6 +43,7 @@ Asset based mods are created, packaged and uploaded within the Mod Kit / SDK, wh
 
 -   [Installing the Mod Kit](/modding/sdk/installing-modkit)
 -   [Mod Kit overview](/modding/sdk/overview)
+-   [Creating new game items](/modding/sdk/creating-child-assets)
 
 ### Mod Kit operations
 
