@@ -1,8 +1,8 @@
 ---
 title: Packaging a mod
-description: 
+description: Turning your mod assets into a packaged mod ready for upload
 published: true
-date: 2024-06-24T13:02:14.182Z
+date: 2024-06-24T13:03:07.986Z
 tags: guide, unreal
 editor: markdown
 dateCreated: 2024-01-24T16:07:00.909Z
