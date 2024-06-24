@@ -2,7 +2,7 @@
 title: Mod Kit overview
 description: The main features of the Ground Branch Mod Kit / SDK
 published: true
-date: 2024-06-24T12:41:51.576Z
+date: 2024-06-24T12:49:42.700Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-24T12:18:22.135Z
@@ -31,19 +31,30 @@ When the Mod Kit is properly loaded, you will see a screen similar to the follow
 <figcaption>New plugins warning on startup</figcaption>
 </figure>
 
-@todo annotate picure with letters (currently on laptop)
+@todo annotate picture with letters (currently on laptop only with MS Paint)
 
 This is essentially the normal Unreal Engine 4 editor but with some extra assets and UI elements. We would refer you to the very large amount of literature and tutorials online about the Unreal Engine 4 as a background on carrying out various tasks in it. However, briefly, the main elements are:
 
-- A: Main world viewport
+#### A: Main world viewport
 You can freely fly around the editor world (or, in due course, your levels) in this viewport. You can left-click items in the world to select them, and you can use the right mouse button and normal movement controls (WADS) to move around the world.
 
-- B: Selected item properties
+#### B: Selected item properties
 When you select an item (or multiple items) in the viewport (see A above), the properties of that item or those items (where they have properties in common) will be displayed here.
 
-- C: Content browser
+#### C: Content browser
 You can navigate around your mod contents here. Please note that only Unreal Engine assets will be shown here. Non-asset files like patches, missions, game modes, and so on can only be seen in the normal Operating System browser outside the editor.
 
-- D: Show directory tree button
+#### D: Show directory tree button
 You may find this button useful to see you mod in the context of the project as a whole. You will likely need to visit the GBCore directory at some point to find a starting point for your modded assets, and to find suitable animations, sound effects, and so on.
 
+#### E: World item view
+All of the actors in the world are shown here, and can be filtered and selected directly from this list. Properties of selected actors are shown in element B mentioned above.
+
+#### F: Object browser
+Certain kinds of objects can be selected directly from this area and dragged into the level to create new actors.
+
+#### G: Editor buttons
+A number of editor functions have associated buttons displayed in this row of buttons. A number of Ground Branch Mod Kit buttons are included at the end of this row.
+
+#### H: Editor menus
+Various operations can be carried out and windows opened via these normal text menus. You can load and save levels via the File menu, for example.
