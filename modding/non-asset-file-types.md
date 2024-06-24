@@ -2,7 +2,7 @@
 title: Non asset file types
 description: Types of files which can be used with the Quick Create system
 published: true
-date: 2024-06-24T11:48:35.543Z
+date: 2024-06-24T12:05:03.259Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-24T11:40:08.606Z
@@ -19,8 +19,7 @@ The following is a list of file types recognised by the Quick Create mod system.
 | LuaScript | `GroundBranch/Lua/` | .lua | Generic/library Lua script |
 |	Mutator | `GroundBranch/Mutator/` | .lua | Mutator Lua script |
 | Localization | `GroundBranch/Localization/<lang>/` | .csv | Lua script localization text look-up |
-| Patch | `
-	EGBResourceType::CustomKit,
-	EGBResourceType::AILoadout,
-	EGBResourceType::DefaultItemBuild
+| Patch | `GroundBranch/Patches/<Category>` | .png | Patch image file(s) |
+| Custom Kit | `GroundBranch/CustomKit/` | .kit | Custom kit json files |
+| AI Loadout | `GroundBranch/AILoadouts/<Type>` | .kit | AI loadouts |
 
