@@ -1,8 +1,8 @@
 ---
 title: Modding
-description: Modding Homepage
+description: Making mods in Ground Branch
 published: true
-date: 2024-06-23T15:18:09.749Z
+date: 2024-06-24T11:35:46.806Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-20T13:07:51.217Z
@@ -37,12 +37,24 @@ The Ground Branch Mod Kit or SDK ("Software Development Kit") is used to create 
 
 Asset based mods are created, packaged and uploaded within the Mod Kit / SDK, which is downloadable as a separate program from the Epic launcher / store (@needs link when live). The SDK includes the base systems from Ground Branch but none of the maps and assets. Placeholder meshes are provided, for example for weapons, to allow you to access standard animations and sounds and suchlike.
 
+### Mod Kit overview
+
+-   Downloading the Mod Kit
+-   Mod Kit overview
+
+### Mod Kit operations
+
 -   [Creating a mod](/modding/sdk/creating-a-mod)
 -   [Content types](/modding/sdk/content-types)
 -   [Packaging a mod](/modding/sdk/packaging-a-mod)
 -   [Uploading a mod](/modding/sdk/uploading-a-mod)
--   [Creating custom sounds with Wwise](/modding/sdk/Wwise)
+
+### Weapon mods
 
 The SDK was first released with Ground Branch version 1034. In this version, we are focusing on weapon mods only.
 
 -   [Making an example weapon mod](/modding/sdk/making-an-example-mod)
+
+### Other modding types
+
+-   [Creating custom sounds with Wwise](/modding/sdk/Wwise)
