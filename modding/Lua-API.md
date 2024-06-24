@@ -2,7 +2,7 @@
 title: Lua Library Reference
 description: Lua Function Library For GameMode and Mutator Modding
 published: true
-date: 2024-06-24T08:47:20.608Z
+date: 2024-06-24T08:53:51.510Z
 tags: lua, runtime
 editor: markdown
 dateCreated: 2023-07-20T12:57:12.749Z
@@ -126,7 +126,7 @@ math.modf()
 
 There are also some useful functions in the `string` and `table` library, amongst others, which you can look up at your leisure (see, for example, `table.insert`). See also `umath.random()`.
 
-The 'require()' keyword is approximately equivalent to the '#include' keyword in C/C++, and loads a shared library if it has not already been loaded. See for example the use of the ValidationFunctions library in game mode validators:
+The ``require()`` keyword is approximately equivalent to the #include keyword in C/C++, and loads a shared library if it has not already been loaded. See for example the use of the ValidationFunctions library in game mode validators:
 
 ``` lua
 local validationfunctions = require("ValidationFunctions")
@@ -139,7 +139,7 @@ end
 
 ### Lua scripts in Ground Branch
 
-There are usually several ways to do a simple thing in lua. Lua scripts in Ground Branch are universally of the form (where <modulename> is a game mode name, for example):
+There are usually several ways to do a simple thing in lua. Lua scripts in Ground Branch are universally of the form (where ``<modulename>`` is a game mode name, for example):
 
 ``` lua
 local <modulename> = {
@@ -175,7 +175,7 @@ Game mode scripts need to implement a number of standard functions that are call
 
 Ground Branch provides libraries of functions which can be called from the game mode script. These libraries are described below. The game mode script calls certain functions to indicate a win/lose condition for the game mode. Other functions can be provided in the game mode script to specific game events such as players entering triggers, or a timer expiring. Between being called in `Postinit()` and returning a win/loss condition, the game mode script can essentially do whatever it likes to deliver the necessary game mode experience.
 
-Also please bear in mind that ABSOLUTELY ANYTHING/EVERYTHING HERE MAY CHANGE and ANYTHING/EVERYTHING HERE MAY BE COMPLETELY WRONG. Sorry.
+Also please bear in mind that everything/anything here may be out of date and may change without warning. We cannot accept responsibilty for any harm arising from relying on information presented here. That said, if you can somehow use this information to cause harm, bravo! That is the Ground Branch spirit.
 
 The Ground Branch Lua libraries will be described below. First, the structure of the game mode scripts will be described.
 
