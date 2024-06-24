@@ -2,7 +2,7 @@
 title: Lua Library Reference
 description: Lua Function Library For GameMode and Mutator Modding
 published: true
-date: 2024-06-24T08:43:47.046Z
+date: 2024-06-24T08:47:20.608Z
 tags: lua, runtime
 editor: markdown
 dateCreated: 2023-07-20T12:57:12.749Z
@@ -126,7 +126,16 @@ math.modf()
 
 There are also some useful functions in the `string` and `table` library, amongst others, which you can look up at your leisure (see, for example, `table.insert`). See also `umath.random()`.
 
-The 'require()' keyword is approximately equivalent to the '#include' keyword in C/C++, and loads a shared library if it has not already been loaded.
+The 'require()' keyword is approximately equivalent to the '#include' keyword in C/C++, and loads a shared library if it has not already been loaded. See for example the use of the ValidationFunctions library in game mode validators:
+
+``` lua
+local validationfunctions = require("ValidationFunctions")
+
+function ... ()
+	----- carry out generic validation functions using new function library
+	ErrorsFound = validationfunctions:PerformGenericValidations()
+end
+```
 
 ### Lua scripts in Ground Branch
 
