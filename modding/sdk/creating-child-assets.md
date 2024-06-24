@@ -2,7 +2,7 @@
 title: Creating new game assets
 description: How to create new inventory items or game props
 published: true
-date: 2024-06-24T15:24:13.061Z
+date: 2024-06-24T15:25:23.778Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-24T13:28:34.959Z
@@ -38,10 +38,10 @@ To create a new item, go to your plugin folder and create a child blueprint. You
 
 <figure>
 <img src="/images/sdk/modkit_mycustomchildbp.jpg" width="100%" alt="Screenshot"/>
-<figcaption>Create new blueprint class menu</figcaption>
+<figcaption>Opening up a new child blueprint (in this case a weapon blueprint)</figcaption>
 </figure>
 
 <figure>
 <img src="/images/sdk/modkit_childweaponproperties.jpg" width="60%" alt="Screenshot"/>
-<figcaption>Create new blueprint class menu</figcaption>
+<figcaption>Just some of the configurable properties of a master blueprint-derived custom blueprint</figcaption>
 </figure>
