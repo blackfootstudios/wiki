@@ -2,11 +2,13 @@
 title: Packaging a mod
 description: 
 published: true
-date: 2024-05-22T19:17:28.848Z
+date: 2024-06-24T12:58:56.258Z
 tags: guide, unreal
 editor: markdown
 dateCreated: 2024-01-24T16:07:00.909Z
 ---
+
+# Packaging a mod
 
 Once you've created a mod and want to package it up ready for uploading to the workshop, you'll need to click the button "Package Mod" and then select the mod you'd like to Package
 
@@ -24,3 +26,10 @@ If it fails check the output log, common reasons it might fail:
 
 -   Your mod has compile errors
 -   Your mod is marked read-only
+
+When you start packaging, you should be offered a chance to open a log window to see how cooking and packaging is progressing. If not, you can open it manually via Windows / Developer / Output Log.
+
+<figure>
+<img src="/images/sdk/modkit_moddingbuttons.jpg" width="40%" alt="Screenshot"/>
+<figcaption>Opening output log</figcaption>
+</figure>
