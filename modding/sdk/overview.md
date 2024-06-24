@@ -2,7 +2,7 @@
 title: Mod Kit overview
 description: The main features of the Ground Branch Mod Kit / SDK
 published: true
-date: 2024-06-24T13:05:11.770Z
+date: 2024-06-24T13:11:48.877Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-24T12:18:22.135Z
@@ -11,6 +11,15 @@ dateCreated: 2024-06-24T12:18:22.135Z
 # Mod Kit Overview
 
 ## Launching the Mod Kit
+
+The Mod Kit is launched from the Epic launcher, which you have already downloaded it from if you have followed the previous step: [Installing the Ground Branch Mod Kit](/modding/sdk/installing-modkit).
+
+Specifically, click on the appropriate icon in your library, and the editor should start launching:
+
+<figure>
+<img src="/images/sdk/modkit_fakelibraryicon.jpg" width="20%" alt="Screenshot"/>
+<figcaption>Mod kit in Epic launcher library (placeholder icon)</figcaption>
+</figure>
 
 When you (first) launch the Mod Kit, you may be asked various questions. Generally you can say 'no' or 'dismiss' to these. For example:
 
