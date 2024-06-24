@@ -2,7 +2,7 @@
 title: Creating new game assets
 description: How to create new inventory items or game props
 published: true
-date: 2024-06-24T15:31:53.461Z
+date: 2024-06-24T15:40:31.788Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-24T13:28:34.959Z
@@ -58,5 +58,26 @@ You will see that a lot of information is already filled in. You can leave almos
 <figcaption>Just some of the configurable properties of a master blueprint-derived custom blueprint</figcaption>
 </figure>
 
-All that remains (!) is to create or import the necessary new assets and to then follow the standard steps to package and upload your mod. You will probably want to do some testing before setting it public...
+Bear in mind that some important properties of a master blueprint may be hidden with components of the blueprint. Components of different predefined types can be added to blueprints like building blocks. Master blueprints will include some components, which you can edit (but not delete), and you can add further components as you see fit.
+
+<figure>
+<img src="/images/sdk/modkit_bpcomponents.jpg" width="40%" alt="Screenshot"/>
+<figcaption>Viewing blueprint components (top left of blueprint editor)</figcaption>
+</figure>
+
+If you click on a component in the top left part of a blueprint viewer, you will get a new set of properties to view on the right hand side. In some cases the global properties of a blueprint will mirror at least part of the settings of individual components (largely for convenience):
+
+<figure>
+<img src="/images/sdk/modkit_bpcomponentproperties.jpg" width="60%" alt="Screenshot"/>
+<figcaption>Properties viewer when selecting a mesh component</figcaption>
+</figure>
+
+Each blueprint also has an event graph, which is where you can implement different events called by the underlying c++ class or by other parts of the game, and implement (or re-implement) interfaces for various things. This is beyond the scope of the present page, but will be described elsewhere in more detail:
+
+<figure>
+<img src="/images/sdk/modkit_eventgraph.jpg" width="80%" alt="Screenshot"/>
+<figcaption>The empty event graph of a new child blueprint</figcaption>
+</figure>
+
+All that remains (!) once you have set up your new blueprint is to create or import the necessary new assets and to then follow the standard steps to package and upload your mod. You will probably want to do some testing before setting it public...
 
