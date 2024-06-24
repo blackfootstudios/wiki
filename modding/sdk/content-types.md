@@ -2,7 +2,7 @@
 title: Content Types
 description: Types of content that can be made with the SDK
 published: true
-date: 2024-06-24T14:33:10.573Z
+date: 2024-06-24T14:37:14.019Z
 tags: guide, unreal
 editor: markdown
 dateCreated: 2024-01-24T16:25:49.987Z
@@ -16,9 +16,13 @@ A non-exhaustive list of content types is given below, with a link to a set of a
 
 Ground Branch uses particular asset types that are typically blueprints referencing 'fundamental' UE4 types in various ways. Ground Branch asset types typically include a base c++ class and an implementing master blueprint (BP). If you don't understand a word of this, that's fine.
 
+Unreal Engine has an asset registry which has defined (or allows you to define) specific 'asset types'. The mean feature of the asset registry is that you can search for particular asset types and apply particular filters, and the asset registry will handle mapping the Unreal Engine asset reference to a specific file location. The assets in mods can be added seamlessly to (and removed seamlessly from) the current list of assets. This is handled by Ground Branch and modders do not need to get involved with this process at all. It should be noted that the term 'asset type' is used in its specific technical meaning (within UE4) throughout this documentation.
+
 ### Fundamental UE4 content types
 
-| Content type | Description | Notes |
+This is a list of some fundamental UE4 asset types. This list is very far from exhaustive.
+
+| Asset type | Description | Notes |
 | --- | --- | --- |
 | Texture (.utx) | Image file | May be a UI element, an object skin, or other |
 | Material | Material | Typically uses a set of textures to define physical properties such as diffuse colour, specular, roughness and surface normal |
@@ -27,9 +31,9 @@ Ground Branch uses particular asset types that are typically blueprints referenc
 | Map | The geometry of a game level (as distinct from mission objects) | |
 
 ## Ground Branch content types
-(currently supported; more exist but as of 1034 these are the officially supported modding types)
+These are currently supported Ground Branch content types for modding; more exist but as of 1034 these are the officially supported ones.
 
-| Content type | Description | Master blueprint(s) |
+| Asset type | Description | Master blueprint(s) |
 | --- | --- | --- |
 | Primary | Primary weapon, e.g. rifle, shotgun, LMG, sniper rifle | [Master BP list](/modding/sdk/master-bps-weapons) |
 | Sidearm | Sidearm, e.g. pistol | `BP_Handgun_Master` |
