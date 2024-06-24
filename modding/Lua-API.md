@@ -2,7 +2,7 @@
 title: Lua Library Reference
 description: Lua Function Library For GameMode and Mutator Modding
 published: true
-date: 2024-06-22T21:04:18.365Z
+date: 2024-06-24T08:43:47.046Z
 tags: lua, runtime
 editor: markdown
 dateCreated: 2023-07-20T12:57:12.749Z
@@ -15,6 +15,8 @@ Revision date: 22 June 2024 (game version 1034.4)
 New or modified game modes can now be ‘modded into’ Ground Branch. This is a guide to the functions and coding conventions you will need to know in order to start modding your own game modes into Ground Branch. You will also probably want to look at the [Ground Branch Mission Editor guide](/modding/mission-editor).
 
 Game modes are now implemented using Lua script, which is an interpreted language that is executed substantially in real time (as opposed to languages like C++ which must be compiled before being executed). This has some advantages, such as being able to debug and modify Lua code while the game is running (and indeed, within the game itself). This guide assumes an at least basic knowledge of Lua. Typically only a few basic features of Lua are needed to implement the game modes. For more information, see <http://www.lua.org/>.
+
+### Lua language quick primer
 
 Notwithstanding the above, some important aspects of Lua to understand include:
 
@@ -30,15 +32,15 @@ Notwithstanding the above, some important aspects of Lua to understand include:
 
 and items can be read from the table using the key, e.g. `IsRowEnabled = NewArray("Row11")`. Empty arrays are defined using the form `MyArray = {}`
 
-- Tables can be defined just as a sequence of values (like traditional arrays), e.g. `PriorityTags = {"AISpawn_1", "AISpawn_"”, … }`, but numeric index keys will be implicitly defined and stored, starting at a predefined number and incrementing by 1 each time. So the above table declaration is actually treated as if it was written as `PriorityTags = { {"1", "AISpawn_1"}, {"2", "AISpawn_2"}, … }`.
+- Tables can be defined just as a sequence of values (like traditional arrays), e.g. `PriorityTags = {"AISpawn_1", "AISpawn_"”, … }`, but numeric index keys will be implicitly defined and stored, starting at a predefined number and incrementing by 1 each time. So the above table declaration is actually treated as if it was written as `PriorityTags = { {"1", "AISpawn_1"}, {"2", "AISpawn_2"}, … }`. When a table is referred to as an 'array', that usually implies the use of an ordered sequence of indices like this.
 
 - As you can see above, the default start index for array elements is 1 (<u>not 0!</u>). This may be another source of errors in your game mode. You can brute force things to start at index 0, but really it’s better to go with the flow.
 
 - The statement `a.x` is functionally equivalent in Lua to `a["x"]`. This is especially relevant to calling functions (see below).
 
-- One quirk of Lua is a statement of the form `Foo = Foo or 4`, which has the actual meaning of \<if `Foo` is not defined, set it to 4\>. This format doesn’t work as intended if `Foo` is false. (I hate that, but apparently everyone is fine with it.)
+- One quirk of Lua is a statement of the form `Foo = Foo or 4`, which has the actual meaning of \<if `Foo` is not defined, set it to 4\>. This format doesn’t work as intended if `Foo` is false. *Author's comment: not my favourite feature of lua but I'm on my own here it seems.*
 
-- Putting \# at the beginning of an expression returns the size of the sequence of in a table (which is *nearly* always equal to the size of the array - just assume it is for your purposes), so a *for* loop iterating through all entries in an array may be written as:
+- Putting \# at the beginning of an expression returns the size of the sequence of in a table (which is *nearly* always equal to the size of the table, unless it is not an 'array' - see above). A *for* loop iterating through all entries in an array may be written as:
 
 ``` lua
 for i = 1, #self.MyArray do
@@ -46,7 +48,7 @@ for i = 1, #self.MyArray do
 end
 ```
 
-- An alternative form of *for* loop uses the `ipairs` keyword, and is of the form:
+- An alternative form of *for* loop for arrays uses the `ipairs` keyword, and is of the form:
 
 ``` lua
 for MyKey, MyValue in ipairs(self.MyArray) do
@@ -54,7 +56,23 @@ for MyKey, MyValue in ipairs(self.MyArray) do
 end
 ```
 
-In this case the loop reads off each pair of key and value from the table. It can be a quicker way to access the values <var>MyValue</var> and avoid any problems caused by ‘holes’ in the table.
+In this case the loop reads off each pair of key and value from the table in turn. It can be a quicker way to access the values <var>MyValue</var>, but it only works if you are using continuous numeric indices in your table (e.g. 1, 2, 3, 4 ...).
+
+Usually the index is not of great interest, so it is replaced by a dummy variable, and often that dummy variable is an underscore ('\_'):
+
+``` lua
+for _, MyValue in pairs(self.MyArray) do
+    -- ...
+end
+```
+
+- If you have arbitrary indices in your table, you need to use the 'pairs' keyword instead:
+
+``` lua
+for MyKey, MyValue in pairs(self.MyArray) do
+    -- ...
+end
+```
 
 - As mentioned above, Lua has a *function* data type which is treated as any other type. Lua functions are defined as function data elements in a container table. You may recall from above that a.x is treated as a\[“x”\]. So functions in Lua can have the surface appearance of C++ object oriented shenanigans, but they are not really the same. So you will see game mode scripts begin with something of the form…
 
@@ -108,6 +126,36 @@ math.modf()
 
 There are also some useful functions in the `string` and `table` library, amongst others, which you can look up at your leisure (see, for example, `table.insert`). See also `umath.random()`.
 
+The 'require()' keyword is approximately equivalent to the '#include' keyword in C/C++, and loads a shared library if it has not already been loaded.
+
+### Lua scripts in Ground Branch
+
+There are usually several ways to do a simple thing in lua. Lua scripts in Ground Branch are universally of the form (where <modulename> is a game mode name, for example):
+
+``` lua
+local <modulename> = {
+-- 'global' variables for module
+...
+}
+
+require ("<libraryname>")
+-- bring in shared lua library functions
+  
+function <modulename>.Function1()
+end
+function <modulename>.Function2()
+end
+...
+  
+return <modulename>
+```
+
+Lua scripts are run (thereby defining all the necessary functions and variables), and the return value from them (a reference to the module) is stored for future calls and callbacks.
+  
+### Lua package paths
+
+When a lua script is first run, the ``package.path`` global variable is set so that the lua virtual machine will search for file references in specific defined places (for example when using a 'require()' command). Specifically, the lua VM will look in ``GroundBranch/GameMode`` and ``GroundBranch/Lua`` folders in the base game, and the same subfolders within any mod that is hosting the currently executing lua script (if applicable). In addition, the lua VM will try to match ``<filename>.lua`` and ``<filename>\init.lua``, in accordance with normal custom.
+  
 # Basic game mode concepts in Ground Branch
 
 Each game mode is provided in the form of a single Lua script stored in the GroundBranch/GameMode folder within the Ground Branch content directory:
