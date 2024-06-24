@@ -2,7 +2,7 @@
 title: Creating new game assets
 description: How to create new inventory items or game props
 published: true
-date: 2024-06-24T15:18:40.227Z
+date: 2024-06-24T15:24:13.061Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-24T13:28:34.959Z
@@ -21,12 +21,27 @@ To create a new item, go to your plugin folder and create a child blueprint. You
 <figcaption>Create new blueprint class menu</figcaption>
 </figure>
 
-![modkit_createchildblueprint.jpg](/images/sdk/modkit_createchildblueprint.jpg)
+<figure>
+<img src="/images/sdk/modkit_createchildblueprint.jpg" width="60%" alt="Screenshot"/>
+<figcaption>Pick parent class menu</figcaption>
+</figure>
 
-![modkit_createakmaster.jpg](/images/sdk/modkit_createakmaster.jpg)
+<figure>
+<img src="/images/sdk/modkit_createakmaster.jpg" width="60%" alt="Screenshot"/>
+<figcaption>Using text filter to find desired master blueprint</figcaption>
+</figure>
 
-![modkit_myakderivative.jpg](/images/sdk/modkit_myakderivative.jpg)
+<figure>
+<img src="/images/sdk/modkit_myakderivative.jpg" width="20%" alt="Screenshot"/>
+<figcaption>The newly created child blueprint in the plugin folder, with an appropriate name filled in</figcaption>
+</figure>
 
-![modkit_mycustomchildbp.jpg](/images/sdk/modkit_mycustomchildbp.jpg)
+<figure>
+<img src="/images/sdk/modkit_mycustomchildbp.jpg" width="100%" alt="Screenshot"/>
+<figcaption>Create new blueprint class menu</figcaption>
+</figure>
 
-![modkit_childweaponproperties.jpg](/images/sdk/modkit_childweaponproperties.jpg)
+<figure>
+<img src="/images/sdk/modkit_childweaponproperties.jpg" width="60%" alt="Screenshot"/>
+<figcaption>Create new blueprint class menu</figcaption>
+</figure>
