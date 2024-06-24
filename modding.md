@@ -2,7 +2,7 @@
 title: Modding
 description: Making mods in Ground Branch
 published: true
-date: 2024-06-24T11:43:07.275Z
+date: 2024-06-24T12:21:52.404Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-20T13:07:51.217Z
@@ -20,15 +20,17 @@ With the exception of Mission files, non-asset files are readable and editable u
 
 The Quick Create system allows non-asset based mods to be made simply and quickly, and without having to download or use the Ground Branch Mod Kit / SDK.
 
--   [List of non-asset file types](/modding/non-asset-file-types)
 -   [Quick Create menu](/modding/quick-create)
+-   [List of non-asset file types](/modding/non-asset-file-types)
 
 ### Game mode mods
+
 -   Game mode modding overview
 -   [Ground Branch Mission Editor guide](/modding/mission-editor)
 -   [Ground Branch Lua Library guide](/modding/Lua-API)
 
 ### Patch mods
+
 -   [Patch modding overview](/modding/patches)
 
 ## Asset Based Mods (Mod Kit / SDK)
@@ -39,8 +41,8 @@ Asset based mods are created, packaged and uploaded within the Mod Kit / SDK, wh
 
 ### Mod Kit overview
 
--   Downloading the Mod Kit
--   Mod Kit overview
+-   [Installing the Mod Kit](/modding/sdk/installing-modkit)
+-   [Mod Kit overview](/modding/sdk/overview)
 
 ### Mod Kit operations
 
