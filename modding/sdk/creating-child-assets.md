@@ -2,7 +2,7 @@
 title: Creating new game assets
 description: How to create new inventory items or game props
 published: true
-date: 2024-06-24T15:40:31.788Z
+date: 2024-06-24T15:41:54.533Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-24T13:28:34.959Z
@@ -72,7 +72,7 @@ If you click on a component in the top left part of a blueprint viewer, you will
 <figcaption>Properties viewer when selecting a mesh component</figcaption>
 </figure>
 
-Each blueprint also has an event graph, which is where you can implement different events called by the underlying c++ class or by other parts of the game, and implement (or re-implement) interfaces for various things. This is beyond the scope of the present page, but will be described elsewhere in more detail:
+Each blueprint also has a construction script and an event graph, which is where you can implement different events called by the underlying c++ class or by other parts of the game, and implement (or re-implement) interfaces for various things. Please refer to standard Unreal Engine documentation for more details on how these parts of a blueprint work. Specific events, interfaces and other master blueprint-specific elements will be described elsewhere in more detail.
 
 <figure>
 <img src="/images/sdk/modkit_eventgraph.jpg" width="80%" alt="Screenshot"/>
