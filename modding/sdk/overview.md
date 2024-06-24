@@ -2,13 +2,15 @@
 title: Mod Kit overview
 description: The main features of the Ground Branch Mod Kit / SDK
 published: true
-date: 2024-06-24T12:49:42.700Z
+date: 2024-06-24T13:03:49.505Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-24T12:18:22.135Z
 ---
 
 # Mod Kit Overview
+
+## Launching the Mod Kit
 
 When you (first) launch the Mod Kit, you may be asked various questions. Generally you can say 'no' or 'dismiss' to these. For example:
 
@@ -23,6 +25,8 @@ When you (first) launch the Mod Kit, you may be asked various questions. General
 </figure>
 
 You don't normally have to worry about any of these options.
+
+## Mod Kit layout
 
 When the Mod Kit is properly loaded, you will see a screen similar to the following:
 
@@ -58,3 +62,30 @@ A number of editor functions have associated buttons displayed in this row of bu
 
 #### H: Editor menus
 Various operations can be carried out and windows opened via these normal text menus. You can load and save levels via the File menu, for example.
+
+## Ground Branch modding buttons
+
+At the right hand of the button bar, you will find some buttons specific to Ground Branch modding. These are not present in the 'vanilla' Unreal Engine 4 editor.
+
+<figure>
+<img src="/images/sdk/modkit_moddingbuttons.jpg" width="40%" alt="Screenshot"/>
+<figcaption>Ground Branch modding buttons</figcaption>
+</figure>
+
+#### Create Mod
+
+The Create Mod button will initialise a plugin directory (locally) and create a blank Workshop item (remotely), after which you can create, import and tweak your mod contents. See [creating-a-mod](/modding/sdk/creating-a-mod) for more details.
+
+#### Package Mod
+
+The Package Mod button will 'cook' all the files in your mod and combine them in a package (.pak file) ready for uploading. It is a necessary step before uploading, but it will also check all your files and give you a comprehensive run-down of any errors detected when compiling/packaging.
+
+See [packaging-a-mod](/modding/sdk/packaging-a-mod) for more details.
+
+#### Upload Mod
+
+See [uploading-a-mod](/modding/sdk/uploading-a-mod) for more details.
+
+#### Open Wiki
+
+This button will take you to a beautiful place on the Internet.
