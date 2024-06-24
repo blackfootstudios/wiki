@@ -2,7 +2,7 @@
 title: Mod Kit overview
 description: The main features of the Ground Branch Mod Kit / SDK
 published: true
-date: 2024-06-24T13:04:19.332Z
+date: 2024-06-24T13:05:11.770Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-24T12:18:22.135Z
@@ -83,6 +83,8 @@ The Package Mod button will 'cook' all the files in your mod and combine them in
 See [Updating mods](/modding/sdk/packaging-a-mod) for more details.
 
 #### Upload Mod
+
+This Upload Mod button will physically transfer your packaged mod to the Steam Workshop. Congratulations! Your mod is now online. But don't forget to test it and then set the visibility to Public.
 
 See [Uploading mods](/modding/sdk/uploading-a-mod) for more details.
 
