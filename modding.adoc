@@ -22,7 +22,7 @@ The Quick Create system allows non-asset based mods to be made simply and quickl
 
 * link:/modding/gamemode-modding[Game mode modding overview]
 * link:/modding/mission-editor[Ground Branch Mission Editor guide]
-* link:/modding/Lua-API[Ground Branch Lua Library guide]
+* link:/modding/lua-api[Ground Branch Lua Library guide]
 
 === Patch mods
 
@@ -57,4 +57,4 @@ Other types of mods will be added in due course.
 
 === Other modding types
 
-* link:/modding/sdk/Wwise[Creating custom sounds with Wwise]
+* link:/modding/sdk/wwise[Creating custom sounds with Wwise]
