@@ -1,7 +1,7 @@
 // Lua API
 // enable section numbers
 :sectnums:
-:toc:
+:toc: preamble
 :tocdepth: 1
 
 [abstract]
@@ -10,6 +10,9 @@ Lua Function Library For GameMode and Mutator Modding
 
 Revision date: 22 June 2024 (game version 1034.4)
 --
+
+[toc]
+== Table of contents
 
 == Introduction
 
