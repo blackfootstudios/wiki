@@ -1,5 +1,5 @@
-= Game mode modding overview
-
+// Game mode modding overview
+[abstract]
 The basics of making new game modes in Ground Branch.
 
 == Creating game modes
