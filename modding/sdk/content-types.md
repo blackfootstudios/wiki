@@ -2,7 +2,7 @@
 title: Content Types
 description: Types of content that can be made with the SDK
 published: true
-date: 2024-06-25T11:19:56.160Z
+date: 2024-06-25T11:20:25.666Z
 tags: guide, unreal
 editor: markdown
 dateCreated: 2024-01-24T16:25:49.987Z
@@ -38,7 +38,7 @@ A fundamental type of object missing from the above list (because it is not an a
 
 Blueprints are not an asset type as such, but are typically used as the final embodiment of particular asset types. That is to say, the vast majority of usable items in Ground Branch are represented by a blueprint of the appropriate asset type.
 
-## Ground Branch content types
+### Ground Branch content types
 These are currently supported Ground Branch content types for modding; more exist but as of 1034 these are the officially supported ones.
 
 | Asset type | Description | Master blueprint(s) | Modding |
