@@ -4,15 +4,18 @@ Turning your mod assets into a packaged mod ready for upload.
 
 Once you’ve created a mod and want to package it up ready for uploading to the workshop, you’ll need to click the button "`Package Mod`" and then select the mod you’d like to Package
 
-The Package Mod button in the editor
+.The Package Mod button in the editor
+image::/images/packaging-a-mod/toolbar_package_a_mod_2.png[Screenshot,100%]
 
 This will start the packaging process which is exactly the same as the regular one (with a popup and sound)
 
-Notification that packaging has commenced
+.Notification that packaging has commenced
+image::/images/packaging-a-mod/packaging-mod.png[Screenshot,60%]
 
 Assuming all went well you should see `+%MOD_NAME%.pak+` in `+%PROJECT_ROOT%\GroundBranch\Saved\StagedMods\%MOD_NAME%\+` now you’ve packaged your mod it’s time to link:/modding/sdk/uploading-a-mod[upload] to Steam Workshop!
 
-Notification that packaging is complete
+.Notification that packaging is complete
+image::/images/packaging-a-mod/packaged-mod.png[Screenshot,60%]
 
 If it fails check the output log, common reasons it might fail:
 
@@ -21,4 +24,6 @@ If it fails check the output log, common reasons it might fail:
 
 When you start packaging, you should be offered a chance to open a log window to see how cooking and packaging is progressing (see picture above). If not, you can open it manually via Windows / Developer / Output Log.
 
-Opening output log
+.Opening output log
+image::/images/sdk/modkit_outputlog.jpg[Screenshot,60%]
+
