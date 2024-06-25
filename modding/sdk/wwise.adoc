@@ -1,5 +1,5 @@
-= Modding with Wwise
-
+//= Modding with Wwise
+[abstract]
 This is a breakdown of how to mod with Wwise.
 
 [arabic]
