@@ -1,4 +1,6 @@
-== Non Asset File References in Ground Branch
+= Non Asset File References in Ground Branch
+
+The naming scheme used for accessing non asset files in Ground Branch.
 
 There is a specific naming convention for non asset files (such as missions, patches, and so on) and others within Ground Branch.
 You should be aware of this convention when providing a reference to your own modded files, for example when typing in the location of a lua script for a laptop in a mission.
