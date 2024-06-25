@@ -15,3 +15,9 @@ You will need to make sure that your skeletal mesh model uses the correct skelet
 It is assumed that you are familiar with how to do this in general terms for a particular skeleton.
 
 #TODO:# @bone list
+
+.The stock M16A4 weapon, showing the placement of Rail components in the weapon blueprint
+image::/images/sdk/weapon/weapon_m16a4rails.jpg[weapon_m16a4rails.jpg,80%]
+
+.The Rail component properties for the selected rail
+image::/images/sdk/weapon/weapon_railproperties.jpg[weapon_railproperties.jpg,60%]
