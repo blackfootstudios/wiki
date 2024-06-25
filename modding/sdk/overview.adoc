@@ -8,15 +8,18 @@ The Mod Kit is launched from the Epic launcher, which you have already downloade
 
 Specifically, click on the appropriate icon in your library, and the editor should start launching:
 
-Mod kit in Epic launcher library (placeholder icon)
+.Mod kit in Epic launcher library (placeholder icon)
+image::/images/sdk/modkit_fakelibraryicon.jpg[Screenshot,20%]
 
 When you (first) launch the Mod Kit, you may be asked various questions.
 Generally you can say '`no`' or '`dismiss`' to these.
 For example:
 
-Wwise warning on startup
+.Wwise warning on startup
+image::/images/sdk/modkit_wwisewarning.jpg[Screenshot,80%]
 
-New plugins warning on startup
+.New plugins warning on startup
+image::/images/sdk/modkit_newplugins.jpg[Screenshot,40%]
 
 You don’t normally have to worry about any of these options.
 
@@ -24,7 +27,8 @@ You don’t normally have to worry about any of these options.
 
 When the Mod Kit is properly loaded, you will see a screen similar to the following:
 
-New plugins warning on startup
+.New plugins warning on startup
+image::/images/sdk/modkit_loaded.jpg[Screenshot,100%]
 
 @todo annotate picture with letters (currently on laptop only with MS Paint)
 
@@ -76,7 +80,8 @@ You can load and save levels via the File menu, for example.
 At the right hand of the button bar, you will find some buttons specific to Ground Branch modding.
 These are not present in the '`vanilla`' Unreal Engine 4 editor.
 
-Ground Branch modding buttons
+.Ground Branch modding buttons
+image::/images/sdk/modkit_moddingbuttons.jpg[Screenshot,40%]
 
 ==== Create Mod
 
