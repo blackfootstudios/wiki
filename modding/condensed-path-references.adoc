@@ -1,5 +1,5 @@
-= Non Asset File References in Ground Branch
-
+// Non Asset File References in Ground Branch
+[abstract]
 The naming scheme used for accessing non asset files in Ground Branch.
 
 There is a specific naming convention for non asset files (such as missions, patches, and so on) and others within Ground Branch.
