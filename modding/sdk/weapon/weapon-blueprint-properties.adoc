@@ -50,12 +50,7 @@ These properties are common to every '`GB Item`' in game, and define inventory p
 * `Item Weight` This is the weight of the rifle (without any attachments) in kilograms. The M16A4 stock rifle has a weight of 3.257, for example.
 * `Display Name` This is the name that should be used for the weapon in-game.
 * `Icon` This should be set to a UI texture (Texture2D type) with an icon of the weapon.
-* Left and Right Equip/Equipped tags:
-
-.Equip and Equipped tags in inventory section
-image::/images/sdk/weapon/weapon_equippedtags.jpg[weapon_equippedtags.jpg, 60%]
-
-(kris or John to explain? Specifically the AR15 codes and why two sets of tags are needed, etc)
+* Left and Right Equip/Equipped tags: it is highly recommended to leave these as-is, as defined in the specific weapon class master blueprint.
 
 .ABP Animation properties
 image::/images/sdk/weapon/weapon_properties_abpvariable.jpg[Screenshot,60%]
