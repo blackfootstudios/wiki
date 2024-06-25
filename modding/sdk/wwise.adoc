@@ -1,4 +1,4 @@
-= Modding With Wwise
+= Modding with Wwise
 
 This is a breakdown of how to mod with Wwise.
 
