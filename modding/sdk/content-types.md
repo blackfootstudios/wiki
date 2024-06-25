@@ -2,7 +2,7 @@
 title: Content Types
 description: Types of content that can be made with the SDK
 published: true
-date: 2024-06-25T11:16:46.575Z
+date: 2024-06-25T11:17:25.077Z
 tags: guide, unreal
 editor: markdown
 dateCreated: 2024-01-24T16:25:49.987Z
@@ -41,8 +41,8 @@ Blueprints are not an asset type as such, but are typically used as the final em
 ## Ground Branch content types
 These are currently supported Ground Branch content types for modding; more exist but as of 1034 these are the officially supported ones.
 
-| Asset type | Description | Master blueprint(s) |
-| --- | --- | --- |
-| Primary | Primary weapon, e.g. rifle, shotgun, LMG, sniper rifle | [Master BP list](/modding/sdk/master-bps-weapons) |
-| Sidearm | Sidearm, e.g. pistol | `BP_Handgun_Master` |
+| Asset type | Description | Master blueprint(s) | Modding |
+| --- | --- | --- | --- |
+| Primary | Primary weapon, e.g. rifle, shotgun, LMG, sniper rifle | [Master BP list](/modding/sdk/master-bps-weapons) | Weapon modding guide |
+| Sidearm | Sidearm, e.g. pistol | `BP_Handgun_Master` | Weapon modding guide |
 
