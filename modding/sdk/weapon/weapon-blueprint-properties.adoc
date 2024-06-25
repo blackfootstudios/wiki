@@ -21,7 +21,7 @@ image::/images/sdk/weapon/weapon_properties_firearm.jpg[weapon_properties_firear
 * `+No More Ammo Text+` this text is displayed when the weapon is out of ammo and the player tries to fire it.
 * `+Max Dry Fire Trigger Pulls+` this is how many times to play the '`dry fire`' animation if the player attempts to shoot the weapon without any ammo in it.
 * `+Alpha Different Threshold+` @
-* `+Firing Modes+` each firing mode has a separate enttry in this table, defining the number of shots fired (so long as the trigger is held down) and the rate of fire (measured in seconds between shots). @where is the text determined e.g. semi / auto?
+* `+Firing Modes+` each firing mode has a separate entry in this table, defining the number of shots fired (so long as the trigger is held down) and the rate of fire (measured in seconds between shots). @where is the text determined e.g. semi / auto?
 * `+Barrel Aim Angle Threshold+` @
 * `+Min Sight Relative X+` @
 * `+Max Grip Relative X+` @
@@ -31,8 +31,23 @@ image::/images/sdk/weapon/weapon_properties_inventory.jpg[Screenshot,60%]
 
 These properties are common to every '`GB Item`' in game, and define inventory properties of the item (in this case weapon).
 
+* `Item Asset Type` This should be PrimaryFirearm or Sidearm, depending on what you are making.
+* `Item Weight` This is the weight of the rifle (without any attachments) in kilograms. The M16A4 stock rifle has a weight of 3.257, for example.
+* `Display Name` This is the name that should be used for the weapon in-game.
+* `Icon` This should be set to a UI texture (Texture2D type) with an icon of the weapon.
+* Left and Right Equip/Equipped tags:
+
+.Equip and Equipped tags in inventory section
+image::/images/sdk/weapon/weapon_equippedtags.jpg[weapon_equippedtags.jpg, 60%]
+
+(kris or John to explain? Specifically the AR15 codes and why two sets of tags are needed, etc)
+
 .ABP Animation properties
 image::/images/sdk/weapon/weapon_properties_abpvariable.jpg[Screenshot,60%]
+
+* `Dust Cover Open` 
+* `Front Sight Post Offset`
+* `Rear Sight Vec`
 
 .AI Config properties
 image::/images/sdk/weapon/weapon_properties_aiconfig.jpg[Screenshot,60%]
