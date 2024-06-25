@@ -1,5 +1,6 @@
-= Weapon Master Blueprints
+// Weapon Master Blueprints
 
+[abstract]
 Master blueprints you may choose to use for specific types of weapon mods.
 
 == Primary (weapon) Master Blueprints
