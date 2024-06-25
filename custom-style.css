@@ -1,0 +1,54 @@
+.v-application .headline {
+  font-size: 2rem!important;
+  font-weight: 700
+}
+.contents h1.toc-header {
+  color: inherit;
+  text-align: center;
+  margin-bottom: 0
+}
+.contents h1.toc-header:after {
+  background: 0 0
+}
+.contents h1.toc-header a {
+  display: none!important
+}
+.contents div.abstract blockquote,
+.contents div.abstract blockquote:before {
+  background: 0 0;
+  color: inherit;
+  border-left: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 0
+}
+.contents div.abstract blockquote:before {
+  content: ""
+}
+.contents .imageblock {
+  text-align: center
+}
+.contents .imageblock .title {
+  font-size: .8rem!important
+}
+.contents kbd {
+  display: inline-block;
+  font-size: .66667rem;
+  background: #fafafa;
+  color: #000;
+  border: 1px solid #c1c1c1;
+  border-radius: .25em;
+  box-shadow: 0 1px 0 #c1c1c1,inset 0 0 0 .1em #fff;
+  padding: .25em .5em;
+  vertical-align: text-bottom
+}
+.contents span.var {
+  font-style: italic
+}
+.contents span.new {
+  background-color: #ff0;
+  color: #000;
+  border: 2px #ddd solid;
+  padding: 1px 4px
+}
