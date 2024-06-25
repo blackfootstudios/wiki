@@ -56,7 +56,7 @@ Placeholder meshes are provided, for example for weapons, to allow you to access
 The SDK was first released with Ground Branch version 1034. In this version, we are focusing on weapon mods only.
 Other types of mods will be added in due course.
 
-* link:/modding/sdk/weapon/weapon[Weapon mods]
+* link:/modding/sdk/weapon/[Weapon mods]
 
 === Other modding types
 
