@@ -6,7 +6,8 @@ The Ground Branch Mod Kit is available (only) via the Epic game launcher _(becau
 
 Search for Ground Branch and you should be able to find the Mod Kit, shown here in a player library:
 
-Mod Kit installed in your library (placeholder icon)
+.Mod Kit installed in your library (placeholder icon)
+image::/images/sdk/modkit_fakelibraryicon.jpg[Screenshot,20%]
 
 Once you '`buy`' the Mod Kit (it is free), it should start downloading to your Epic game library.
 It is launched via the Epic game library in the usual fashion.
