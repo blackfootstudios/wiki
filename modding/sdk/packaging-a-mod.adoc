@@ -1,0 +1,22 @@
+== Packaging a mod
+
+Once you’ve created a mod and want to package it up ready for uploading to the workshop, you’ll need to click the button "`Package Mod`" and then select the mod you’d like to Package
+
+The Package Mod button in the editor
+
+This will start the packaging process which is exactly the same as the regular one (with a popup and sound)
+
+Notification that packaging has commenced
+
+Assuming all went well you should see `+%MOD_NAME%.pak+` in `+%PROJECT_ROOT%\GroundBranch\Saved\StagedMods\%MOD_NAME%\+` now you’ve packaged your mod it’s time to link:/modding/sdk/uploading-a-mod[upload] to Steam Workshop!
+
+Notification that packaging is complete
+
+If it fails check the output log, common reasons it might fail:
+
+* Your mod has compile errors
+* Your mod is marked read-only
+
+When you start packaging, you should be offered a chance to open a log window to see how cooking and packaging is progressing (see picture above). If not, you can open it manually via Windows / Developer / Output Log.
+
+Opening output log

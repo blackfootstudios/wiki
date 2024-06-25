@@ -1,0 +1,50 @@
+== Weapon blueprint properties
+
+A rundown is given below of the meaning and usage of the properties that you will see in blueprints derived from `+BP_Firearm_Master+`. Just as you will have derived your custom firearm from a specific firearm master blueprint, all firearm master blueprints are child classes of `+BP_Firearm_Master+`. Individual firearm master blueprints will generally have different properties, different meshes, and different components possibly, but a vast majority of the properties of individual firearm master blueprints will be shared.
+
+For the most part, you will not want to change *any* of these values.
+Only the most relevant sections are shown below, and only the most relevant properties within those sections are described.
+Properties whose purpose and content are deemed relatively self-explanatory are also omitted below.
+In some cases, properties are working variables, which is to say that they are set and used at runtime.
+For example, `+Dry Fire Trigger Pulls+` is a count of how many times a player has pulled the trigger while the ammo is out.
+
+A typical weapon child blueprint with some common properties shown
+
+=== Blueprint default properties
+
+Firearm properties
+
+* `+Camera Shake Class+` this specifies a type of camera shake that will be played whenever the weapon is fired.
+* `+No More Ammo Text+` this text is displayed when the weapon is out of ammo and the player tries to fire it.
+* `+Max Dry Fire Trigger Pulls+` this is how many times to play the '`dry fire`' animation if the player attempts to shoot the weapon without any ammo in it.
+* `+Alpha Different Threshold+` @
+* `+Firing Modes+` each firing mode has a separate enttry in this table, defining the number of shots fired (so long as the trigger is held down) and the rate of fire (measured in seconds between shots). @where is the text determined e.g. semi / auto?
+* `+Barrel Aim Angle Threshold+` @
+* `+Min Sight Relative X+` @
+* `+Max Grip Relative X+` @
+
+Inventory properties
+
+These properties are common to every '`GB Item`' in game, and define inventory properties of the item (in this case weapon).
+
+ABP Animation properties
+
+AI Config properties
+
+Animation properties
+
+Effects properties
+
+Recoil properties
+
+Sound properties
+
+Stamina properties
+
+UI properties
+
+=== Firearm Mesh component default properties
+
+Firearm Mesh Component selected
+
+Key Firearm Mesh Component properties

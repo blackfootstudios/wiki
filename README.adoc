@@ -1,0 +1,50 @@
+== Markdown files for the wiki.
+
+=== Editing existing pages
+
+Just edit and create a https://github.com/blackfootstudios/wiki/pulls[pull request].
+
+=== Creating a new page
+
+For example if we want to create the page `+kit-file-tutorial+`:
+
+Step 1: Create `+/community/kit-file-tutorial.md+`
+
+....
+---
+title: Kit file tutorial
+description: Kit file tutorial by Bob/AT
+---
+
+Markdown of the article here
+....
+
+Step 2: Create a https://github.com/blackfootstudios/wiki/pulls[pull request]. If you want to add screenshot/images attach them to pull request as PNG images.
+
+=== Markdown syntax
+
+The supported syntax is described at https://docs.requarks.io/en/editors/markdown.
+
+For figures with captions we use HTML `+<figure>+`:
+
+[source,html]
+----
+<figure>
+<img src="/path/to/image.png" alt="alt-text"/>
+<figcaption>The caption of the figure</figcaption>
+</figure>
+----
+
+For keyboard keys, like F12, we use HTML `+<kbd>+`:
+
+[source,html]
+----
+Press <kbd>F12</kbd>
+----
+
+For new features, there’s a custom class:
+
+[source,html]
+----
+<span class="new">New in v1034.x</span>
+----

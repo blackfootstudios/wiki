@@ -1,0 +1,33 @@
+== Non Asset File References in Ground Branch
+
+There is a specific naming convention for non asset files (such as missions, patches, and so on) and others within Ground Branch.
+You should be aware of this convention when providing a reference to your own modded files, for example when typing in the location of a lua script for a laptop in a mission.
+
+This convention essentially mirrors the normal asset references in Unreal Engine, which are of the form:
+
+* `+/Game/GroundBranch/Folder/File+`
+* `+/<PluginName>/PluginFolder/File+`
+
+`+/Game/+` directs the engine to the normal game folder in `+steamapps/common/Ground Branch/GroundBranch/Content/+`.
+
+`+/<PluginName>+` directs the engine to `+steamapps/common/Ground Branch/GroundBranch/Plugins/<PluginName>+`.
+
+(there are other paths such as `+/User/+`, which redirects to the current user’s MyDocuments folder, and so on).
+
+The same approach is taken for non-asset file references, with a little variation:
+
+`+/Game/Folder/File+` will use the normal game structure as before.
+
+`+/<ModID>/Folder/File+` will redirect to the specified mod in the steam Workshop repository (similarly to using the plugin name of that mod), using the 64 bit Mod ID (a roughly 10 digit long number used everywhere within the steam web interface).
+
+`+/0/Folder/File+` will redirect to wherever the Staged Mod folder is set.
+
+So if you are testing a new laptop lua script in your custom game mode / mission, you may want to put in something of the form `+/0/GroundBranch/Lua/MyLaptopScript.lua+`. If and when you turn your test Staged Mod into a full-fledged mod, you will need to replace that /0/ with your new mod ID, and you will then need to re-upload the mod.
+
+Sometimes file extensions are needed and sometimes they will be assumed, for example based on the non asset type in question.
+In map list options lists, there is no need to add .mis for mission files, for example.
+
+There is a custom blueprint node available in Ground Branch called CondenseModReferencesInFilename, which will take a standard filename, it will deduce what it belongs to, and it will replace the beginning of the filename with the appropriate prefix, e.g. `+/Game/+` or `+/0/+` and so on.
+
+There is a corresponding ExpandModReferencesInFilename node which will convert any condensed filename into a full standard filename (which may or may not be relative, depending on whether the filename is on the same drive as the game installation.
+Because reasons).

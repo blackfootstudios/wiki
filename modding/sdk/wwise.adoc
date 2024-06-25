@@ -1,0 +1,32 @@
+[arabic]
+. Download the GBModding Wwise project [Here} (PUT IN HYPERLINK)
+. Download the correct Wwise to match the project 2021.1.14.8108 [https://www.audiokinetic.com/en/download/[here]] 
+. In Wwise use the weapons structure to make your gun sound.
+
+image:/images/wwise/wwise_step_1.png[/images/wwise/wwise_step_1]
+
+{empty}4. Create an event for your new sound.(Change to "`Event`" tab)
+
+image:/images/wwise/wwise_step_2.png[/images/wwise/wwise_step_2]
+
+image:/images/wwise/wwise_step_2.2.png[/images/wwise/wwise_step_2.2]
+
+{empty}5. Create a bank for your new sound and add the event to the bank(Change "`Layouts`" to "`SoundBank`")
+
+image:/images/wwise/wwise_step_3.png[/images/wwise/wwise_step_3]
+
+image:/images/wwise/wwise_step_3.2.png[/images/wwise/wwise_step_3.2]
+
+{empty}6. Generate all banks.
+
+image:/images/wwise/wwise_step_4.png[/images/wwise/wwise_step_4]
+
+{empty}7. Open Unreal Engine 4.27
+
+{empty}8. Add your Bank and event to your mod folder(the names have to match exactly as they do in Wwise)
+
+{empty}9. Add the event in Unreal to the bank in Unreal.
+
+{empty}10. Generate that bank.
+
+{empty}11. Add your event to where you want the sound to play, if you made a gun sound add the event to your weapon BP.

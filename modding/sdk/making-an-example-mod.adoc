@@ -1,0 +1,23 @@
+== Creating the blueprint
+
+Create a new blueprint with `+BP_Handgun_Master+`.
+
+== Skeletal Mesh/Physics Asset
+
+A mesh needs to be "`skinned`" to a skeleton and imported as a SkeletalMesh.
+
+Handguns all use the same skeleton.
+Bones are not allowed to be rotated, but can be translated (moved) to new locations.
+The existing animations will still work properly.
+
+== Animation
+
+Not sure about this one?
+
+== Audio
+
+Either use existing sounds by assigning the sound banks or link:/modding/sdk/Wwise[create custom sound banks with Wwise]
+
+== Next step
+
+Once you’ve finished all these steps move onto the link:/modding/sdk/packaging-a-mod[packaging] step!
