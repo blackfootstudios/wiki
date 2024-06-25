@@ -1,3 +1,7 @@
+= Weapon Master Blueprints
+
+Master blueprints you may choose to use for specific types of weapon mods.
+
 == Primary (weapon) Master Blueprints
 
 Derive a blueprint from one of the following master blueprints to create a new weapon type:
