@@ -64,28 +64,50 @@ image::/images/sdk/weapon/weapon_properties_aiconfig.jpg[Screenshot,60%]
 * `Weight No Cover Go Prone` Determines relatively how likely it is that an AI using this weapon will drop to prone when taking fire. This may be weighted relatively highly for light machine guns, for example.
 * `Weight No Cover Go Crouch` Determines relatively how likely it is that an AI using this weapon will crouch down when taking fire.
 
-[TIP]
---
-If in doubt, leave all values at 1.0.
---
-
 .Animation properties
 image::/images/sdk/weapon/weapon_properties_animation.jpg[Screenshot,60%]
+
+* `Recoil Montage` This is the animation montage to display when a shot is fired.
+* `Prone Recoil Montage` This is the animation montage to display when a shot is fired from prone.
+[TIP]
+--
+For a choice of in-built recoil animation montages for different weapons and calibres, search for `AM_XXX_Recoil_YYY` montages in `GBCore/Character/Animations/\...`
+--
+For all the other settings, it is highly recommended to just use the default values in the relevant weapon master blueprint. Here are the animation actions for the M16A4 rifle, for example:
+
+.M16A4 animation actions
+image::/images/sdk/weapon_animactions.jpg[weapon_animactions.jpg, 60%]
 
 .Effects properties
 image::/images/sdk/weapon/weapon_properties_effects.jpg[Screenshot,60%]
 
+* `Flash FXNiagara` This is the Niagara effect to use when a muzzle flash occurs
+* `Smoke FXNiagara` This is the Niagara effect to use for muzzle smoke (after each shot)
+* `Shell FXNiagara` This is the Niagara effect to use for spawning used shells (after each shot)
+
 .Recoil properties
 image::/images/sdk/weapon/weapon_properties_recoil.jpg[Screenshot,60%]
+
+* `Recoil Impulse Time`
+* `Recoil Recovery Time`
+
+* `Recoil per shot` These properties define the extent of the deflection (up and down) caused by each shot, in degrees, and in engaged position (Engaged Recoil Per Shot) and otherwise (Recoil Per Shot). A random value for the pitch and yaw is chosen within the specified ranges on each shot.
 
 .Sound properties
 image::/images/sdk/weapon/weapon_properties_sound.jpg[Screenshot,60%]
 
+* `Firearm Sound Type` This is the name of the sound bank that should be used for firearm sounds. You will most likely want to use one of the built-in weapon sound banks. If you are feeling brave, you can check out link:/modding/sdk/wwise[modding with Wwise].
+
 .Stamina properties
 image::/images/sdk/weapon/weapon_properties_stamina.jpg[Screenshot,60%]
 
+These properties are relatively finely tuned and should not be altered if possible. These are unitless constants that have fairly self-evident effects. High recovery values mean a quick recovery, and high exhaustion values mean a quicker stamina exhaustion when holding the weapon in engaged or ready posture.
+
 .UI properties
 image::/images/sdk/weapon/weapon_properties_ui.jpg[Screenshot,60%]
+
+* `Customisation Widget` This is a @explanation of and link to customisation widget creation
+* `Drag Drop Operations` @
 
 === Firearm Mesh component default properties
 
@@ -93,4 +115,4 @@ image::/images/sdk/weapon/weapon_properties_ui.jpg[Screenshot,60%]
 image::/images/sdk/weapon/weapon_firearmmeshcomponent.jpg[Screenshot,40%]
 
 .Key Firearm Mesh Component properties
-image::/images/sdk/weapon/weapon_mesh_properties.jpg[Screenshot,40%]
+image::/images/sdk/weapon/weapon_mesh_properties.jpg[Screenshot,60%]
