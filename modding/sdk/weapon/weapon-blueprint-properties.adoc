@@ -37,9 +37,9 @@ image::/images/sdk/weapon/weapon_properties_firearm.jpg[weapon_properties_firear
 * `+Firing Modes+` each firing mode has a separate entry in this table, defining the number of shots fired (so long as the trigger is held down) and the rate of fire (measured in seconds between shots). 
 ** `Burst Count` A value of 0 is considered `full-auto`; a value of 1 is considered `semi-auto`; and a value greater then 1 is considered a `burst` (and the fire selector options when pressing X will be created automatically in accordance with this table).
 ** `Rate of Fire` The time between shots in seconds. For example: for 600 rounds per minute, set this to 60/600 = 0.1.
-* `+Barrel Aim Angle Threshold+` @
-* `+Min Sight Relative X+` @
-* `+Max Grip Relative X+` @
+* `+Barrel Aim Angle Threshold+` This is the maximum angle difference between the barrel and the forward view of the player in order to fire when the instigator is not in the ready or engaged weapon position.
+* `+Min Sight Relative X+` This value is used to determine when to disallow placing a sight too far back. It compares the relative X location of the sight/"Back" socket against this arbitrary configurable value. If the sight/"Back" socket has a relative X location less than this, it is considered invalid.
+* `+Max Grip Relative X+` This value is used to determine when to disallow placing a grip too far forward. It compares the relative X location of the grip against this arbitrary configurable value. If the grip has a relative X location greater than this, it is considered invalid.
 
 .Inventory properties
 image::/images/sdk/weapon/weapon_properties_inventory.jpg[Screenshot,60%]
