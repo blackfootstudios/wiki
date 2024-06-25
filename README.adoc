@@ -12,15 +12,17 @@ For example if we want to create the page `+kit-file-tutorial+`:
 
 [source]
 ....
-= Kit file tutorial
+// title: Kit file tutorial
+// subtitle: Written by Bob/AT
 
-Kit file tutorial by Bob/AT
+[abstract]
+This is a short tutoral for creating kit files.
 
-The rest of the article here.
-Lore ipsum.
+Rest of your text.
+Lorem ipsum.
 ....
 
-NOTE: Line 1 is the title. Line 3 is the short summary. Line 5+ is the body of the text.
+NOTE: Line 1-2 are comments containing the title and subtitle. Line 4-5 is the short summary.
 
 *Step 2*: Create a https://github.com/blackfootstudios/wiki/pulls[pull request]. If you want to add screenshot/images attach them to pull request as PNG images.
 
