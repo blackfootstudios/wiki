@@ -18,7 +18,7 @@ Not sure about this one?
 
 == Audio
 
-Either use existing sounds by assigning the sound banks or link:/modding/sdk/Wwise[create custom sound banks with Wwise]
+Either use existing sounds by assigning the sound banks or link:/modding/sdk/wwise[create custom sound banks with Wwise]
 
 == Next step
 
