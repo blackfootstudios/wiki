@@ -1,4 +1,6 @@
-== Non-asset File Types
+= Non-asset File Types
+
+Types of files which can be used with the Quick Create system.
 
 The following is a list of file types recognised by the Quick Create mod system.
 These are '`non asset`' file types used in Ground Branch.
