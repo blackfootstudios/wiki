@@ -1,4 +1,10 @@
-= Kit file tutorial
+// title: Kit file tutorial
+[abstract]
+--
+This is a short tutoral for creating kit files
+
+-- Bob/AT.
+--
 
 The following describes how to customize the main menu guys.
 The same steps can also be used to create AI kits.
