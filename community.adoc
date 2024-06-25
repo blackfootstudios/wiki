@@ -8,3 +8,5 @@ In this directory is community made pages and guides.
 == Unreal modding
 
 (none, at the moment)
+
+NOTE: You can add/edit pages via pull request on https://github.com/blackfootstudios/wiki[GitHub]. 
