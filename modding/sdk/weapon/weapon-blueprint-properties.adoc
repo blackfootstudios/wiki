@@ -1,4 +1,6 @@
-== Weapon blueprint properties
+= Weapon blueprint properties
+
+The meaning of properties and components in blueprints derived from `BP_Firearm_Master`.
 
 A rundown is given below of the meaning and usage of the properties that you will see in blueprints derived from `+BP_Firearm_Master+`. Just as you will have derived your custom firearm from a specific firearm master blueprint, all firearm master blueprints are child classes of `+BP_Firearm_Master+`. Individual firearm master blueprints will generally have different properties, different meshes, and different components possibly, but a vast majority of the properties of individual firearm master blueprints will be shared.
 
