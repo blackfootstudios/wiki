@@ -1655,8 +1655,6 @@ It is not intended to be used in release versions of game modes.
 
 This function draws a debug line from the specified start location to the specified end location for the specified duration.
 
-==== 
-
 === GameMode (GBLuaGameModePackage.h)
 
 This library handles interactions between the game mode script and the Ground Branch code.
