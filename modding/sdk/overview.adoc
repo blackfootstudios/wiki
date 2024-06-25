@@ -1,4 +1,6 @@
-== Mod Kit Overview
+= Mod Kit overview
+
+The main features of the GROUND BRANCH Mod Kit / SDK.
 
 === Launching the Mod Kit
 
