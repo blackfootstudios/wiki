@@ -42,12 +42,12 @@ Placeholder meshes are provided, for example for weapons, to allow you to access
 
 * link:/modding/sdk/installing-modkit[Installing the Mod Kit]
 * link:/modding/sdk/overview[Mod Kit overview]
+* link:/modding/sdk/content-types[Content types]
 * link:/modding/sdk/creating-child-assets[Creating new game items]
 
 === Mod Kit operations
 
 * link:/modding/sdk/creating-a-mod[Creating a mod]
-* link:/modding/sdk/content-types[Content types]
 * link:/modding/sdk/packaging-a-mod[Packaging a mod]
 * link:/modding/sdk/uploading-a-mod[Uploading a mod]
 
