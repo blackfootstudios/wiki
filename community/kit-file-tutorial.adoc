@@ -1,5 +1,5 @@
-// Kit file tutorial
-// Bob/AT
+// title: Kit file tutorial
+// subtitle: Written by Bob/AT
 
 [abstract]
 This is a short tutoral for creating kit files.
