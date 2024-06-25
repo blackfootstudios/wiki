@@ -7,7 +7,7 @@ The basics of making new game modes in Ground Branch.
 Any consideration of making a new game mode in Ground Branch should begin with:
 
 * Consulting the link:/modding/mission-editor[Ground Branch mission editor guide]
-* Reading the introduction (at least) of the link:/modding/Lua-API[Ground Branch lua library reference]
+* Reading the introduction (at least) of the link:/modding/lua-api[Ground Branch lua library reference]
 * Taking a look at built-in game mode scripts in GroundBranch/GameMode
 
 It will be assumed in the foregoing that you are familiar with these sources.
