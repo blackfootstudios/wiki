@@ -1,4 +1,6 @@
-== Packaging a mod
+= Packaging a mod
+
+Turning your mod assets into a packaged mod ready for upload.
 
 Once you’ve created a mod and want to package it up ready for uploading to the workshop, you’ll need to click the button "`Package Mod`" and then select the mod you’d like to Package
 
