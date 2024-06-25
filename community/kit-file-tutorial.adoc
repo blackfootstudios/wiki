@@ -1,5 +1,8 @@
+= Kit file tutorial
+
 The following describes how to customize the main menu guys.
 The same steps can also be used to create AI kits.
+
 
 == Overview
 
