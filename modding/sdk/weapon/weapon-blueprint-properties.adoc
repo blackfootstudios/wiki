@@ -4,13 +4,19 @@ The meaning of properties and components in blueprints derived from `BP_Firearm_
 
 A rundown is given below of the meaning and usage of the properties that you will see in blueprints derived from `+BP_Firearm_Master+`. Just as you will have derived your custom firearm from a specific firearm master blueprint, all firearm master blueprints are child classes of `+BP_Firearm_Master+`. Individual firearm master blueprints will generally have different properties, different meshes, and different components possibly, but a vast majority of the properties of individual firearm master blueprints will be shared.
 
-For the most part, you will not want to change *any* of these values.
+[TIP]
+--
+If in doubt, just stick to the default values for properties.
+--
+[NOTE]
+--
 Only the most relevant sections are shown below, and only the most relevant properties within those sections are described.
 Properties whose purpose and content are deemed relatively self-explanatory are also omitted below.
 In some cases, properties are working variables, which is to say that they are set and used at runtime.
 For example, `+Dry Fire Trigger Pulls+` is a count of how many times a player has pulled the trigger while the ammo is out.
-
-A typical weapon child blueprint with some common properties shown
+--
+.A typical weapon child blueprint with some common properties shown
+image::/images/sdk/modkit_mycustomchildbp.jpg[modkit_mycustomchildbp.jpg]
 
 === Blueprint default properties
 
@@ -45,12 +51,23 @@ image::/images/sdk/weapon/weapon_equippedtags.jpg[weapon_equippedtags.jpg, 60%]
 .ABP Animation properties
 image::/images/sdk/weapon/weapon_properties_abpvariable.jpg[Screenshot,60%]
 
-* `Dust Cover Open` 
-* `Front Sight Post Offset`
-* `Rear Sight Vec`
+* `Dust Cover Open` @
+* `Front Sight Post Offset` @
+* `Rear Sight Vec` @
+* `Rear Sight Rot` @
+* `Safety Alpha` @
 
 .AI Config properties
 image::/images/sdk/weapon/weapon_properties_aiconfig.jpg[Screenshot,60%]
+
+* `Weight No Cover Advance` Determines relatively how likely it is that an AI using this weapon will advance towards the enemy when taking fire. This may be weighted relatively highly for assault style weapons, for example. 
+* `Weight No Cover Go Prone` Determines relatively how likely it is that an AI using this weapon will drop to prone when taking fire. This may be weighted relatively highly for light machine guns, for example.
+* `Weight No Cover Go Crouch` Determines relatively how likely it is that an AI using this weapon will crouch down when taking fire.
+
+[TIP]
+--
+If in doubt, leave all values at 1.0.
+--
 
 .Animation properties
 image::/images/sdk/weapon/weapon_properties_animation.jpg[Screenshot,60%]
