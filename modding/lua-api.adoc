@@ -1,6 +1,7 @@
 // Lua API
 // enable section numbers
-:sectnums: 
+:sectnums:
+:tocdepth: 1
 
 [abstract]
 --
