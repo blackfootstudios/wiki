@@ -6,16 +6,19 @@ How to create custom patches.
 
 Once you have followed the instructions to create a Staged Mod folder (see link:/modding/quick-create[quick-create]), there will now exist a GroundBranch/Patches folder inside the Staged Mod folder:
 
-Location of the Patches folder
+.Location of the Patches folder
+image::/images/patches/patches_patchfolder.jpg[Screenshot,60%]
 
 Inside this folder, you can create a subfolder corresponding to the category of patch you are adding.
 This can be an existing category (e.g. Morale) or a new one:
 
-Specifying a patch category
+.Specifying a patch category
+image::/images/patches/patches_patchtype.jpg[Screenshot,60%]
 
 You then place your new patch files inside this folder (the patch image files being created according to the specification below):
 
-The patch itself
+.The patch itself
+image::/images/patches/patches_thepatch.jpg[Screenshot,60%]
 
 All that remains now is to create the mod using the Quick Create system mentioned above.
 
@@ -34,7 +37,8 @@ A default normal map is used to display patches, unless a second image file is p
 The standard Unreal Engine 4 normal map format should be used.
 This is an example of a combination of a patch image file and its corresponding normal map image:
 
-A patch image and its corresponding normal map
+.A patch image and its corresponding normal map
+image::/images/patches/patches_mainandnormal.jpg[Screenshot,60%]
 
 The creation of normal maps is outside the scope of this document, but there exist many programs which will generate an estimated normal map based on an arbitrary source image, for example.
 Better results will be obtained by generating the source image and normal map in the same process, for example using custom patch generator scripts in Substance 3D and suchlike.
