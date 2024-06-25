@@ -122,3 +122,10 @@ image::/images/sdk/weapon/weapon_firearmmeshcomponent.jpg[Screenshot,40%]
 
 .Key Firearm Mesh Component properties
 image::/images/sdk/weapon/weapon_mesh_properties.jpg[Screenshot,60%]
+
+=== Additional firearm blueprint components
+
+The more specific weapon blueprints listed link:/modding/sdk/master-bps-weapons[here] will usually have a more detailed component list. Regardless, the firearm components that you can add (and in some cases have to add) to a custom blueprint include:
+
+- `MagWell` component (receives magazine and defines magazine type)
+- `Rail` component (picatinny rail)
