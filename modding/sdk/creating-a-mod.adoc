@@ -1,6 +1,6 @@
-= Creating a mod
-
-This will take you through the steps of creating a new mod.
+//= Creating a mod
+[abstract]
+This guide will take you through the steps of creating a new mod.
 
 Once the editor has launched you should see the '`Create Mod`' button on the toolbar at the top of the screen (if you have a very small screen you may need to use the double chevrons to expand the toolbar)
 
