@@ -2,7 +2,7 @@
 title: Weapon blueprint properties
 description: The meaning of properties and components in blueprints derived from BP_Firearm_Master
 published: true
-date: 2024-06-25T12:37:04.654Z
+date: 2024-06-25T12:37:08.286Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-25T11:32:11.053Z
