@@ -25,28 +25,39 @@ Firearm properties
 * `+Min Sight Relative X+` @
 * `+Max Grip Relative X+` @
 
-Inventory properties
+.Inventory properties
+image::/images/sdk/weapon/weapon_properties_inventory.jpg[Screenshot,60%]
 
 These properties are common to every '`GB Item`' in game, and define inventory properties of the item (in this case weapon).
 
-ABP Animation properties
+.ABP Animation properties
+image::/images/sdk/weapon/weapon_properties_abpvariable.jpg[Screenshot,60%]
 
-AI Config properties
+.AI Config properties
+image::/images/sdk/weapon/weapon_properties_aiconfig.jpg[Screenshot,60%]
 
-Animation properties
+.Animation properties
+image::/images/sdk/weapon/weapon_properties_animation.jpg[Screenshot,60%]
 
-Effects properties
+.Effects properties
+image::/images/sdk/weapon/weapon_properties_effects.jpg[Screenshot,60%]
 
-Recoil properties
+.Recoil properties
+image::/images/sdk/weapon/weapon_properties_recoil.jpg[Screenshot,60%]
 
-Sound properties
+.Sound properties
+image::/images/sdk/weapon/weapon_properties_sound.jpg[Screenshot,60%]
 
-Stamina properties
+.Stamina properties
+image::/images/sdk/weapon/weapon_properties_stamina.jpg[Screenshot,60%]
 
-UI properties
+.UI properties
+image::/images/sdk/weapon/weapon_properties_ui.jpg[Screenshot,60%]
 
 === Firearm Mesh component default properties
 
-Firearm Mesh Component selected
+.Firearm Mesh Component selected
+image::/images/sdk/weapon/weapon_firearmmeshcomponent.jpg[Screenshot,40%]
 
-Key Firearm Mesh Component properties
+.Key Firearm Mesh Component properties
+image::/images/sdk/weapon/weapon_mesh_properties.jpg[Screenshot,40%]
