@@ -1,0 +1,16 @@
+= Weapon modding
+
+How to create weapon mods.
+
+To start a weapon mod, follow the usual steps to link:/modding/sdk/creating-a-mod[create a mod], find an appropriate master blueprint (`+BP_Handgun_Master+` for sidearms, or see link:/modding/sdk/master-bps-weapons[this list] for primary weapon master blueprints). Then link:/modding/sdk/creating-child-assets[create an appropriate child blueprint]. This guide assumes that you have followed these steps and have your new custom BP open like so:
+
+Your new child blueprint
+
+Please see link:/modding/sdk/weapon/weapon-blueprint-properties[here] for a run-down of (nearly) all of the properties in your new custom firearm blueprint.
+
+First of all, you will most likely start by putting in a new firearm model (skeletal mesh) and skin (material) into the `+Firearm Mesh Component+` properties.
+
+You will need to make sure that your skeletal mesh model uses the correct skeleton, and has the correct bones assigned.
+It is assumed that you are familiar with how to do this in general terms for a particular skeleton.
+
+#TODO:# @bone list
