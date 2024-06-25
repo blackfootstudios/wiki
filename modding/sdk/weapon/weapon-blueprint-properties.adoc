@@ -62,7 +62,7 @@ image::/images/sdk/weapon/weapon_properties_abpvariable.jpg[Screenshot,60%]
 * `Safety Alpha` @
 
 .AI Config properties
-image::/images/sdk/weapon/weapon_properties_aiconfig.jpg[Screenshot,60%]
+image::/images/sdk/weapon/weapon_properties_aiconfig.jpg[Screenshot,50%]
 
 * `Weight No Cover Advance` Determines relatively how likely it is that an AI using this weapon will advance towards the enemy when taking fire. This may be weighted relatively highly for assault style weapons, for example. 
 * `Weight No Cover Go Prone` Determines relatively how likely it is that an AI using this weapon will drop to prone when taking fire. This may be weighted relatively highly for light machine guns, for example.
@@ -80,7 +80,7 @@ For a choice of in-built recoil animation montages for different weapons and cal
 For all the other settings, it is highly recommended to just use the default values in the relevant weapon master blueprint.
 
 .Audio properties
-image::/images/sdk/weapon_properties_audio.jpg[weapon_properties_audio.jpg, 60%]
+image::/images/sdk/weapon_properties_audio.jpg[weapon_properties_audio.jpg, 50%]
 
 Again, it is highly recommended to use the default audio setup for the specific weapon type master blueprint. You can swap in different individual events (wwise terminology for 'sounds') from other banks, but you will then need to make sure the new banks are included in the Audio Banks list as well, and that will take up more memory and load a little slower.
 
@@ -92,7 +92,7 @@ image::/images/sdk/weapon/weapon_properties_effects.jpg[Screenshot,60%]
 * `Shell FXNiagara` This is the Niagara effect to use for spawning used shells (after each shot)
 
 .Recoil properties
-image::/images/sdk/weapon/weapon_properties_recoil.jpg[Screenshot,60%]
+image::/images/sdk/weapon/weapon_properties_recoil.jpg[Screenshot,50%]
 
 * `Recoil Impulse Time` @
 * `Recoil Recovery Time` @
@@ -100,17 +100,17 @@ image::/images/sdk/weapon/weapon_properties_recoil.jpg[Screenshot,60%]
 * `Recoil per shot` These properties define the extent of the deflection (up and down) caused by each shot, in degrees, and in engaged position (Engaged Recoil Per Shot) and otherwise (Recoil Per Shot). A random value for the pitch and yaw is chosen within the specified ranges on each shot.
 
 .Sound properties
-image::/images/sdk/weapon/weapon_properties_sound.jpg[Screenshot,60%]
+image::/images/sdk/weapon/weapon_properties_sound.jpg[Screenshot,50%]
 
 * `Firearm Sound Type` This is the name of the sound bank that should be used for firearm sounds. You will most likely want to use one of the built-in weapon sound banks. If you are feeling brave, you can check out link:/modding/sdk/wwise[modding with Wwise].
 
 .Stamina properties
-image::/images/sdk/weapon/weapon_properties_stamina.jpg[Screenshot,60%]
+image::/images/sdk/weapon/weapon_properties_stamina.jpg[Screenshot,50%]
 
 These properties are relatively finely tuned and should not be altered if possible. These are unitless constants that have fairly self-evident effects. High recovery values mean a quick recovery, and high exhaustion values mean a quicker stamina exhaustion when holding the weapon in engaged or ready posture.
 
 .UI properties
-image::/images/sdk/weapon/weapon_properties_ui.jpg[Screenshot,60%]
+image::/images/sdk/weapon/weapon_properties_ui.jpg[Screenshot,70%]
 
 * `Customisation Widget` This is a widget class (UI element, essentially) which handles the customisation of the firearm. The default WBP_FirearmCustomisation widget should normally suffice, but some weapons need a custom widget to handle quirks in the weapon setup.
 
