@@ -1,3 +1,6 @@
+// Lua
+:sectnums:
+
 [abstract]
 --
 Lua Function Library For GameMode and Mutator Modding
