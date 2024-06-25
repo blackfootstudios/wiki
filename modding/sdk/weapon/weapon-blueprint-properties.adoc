@@ -112,8 +112,7 @@ These properties are relatively finely tuned and should not be altered if possib
 .UI properties
 image::/images/sdk/weapon/weapon_properties_ui.jpg[Screenshot,60%]
 
-* `Customisation Widget` This is a @explanation of and link to customisation widget creation
-* `Drag Drop Operations` @
+* `Customisation Widget` This is a widget class (UI element, essentially) which handles the customisation of the firearm. The default WBP_FirearmCustomisation widget should normally suffice, but some weapons need a custom widget to handle quirks in the weapon setup.
 
 === Firearm Mesh component default properties
 
