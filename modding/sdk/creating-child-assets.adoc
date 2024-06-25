@@ -65,4 +65,5 @@ Specific events, interfaces and other master blueprint-specific elements will be
 image::/images/sdk/modkit_eventgraph.jpg[Screenshot,80%]
 
 All that remains (!) once you have set up your new blueprint is to create or import the necessary new assets and to then follow the standard steps to package and upload your mod.
-You will probably want to do some testing before setting it public...
+
+TIP: You will probably want to do some testing before setting it public...
