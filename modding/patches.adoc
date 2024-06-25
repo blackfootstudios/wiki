@@ -1,5 +1,6 @@
 = Patches
 
+[abstract]
 How to create custom patches.
 
 == Creating a New Patch
