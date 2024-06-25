@@ -1,4 +1,6 @@
-= Making an example handgun mod
+// Making an example handgun mod
+[abstract]
+Making an example handgun mod
 
 == Creating the blueprint
 
