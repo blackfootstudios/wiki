@@ -1,5 +1,5 @@
-= Content Types
-
+// Content Types
+[abstract]
 Types of content that can be made with the SDK.
 
 == Asset modding content types
