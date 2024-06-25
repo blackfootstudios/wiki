@@ -3,6 +3,6 @@ Runtime modding does require the GROUND BRANCH Unreal SDK.
 * link:/modding/sdk/content-types[Content Types]: Types of content that can be made with the SDK
 * link:/modding/sdk/creating-a-mod[Creating a mod]: This will take you through the steps of creating a new mod
 * link:/modding/sdk/making-an-example-mod[Making an example mod]
-* link:/modding/sdk/Wwise[Wwise]: This is a breakdown of how to mod audio with Wwise
+* link:/modding/sdk/wwise[Wwise]: This is a breakdown of how to mod audio with Wwise
 * link:/modding/sdk/packaging-a-mod[Packaging a mod]
 * link:/modding/sdk/uploading-a-mod[Uploading a mod]: Upload your mod to Steam Workshop
