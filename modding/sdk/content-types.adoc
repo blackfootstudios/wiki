@@ -1,3 +1,7 @@
+= Content Types
+
+Types of content that can be made with the SDK.
+
 == Asset modding content types
 
 You can create essentially any Unreal Engine content type that you want in the Mod Kit, but only some types will be '`auto recognised`' as part of inventory systems and suchlike.
