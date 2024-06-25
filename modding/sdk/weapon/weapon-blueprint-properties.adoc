@@ -14,7 +14,8 @@ A typical weapon child blueprint with some common properties shown
 
 === Blueprint default properties
 
-Firearm properties
+.Firearm properties
+image::/images/sdk/weapon/weapon_properties_firearm.jpg[weapon_properties_firearm.jpg,60%]
 
 * `+Camera Shake Class+` this specifies a type of camera shake that will be played whenever the weapon is fired.
 * `+No More Ammo Text+` this text is displayed when the weapon is out of ammo and the player tries to fire it.
