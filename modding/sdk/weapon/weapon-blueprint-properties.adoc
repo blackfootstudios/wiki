@@ -26,7 +26,7 @@ image::/images/sdk/weapon/weapon_properties_firearm.jpg[weapon_properties_firear
 * `+Camera Shake Class+` this specifies a type of camera shake that will be played whenever the weapon is fired.
 * `+No More Ammo Text+` this text is displayed when the weapon is out of ammo and the player tries to fire it.
 * `+Max Dry Fire Trigger Pulls+` this is how many times to play the '`dry fire`' animation if the player attempts to shoot the weapon without any ammo in it.
-* `+Alpha Different Threshold+` @
+* `+Alpha Difference Threshold+` 0.3 is fine. Let's go with 0.3.
 * `Type` This is simply `Handgun` for sidearms, or it can be one of six predetermined types for primary weapons, determining the subcategory the weapon is displayed under when selecting primary weapons in the character editor:
 ** `AssaultRifle`
 ** `BattleRifle`
@@ -34,7 +34,9 @@ image::/images/sdk/weapon/weapon_properties_firearm.jpg[weapon_properties_firear
 ** `Shotgun`
 ** `SubmachineGun`
 ** `Marksman`
-* `+Firing Modes+` each firing mode has a separate entry in this table, defining the number of shots fired (so long as the trigger is held down) and the rate of fire (measured in seconds between shots). @where is the text determined e.g. semi / auto?
+* `+Firing Modes+` each firing mode has a separate entry in this table, defining the number of shots fired (so long as the trigger is held down) and the rate of fire (measured in seconds between shots). 
+** `Burst Count` A value of 0 is considered `full-auto`; a value of 1 is considered `semi-auto`; and a value greater then 1 is considered a `burst` (and the fire selector options when pressing X will be created automatically in accordance with this table).
+** `Rate of Fire` The time between shots in seconds. For example: for 600 rounds per minute, set this to 60/600 = 0.1.
 * `+Barrel Aim Angle Threshold+` @
 * `+Min Sight Relative X+` @
 * `+Max Grip Relative X+` @
