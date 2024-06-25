@@ -1,6 +1,9 @@
 There are two main types of modding in Ground Branch: *non-asset based* (Quick Create) and *asset based* (Mod Kit / SDK), which are described in more detail below.
 
-_The term '`asset`' has a particular meaning within the Unreal Engine 4. Any file which is viewable within the Unreal Engine content browser is an '`asset`'. With some limited exceptions (e.g. map files, .umap), Unreal Engine assets all have the .uasset file extension._
+[NOTE]
+--
+The term '`asset`' has a particular meaning within the Unreal Engine 4. Any file which is viewable within the Unreal Engine content browser is an '`asset`'. With some limited exceptions (e.g. map files, .umap), Unreal Engine assets all have the .uasset file extension.
+--
 
 == Non-Asset Based Mods (Quick Create)
 
