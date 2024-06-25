@@ -1,1 +1,9 @@
-In this directory is community made pages and guides
+In this directory is community made pages and guides.
+
+== Non-asset modding
+
+* link:/community/kit-file-tutorial[Kit file tutorial]
+
+== Unreal modding
+
+(none)
