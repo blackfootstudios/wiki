@@ -2,7 +2,7 @@
 title: Weapon blueprint properties
 description: The meaning of properties and components in blueprints derived from BP_Firearm_Master
 published: true
-date: 2024-06-25T12:28:45.920Z
+date: 2024-06-25T12:37:04.654Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-25T11:32:11.053Z
@@ -11,6 +11,8 @@ dateCreated: 2024-06-25T11:32:11.053Z
 # Weapon blueprint properties
 
 A rundown is given below of the meaning and usage of the properties that you will see in blueprints derived from `BP_Firearm_Master`. Just as you will have derived your custom firearm from a specific firearm master blueprint, all firearm master blueprints are child classes of `BP_Firearm_Master`. Individual firearm master blueprints will generally have different properties, different meshes, and different components possibly, but a vast majority of the properties of individual firearm master blueprints will be shared.
+
+For the most part, you will not want to change **any** of these values. Only the most relevant sections are shown below, and only the most relevant properties within those sections are described. Properties whose purpose and content are deemed relatively self-explanatory are also omitted below. In some cases, properties are working variables, which is to say that they are set and used at runtime. For example, `Dry Fire Trigger Pulls` is a count of how many times a player has pulled the trigger while the ammo is out.
 
 <figure>
 <img src="/images/sdk/modkit_mycustomchildbp.jpg" width="100%" alt="Screenshot"/>
@@ -24,10 +26,23 @@ A rundown is given below of the meaning and usage of the properties that you wil
 <figcaption>Firearm properties</figcaption>
 </figure>
 
+-   `Camera Shake Class` this specifies a type of camera shake that will be played whenever the weapon is fired.
+-   `No More Ammo Text` this text is displayed when the weapon is out of ammo and the player tries to fire it.
+-   `Max Dry Fire Trigger Pulls` this is how many times to play the 'dry fire' animation if the player attempts to shoot the weapon without any ammo in it.
+-   `Alpha Different Threshold` @
+-   `Firing Modes` each firing mode has a separate enttry in this table, defining the number of shots fired (so long as the trigger is held down) and the rate of fire (measured in seconds between shots). @where is the text determined e.g. semi / auto?
+-   `Barrel Aim Angle Threshold` @
+-   `Min Sight Relative X` @
+-   `Max Grip Relative X` @
+
 <figure>
 <img src="/images/sdk/weapon/weapon_properties_inventory.jpg" width="60%" alt="Screenshot"/>
 <figcaption>Inventory properties</figcaption>
 </figure>
+
+These properties are common to every 'GB Item' in game, and define inventory properties of the item (in this case weapon).
+
+
 
 <figure>
 <img src="/images/sdk/weapon/weapon_properties_abpvariable.jpg" width="60%" alt="Screenshot"/>
