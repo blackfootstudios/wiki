@@ -44,6 +44,7 @@ Placeholder meshes are provided, for example for weapons, to allow you to access
 * link:/modding/sdk/overview[Mod Kit overview]
 * link:/modding/sdk/content-types[Content types]
 * link:/modding/sdk/creating-child-assets[Creating new game items]
+* link:/modding/sdk/wwise[Creating custom sounds with Wwise]
 
 === Mod Kit operations
 
@@ -58,6 +59,5 @@ Other types of mods will be added in due course.
 
 * link:/modding/sdk/weapon/[Weapon mods]
 
-=== Other modding types
 
-* link:/modding/sdk/wwise[Creating custom sounds with Wwise]
+
