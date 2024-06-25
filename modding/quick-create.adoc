@@ -1,4 +1,4 @@
-= Quick Create
+// Quick Create
 
 The Quick Create menu allows the creation of non-asset based mods from within the Ground Branch game.
 It is accessed via the Modding element of the main menu:
