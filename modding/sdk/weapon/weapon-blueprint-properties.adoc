@@ -77,10 +77,12 @@ image::/images/sdk/weapon/weapon_properties_animation.jpg[Screenshot,60%]
 --
 For a choice of in-built recoil animation montages for different weapons and calibres, search for `AM_XXX_Recoil_YYY` montages in `GBCore/Character/Animations/\...`
 --
-For all the other settings, it is highly recommended to just use the default values in the relevant weapon master blueprint. Here are the animation actions for the M16A4 rifle, for example:
+For all the other settings, it is highly recommended to just use the default values in the relevant weapon master blueprint.
 
-.M16A4 animation actions
-image::/images/sdk/weapon_animactions.jpg[weapon_animactions.jpg, 60%]
+.Audio properties
+image::/images/sdk/weapon_properties_audio.jpg[weapon_properties_audio.jpg, 60%]
+
+Again, it is highly recommended to use the default audio setup for the specific weapon type master blueprint. You can swap in different individual events (wwise terminology for 'sounds') from other banks, but you will then need to make sure the new banks are included in the Audio Banks list as well, and that will take up more memory and load a little slower.
 
 .Effects properties
 image::/images/sdk/weapon/weapon_properties_effects.jpg[Screenshot,60%]
