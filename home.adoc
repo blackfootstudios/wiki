@@ -1,4 +1,4 @@
-*Ground Branch Wiki Home Page*
+*GROUND BRANCH Wiki Home Page*
 
 * link:/modding[Modding Homepage]
 * link:/community[Community Homepage]
