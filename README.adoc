@@ -1,4 +1,4 @@
-== Markdown files for the wiki.
+== Markup files for the wiki.
 
 === Editing existing pages
 
@@ -8,43 +8,27 @@ Just edit and create a https://github.com/blackfootstudios/wiki/pulls[pull reque
 
 For example if we want to create the page `+kit-file-tutorial+`:
 
-Step 1: Create `+/community/kit-file-tutorial.md+`
+*Step 1*: Create `+/community/kit-file-tutorial.adoc+`
 
+[source,asciidoc]
 ....
----
-title: Kit file tutorial
-description: Kit file tutorial by Bob/AT
----
+= Kit file tutorial
 
-Markdown of the article here
+Kit file tutorial by Bob/AT
+
+The rest of the article here.
+Lore ipsum.
 ....
 
-Step 2: Create a https://github.com/blackfootstudios/wiki/pulls[pull request]. If you want to add screenshot/images attach them to pull request as PNG images.
+NOTE: Line 1 is the title. Line 3 is the short summary. Line 5+ is the body of the text.
 
-=== Markdown syntax
+*Step 2*: Create a https://github.com/blackfootstudios/wiki/pulls[pull request]. If you want to add screenshot/images attach them to pull request as PNG images.
 
-The supported syntax is described at https://docs.requarks.io/en/editors/markdown.
+=== AsciiDoc syntax
 
-For figures with captions we use HTML `+<figure>+`:
+See <https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/>.
 
-[source,html]
-----
-<figure>
-<img src="/path/to/image.png" alt="alt-text"/>
-<figcaption>The caption of the figure</figcaption>
-</figure>
-----
+Custom styles:
 
-For keyboard keys, like F12, we use HTML `+<kbd>+`:
-
-[source,html]
-----
-Press <kbd>F12</kbd>
-----
-
-For new features, there’s a custom class:
-
-[source,html]
-----
-<span class="new">New in v1034.x</span>
-----
+* `+[new]#text#+` can be used to mark new features.
+* `+[var]#text#+` can be used to mark variables.
