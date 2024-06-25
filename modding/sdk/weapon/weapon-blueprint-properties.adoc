@@ -27,12 +27,13 @@ image::/images/sdk/weapon/weapon_properties_firearm.jpg[weapon_properties_firear
 * `+No More Ammo Text+` this text is displayed when the weapon is out of ammo and the player tries to fire it.
 * `+Max Dry Fire Trigger Pulls+` this is how many times to play the '`dry fire`' animation if the player attempts to shoot the weapon without any ammo in it.
 * `+Alpha Different Threshold+` @
-* `Type` This corresponds to the subcategory icon used in the character editor when picking primary weapons. Possible values are:
-** Submachine gun
-** Assault rifle
-** Battle rifle
-** Shotgun
-** Marksman
+* `Type` This is `Sidearm` for sidearms, or it can be one of six predetermined types for primary weapons, determining the subcategory the weapon is displayed under when selecting primary weapons in the character editor:
+** `AssaultRifle`
+** `BattleRifle`
+** `LightMachineGun`
+** `Shotgun`
+** `SubmachineGun`
+** `Marksman`
 * `+Firing Modes+` each firing mode has a separate entry in this table, defining the number of shots fired (so long as the trigger is held down) and the rate of fire (measured in seconds between shots). @where is the text determined e.g. semi / auto?
 * `+Barrel Aim Angle Threshold+` @
 * `+Min Sight Relative X+` @
