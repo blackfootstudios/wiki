@@ -1,3 +1,7 @@
+= Patches
+
+How to create custom patches.
+
 == Creating a New Patch
 
 Once you have followed the instructions to create a Staged Mod folder (see link:/modding/quick-create[quick-create]), there will now exist a GroundBranch/Patches folder inside the Staged Mod folder:
