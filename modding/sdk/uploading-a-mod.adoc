@@ -1,5 +1,5 @@
-=  Uploading a mod
-
+//  Uploading a mod
+[abstract]
 Upload your mod to Steam Workshop.
 
 First we need to prepare the workshop item data, if you don’t have one that because it hasn’t created a Steam Workshop Item yet, but pressing Upload Mod will generate one, then stick all your content in the workshop folder and repackage.
