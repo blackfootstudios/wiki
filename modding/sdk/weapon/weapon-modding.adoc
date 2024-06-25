@@ -1,4 +1,6 @@
-== Weapon modding
+= Weapon modding
+
+How to create weapon mods.
 
 To start a weapon mod, follow the usual steps to link:/modding/sdk/creating-a-mod[create a mod], find an appropriate master blueprint (`+BP_Handgun_Master+` for sidearms, or see link:/modding/sdk/master-bps-weapons[this list] for primary weapon master blueprints). Then link:/modding/sdk/creating-child-assets[create an appropriate child blueprint]. This guide assumes that you have followed these steps and have your new custom BP open like so:
 
