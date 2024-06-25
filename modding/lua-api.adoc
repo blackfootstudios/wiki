@@ -1,5 +1,6 @@
-// Lua
-:sectnums:
+// Lua API
+// enable section numbers
+:sectnums: 
 
 [abstract]
 --
@@ -468,8 +469,6 @@ See sections 6.2.49 to 6.2.52 below for calls relating to the volunteer feature.
 ----
 VolunteersAllowed = true,
 ----
-
-==== 
 
 === Localisation files (.csv)
 
