@@ -1,9 +1,13 @@
+= Community
+
 In this directory is community made pages and guides.
 
 == Non-asset modding
 
-* link:/community/kit-file-tutorial[Kit file tutorial]
-* https://steamcommunity.com/sharedfiles/filedetails/?id=3266975248[Custom patch creation guide] on Steam.
+* Kits
+** link:/community/kit-file-tutorial[Kit file tutorial]
+* Patches
+** https://steamcommunity.com/sharedfiles/filedetails/?id=3266975248[Custom patch creation guide] on Steam.
 
 == Unreal modding
 
