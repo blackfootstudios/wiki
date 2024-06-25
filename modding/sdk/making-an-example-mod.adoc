@@ -1,3 +1,5 @@
+= Making an example handgun mod
+
 == Creating the blueprint
 
 Create a new blueprint with `+BP_Handgun_Master+`.
