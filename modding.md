@@ -2,7 +2,7 @@
 title: Modding
 description: Making mods in Ground Branch
 published: true
-date: 2024-06-24T14:55:09.634Z
+date: 2024-06-25T11:28:33.471Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-20T13:07:51.217Z
@@ -55,11 +55,11 @@ Asset based mods are created, packaged and uploaded within the Mod Kit / SDK, wh
 -   [Packaging a mod](/modding/sdk/packaging-a-mod)
 -   [Uploading a mod](/modding/sdk/uploading-a-mod)
 
-### Weapon mods
+### Creating specific types of mods
 
-The SDK was first released with Ground Branch version 1034. In this version, we are focusing on weapon mods only.
+The SDK was first released with Ground Branch version 1034. In this version, we are focusing on weapon mods only. Other types of mods will be added in due course.
 
--   [Making an example weapon mod](/modding/sdk/making-an-example-mod)
+-   [Weapon mods](/modding/sdk/weapon/weapon-modding)
 
 ### Other modding types
 
