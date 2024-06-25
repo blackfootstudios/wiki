@@ -1,5 +1,3 @@
-= SDK
-
 Runtime modding does require the GROUND BRANCH Unreal SDK.
 
 * link:/modding/sdk/overview[Mod kit overview]
