@@ -34,6 +34,7 @@
 
 /* center figures */
 .contents .imageblock {
+  margin-top: 1em;
   text-align: center
 }
 .contents .imageblock .title {
