@@ -2,7 +2,7 @@
 title: Setting up a weapon skeletal mesh
 description: setting up bones, animations and physics
 published: true
-date: 2024-06-27T10:58:49.203Z
+date: 2024-06-27T11:01:38.652Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-27T10:42:44.365Z
@@ -14,6 +14,7 @@ You will be familiar with the Unreal Engine 4 feature that when you open a skele
 
 .Editor files for M16A4 in-game item (not including master blueprint, wwise sounds, and so on)
 ![weapon_skeletalmeshes_switchbuttons.jpg](/images/sdk/weapon/weapon_skeletalmeshes_switchbuttons.jpg)
+@TODO this seems to have reverted to the old style of image references
 
 ![weapon_m16_blueprint.jpg](/images/sdk/weapon/weapon_m16_blueprint.jpg)
 
