@@ -36,7 +36,7 @@ This view lets you preview assigned animations/montages for particular operation
 .weapon_m16_blueprint.jpg
 image::/images/sdk/weapon/weapon_m16_blueprint.jpg[weapon_m16_blueprint.jpg]
 
-This view lets you alter the internals of the animation blueprint, to provide custom poses and other custom animation features. This is for advanced use only. If you don't know what you are doing, leave this well alone, is our suggestion.
+This view lets you alter the internals of the animation blueprint, to provide custom poses and other custom animation features. The animation blueprint is a separate entity to the weapon blueprint, and it is really for advanced use only. If you don't know what you are doing, leave this well alone, is our suggestion.
 
 === Physics view (PHYS_xxx)
 .weapon_mk16_physics.jpg
