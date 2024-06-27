@@ -23,18 +23,28 @@ There follow some examples of overrides in specific weapon blueprints that can b
 
 image::/images/sdk/weapon/weapon_bpexample_setsafetyalpha.jpg[weapon_bpexample_setsafetyalpha.jpg]
 
+`Event Update Safety Alpha` is called (amongst other times) when the the fire selector mode is changed. This gives the specific weapon blueprint a chance to set the safety button alpha to a desired value based on the type of safety/fire selector button that the weapon has. For example, the code above will select a fire selector button position in dependence on whether the weapon is in semi auto fire mode (that is, a burst count of 1).
+
 ==== Set in-built sight zero
 
 image::/images/sdk/weapon/weapon_bpexample_onsetzero.jpg[weapon_bpexample_onsetzero.jpg]
+
+`On Sight Zeroing (<Component>)` allows the specific weapon blueprint to set an appropriate Rear Sight rotation based on the input zeroing. @better explanation
 
 ==== Set front sight post offset
 
 image::/images/sdk/weapon/weapon_bpexample_setfrontsightpostoffset.jpg[weapon_bpexample_setfrontsightpostoffset.jpg]
 
+`On Set Front Sight Post Height Office <SightComponent>` is called when @
+
 ==== Update the visibility of bullets loaded in the weapon
 
 image::/images/sdk/weapon/weapon_bpexample_updatebulletvis.jpg[weapon_bpexample_updatebulletvis.jpg]
 
+This code example is from the M24 sniper rifle, where multiple rounds are loaded into the rifle at one time. This means that the display of rounds must be handled by the weapon as well as by the magazine. The BP_M24_Master blueprint calls a specific `EventUpdateBulletVis` event to allow derived weapons to show or hide bullets in dependence on the Bullet1Vis, Bullet2Vis, ... Bullet4Vis bool properties.
+
 ==== Show or hide parts of weapon if certain accessories are added or removed
 
 image::/images/sdk/weapon/weapon_bpexample_showorhideforegrip.jpg[weapon_bpexample_showorhideforegrip.jpg]
+
+In this example from the MP5A4, the foregrip element is hidden when a handguard is added. You can use code like this if, for example, you need to hide a standard/stock part of a weapon that would be removed (or would otherwise clip with things) if a particular attachment is added.
