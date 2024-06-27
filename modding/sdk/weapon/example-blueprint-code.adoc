@@ -17,12 +17,24 @@ To override an event or function, just click an item in this list, and an approp
 
 === Examples of overrides / event handling
 
+There follow some examples of overrides in specific weapon blueprints that can be found in stock Ground Branch weapons. The first three examples are relatively common, and the last two are one-offs.
+
+==== Set safety button rotation when safety is changed
+
 image::/images/sdk/weapon/weapon_bpexample_setsafetyalpha.jpg[weapon_bpexample_setsafetyalpha.jpg]
+
+==== Set in-built sight zero
 
 image::/images/sdk/weapon/weapon_bpexample_onsetzero.jpg[weapon_bpexample_onsetzero.jpg]
 
+==== Set front sight post offset
+
 image::/images/sdk/weapon/weapon_bpexample_setfrontsightpostoffset.jpg[weapon_bpexample_setfrontsightpostoffset.jpg]
 
+==== Update the visibility of bullets loaded in the weapon
+
 image::/images/sdk/weapon/weapon_bpexample_updatebulletvis.jpg[weapon_bpexample_updatebulletvis.jpg]
+
+==== Show or hide parts of weapon if certain accessories are added or removed
 
 image::/images/sdk/weapon/weapon_bpexample_showorhideforegrip.jpg[weapon_bpexample_showorhideforegrip.jpg]
