@@ -6,20 +6,37 @@ You will be familiar with the Unreal Engine 4 feature that when you open a skele
 .Editor files for M16A4 in-game item (not including master blueprint, wwise sounds, and so on) 
 image::/images/sdk/weapon/weapon_skeletalmeshes_switchbuttons.jpg[weapon_skeletalmeshes_switchbuttons.jpg]
 
-.weapon_m16_blueprint.jpg
-image::/images/sdk/weapon/weapon_m16_blueprint.jpg[weapon_m16_blueprint.jpg]
-
-.weapon_m16_skmesh.jpg
-image::/images/sdk/weapon/weapon_m16_skmesh.jpg[weapon_m16_skmesh.jpg]
-
+=== Skeleton view
 .weapon_mk16_skel.jpg
 image::/images/sdk/weapon/weapon_mk16_skel.jpg[weapon_mk16_skel.jpg]
 
+This view allows you to visualise the weapon bones (discussed in the skinning link above). You will be (re)using an existing skeleton from GBCore, so the ability to add skeletal sockets will not be needed. You can probably ignore this view.
+
+=== Skeletal mesh view (SK_xxx)
+.weapon_m16_skmesh.jpg
+image::/images/sdk/weapon/weapon_m16_skmesh.jpg[weapon_m16_skmesh.jpg]
+
+This view allows you to preview the mesh that you have imported and to add mesh sockets (as opposed to skeletal sockets) to define custom attachment points or similar for your weapon.
+
+There are some sockets that you need to add:
+
+- `SelfieCam` The target viewpoint for the 'selfie cam' spectator view
+- `CollisionTraceEnd` @check/describe?
+
+=== Animation view (ABP_xxx)
 .weapon_mk16_animation.jpg
 image::/images/sdk/weapon/weapon_mk16_animation.jpg[weapon_mk16_animation.jpg]
 
+This view lets you preview assigned animations/montages for particular operations on/with your weapon, if you put your new weapon mesh into the Preview Mesh field at the top right. Your weapon should animate in this screen in the same was as it will in-game in response to the selected operations/animations.
+
+=== Animation blueprint view (ABP_xxx)
 .weapon_m16_blueprint.jpg
 image::/images/sdk/weapon/weapon_m16_blueprint.jpg[weapon_m16_blueprint.jpg]
 
+This view lets you alter the internals of the animation blueprint, to provide custom poses and other custom animation features. This is for advanced use only. If you don't know what you are doing, leave this well alone, is our suggestion.
+
+=== Physics view (PHYS_xxx)
 .weapon_mk16_physics.jpg
 image::/images/sdk/weapon/weapon_mk16_physics.jpg[weapon_mk16_physics.jpg]
+
+This view allows you to define a simplified physics representation of the weapon, principally used for (but not limited to) defining collision for the weapon. Physics collisions are comprised of simple (as simple as possible, in fact) primitive shapes such as capsules, boxes and spheres.
