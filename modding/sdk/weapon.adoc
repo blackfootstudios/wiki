@@ -18,7 +18,9 @@ First of all, you will most likely start by putting in a new firearm model (skel
 
 You will need to make sure that your skeletal mesh model is skinned properly before importing into the Mod Kit (see link:/modding/sdk/weapon/skinning-weapon-models[skinning weapon models] for more details).
 
-You will need to make sure you have properly link:/modding/sdk/weapon/setting-up-weapon-skeletal-mesh[set up your skeletal mesh], so that all the animation aspects will work properly. You may need to @add custom code to your weapon blueprint to handle custom behaviour for your specific weapon.
+You will need to make sure you have properly link:/modding/sdk/weapon/setting-up-weapon-skeletal-mesh[set up your skeletal mesh], so that all the animation aspects will work properly. 
+
+You may need to add custom code to your weapon blueprint to handle custom behaviour for your specific weapon. See link:/modding/sdk/weapon/example-blueprint-code[weapon blueprint code examples] for more information on weapon events and functions that you can and may want to override in the blueprint event graph.
 
 .The stock M16A4 weapon, showing the placement of Rail components in the weapon blueprint
 image::/images/sdk/weapon/weapon_m16a4rails.jpg[weapon_m16a4rails.jpg,80%]
