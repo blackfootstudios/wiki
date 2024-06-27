@@ -20,8 +20,9 @@ This view allows you to preview the mesh that you have imported and to add mesh 
 
 There are some sockets that you need to add:
 
-- `SelfieCam` The target viewpoint for the 'selfie cam' spectator view
-- `CollisionTraceEnd` @check/describe?
+- `SelfieCam` The viewpoint for the 'selfie cam' spectator view. The camera points from this socket towards the operator eyes in the selfie cam view.
+- `<SuppressorSocketName> A socket name to define where a suppressor attaches, if applicable (not all weapons take suppressors). This socket name needs to be placed in the Muzzle Device Thread field in the GBBarrel component of a weapon.
+- `CollisionTraceEnd` For the purpose of collision checking, it is assumed that the end of the barrel component is at the end of the mesh. If not, such as on the M16, you will need to manually create a CollisionTraceEnd socket to define the very end of the weapon/barrel.
 
 === Animation view (ABP_xxx)
 .weapon_mk16_animation.jpg
