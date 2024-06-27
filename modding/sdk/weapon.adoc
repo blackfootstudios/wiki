@@ -5,7 +5,7 @@ How to create weapon mods.
 To start a weapon mod, follow the usual steps to link:/modding/sdk/creating-a-mod[create a mod], find an appropriate master blueprint (`+BP_Handgun_Master+` for sidearms, or see link:/modding/sdk/master-bps-weapons[this list] for primary weapon master blueprints). Then link:/modding/sdk/creating-child-assets[create an appropriate child blueprint]. This guide assumes that you have followed these steps and have your new custom BP open like so:
 
 .Your new child blueprint
-image::/images/sdk/modkit_mycustomchildbp.jpg[modkit_createdmod.jpg]
+image::/images/sdk/modkit_mycustomchildbp.jpg[modkit_mycustomchildbp.jpg]
 
 A weapon mod can be a complex item to set up. Here, for example, are some (not all) files needed for the in-game stock M16A4 rifle. See below for more details of what these files typically include:
 
