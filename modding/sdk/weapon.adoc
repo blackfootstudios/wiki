@@ -11,10 +11,7 @@ Please see link:/modding/sdk/weapon/weapon-blueprint-properties[here] for a run-
 
 First of all, you will most likely start by putting in a new firearm model (skeletal mesh) and skin (material) into the `+Firearm Mesh Component+` properties.
 
-You will need to make sure that your skeletal mesh model uses the correct skeleton, and has the correct bones assigned.
-It is assumed that you are familiar with how to do this in general terms for a particular skeleton.
-
-#TODO:# @bone list
+You will need to make sure that your skeletal mesh model is skinned properly. See link:/modding/sdk/weapon/skinning-weapon-models[skinning weapon models] for more details.
 
 .The stock M16A4 weapon, showing the placement of Rail components in the weapon blueprint
 image::/images/sdk/weapon/weapon_m16a4rails.jpg[weapon_m16a4rails.jpg,80%]
