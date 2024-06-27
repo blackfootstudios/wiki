@@ -126,10 +126,8 @@ image::/images/sdk/weapon/weapon_mesh_properties.jpg[Screenshot,60%]
 
 The more specific weapon blueprints listed link:/modding/sdk/master-bps-weapons[here] will usually have a more detailed component list. Regardless, the firearm components that you can add (and in some cases have to add) to a custom blueprint include:
 
-- `GBBarrel` ('Barrel') component
-- `GBExternalMagazine` ('MagWell') component (receives magazine and defines magazine type)
-- `GBEject` ('EjectionPort') component (spawns spent shells when firing)
-- `GBSight` ('Sight') component (for built-in / backup sights)
-- `GBRail` ('Rail') component (picatinny rail)
-
-#TODO#make separate pages to explain properties and operation of each
+- `GBBarrel` ('Barrel') component: link:/modding/sdk/weapon/component-barrel[barrel component]
+- `GBExternalMagazine` ('MagWell') component: link:/modding/sdk/weapon/component-magwell[magwell component]
+- `GBEject` ('EjectionPort') component: link:/modding/sdk/weapon/component-eject[eject component]
+- `GBSight` ('Sight') component: link:/modding/sdk/weapon/component-sight[sight component]
+- `GBRail` ('Rail') component: link:/modding/sdk/weapon/component-rail[rail component]
