@@ -7,11 +7,18 @@ To start a weapon mod, follow the usual steps to link:/modding/sdk/creating-a-mo
 .Your new child blueprint
 image::/images/sdk/modkit_mycustomchildbp.jpg[modkit_createdmod.jpg]
 
+A weapon mod can be a complex item to set up. Here, for example, are some (not all) files needed for the in-game stock M16A4 rifle. See below for more details of what these files typically include:
+
+.Editor files for M16A4 in-game item (not including master blueprint, wwise sounds, and so on)
+image::/images/sdk/weapon/weapon_m16files.jpg[weapon_m16files.jpg,25%]
+
 Please see link:/modding/sdk/weapon/weapon-blueprint-properties[here] for a run-down of (nearly) all of the properties in your new custom firearm blueprint.
 
 First of all, you will most likely start by putting in a new firearm model (skeletal mesh) and skin (material) into the `+Firearm Mesh Component+` properties.
 
-You will need to make sure that your skeletal mesh model is skinned properly. See link:/modding/sdk/weapon/skinning-weapon-models[skinning weapon models] for more details.
+You will need to make sure that your skeletal mesh model is skinned properly before importing into the Mod Kit (see link:/modding/sdk/weapon/skinning-weapon-models[skinning weapon models] for more details).
+
+You will then need to 
 
 .The stock M16A4 weapon, showing the placement of Rail components in the weapon blueprint
 image::/images/sdk/weapon/weapon_m16a4rails.jpg[weapon_m16a4rails.jpg,80%]
