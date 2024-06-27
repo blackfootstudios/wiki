@@ -1,2 +1,28 @@
-examples of BP code
+=== Overriding default master blueprint behaviour
 
+All the behaviour that your weapon needs to exhibit should be taken care of by the link:/modding/sdk/master-bps-weapons[specific weapon type master blueprints] which you will have derived your item class from.
+
+Nevertheless, sometimes, you need special handling of some aspect of your weapon beyond what can be done by setting appropriate class defaults as set out link:/modding/sdk/weapon/weapon-blueprint-properties[here].
+
+If you open the blueprint editor and go to the Functions section on the left hand side, and click `Override`, you will be presented with a list of events and functions that you can override in your blueprint. The precise list may depend on the master blueprint class you are derived from, but an example list follows here:
+
+image::/images/sdk/weapon/weapon_overridefunctions1.jpg[weapon_overridefunctions1.jpg,40%]
+image::/images/sdk/weapon/weapon_overridefunctions2.jpg[weapon_overridefunctions2.jpg,40%]
+.List of overridable events and functions in a typical weapon blueprint
+image::/images/sdk/weapon/weapon_overridefunctions3.jpg[weapon_overridefunctions3.jpg,40%]
+
+You can see that some events/functions are from GBFirearm (the base c++ firearm class in Ground Branch), some are from BP_Firearm_Master (the implementing master firearm blueprint), some are from the specific BP_AR15_Master parent blueprint (`LockOnEmpty`), some are GBItem (relating to general inventory handling), and some are universal overridable functions (actor). 
+
+To override an event or function, just click an item in this list, and an appropriate event or function will be created.
+
+=== Examples of overrides / event handling
+
+image::/images/sdk/weapon/weapon_bpexample_setsafetyalpha.jpg[weapon_bpexample_setsafetyalpha.jpg]
+
+image::/images/sdk/weapon/weapon_bpexample_onsetzero.jpg[weapon_bpexample_onsetzero.jpg]
+
+image::/images/sdk/weapon/weapon_bpexample_setfrontsightpostoffset.jpg[weapon_bpexample_setfrontsightpostoffset.jpg]
+
+image::/images/sdk/weapon/weapon_bpexample_updatebulletvis.jpg[weapon_bpexample_updatebulletvis.jpg]
+
+image::/images/sdk/weapon/weapon_bpexample_showorhideforegrip.jpg[weapon_bpexample_showorhideforegrip.jpg]
