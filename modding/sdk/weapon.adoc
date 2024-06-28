@@ -24,7 +24,7 @@ You will need to make sure that your skeletal mesh model is skinned properly bef
 
 You will need to make sure you have properly link:/modding/sdk/weapon/setting-up-weapon-skeletal-mesh[set up your skeletal mesh], so that all the animation aspects will work properly. 
 
-When making your materials/skins for the weapon, you may wish to use 
+When making your materials/skins for the weapon, you may wish to use existing link:/modding/sdk/ground-branch-master-materials[Ground Branch master materials] for ease of use and consistency with existing in-game assets.
 
 ### Setting up blueprint components
 
