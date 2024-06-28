@@ -49,4 +49,5 @@ These are currently supported Ground Branch content types for modding; more exis
 |Asset type |Description |Master blueprint(s) |Modding
 |Primary |Primary weapon, e.g. rifle, shotgun, LMG, sniper rifle |link:/modding/sdk/master-bps-weapons[Master BP list] |link:/modding/sdk/weapon/weapon-modding[Weapon modding]
 |Sidearm |Sidearm, e.g. pistol |`+BP_Handgun_Master+` |link:/modding/sdk/weapon/weapon-modding[Weapon modding]
+|Magazine |Holds bullets |`+BP_Magazine_Master+` |link:/modding/sdk/magazine-modding[Magazine modding]
 |===
