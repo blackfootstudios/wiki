@@ -32,6 +32,12 @@ There's a lot that can go wrong when packaging a mod, but most errors in the log
 
 NOTE: The Mod Kit Package button will only cook and package the relevant plug-in folder for the selected mod. The editor 'Package Project' and 'Cook Content For Windows' options will try to cook/package all of the Mod Kit content, including the GBCore section. This is A Bad Thing and it will likely not work.
 
-** I get packaging errors in the log that I can't figure out**
+**I get random packaging errors in the log that I can't figure out**
 
 -> Is your mod folder set read-only? Set it to be not read only in Windows folder view
+
+-> Have you updated the Mod Kit to the latest version?
+
+-> Did a game update break your mod? Double check the documentation to see if anything changed in the latest release.
+
+NOTE: Game updates can break a mod because something in the game changed (such as an API access call or data structure), but often all you need to do is repackage your mod and reupload.
