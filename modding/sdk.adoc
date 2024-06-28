@@ -1,1 +1,1 @@
-include::link:/modding/sdk/sdk-links-and-overview.adoc[]
+include::/modding/sdk/sdk-links-and-overview.adoc[]
