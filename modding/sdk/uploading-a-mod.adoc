@@ -1,28 +1,31 @@
 ## Carrying out the mod upload
 
-First we need to prepare the workshop item data, if you don’t have one that because it hasn’t created a Steam Workshop Item yet, but pressing Upload Mod will generate one, then stick all your content in the workshop folder and repackage.
+First we need to prepare the WorkshopItem data file. You will not have one before a Workshop Item has been created in your Steam Workshop. Pressing Upload Mod will generate one, and it will then move all your content into the workshop folder and repackage the mod.
 
-image:/images/uploading-a-mod/upload_mod_folder.png[/images/uploading-a-mod/upload_mod_folder]
+.The WorkshopItem data file in the Mod Kit
+image::/images/uploading-a-mod/upload_mod_folder.png[/images/uploading-a-mod/upload_mod_folder]
 
-Open your WorkshopItem in the root of your mod’s content folder and fill out the details
+Open the WorkshopItem file in the root of your mod’s content folder and fill out the details:
 
-image:/images/uploading-a-mod/workshop_item_details.png[/images/uploading-a-mod/workshop_item_details]
+.Property fields in the WorkshopItem data file 
+image::/images/uploading-a-mod/workshop_item_details.png[/images/uploading-a-mod/workshop_item_details]
 
-Uploading your mod to Steam workshop will be hidden by default (for new mods) so you can still test it and don’t have to worry about it being public.
+When you uploading your mod to the Steam Workshop, it is hidden by default (for new mods), so you can still test it and you don’t have to worry about it being public.
 
-image:/images/uploading-a-mod/toolbar_upload_a_mod._2png.png[/images/uploading-a-mod/toolbar_upload_a_mod._2png]
+.The Upload Mod icon
+image::/images/uploading-a-mod/toolbar_upload_a_mod._2png.png[/images/uploading-a-mod/toolbar_upload_a_mod._2png]
 
 Assuming you’re logged into Steam with an account that owns Ground Branch and have steam running.
 You’ll get information of what stage and sometimes a percent of the progress of your mod upload.
 
-image:/images/uploading-a-mod/upload_mod_progress.png[/images/uploading-a-mod/upload_mod_progress]
+.The status update displayed when committing changes
+image::/images/uploading-a-mod/upload_mod_progress.png[/images/uploading-a-mod/upload_mod_progress]
 
 Your mod is now uploaded, you can now subscribe and once downloaded should be able to see it in game!
 
 ## Trouble-shooting mod uploads
 
-There's a few things that can go wrong when uploading a mod, though we can't predict them all. Here are some issues that have come up while uploading mods, and some possible solutions:
-
+There's a few things that can go wrong when uploading a mod. Here are some issues that have come up while uploading mods, and some possible solutions:
 
 **I set my thumbnail path to `(...)/MyMod/Content/Resources/Thumbnail_MyMod.uasset` but the thumbnail is broken**
 
