@@ -15,10 +15,7 @@ Assuming all went well you should see `+%MOD_NAME%.pak+` in `+%PROJECT_ROOT%\Gro
 .Notification that packaging is complete
 image::/images/packaging-a-mod/packaged-mod.png[Screenshot,40%]
 
-If it fails check the output log, common reasons it might fail:
-
-* Your mod has compile errors
-* Your mod is marked read-only
+If the packaging step fails, you should find an explanation for the failure in the output log. You may have blueprint compile errors (see generic Unreal Engine 4 documentation for solutions), or other errors that are hopefully self-explanatory.
 
 When you start packaging, you should be offered a chance to open a log window to see how cooking and packaging is progressing (see picture above). If not, you can open it manually via Windows / Developer / Output Log.
 
@@ -27,10 +24,14 @@ image::/images/sdk/modkit_outputlog.jpg[Screenshot,40%]
 
 ## Trouble-shooting packaging errors
 
-There's a lot that can go wrong when packaging a mod, but most errors in the log are hopefully self-explanatory, or will at least point to the item causing problems. Here are some issues that have come up while packaging mods, and some possible solutions:
+There's a lot that can go wrong when packaging a mod, but most errors in the log should at least point to the asset(s) causing problems. Here are some issues that may come up while packaging mods, and some possible solutions:
 
-**I get a lot of errors when I use the menu option to cook the project**
+**I get a lot of errors when I use the menu option to package/cook the project**
 
 -> Don't use any editor menus to cook the project! Use the Package button only
 
-NOTE: The Mod Kit Package button will only attempt to cook and package your mods. This also keeps the process relatively quick. The 'Package Project' and 'Cook Content For Windows' options and similar will try to cook and package everything in the Mod Kit, including the GBCore section. This will likely fail and will in any event take a very long time to complete.
+NOTE: The Mod Kit Package button will only cook and package the relevant plug-in folder for the selected mod. The editor 'Package Project' and 'Cook Content For Windows' options will try to cook/package all of the Mod Kit content, including the GBCore section. This is A Bad Thing and it will likely not work.
+
+** I get packaging errors in the log that I can't figure out**
+
+-> Is your mod folder set read-only? Set it to be not read only in Windows folder view
