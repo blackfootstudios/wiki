@@ -1,7 +1,3 @@
-// Game mode modding overview
-[abstract]
-The basics of making new game modes in Ground Branch.
-
 == Creating game modes
 
 Any consideration of making a new game mode in Ground Branch should begin with:
