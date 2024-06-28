@@ -8,6 +8,8 @@ Just edit and create a https://github.com/blackfootstudios/wiki/pulls[pull reque
 
 For example if we want to create the page `+kit-file-tutorial+`:
 
+include::modding/patches.adoc
+
 *Step 1*: Create `+/community/kit-file-tutorial.adoc+`
 
 [source]
