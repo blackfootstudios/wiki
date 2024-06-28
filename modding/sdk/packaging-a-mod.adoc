@@ -33,4 +33,4 @@ There's a lot that can go wrong when packaging a mod, but most errors in the log
 
 -> Don't use any editor menus to cook the project! Use the Package button only
 
-NOTE: The Mod Kit Package button will only attempt to cook and package your mods. The 'cook project' option and similar will try to cook and package everything in the Mod Kit, including the GBCore section. 
+NOTE: The Mod Kit Package button will only attempt to cook and package your mods. This also keeps the process relatively quick. The 'Package Project' and 'Cook Content For Windows' options and similar will try to cook and package everything in the Mod Kit, including the GBCore section. This will likely fail and will in any event take a very long time to complete.
