@@ -50,9 +50,9 @@ See link:/modding/sdk/weapon/ground-branch-weapon-components[here] for a list of
 
 ### Ancillary items
 
-You may need to make your own custom magazine. See @here for a guide on making a custom magazine.
+You may need to make your own custom magazine. See link:/modding/sdk/magazine-modding[magazine modding].
 
-You may need to make your own custom sight (optic or iron). Details on this will follow. @
+You may need to make your own custom sight (optic or iron). @Details on this will follow.
 
 ### Custom blueprint code
 
