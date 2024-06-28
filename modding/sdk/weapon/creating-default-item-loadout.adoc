@@ -1,0 +1,4 @@
+== header
+
+TIP: It is usually easiest to manually edit an existing default item build `.kit` file, but you may want to validate the JSON before saving with a JSON validator. Many different JSON validators exist, and this is just one example: https://codebeautify.org/jsonvalidator
+
