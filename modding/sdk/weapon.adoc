@@ -42,7 +42,7 @@ Congratulations! At this point, your weapon should be set up. Go package and upl
 
 ## Trouble-shooting your custom weapon
 
-There's a lot to go wrong, and weapon setups are quite complex. That said, here are some issues that have come up while making weapon mods, and some possible solutions:
+There's a lot that can go wrong when making a weapon mod, and weapon setups are quite complex. We can't predict every possible failure path. That said, here are some issues that have come up while making weapon mods, and some possible solutions:
 
 **The custom magazine does not show up in the configuration screen for my custom weapon**
 
@@ -56,6 +56,8 @@ There's a lot to go wrong, and weapon setups are quite complex. That said, here 
 
 -> Make sure you have filled in both the Audio and Sound sections in your custom weapon blueprint, as documented link:/modding/sdk/weapon/weapon-blueprint-properties[here].
 
+**I get this error when packaging: `UATHelper: Packaging <MyMod> (Windows):   LogGB: Error: BP_<MyMod>_C has no DefaultMagazineClass set.`**
 
+-> You need to set the DefaultMagazine class in the MagWell component of your weapon
 
 
