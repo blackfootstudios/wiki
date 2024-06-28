@@ -24,10 +24,12 @@ image::/images/sdk/weapon/weapon_m16a4rails.jpg[weapon_m16a4rails.jpg,80%]
 Typically each component has further configuration options that can be used to customise your weapon further, such as the GBRail components, for example:
 
 .The Rail component properties for the selected rail
-image::/images/sdk/weapon/weapon_railproperties.jpg[weapon_railproperties.jpg,60%]
+image::/images/sdk/weapon/weapon_railproperties.jpg[weapon_railproperties.jpg,40%]
 
 See link:/modding/sdk/weapon/ground-branch-weapon-components[here] for a list of all of the Ground Branch custom weapon blueprint components.
 
 With all the weapon features now defined in your blueprint, you may need to add custom code to your weapon blueprint to handle custom behaviour for your specific weapon. See link:/modding/sdk/weapon/example-blueprint-code[weapon blueprint code examples] for more information on weapon events and functions that you can and may want to override in the blueprint event graph.
 
 You should also create a link:/modding/sdk/weapon/creating-default-item-loadout[default item build] for your weapon, at least to add a magazine as a default item.
+
+Congratulations! At this point, your weapon should be set up. Go package and upload it, and have a test.
