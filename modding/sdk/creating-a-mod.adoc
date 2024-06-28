@@ -35,7 +35,7 @@ If, for any reason, the Workshop Item was not created successfully, it can be cr
 
 If the Workshop Item was created successfully, your content folder should look like this:
 
-.WorkshopItem data file in a mod plugin folder
+.WorkshopItem file in a mod plugin folder
 image::/images/creating-a-mod/create-a-mod-finished.png[/images/creating-a-mod/create-a-mod-finished]
 
 All your content should go in the workshop ID folder to avoid conflicts with mods of the same plugin name.
