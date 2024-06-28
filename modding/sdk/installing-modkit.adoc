@@ -8,6 +8,6 @@ image::/images/sdk/modkit_fakelibraryicon.jpg[Screenshot,20%]
 Once you '`buy`' the Mod Kit (it is free), it should start downloading to your Epic game library.
 It is launched via the Epic game library in the usual fashion.
 
-Once you have installed the Mod Kit, you can start modding; link:/modding/sdk/overview[Mod Kit overview] here.
+Once you have installed the Mod Kit, you can start modding: link:/modding/sdk/overview[Mod Kit overview].
 
 At the time of writing, currently only weapon modding is supported. See the link:/modding/sdk/weapon[weapon modding] guide.
