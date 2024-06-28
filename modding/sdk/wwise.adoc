@@ -1,7 +1,3 @@
-//= Modding with Wwise
-[abstract]
-This is a breakdown of how to mod with Wwise.
-
 [arabic]
 . Download the GBModding Wwise project [Here} (PUT IN HYPERLINK)
 . Download the correct Wwise to match the project 2021.1.14.8108 [https://www.audiokinetic.com/en/download/[here]] 
