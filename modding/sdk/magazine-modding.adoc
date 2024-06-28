@@ -1,1 +1,5 @@
-magazine modding
+To make a custom magazine, make a child blueprint of the master blueprint as usual (`BP_Magazine_Master`). It will look something like this when you open it:
+
+.New magazine child blueprint class
+image::/images/sdk/modkit_magazine_bp.jpg[modkit_magazine_bp.jpg]
+
