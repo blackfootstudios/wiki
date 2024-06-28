@@ -10,7 +10,7 @@ image::/images/sdk/modkit_mycustomchildbp.jpg[modkit_mycustomchildbp.jpg]
 A weapon mod can be a complex item to set up. Here, for example, are some (not all) files needed for the in-game stock M16A4 rifle. See below for more details of what these files typically include:
 
 .Editor files for M16A4 in-game item (not including master blueprint, wwise sounds, and so on)
-image::/images/sdk/weapon/weapon_m16files.jpg[weapon_m16files.jpg,25%]
+image::/images/sdk/weapon/weapon_m16files.jpg[weapon_m16files.jpg,20%]
 
 ### Setting basic blueprint properties
 
@@ -36,7 +36,7 @@ image::/images/sdk/weapon/weapon_m16a4rails.jpg[weapon_m16a4rails.jpg,80%]
 Typically each component has further configuration options that can be used to customise your weapon further, such as the GBRail components, for example:
 
 .The Rail component properties for the selected rail
-image::/images/sdk/weapon/weapon_railproperties.jpg[weapon_railproperties.jpg,40%]
+image::/images/sdk/weapon/weapon_railproperties.jpg[weapon_railproperties.jpg,30%]
 
 These is the minimum list of components that are necessary for a working weapon in Ground Branch:
 
