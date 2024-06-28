@@ -60,4 +60,6 @@ There's a lot that can go wrong when making a weapon mod, and weapon setups are 
 
 -> You need to set the DefaultMagazine class in the MagWell component of your weapon
 
+**The top rail works, but only for attachments**
 
+-> You need to set the SightOnly property to TRUE in the Rail component properties
