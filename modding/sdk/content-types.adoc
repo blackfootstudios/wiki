@@ -1,13 +1,7 @@
-// Content Types
-[abstract]
-Types of content that can be made with the SDK.
-
-== Asset modding content types
-
 You can create essentially any Unreal Engine content type that you want in the Mod Kit, but only some types will be '`auto recognised`' as part of inventory systems and suchlike.
 
 A non-exhaustive list of content types is given below, with a link to a set of available '`master blueprints`' where applicable.
-As described further in @, it is best to make your new mod content a child blueprint of a relevant master blueprint:
+As described further in link:/modding/sdk/creating-child-assets[creating new game items], it is best to make your new mod content a child blueprint of a relevant master blueprint.
 
 Ground Branch uses particular asset types that are typically blueprints referencing '`fundamental`' UE4 types in various ways.
 Ground Branch asset types typically include a base c++ class and an implementing master blueprint (BP). If you don’t understand a word of this, that’s fine.
