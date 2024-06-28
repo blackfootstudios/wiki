@@ -1,3 +1,5 @@
+## Making your custom weapon
+
 To start making a weapon mod, follow the usual steps to link:/modding/sdk/creating-a-mod[create a mod], find an appropriate master blueprint (`+BP_Handgun_Master+` for sidearms, or see link:/modding/sdk/master-bps-weapons[this list] for primary weapon master blueprints). Then link:/modding/sdk/creating-child-assets[create an appropriate child blueprint]. This guide assumes that you have followed these steps and have your new custom BP open like so:
 
 .Your new child blueprint
@@ -18,6 +20,10 @@ You will need to make sure you have properly link:/modding/sdk/weapon/setting-up
 
 You may need to add additional components to your weapon in the blueprint editor. Here, the in-game M16A4 blueprint is shown, including additional GBSight components for the built-in iron sights (FailSafeSight, FrontSightPost), and a number of GBRail components to define attachment points for  the picatinny rails (RearSightRail, TopRail, BottomRail, RightRail, LeftRail), as shown here:
 
+You may want to make your own custom magazine. See @here for a guide on making a custom magazine.
+
+You may want to make your own custom sight (optic or iron). Details on this will follow. @
+
 .The stock M16A4 weapon, showing the placement of Rail components in the weapon blueprint
 image::/images/sdk/weapon/weapon_m16a4rails.jpg[weapon_m16a4rails.jpg,80%]
 
@@ -33,3 +39,23 @@ With all the weapon features now defined in your blueprint, you may need to add 
 You should also create a link:/modding/sdk/weapon/creating-default-item-loadout[default item build] for your weapon, at least to add a magazine as a default item.
 
 Congratulations! At this point, your weapon should be set up. Go package and upload it, and have a test.
+
+## Trouble-shooting your custom weapon
+
+There's a lot to go wrong, and weapon setups are quite complex. That said, here are some issues that have come up while making weapon mods, and some possible solutions:
+
+**The custom magazine does not show up in the configuration screen for my custom weapon**
+
+-> Make sure the same magazine type is used in the magazine and in the magazine component ('MagWell') of the weapon.
+
+**I can't see the default item build in the editor**
+
+-> This is correct. You can only see default item builds (.kit files), loadouts and other non-asset files in a normal folder viewer. See link:/modding/non-asset-file-types[non-asset file types] for a non-exhaustive list of such files.
+
+**My handgun sounds like an AK**
+
+-> Make sure you have filled in both the Audio and Sound sections in your custom weapon blueprint, as documented link:/modding/sdk/weapon/weapon-blueprint-properties[here].
+
+
+
+
