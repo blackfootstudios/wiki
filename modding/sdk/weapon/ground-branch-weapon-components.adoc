@@ -1,0 +1,7 @@
+These are the custom blueprint components in Ground Branch for defining additional features of your weapons:
+
+- `GBBarrel` ('Barrel') component: link:/modding/sdk/weapon/component-barrel[barrel component]
+- `GBExternalMagazine` ('MagWell') component: link:/modding/sdk/weapon/component-magwell[magwell component]
+- `GBEject` ('EjectionPort') component: link:/modding/sdk/weapon/component-eject[eject component]
+- `GBSight` ('Sight') component: link:/modding/sdk/weapon/component-sight[sight component]
+- `GBRail` ('Rail') component: link:/modding/sdk/weapon/component-rail[rail component]
