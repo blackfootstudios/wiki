@@ -1,7 +1,3 @@
-//= Mod Kit overview
-[abstract]
-The main features of the GROUND BRANCH Mod Kit / SDK.
-
 === Launching the Mod Kit
 
 The Mod Kit is launched from the Epic launcher, which you have already downloaded it from if you have followed the previous step: link:/modding/sdk/installing-modkit[Installing the Ground Branch Mod Kit].
@@ -27,10 +23,8 @@ You don’t normally have to worry about any of these options.
 
 When the Mod Kit is properly loaded, you will see a screen similar to the following:
 
-.New plugins warning on startup
-image::/images/sdk/modkit_loaded.jpg[Screenshot,100%]
-
-@todo annotate picture with letters (currently on laptop only with MS Paint)
+.Annotated Mod Kit layout
+image::/images/sdk/modkit_enginelayout.jpg[modkit_enginelayout.jpg, 100%]
 
 This is essentially the normal Unreal Engine 4 editor but with some extra assets and UI elements.
 We would refer you to the very large amount of literature and tutorials online about the Unreal Engine 4 as a background on carrying out various tasks in it.
