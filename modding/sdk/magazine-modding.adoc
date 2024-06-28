@@ -3,3 +3,20 @@ To make a custom magazine, make a child blueprint of the master blueprint as usu
 .New magazine child blueprint class
 image::/images/sdk/modkit_magazine_bp.jpg[modkit_magazine_bp.jpg]
 
+The key thing is to have a MagazineType property that exactly matches the magazine type of the MagWell component of your weapon (GBExternalMagazine class). In this example, the magazine type name is STANAG556:
+
+.Example properties from a stock STANAG 556 magazine class
+image::/images/sdk/modkit_magazine_stanagproperties.jpg[modkit_magazine_stanagproperties.jpg, 30%]
+
+Properties of the magazine base class that you are most likely to need to deal with include:
+
+* `Capacity` This is how many bullets the magazine holds when full
+* `Initial Count` How many bullets the magazine starts out with (-1 -> full magazine)
+* `Bullet Item Class` The class of the bullet loaded in the magazine (for the purpose of displaying in the magazine) @tbc
+* `Base Bullet Item Class` The class of the bullet loaded in the magazine (for the purpose of spawning a bullet) @tbc
+* `Tracer Item Class` The bullet class to use if/when a tracer is fired
+* `Start Tracer Count`
+* `Tracer Frequency`
+
+.Viewport for a stock STANAG 556 magazine blueprint, showing two dummy bullets that are shown or hidden depending on magazine count
+image::/images/sdk/modkit_magazine_bpviewport.jpg[modkit_magazine_bpviewport.jpg]
