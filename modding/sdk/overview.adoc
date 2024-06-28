@@ -99,4 +99,4 @@ See link:/modding/sdk/uploading-a-mod[Uploading mods] for more details.
 
 ==== Open Wiki
 
-This button will take you to a beautiful place on the Internet.
+This button will take you link:/modding[here].
