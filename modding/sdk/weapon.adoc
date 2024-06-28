@@ -63,3 +63,7 @@ There's a lot that can go wrong when making a weapon mod, and weapon setups are 
 **The top rail works, but only for attachments**
 
 -> You need to set the SightOnly property to TRUE in the Rail component properties
+
+**I am not sure how to add a suppressor**
+
+->You need to add the mesh and make a blueprint for it, then setup the socket on the weapon and match the naming conventions. It's called Muzzle Device Thread in the suppressor BP. Just add the name of the socket that you created on the mesh there and it should work.
