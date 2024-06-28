@@ -1,3 +1,5 @@
+=== Magazine blueprints 
+
 To make a custom magazine, make a child blueprint of the master blueprint as usual (`BP_Magazine_Master`). It will look something like this when you open it:
 
 .New magazine child blueprint class
@@ -17,6 +19,12 @@ Properties of the magazine base class that you are most likely to need to deal w
 * `Tracer Item Class` The bullet class to use if/when a tracer is fired
 * `Start Tracer Count`
 * `Tracer Frequency`
+
+=== Child components (visible bullets)
+
+There is a particular treatment of child blueprint components in magazine blueprints: the magazine master blueprint assumes that all child components are bullet meshes. In particular, the master blueprint assumes that the first child component is the top-most bullet, the second component is the second-most bullet, and so on.
+
+Whenever the magazine count is adjusted, the master blueprint will hide the child components in accordance with the magazine count. For example, if only one bullet is left in the magazine, all but the first child component (the top bullet) will be hidden. This is all handled for you so long as you adhere to this system when creating child components.
 
 .Viewport for a stock STANAG 556 magazine blueprint, showing two dummy bullets that are shown or hidden depending on magazine count
 image::/images/sdk/modkit_magazine_bpviewport.jpg[modkit_magazine_bpviewport.jpg]
