@@ -1,40 +1,43 @@
-//= Creating a mod
-[abstract]
-This guide will take you through the steps of creating a new mod.
-
 Once the editor has launched you should see the '`Create Mod`' button on the toolbar at the top of the screen (if you have a very small screen you may need to use the double chevrons to expand the toolbar)
 
-image:/images/creating-a-mod/toolbar_create_a_mod.png[/images/creating-a-mod/toolbar_create_a_mod]
+.The Create Mod button
+image::/images/creating-a-mod/toolbar_create_a_mod.png[/images/creating-a-mod/toolbar_create_a_mod]
 
-Next fill out your details for mod name, no spaces or wildcards but it will tell you if it has a problem.
+Next, fill out your details for mod name. You cannot use and spaces or wildcard characters.
 
-Author and Description are just normal text.
+Author and Description should just be in normal text.
 
-image:/images/creating-a-mod/create-a-mod-details.png[/images/creating-a-mod/create-a-mod-details]
+.The Create Mod information page
+image::/images/creating-a-mod/create-a-mod-details.png[/images/creating-a-mod/create-a-mod-details]
 
 You should get a notification if the mod succeeded or not
 
-image:/images/creating-a-mod/create-a-mod-my-first-mod.png[/images/creating-a-mod/create-a-mod-my-first-mod]
+.Notification that mod creation succeeded
+image::/images/creating-a-mod/create-a-mod-my-first-mod.png[/images/creating-a-mod/create-a-mod-my-first-mod]
 
 If it was successfully created you should see it in your content view as it’s own plugin
 
-image:/images/creating-a-mod/create-a-mod-fodler.png[/images/creating-a-mod/create-a-mod-fodler]
+.Status update when mod creation is successful
+image::/images/creating-a-mod/create-a-mod-fodler.png[/images/creating-a-mod/create-a-mod-fodler]
 
-If it says it was created but you can’t see it, it’s possible plugins aren’t visible in your content view
+If it says it was created but you can’t see it, it is possible that plugins aren’t visible in your content view (they may be hidden by default). Click on the View Options menu at the bottom right of the content browser, and select Show Plugin Content, as shown:
 
-image:/images/creating-a-mod/create-a-mod-plugin-content.png[/images/creating-a-mod/create-a-mod-plugin-content]
+.Showing plugin content in the content viewer
+image::/images/creating-a-mod/create-a-mod-plugin-content.png[/images/creating-a-mod/create-a-mod-plugin-content]
 
 If Steam was initialized properly and you have the correct authority it should have created a workshop item and you should have seen this notification.
 If not check the log in '`Output Log`' for more information.
 
-image:/images/creating-a-mod/create-a-mod-workshop-item-created.png[/images/creating-a-mod/create-a-mod-workshop-item-created]
+.Notification that Workshop Item was created successfully
+image::/images/creating-a-mod/create-a-mod-workshop-item-created.png[/images/creating-a-mod/create-a-mod-workshop-item-created]
 
-If it didn’t create a workshop item, it’s not the end of the world it can be created later when you go to upload the mod, this means if Steam is down you can still get on with making your mod.
+If, for any reason, the Workshop Item was not created successfully, it can be created later when you go to upload the mod (you may need to click the Upload Mod button twice to do so). This means if Steam is down, you can still get on with making your mod.
 
-If it did create the workshop item, your content folder should look like this:
+If the Workshop Item was created successfully, your content folder should look like this:
 
-image:/images/creating-a-mod/create-a-mod-finished.png[/images/creating-a-mod/create-a-mod-finished]
+.WorkshopItem data file in a mod plugin folder
+image::/images/creating-a-mod/create-a-mod-finished.png[/images/creating-a-mod/create-a-mod-finished]
 
-All your content should go in the workshop ID folder to avoid conflicts with mods of the same plugin name!
+All your content should go in the workshop ID folder to avoid conflicts with mods of the same plugin name.
 
-That’s it for creating a mod, checkout the content types for how to make specific types of mod content and then once you’re ready move onto the packaging a mod section.
+That’s it for creating a mod. Check out link:/modding/sdk/content-types[content types] for how to make specific types of mod content and then once you’re ready, you can move on to link:/modding/sdk/packaging-a-mod[packaging a mod].
