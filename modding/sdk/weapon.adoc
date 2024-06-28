@@ -48,6 +48,16 @@ There's a lot that can go wrong when making a weapon mod, and weapon setups are 
 
 -> Make sure the same magazine type is used in the magazine and in the magazine component ('MagWell') of the weapon.
 
+**I can't see the weapon in the editor**
+
+-> Make sure you have the most up-to-date version number in your default item build (.kit) file
+
+-> Make sure the mod is packaged and uploaded, and try quitting the Mod Kit to let the mod update
+
+-> Make sure there is no JSON error in your default item build
+
+-> Check the log to see if anything is throwing an obvious error
+
 **I can't see the default item build in the editor**
 
 -> This is correct. You can only see default item builds (.kit files), loadouts and other non-asset files in a normal folder viewer. See link:/modding/non-asset-file-types[non-asset file types] for a non-exhaustive list of such files.
