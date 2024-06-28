@@ -9,6 +9,8 @@ The bone names are pretty self-explanatory as to what they are, and the mesh nee
 
 Not all bones need to be skinned to the mesh (It's ok if some aren't used), but the entire mesh needs to be skinned to at least one bone to be exported properly.
 
-Once the blueprint is created (assuming you are using a child of an existing one) you need to move each component into place. The naming of components should be self-explanatory, but for more details, see .
+Once the blueprint is created (assuming you are using a child of an existing one) you need to move each component into place. The naming of components should be self-explanatory, but for more details, see link:/modding/sdk/weapon/ground-branch-weapon-components[Ground Branch weapon components].
 
 If a weapon has rail systems then you can either add one or using an existing one (preferable). In the blueprint editor, select +Add Component from the top right (big green button) and chose GBRail. You may need to type it in the search bar to find it.  
+
+TIP: The sight needs to be separate from an RMR plate because we make small adjustments to the sight mesh with the bones in code, and we scale the RMR to zero when it's not used.
