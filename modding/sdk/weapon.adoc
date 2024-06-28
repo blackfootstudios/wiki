@@ -26,7 +26,7 @@ Typically each component has further configuration options that can be used to c
 .The Rail component properties for the selected rail
 image::/images/sdk/weapon/weapon_railproperties.jpg[weapon_railproperties.jpg,40%]
 
-See link:/modding/sdk/weapon/ground-branch-weapon-components[here] for a list of all of the Ground Branch custom weapon blueprint components.
+See link:/modding/sdk/weapon/ground-branch-weapon-components[here] for a list of all of the Ground Branch custom weapon blueprint components, including rails, ejection ports, magwells, barrels and (built in) sights.
 
 With all the weapon features now defined in your blueprint, you may need to add custom code to your weapon blueprint to handle custom behaviour for your specific weapon. See link:/modding/sdk/weapon/example-blueprint-code[weapon blueprint code examples] for more information on weapon events and functions that you can and may want to override in the blueprint event graph.
 
