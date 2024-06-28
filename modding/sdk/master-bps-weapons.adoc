@@ -1,4 +1,4 @@
-To create a new primary weapon, you can either use the `BP_Firearm_Master` top-level master blueprint, or (more easily) you can derive a blueprint from one of the following master blueprints for specific types of primary:
+To create a new primary weapon, you can either use the `BP_Firearm_Master` top-level master blueprint, or (more easily) you can derive a blueprint from one of the following master blueprints, which have been set up with animations and default properties for specific types of primary weapon:
 
 [cols=",,",options="header",]
 |===
