@@ -1,5 +1,7 @@
 ## Making your custom weapon
 
+### Overview
+
 To start making a weapon mod, follow the usual steps to link:/modding/sdk/creating-a-mod[create a mod], find an appropriate master blueprint (`+BP_Handgun_Master+` for sidearms, or see link:/modding/sdk/master-bps-weapons[this list] for primary weapon master blueprints). Then link:/modding/sdk/creating-child-assets[create an appropriate child blueprint]. This guide assumes that you have followed these steps and have your new custom BP open like so:
 
 .Your new child blueprint
@@ -10,7 +12,11 @@ A weapon mod can be a complex item to set up. Here, for example, are some (not a
 .Editor files for M16A4 in-game item (not including master blueprint, wwise sounds, and so on)
 image::/images/sdk/weapon/weapon_m16files.jpg[weapon_m16files.jpg,25%]
 
+### Setting basic blueprint properties
+
 Please see link:/modding/sdk/weapon/weapon-blueprint-properties[here] for a run-down of (nearly) all of the properties in your new custom firearm blueprint.
+
+### Setting up the skeletal mesh
 
 First of all, you will most likely start by putting in a new firearm model (skeletal mesh) and skin (material) into the `+Firearm Mesh Component+` properties.
 
@@ -18,11 +24,9 @@ You will need to make sure that your skeletal mesh model is skinned properly bef
 
 You will need to make sure you have properly link:/modding/sdk/weapon/setting-up-weapon-skeletal-mesh[set up your skeletal mesh], so that all the animation aspects will work properly. 
 
+### Setting up blueprint components
+
 You may need to add additional components to your weapon in the blueprint editor. Here, the in-game M16A4 blueprint is shown, including additional GBSight components for the built-in iron sights (FailSafeSight, FrontSightPost), and a number of GBRail components to define attachment points for  the picatinny rails (RearSightRail, TopRail, BottomRail, RightRail, LeftRail), as shown here:
-
-You may want to make your own custom magazine. See @here for a guide on making a custom magazine.
-
-You may want to make your own custom sight (optic or iron). Details on this will follow. @
 
 .The stock M16A4 weapon, showing the placement of Rail components in the weapon blueprint
 image::/images/sdk/weapon/weapon_m16a4rails.jpg[weapon_m16a4rails.jpg,80%]
@@ -32,11 +36,31 @@ Typically each component has further configuration options that can be used to c
 .The Rail component properties for the selected rail
 image::/images/sdk/weapon/weapon_railproperties.jpg[weapon_railproperties.jpg,40%]
 
+These is the minimum list of components that are necessary for a working weapon in Ground Branch:
+
+* link:/modding/sdk/weapon/component-barrel[Barrel] (GBBarrel)
+
+* link:/modding/sdk/weapon/component-magwell[Magwell] (GBInternalMagazine)
+
+* link:/modding/sdk/weapon/component-eject[Ejection port] (GBEject) 
+
 See link:/modding/sdk/weapon/ground-branch-weapon-components[here] for a list of all of the Ground Branch custom weapon blueprint components, including rails, ejection ports, magwells, barrels and (built in) sights.
+
+### Ancillary items
+
+You may need to make your own custom magazine. See @here for a guide on making a custom magazine.
+
+You may need to make your own custom sight (optic or iron). Details on this will follow. @
+
+### Custom blueprint code
 
 With all the weapon features now defined in your blueprint, you may need to add custom code to your weapon blueprint to handle custom behaviour for your specific weapon. See link:/modding/sdk/weapon/example-blueprint-code[weapon blueprint code examples] for more information on weapon events and functions that you can and may want to override in the blueprint event graph.
 
+### Default item build
+
 You should also create a link:/modding/sdk/weapon/creating-default-item-loadout[default item build] for your weapon, at least to add a magazine as a default item.
+
+### Setup complete
 
 Congratulations! At this point, your weapon should be set up. Go package and upload it, and have a test.
 
