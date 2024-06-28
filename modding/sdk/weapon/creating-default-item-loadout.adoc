@@ -34,6 +34,8 @@ The default item build looks like this in a text editor:
 }
 ----
 
+NOTE: The version number (in this case 12) may increase in later releases of the Mod Kit and Ground Branch game. We would suggest checking a recent saved item build or loadout to determine the latest version number. The game will usually just silently fail to load or display any apparently outdated item builds or loadouts.
+
 Rather than list all possible permutations of item types and syntax here, we would suggest that you build more complicated default weapon configurations in the in-game character editor, save the build to disk, and copy over the relevant part of the created item build in a text editor.
 
 TIP: It is usually easiest to manually edit an existing default item build `.kit` file, but you may want to validate the JSON before saving with a JSON validator. Many different JSON validators exist, and this is just one example: https://codebeautify.org/jsonvalidator
