@@ -52,7 +52,9 @@ See link:/modding/sdk/weapon/ground-branch-weapon-components[here] for a list of
 
 You may need to make your own custom magazine. See link:/modding/sdk/magazine-modding[magazine modding].
 
-You may need to make your own custom sight (optic or iron). @Details on this will follow.
+You may need to make your own custom sight (optic or iron). @link
+
+If you wish to use your own custom sounds, see link:/modding/sdk/wwise[adding sounds with Wwise].
 
 ### Custom blueprint code
 
