@@ -1,4 +1,41 @@
-== header
+=== "Default Item Build" Overview
+
+You will need to make a default item build for every weapon you add in the Mod Kit (and similarly for certain other types of items). You will need to go outside the Mod Kit to do this. You need to save a special .kit file in the same place as the item the default item build is for, using the same leaf name (that is, the same file name, minus the path).
+
+The default item build file tells Ground Branch what accessories should be spawned with your item by default. In the case of weapons, this will always include a default magazine type. Some weapons also add default sights and maybe grips, and so on. It is up to you to ensure that the included extra attachments are validly selected and placed.
+
+### Example default item build (Mk23 mod) 
+
+An example of a default item build can be found in the sample Mk23 mod in the Workshop by BlackFoot Studios. Here (*within the operating system folder viewer* we can see that a `BP_Mk23.kit` file exists in the same place as the related `BP_Mk23.uasset` asset. This file is not visible in the editor.
+
+.Location of the default item build .kit file (alongside the asset it refers to)
+image::/images/sdk/modkit_defaultitembuild_infolder.jpg[modkit_defaultitembuild_infolder.jpg]
+
+NOTE: You will not see any .kit files within the editor, because they are non-asset types. Just because you do not see them does not mean that they are not there.
+
+The `.kit` file itself is a JSON formatted file including a definition of the necessary attachments. In this case (as is commonly the case), just a magazine is specified. This means that if you click on the generic Mk23 icon in the character editor, you will be assigned the weapon with the specified magazine. If you click to edit a default item, the magazine will be inserted automatically as per the default item build. 
+
+The magazine can later be manually removed and/or replaced in the weapon editor by the user, if that is a thing that the user wants to do...
+
+The default item build looks like this in a text editor:
+
+[json]
+----
+{
+	"Ver": 12,
+	"BuildName": "MK23",
+	"Item": "Sidearm:BP_Mk23",
+	"Children": [
+		{
+			"Item": "Magazine:BP_Mk23_Magazine",
+			"Well": "MagWell"
+		}
+	]
+}
+----
+
+Rather than list all possible permutations of item types and syntax here, we would suggest that you build more complicated default weapon configurations in the in-game character editor, save the build to disk, and copy over the relevant part of the created item build in a text editor.
 
 TIP: It is usually easiest to manually edit an existing default item build `.kit` file, but you may want to validate the JSON before saving with a JSON validator. Many different JSON validators exist, and this is just one example: https://codebeautify.org/jsonvalidator
 
+TIP: If a default item build fails to spawn, there may be no error given in-game, but you may find an explanation of any fault in the game log. If a default item build fails to load, very often it may be an issue with a missing (or extra) comma, or bracket of any appropriate type.
