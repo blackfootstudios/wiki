@@ -35,7 +35,7 @@ image::/images/sdk/weapon/weapon_bpexample_onsetzero.jpg[weapon_bpexample_onsetz
 
 image::/images/sdk/weapon/weapon_bpexample_setfrontsightpostoffset.jpg[weapon_bpexample_setfrontsightpostoffset.jpg]
 
-`On Set Front Sight Post Height Office <SightComponent>` is called when @
+`On Set Front Sight Post Height Offset <SightComponent>` is called when @
 
 ==== Update the visibility of bullets loaded in the weapon
 
