@@ -26,6 +26,8 @@ This is only an internal name, and you will be choosing a display name within th
 .The newly created child blueprint in the plugin folder, with an appropriate name filled in
 image::/images/sdk/modkit_myakderivative.jpg[Screenshot,20%]
 
+NOTE: You MUST choose a unique name for your blueprint that is not used by any other asset of the same type (primary, firearm, etc.). Consider putting your name in the title, or have some other unique naming convention that is unlikely to overlap with either stock in-game weapons, or the same weapon made by another modder (yes, it happens). So `BP_Fatmarrow_Mk23`, for example, instead of plain BP_Mk23 (which would, in fact, clash with one of our example mods).
+
 You can then double-click the new blueprint to open up the standard UE4 blueprint editing screen:
 
 .Opening up a new child blueprint (in this case a weapon blueprint)
