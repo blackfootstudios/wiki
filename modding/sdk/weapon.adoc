@@ -102,4 +102,8 @@ There's a lot that can go wrong when making a weapon mod, and weapon setups are 
 
 **I am not sure how to add a suppressor**
 
-->You need to add the mesh and make a blueprint for it, then setup the socket on the weapon and match the naming conventions. It's called Muzzle Device Thread in the suppressor BP. Just add the name of the socket that you created on the mesh there and it should work.
+-> You need to add the mesh and make a blueprint for it, then setup the socket on the weapon and match the naming conventions. It's called Muzzle Device Thread in the suppressor BP. Just add the name of the socket that you created on the mesh there and it should work.
+
+**I have made the same gun as someone else, but mine/theirs does not show up in the list of weapons in the character editor**
+
+-> You may have used the same blueprint name as the game / the other mod. If you have used the same name, you will also have used the same primary asset ID (e.g. `PrimaryFirearm:BP_MyGun`), and this will break a ton of stuff. Consider having some kind of unique reference in your weapon blueprint names, e.g. your modding handle, to avoid name clashes with the game and also (more importantly perhaps) other mods.
