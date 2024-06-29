@@ -7,6 +7,8 @@ To start making a weapon mod, follow the usual steps to link:/modding/sdk/creati
 .Your new child blueprint
 image::/images/sdk/modkit_mycustomchildbp.jpg[modkit_mycustomchildbp.jpg]
 
+NOTE: You MUST choose a unique name for your blueprint that is not used by any other asset of the same type (PrimaryFirearm, Sidearm, etc.). Consider putting your name in the title, or have some other unique naming convention that is unlikely to overlap with either stock in-game weapons, or the same weapon made by another modder (yes, it happens). So `BP_Fatmarrow_Mk23`, for example, instead of plain BP_Mk23 (which would, in fact, clash with one of our example mods).
+
 A weapon mod can be a complex item to set up. Here, for example, are some (not all) files needed for the in-game stock M16A4 rifle. See below for more details of what these files typically include:
 
 .Editor files for M16A4 in-game item (not including master blueprint, wwise sounds, and so on)
