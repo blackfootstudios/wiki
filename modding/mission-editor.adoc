@@ -289,7 +289,7 @@ The Insertion Point actors are shown on the ops board and do not have to be loca
 Therefore you can move around the Insertion Point to improve or adjust the appearance of the ops board (for example moving the insertion point further into the map if names are getting cropped out at the border).
 
 .Insertion point details
-image::/images/mission-editor/insertion-point-details.jpg[Screenshot, 80%]
+image::/images/mission-editor/insertion-point-details.jpg[Screenshot]
 
 If you click on an Insertion Point in a map, the Add Player Starts button will automatically attempt to create 8 Player Starts in the immediate vicinity of the Insertion Point.
 
