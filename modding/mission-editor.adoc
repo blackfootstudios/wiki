@@ -303,7 +303,7 @@ See the section on the particular game mode for more info.
 image::/images/mission-editor/player-start-icon.jpg[Screenshot]
 
 .Player start details
-image::/images/mission-editor/player-start-details.jpg[Screenshot, 40%]
+image::/images/mission-editor/player-start-details.jpg[Screenshot]
 
 The group field of player starts is automatically filled in when generated from Insertion Points.
 The Team Id is typically set to 255, but other values can be used in custom game modes if desired.
@@ -316,7 +316,7 @@ To set up the enemy AI, you need to create and edit AI Spawn, AI Guard Point and
 ==== AI spawn points (GBAISpawnPoint)
 
 .AI spawn point details
-image::/images/mission-editor/api-spawn-point-details.jpg[Screenshpt, 40%]
+image::/images/mission-editor/api-spawn-point-details.jpg[Screenshot]
 
 AI Spawn points are determined using the GBAISpawnPoint mission object, which can be dragged into the level from the left hand menu bar.
 
