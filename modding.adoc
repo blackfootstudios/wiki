@@ -1,4 +1,4 @@
-There are two main types of modding in Ground Branch: *non-asset based* (Quick Create) and *asset based* (Mod Kit / SDK), which are described in more detail below.
+There are two main types of modding in GROUND BRANCH: *non-asset based* (Quick Create) and *asset based* (Mod Kit / SDK), which are described in more detail below.
 
 [NOTE]
 --
@@ -13,7 +13,7 @@ With the exception of Mission files, non-asset files are readable and editable u
 Examples of non-asset files include patch images, game mode scripts, localisation files, kit files of various kinds, and so on.
 A Non-asset based mod may typically include several different types of files: for example, a game mode mod may additionally include missions for that game mode, localisation for the game mode, and custom AI kits.
 
-The Quick Create system allows non-asset based mods to be made simply and quickly, and without having to download or use the Ground Branch Mod Kit / SDK.
+The Quick Create system allows non-asset based mods to be made simply and quickly, and without having to download or use the GROUND BRANCH Mod Kit / SDK.
 
 === Non asset mod basics
 
@@ -24,8 +24,8 @@ The Quick Create system allows non-asset based mods to be made simply and quickl
 === Game mode mods
 
 * link:/modding/gamemode-modding[Game mode modding overview]
-* link:/modding/mission-editor[Ground Branch Mission Editor guide]
-* link:/modding/lua-api[Ground Branch Lua Library guide]
+* link:/modding/mission-editor[GROUND BRANCH Mission Editor guide]
+* link:/modding/lua-api[GROUND BRANCH Lua Library guide]
 
 === Patch mods
 
@@ -33,9 +33,9 @@ The Quick Create system allows non-asset based mods to be made simply and quickl
 
 == Asset Based Mods (Mod Kit / SDK)
 
-The Ground Branch Mod Kit or SDK ("`Software Development Kit`") is used to create more advanced mods combining native Unreal Engine 4 elements such as textures, materials, static meshes, skeletal meshes, sounds, and so on.
+The GROUND BRANCH Mod Kit or SDK ("`Software Development Kit`") is used to create more advanced mods combining native Unreal Engine 4 elements such as textures, materials, static meshes, skeletal meshes, sounds, and so on.
 
-Asset based mods are created, packaged and uploaded within the Mod Kit / SDK, which is downloadable as a separate program from the Epic launcher / store (@needs link when live). The SDK includes the base systems from Ground Branch but none of the maps and assets.
+Asset based mods are created, packaged and uploaded within the Mod Kit / SDK, which is downloadable as a separate program from the Epic launcher / store (@needs link when live). The SDK includes the base systems from GROUND BRANCH but none of the maps and assets.
 Placeholder meshes are provided, for example for weapons, to allow you to access standard animations and sounds and suchlike.
 
 === Mod Kit basics
@@ -54,7 +54,7 @@ Placeholder meshes are provided, for example for weapons, to allow you to access
 
 === Specific types of mods
 
-The SDK was first released with Ground Branch version 1034. In this version, we are focusing on weapon mods only.
+The SDK was first released with GROUND BRANCH version 1034. In this version, we are focusing on weapon mods only.
 Other types of mods will be added in due course.
 
 * link:/modding/sdk/weapon/[Weapon mods]

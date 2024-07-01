@@ -11,7 +11,7 @@ The same steps can also be used to create AI kits.
 == Overview
 
 [arabic]
-. Go to `+steamapps\common\Ground Branch\GroundBranch\Content\GroundBranch\DefaultLoadouts+`
+. Go to `+steamapps/common/Ground Branch/GroundBranch/Content/GroundBranch/DefaultLoadouts+`
 . Make a backup of `+MainMenuGuy_01.kit+` and `+MainMenuGuy_02.kit+`
 . Create a kit in the "`Customize Operator`" screen.
 . Open NoTeam.kit in text editor and copy paste the relevant entries to `+MainMenuGuy_01.kit+` and `+MainMenuGuy_02.kit+`. The .kit files are JSON files.

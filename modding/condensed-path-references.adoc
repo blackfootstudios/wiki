@@ -1,4 +1,4 @@
-There is a specific naming convention for non asset files (such as missions, patches, and so on) and others within Ground Branch.
+There is a specific naming convention for non asset files (such as missions, patches, and so on) and others within GROUND BRANCH.
 You should be aware of this convention when providing a reference to your own modded files, for example when typing in the location of a lua script for a laptop in a mission.
 
 This convention essentially mirrors the normal asset references in Unreal Engine, which are of the form:
@@ -25,7 +25,7 @@ So if you are testing a new laptop lua script in your custom game mode / mission
 Sometimes file extensions are needed and sometimes they will be assumed, for example based on the non asset type in question.
 In map list options lists, there is no need to add .mis for mission files, for example.
 
-There is a custom blueprint node available in Ground Branch called CondenseModReferencesInFilename, which will take a standard filename, it will deduce what it belongs to, and it will replace the beginning of the filename with the appropriate prefix, e.g. `+/Game/+` or `+/0/+` and so on.
+There is a custom blueprint node available in GROUND BRANCH called CondenseModReferencesInFilename, which will take a standard filename, it will deduce what it belongs to, and it will replace the beginning of the filename with the appropriate prefix, e.g. `+/Game/+` or `+/0/+` and so on.
 
 There is a corresponding ExpandModReferencesInFilename node which will convert any condensed filename into a full standard filename (which may or may not be relative, depending on whether the filename is on the same drive as the game installation.
 Because reasons).

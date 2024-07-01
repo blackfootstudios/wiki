@@ -1,4 +1,4 @@
-Game items in Ground Branch include inventory items (such as weapons, gear and clothing), and other items such as spawned objects (projectiles) and game props (including variations of game mode props such as bombs, laptops, and so on).
+Game items in GROUND BRANCH include inventory items (such as weapons, gear and clothing), and other items such as spawned objects (projectiles) and game props (including variations of game mode props such as bombs, laptops, and so on).
 
 Typically these are derived from various master blueprints, as detailed here: link:/modding/sdk/content-types[Mod Kit content types].
 

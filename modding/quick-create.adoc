@@ -1,4 +1,4 @@
-The Quick Create menu allows the creation of non-asset based mods from within the Ground Branch game.
+The Quick Create menu allows the creation of non-asset based mods from within the GROUND BRANCH game.
 It is accessed via the Modding element of the main menu:
 
 TIP: See link:/modding[Modding] for an overview of "`non-asset based mods`" and "`asset based mods`").

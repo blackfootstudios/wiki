@@ -1,6 +1,6 @@
 The following is a list of file types recognised by the Quick Create mod system.
-These are '`non asset`' file types used in Ground Branch.
-By '`non asset`' it is meant that the files are not created or visible within the Ground Branch Mod Kit.
+These are '`non asset`' file types used in GROUND BRANCH.
+By '`non asset`' it is meant that the files are not created or visible within the GROUND BRANCH Mod Kit.
 With the exception of Mission files, these '`non asset`' files are normally edited or created using third party programs (text editors, image editors, and so on):
 
 [width="100%",cols="25%,25%,25%,25%",options="header",]

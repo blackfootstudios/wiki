@@ -15,9 +15,9 @@ toc::[]
 
 == Introduction
 
-New or modified game modes can now be '`modded into`' Ground Branch.
-This is a guide to the functions and coding conventions you will need to know in order to start modding your own game modes into Ground Branch.
-You will also probably want to look at the link:/modding/mission-editor[Ground Branch Mission Editor guide].
+New or modified game modes can now be '`modded into`' GROUND BRANCH.
+This is a guide to the functions and coding conventions you will need to know in order to start modding your own game modes into GROUND BRANCH.
+You will also probably want to look at the link:/modding/mission-editor[GROUND BRANCH Mission Editor guide].
 
 Game modes are now implemented using Lua script, which is an interpreted language that is executed substantially in real time (as opposed to languages like C++ which must be compiled before being executed). This has some advantages, such as being able to debug and modify Lua code while the game is running (and indeed, within the game itself). This guide assumes an at least basic knowledge of Lua.
 Typically only a few basic features of Lua are needed to implement the game modes.
@@ -34,7 +34,7 @@ If that variable is supplied as a string parameter, it will automatically be con
 If a _number_ type includes a decimal point (e.g. "`3.5`") then it is a float.
 If no decimal point is specified, then it is an integer.
 There is no real distinction between integers and floats in Lua.
-* The basic data types in Lua are _nil, Boolean, number, string, userdata, function, table and string_. Userdata is a container to hold non-native forms of data (and is used for Ground Branch data types and/or internal pointers). Variables can be set to `+nil+`. If you refer to a variable (or function) that has not yet been defined, you will get the value `+nil+`. If you reference an array element by the wrong key/index, the result is `+nil+`. No error will be generated.
+* The basic data types in Lua are _nil, Boolean, number, string, userdata, function, table and string_. Userdata is a container to hold non-native forms of data (and is used for GROUND BRANCH data types and/or internal pointers). Variables can be set to `+nil+`. If you refer to a variable (or function) that has not yet been defined, you will get the value `+nil+`. If you reference an array element by the wrong key/index, the result is `+nil+`. No error will be generated.
 This is a potentially large source of unexpected/unwanted behaviour in your game mode.
 * If you access an invalid _userdata_ type (for example because the underlying data has been destroyed or garbage-collected), you will get an error.
 There is no test (so far as I am aware) for an invalid _userdata_ reference.
@@ -161,10 +161,10 @@ function ... ()
 end
 ----
 
-=== Lua scripts in Ground Branch
+=== Lua scripts in GROUND BRANCH
 
 There are usually several ways to do a simple thing in lua.
-Lua scripts in Ground Branch are universally of the form (where `+<modulename>+` is a game mode name, for example):
+Lua scripts in GROUND BRANCH are universally of the form (where `+<modulename>+` is a game mode name, for example):
 
 [source,lua]
 ----
@@ -191,17 +191,17 @@ Lua scripts are run (thereby defining all the necessary functions and variables)
 
 When a lua script is first run, the `+package.path+` global variable is set so that the lua virtual machine will search for file references in specific defined places (for example when using a '`require()`' command). Specifically, the lua VM will look in `+GroundBranch/GameMode+` and `+GroundBranch/Lua+` folders in the base game, and the same subfolders within any mod that is hosting the currently executing lua script (if applicable). In addition, the lua VM will try to match `+<filename>.lua+` and `+<filename>\init.lua+`, in accordance with normal custom.
 
-== Basic game mode concepts in Ground Branch
+== Basic game mode concepts in GROUND BRANCH
 
-Each game mode is provided in the form of a single Lua script stored in the GroundBranch/GameMode folder within the Ground Branch content directory:
+Each game mode is provided in the form of a single Lua script stored in the GroundBranch/GameMode folder within the GROUND BRANCH content directory:
 
 .Screenshot
 image::/images/lua-api/folder.png[Screenshot]
 
-Game mode scripts need to implement a number of standard functions that are called by the main Ground Branch program at certain times, in order to set up the game mode functionality.
+Game mode scripts need to implement a number of standard functions that are called by the main GROUND BRANCH program at certain times, in order to set up the game mode functionality.
 An example of such a function is `+PostInit()+`. There are also now optional Validation functions for each game mode, called `+<GameMode>Validate.lua+`. These are called by the mission editor when validating a level.
 
-Ground Branch provides libraries of functions which can be called from the game mode script.
+GROUND BRANCH provides libraries of functions which can be called from the game mode script.
 These libraries are described below.
 The game mode script calls certain functions to indicate a win/lose condition for the game mode.
 Other functions can be provided in the game mode script to specific game events such as players entering triggers, or a timer expiring.
@@ -209,9 +209,9 @@ Between being called in `+Postinit()+` and returning a win/loss condition, the g
 
 Also please bear in mind that everything/anything here may be out of date and may change without warning.
 We cannot accept responsibilty for any harm arising from relying on information presented here.
-That said, if you can somehow use this information to cause harm, bravo! That is the Ground Branch spirit.
+That said, if you can somehow use this information to cause harm, bravo! That is the GROUND BRANCH spirit.
 
-The Ground Branch Lua libraries will be described below.
+The GROUND BRANCH Lua libraries will be described below.
 First, the structure of the game mode scripts will be described.
 
 === Round stages
@@ -240,7 +240,7 @@ Thus the DTAS game mode has DTASInProgress and FoxHuntInProgress round stages, a
 
 === Player status
 
-Players have a number of different statuses maintained within Ground Branch.
+Players have a number of different statuses maintained within GROUND BRANCH.
 The statuses described below are potentially more relevant for game mode:
 
 ==== Readied-up status
@@ -277,7 +277,7 @@ Thus players can have an InPlayArea status but not be playing (if they are spect
 === Game rules
 
 Another key concept for game modes is game rules.
-These are essentially internal flags which can be set to true or false by a game mode to tell the core Ground Branch code what standard game play features are required by the game mode.
+These are essentially internal flags which can be set to true or false by a game mode to tell the core GROUND BRANCH code what standard game play features are required by the game mode.
 If a game rule is true, the relevant feature is provided.
 These differ from game settings (see below) in that they may be set as part of a server command line, or set in the admin menu as server defaults.
 
@@ -464,7 +464,7 @@ GameModeType = "PVE",
 ==== Volunteers allowed
 
 As of v1034, game modes can declare whether volunteering is allowed.
-The implementation of volunteers is down to the game mode and has no specific meaning to Ground Branch.
+The implementation of volunteers is down to the game mode and has no specific meaning to GROUND BRANCH.
 Declaring that volunteering is allowed causes the volunteer icon (hand up / hand down) to be displayed in the server roster and allows players and admins to toggle a volunteering status.
 DTAS uses this feature to allow players to volunteer to be flag carriers or assets (in fox hunt); Hostage Rescue uses this feature to allow players to volunteer to be a hostage, and so on.
 See sections 6.2.49 to 6.2.52 below for calls relating to the volunteer feature.
@@ -691,8 +691,8 @@ Some limited manipulation of player patches may be possible via the inventory sy
 
 == Standard game mode functions
 
-There are a number of functions in game mode scripts that are referenced (and called) directly from the Ground Branch code.
-This is perhaps the most opaque part of game mode modding in Ground Branch, as there is no central list of these functions maintained anywhere (except possibly here); any blueprint or c++ routine in Ground Branch is able to call any part of the current game mode script as it pleases.
+There are a number of functions in game mode scripts that are referenced (and called) directly from the GROUND BRANCH code.
+This is perhaps the most opaque part of game mode modding in GROUND BRANCH, as there is no central list of these functions maintained anywhere (except possibly here); any blueprint or c++ routine in GROUND BRANCH is able to call any part of the current game mode script as it pleases.
 
 Typically you will need to use a fair few of these functions, but none are strictly mandatory:
 
@@ -705,7 +705,7 @@ If you’re reading that and not sure what it means, you should probably just us
 
 This function is called after PreInit() has been called and after some further initialisation of the game mode.
 In the context of a game mode, it is essentially an initialisation function approximately equivalent to a c++ constructor.
-The purpose of `+PostInit()+` is to set up the properties of the game mode and inform the Ground Branch code of the same.
+The purpose of `+PostInit()+` is to set up the properties of the game mode and inform the GROUND BRANCH code of the same.
 Activities like spawning enemies and setting up the level for a new round occurs later, typically via the `+OnRoundStageSet()+` function (see below).
 
 Here is an example of a `+PostInit()+` function from the Uplink game mode Lua script:
@@ -1442,7 +1442,7 @@ This doesn’t affect inventory handling except that you cannot rely on the top-
 
 As of v1033, loadouts for players and custom kit lists can now be converted into lua tables and back again into named loadouts for specific players.
 This can allow a degree of manipulation and customisation of inventories by game modes and mutators.
-However, because of the peculiarities of the systems in Ground Branch, and the difficulty of maintaining loadout coherence in multiplayer, there are some significant restrictions on how and when these manipulations can be done.
+However, because of the peculiarities of the systems in GROUND BRANCH, and the difficulty of maintaining loadout coherence in multiplayer, there are some significant restrictions on how and when these manipulations can be done.
 
 In one place, inventories can be manipulated when they are applied/created, so as to create a temporary version lacking particular items, in the OnPreLoadoutChanged() callback for mutators (see Section 5.4.6 below). Otherwise, however, you need to pre-create a modified loadout and vary which loadout is applied for a particular player when they spawn in (see the calls in Section 6.9 below).
 
@@ -1511,7 +1511,7 @@ If true, the settings of the mutator will be replicated to clients and (temporar
 Mutators can have options in the same way that game modes can have mission settings, and they are treated very similarly.
 Settings are saved to `+Modding.ini+` and can be overridden using parameters in map lists (`+Maplist.ini+` in the `+ServerConfig+` folder), e.g. `+?RemovePrimary=1+` like with game mode settings.
 Mutator options can only be changed between game sessions.
-In later versions of Ground Branch, mutator settings may in some cases be temporarily replicated from server to clients during a game session.
+In later versions of GROUND BRANCH, mutator settings may in some cases be temporarily replicated from server to clients during a game session.
 The SortOrder parameter is intended to manually specify a display order of the options, but is currently inoperable.
 
 [source,lua]
@@ -1583,9 +1583,9 @@ This function is called by the character editor when editing an item build, eith
 
 Return a `+string+` type with the build name, or return `+nil+` to leave the build name unmodified.
 
-== Ground Branch Lua libraries
+== GROUND BRANCH Lua libraries
 
-Ground Branch provides a number of utility functions, hooks, and so on to game modes (and any other modding Lua scripts). These will be described below.
+GROUND BRANCH provides a number of utility functions, hooks, and so on to game modes (and any other modding Lua scripts). These will be described below.
 These libraries may be changed or added to at any time.
 Proceed with caution.
 
@@ -1657,7 +1657,7 @@ This function draws a debug line from the specified start location to the specif
 
 === GameMode (GBLuaGameModePackage.h)
 
-This library handles interactions between the game mode script and the Ground Branch code.
+This library handles interactions between the game mode script and the GROUND BRANCH code.
 
 Function list:
 
@@ -2433,13 +2433,13 @@ This function enables or disables player collisions depending on the value of [.
 ==== actor.IsActive ( Actor )
 
 Returns Boolean to indicate whether the specified actor [.var]#Actor# is active.
-Ground Branch objects have an `+active+` property which can be read via this function.
+GROUND BRANCH objects have an `+active+` property which can be read via this function.
 Certain objects implement certain behaviours depending on whether or not they are active.
 Extraction point markers, for example, will spawn smoke (only) when active.
 
 ==== actor.SetActive ( Actor, NewActive )
 
-This function sets the active property of a Ground Branch game object actor [.var]#Actor# to Boolean value [.var]#Active#.
+This function sets the active property of a GROUND BRANCH game object actor [.var]#Actor# to Boolean value [.var]#Active#.
 
 Example:
 
@@ -2500,7 +2500,7 @@ Used by game mode validators.
 
 === AI (GBLuaAIPackage.h)
 
-This library provides a set of functions for controlling the Ground Branch AI.
+This library provides a set of functions for controlling the GROUND BRANCH AI.
 
 Function list:
 
@@ -2674,7 +2674,7 @@ Returns TRUE if the specified controller is an AI controller in the current play
 === Player (GBLuaPlayerPackage.h)
 
 This library provides a set of functions for manipulating and getting information on the player pawns and controllers.
-The `+Player+` reference encodes an AGBCharacter class (native to Ground Branch). It cannot be directly manipulated within the Lua script, but can be received and passed to the library functions.
+The `+Player+` reference encodes an AGBCharacter class (native to GROUND BRANCH). It cannot be directly manipulated within the Lua script, but can be received and passed to the library functions.
 
 A list of current players can be obtained for example using the `+gamemode.GetPlayerList()+` call (see Section 6.2.17 above).
 
@@ -2682,7 +2682,7 @@ Function list:
 
 ==== player.GetLives ( Player )
 
-Returns the number of lives a player has (in normal Ground Branch, this will be one or zero).
+Returns the number of lives a player has (in normal GROUND BRANCH, this will be one or zero).
 
 ==== player.SetLives ( Player, NewLives )
 
@@ -3184,7 +3184,7 @@ GetLuaComp(Bomb).SetDefused(true)
 
 === Mission Editor Actor Tags
 
-This is covered also in the accompanying Ground Branch Mission Editor guide, but the mission editor adds certain standard actor tags to various things.
+This is covered also in the accompanying GROUND BRANCH Mission Editor guide, but the mission editor adds certain standard actor tags to various things.
 
 Every mission actor has the tag `+MissionActor+` to identify it as a mission item.
 

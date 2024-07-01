@@ -15,7 +15,7 @@ When you uploading your mod to the Steam Workshop, it is hidden by default (for 
 .The Upload Mod icon
 image::/images/uploading-a-mod/toolbar_upload_a_mod._2png.png[/images/uploading-a-mod/toolbar_upload_a_mod._2png]
 
-Assuming you’re logged into Steam with an account that owns Ground Branch and have steam running.
+Assuming you’re logged into Steam with an account that owns GROUND BRANCH and have steam running.
 You’ll get information of what stage and sometimes a percent of the progress of your mod upload.
 
 .The status update displayed when committing changes

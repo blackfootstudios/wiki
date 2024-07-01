@@ -20,7 +20,7 @@ All that remains now is to create the mod using the Quick Create system mentione
 
 == Patch Image File Specification
 
-Ground Branch patches are a fixed size and aspect ratio (512x256 pixels) and a fixed filetype (.png). Patches that do not conform to these requirements will not be displayed. *The alpha channel is ignored* (if present), due to technical limitations involved in rendering the patches on both head and body.
+GROUND BRANCH patches are a fixed size and aspect ratio (512x256 pixels) and a fixed filetype (.png). Patches that do not conform to these requirements will not be displayed. *The alpha channel is ignored* (if present), due to technical limitations involved in rendering the patches on both head and body.
 That is to say that patches cannot have any transparency.
 
 Please note that although patch textures are saved with a 2:1 aspect ratio, they are displayed at 1.65:1 aspect ratio in-game.

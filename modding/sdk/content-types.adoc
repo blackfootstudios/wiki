@@ -5,12 +5,12 @@ You can create essentially any Unreal Engine content type that you want in the M
 A non-exhaustive list of content types is given below, with a link to a set of available '`master blueprints`' where applicable.
 As described further in link:/modding/sdk/creating-child-assets[creating new game items], it is best to make your new mod content a child blueprint of a relevant master blueprint.
 
-Ground Branch uses particular asset types that are typically blueprints referencing '`fundamental`' UE4 types in various ways.
-Ground Branch asset types typically include a base c++ class and an implementing master blueprint (BP). If you don’t understand a word of this, that’s fine.
+GROUND BRANCH uses particular asset types that are typically blueprints referencing '`fundamental`' UE4 types in various ways.
+GROUND BRANCH asset types typically include a base c++ class and an implementing master blueprint (BP). If you don’t understand a word of this, that’s fine.
 
 Unreal Engine has an asset registry which has defined (or allows you to define) specific '`asset types`'. The mean feature of the asset registry is that you can search for particular asset types and apply particular filters, and the asset registry will handle mapping the Unreal Engine asset reference to a specific file location.
 The assets in mods can be added seamlessly to (and removed seamlessly from) the current list of assets.
-This is handled by Ground Branch and modders do not need to get involved with this process at all.
+This is handled by GROUND BRANCH and modders do not need to get involved with this process at all.
 It should be noted that the term '`asset type`' is used in its specific technical meaning (within UE4) throughout this documentation.
 
 === Fundamental UE4 content types
@@ -40,11 +40,11 @@ They are a fundamental building block within Unreal Engine 4, usually providing 
 We would refer you to generic Unreal Engine 4 documentation to learn more about blueprints.
 
 Blueprints are not an asset type as such, but are typically used as the final embodiment of particular asset types.
-That is to say, the vast majority of usable items in Ground Branch are represented by a blueprint of the appropriate asset type.
+That is to say, the vast majority of usable items in GROUND BRANCH are represented by a blueprint of the appropriate asset type.
 
-=== Ground Branch content types
+=== GROUND BRANCH content types
 
-These are currently supported Ground Branch content types for modding; more exist but as of 1034 these are the officially supported ones.
+These are currently supported GROUND BRANCH content types for modding; more exist but as of 1034 these are the officially supported ones.
 
 [width="100%",cols="25%,25%,25%,25%",options="header",]
 |===

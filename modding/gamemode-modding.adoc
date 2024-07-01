@@ -1,14 +1,14 @@
 == Creating game modes
 
-Any consideration of making a new game mode in Ground Branch should begin with:
+Any consideration of making a new game mode in GROUND BRANCH should begin with:
 
-* Consulting the link:/modding/mission-editor[Ground Branch mission editor guide]
-* Reading the introduction (at least) of the link:/modding/lua-api[Ground Branch lua library reference]
+* Consulting the link:/modding/mission-editor[GROUND BRANCH mission editor guide]
+* Reading the introduction (at least) of the link:/modding/lua-api[GROUND BRANCH lua library reference]
 * Taking a look at built-in game mode scripts in GroundBranch/GameMode
 
 It will be assumed in the foregoing that you are familiar with these sources.
 
-In overview, the game logic of '`regular`' game modes in Ground Branch like Terrorist Hunt, Intel Retrieval, Team Elimination, and so on, is implemented as a lua script in the GroundBranch/GameMode directory.
+In overview, the game logic of '`regular`' game modes in GROUND BRANCH like Terrorist Hunt, Intel Retrieval, Team Elimination, and so on, is implemented as a lua script in the GroundBranch/GameMode directory.
 
 Missions for specific maps (such as Arena, Compound, Depot, Tanker, etc) are created using the in-game mission editor (which is accessed by typing `+editmission+` into the console in lone wolf mode after a map has been loaded in - either via the normal way, running a mission, or using the `+open+` console command).
 

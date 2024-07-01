@@ -1,6 +1,6 @@
 === Launching the Mod Kit
 
-The Mod Kit is launched from the Epic launcher, which you have already downloaded it from if you have followed the previous step: link:/modding/sdk/installing-modkit[Installing the Ground Branch Mod Kit].
+The Mod Kit is launched from the Epic launcher, which you have already downloaded it from if you have followed the previous step: link:/modding/sdk/installing-modkit[Installing the GROUND BRANCH Mod Kit].
 
 Specifically, click on the appropriate icon in your library, and the editor should start launching:
 
@@ -62,19 +62,19 @@ Certain kinds of objects can be selected directly from this area and dragged int
 ==== G: Editor buttons
 
 A number of editor functions have associated buttons displayed in this row of buttons.
-A number of Ground Branch Mod Kit buttons are included at the end of this row.
+A number of GROUND BRANCH Mod Kit buttons are included at the end of this row.
 
 ==== H: Editor menus
 
 Various operations can be carried out and windows opened via these normal text menus.
 You can load and save levels via the File menu, for example.
 
-=== Ground Branch modding buttons
+=== GROUND BRANCH modding buttons
 
-At the right hand of the button bar, you will find some buttons specific to Ground Branch modding.
+At the right hand of the button bar, you will find some buttons specific to GROUND BRANCH modding.
 These are not present in the '`vanilla`' Unreal Engine 4 editor.
 
-.Ground Branch modding buttons
+.GROUND BRANCH modding buttons
 image::/images/sdk/modkit_moddingbuttons.jpg[Screenshot,40%]
 
 ==== Create Mod

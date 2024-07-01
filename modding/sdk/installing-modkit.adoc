@@ -1,6 +1,6 @@
-The Ground Branch Mod Kit is available (only) via the Epic game launcher _(because of Unreal Engine licensing restrictions, since you ask)_. It is available via this link, for example: https://store.epicgames.com/en-US/download
+The GROUND BRANCH Mod Kit is available (only) via the Epic game launcher _(because of Unreal Engine licensing restrictions, since you ask)_. It is available via this link, for example: https://store.epicgames.com/en-US/download
 
-Search for Ground Branch and you should be able to find the Mod Kit, shown here in a player library:
+Search for GROUND BRANCH and you should be able to find the Mod Kit, shown here in a player library:
 
 .Mod Kit installed in your library (placeholder icon)
 image::/images/sdk/modkit_fakelibraryicon.jpg[Screenshot,20%]

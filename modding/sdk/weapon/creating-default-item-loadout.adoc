@@ -2,7 +2,7 @@
 
 You will need to make a default item build for every weapon you add in the Mod Kit (and similarly for certain other types of items). You will need to go outside the Mod Kit to do this. You need to save a special .kit file in the same place as the item the default item build is for, using the same leaf name (that is, the same file name, minus the path).
 
-The default item build file tells Ground Branch what accessories should be spawned with your item by default. In the case of weapons, this will always include a default magazine type. Some weapons also add default sights and maybe grips, and so on. It is up to you to ensure that the included extra attachments are validly selected and placed.
+The default item build file tells GROUND BRANCH what accessories should be spawned with your item by default. In the case of weapons, this will always include a default magazine type. Some weapons also add default sights and maybe grips, and so on. It is up to you to ensure that the included extra attachments are validly selected and placed.
 
 ### Example default item build (Mk23 mod) 
 
@@ -34,7 +34,7 @@ The default item build looks like this in a text editor:
 }
 ----
 
-NOTE: The version number (in this case 12) may increase in later releases of the Mod Kit and Ground Branch game. We would suggest checking a recent saved item build or loadout to determine the latest version number. The game will usually just silently fail to load or display any apparently outdated item builds or loadouts.
+NOTE: The version number (in this case 12) may increase in later releases of the Mod Kit and GROUND BRANCH game. We would suggest checking a recent saved item build or loadout to determine the latest version number. The game will usually just silently fail to load or display any apparently outdated item builds or loadouts.
 
 Rather than list all possible permutations of item types and syntax here, we would suggest that you build more complicated default weapon configurations in the in-game character editor, save the build to disk, and copy over the relevant part of the created item build in a text editor.
 

@@ -11,13 +11,13 @@ image::/images/sdk/weapon/weapon_overridefunctions2.jpg[weapon_overridefunctions
 .List of overridable events and functions in a typical weapon blueprint
 image::/images/sdk/weapon/weapon_overridefunctions3.jpg[weapon_overridefunctions3.jpg,40%]
 
-You can see that some events/functions are from GBFirearm (the base c++ firearm class in Ground Branch), some are from BP_Firearm_Master (the implementing master firearm blueprint), some are from the specific BP_AR15_Master parent blueprint (`LockOnEmpty`), some are GBItem (relating to general inventory handling), and some are universal overridable functions (actor). 
+You can see that some events/functions are from GBFirearm (the base c++ firearm class in GROUND BRANCH), some are from BP_Firearm_Master (the implementing master firearm blueprint), some are from the specific BP_AR15_Master parent blueprint (`LockOnEmpty`), some are GBItem (relating to general inventory handling), and some are universal overridable functions (actor). 
 
 To override an event or function, just click an item in this list, and an appropriate event or function will be created.
 
 === Examples of overrides / event handling
 
-There follow some examples of overrides in specific weapon blueprints that can be found in stock Ground Branch weapons. The first three examples are relatively common, and the last two are one-offs.
+There follow some examples of overrides in specific weapon blueprints that can be found in stock GROUND BRANCH weapons. The first three examples are relatively common, and the last two are one-offs.
 
 ==== Set safety button rotation when safety is changed
 

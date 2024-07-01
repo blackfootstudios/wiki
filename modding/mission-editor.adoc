@@ -1,4 +1,4 @@
-// Quick Guide to Editing Missions in Ground Branch
+// Quick Guide to Editing Missions in GROUND BRANCH
 :toc: macro
 :sectnums:
 
@@ -10,7 +10,7 @@ toc::[]
 
 === Naming conventions
 
-In Ground Branch mission editing, a lot of standard naming conventions are used.
+In GROUND BRANCH mission editing, a lot of standard naming conventions are used.
 These will be indicated in the following format:
 
 [.convention]
@@ -29,8 +29,8 @@ automatic assignment of squads).
 
 === Introduction to game modes
 
-Ground Branch includes a number of built-in game modes, and can run a further number of modded game modes.
-Built in game modes include (at time of v1034 release of Ground Branch):
+GROUND BRANCH includes a number of built-in game modes, and can run a further number of modded game modes.
+Built in game modes include (at time of v1034 release of GROUND BRANCH):
 
 “Co-op” modes (1 team v AI)
 
@@ -322,7 +322,7 @@ AI Spawn points are determined using the GBAISpawnPoint mission object, which ca
 The [.underline]#character class# should be set to Ky Bad Guy _[.mark]#Updated in v1034#_. The [.underline]#loadout# can be set to whatever you wish, but on the grounds of consistency and performance you should aim to use the same basic AI type (Rebel, Riot, or Ru Soldier) throughout each mission.
 The AI will spawn with the specified weapon.
 
-AI [.underline]#Team IDs# must normally be set to 100 (the default team, and standard team for AI in Ground Branch). It is recommended not to set the Squad ID manually, but to use the standard naming convention for AI (see below), and as a final step to assign [.underline]#Squad IDs# automatically using the Determine Squad IDs button.
+AI [.underline]#Team IDs# must normally be set to 100 (the default team, and standard team for AI in GROUND BRANCH). It is recommended not to set the Squad ID manually, but to use the standard naming convention for AI (see below), and as a final step to assign [.underline]#Squad IDs# automatically using the Determine Squad IDs button.
 This is done by selecting all AI spawn points in the level, then simply clicking the Determine Squad IDs button.
 This will assign consecutive squad IDs to each detected group of AI spawns.
 
