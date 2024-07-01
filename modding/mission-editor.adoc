@@ -175,7 +175,7 @@ For example, you may choose a variant name like “Sniper Heavy”, which will t
 
 For co-op modes, use the tag “coop”. For pvp modes, use the tags “pvp” and “team”. This will help your mission show up in the right place. [.underline]#If you do not add any tags, your mission will not appear in any menus#. You might only consider picking screenshots if you are making a variant mission using only part of the map, so it is only relevant to some of the available screenshots; otherwise just leave blank.
 
-[.underline]#Names of Mission Objects#
+==== Names of Mission Objects
 
 *Summary*: _Press F2 to rename mission objects.
 Use the format THINGY_INSTANCE_1, THINGY_INSTANCE_2 and so on._
@@ -226,8 +226,7 @@ These options are generally self-explanatory.
 Exit will return to the current mission, although after editing a mission and/or loading new missions in the editor, the current mission may become corrupted, so it is best to go back to the main menu and reload the mission if you want to play on.
 
 Validate Level will run a game mode validation script (if present/defined) to give you information on any problems with the level.
-This validation cannot generally detect problems with AI spawn point, guard point or patrol point placement within the level, but it can detect more basic problems with missing actors, mismatching metadata, and so on.[.underline]# +
-#
+This validation cannot generally detect problems with AI spawn point, guard point or patrol point placement within the level, but it can detect more basic problems with missing actors, mismatching metadata, and so on.
 
 ==== Creating and saving a new mission
 
@@ -570,7 +569,7 @@ For gameplay purposes it is usually desired to have extraction zones located far
 
 In the example above, when this extraction point is active, the ‘Main Gate’ attacker insertion point (which is located nearby, and listed as a tag for the extraction point) will not be available to select on the ops board.
 
-[.underline]#Disabling spawn points#
+==== Disabling spawn points
 
 You can now also disable spawn points in the region of particular search locations (in case spawn points are particularly close) by putting the laptop search location/insertion point name as a tag on the attacker insertion point.
 If a tagged search location is chosen (whether or not it is the ‘true’ location) then all insertion points that have that insertion point name as a tag will be disabled.
@@ -708,7 +707,7 @@ Give each set of guard points the same group name (ideally leave as None).
 Go to the file menu and select Validate Level and deal with anything it mentions.
 Now you’re done, and make sure to save your mission.
 
-4.4 [.underline]#Setting up PvP missions: *Dynamic Take And Secure (DTAS)*#
+==== Setting up PvP missions: _Dynamic Take And Secure (DTAS)_
 
 *Game mode summary*: Red Team and Blue Team spawn in entirely random locations in the level (unknown to each other). The defending team has to place a flag which marks a capture zone.
 The attackers have to get at least two attackers into the zone to capture the area.
@@ -728,7 +727,7 @@ In simple terms: just load a completed terrorist hunt mission, change the script
 Go to the file menu and select Validate Level and deal with anything it mentions.
 Now you’re done, and make sure to save your mission.
 
-4.5 [.underline]#Setting up PvP missions: *Hostage Rescue*#
+===== Setting up PvP missions: _Hostage Rescue_
 
 *Game mode summary*: Players join attacking and defending teams.
 Team auto-balancing will try to maintain two more players in the attacking team compared to the defending team.
