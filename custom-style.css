@@ -10,6 +10,12 @@
   font-weight: 700;
 }
 
+/* make bullet points look normal */
+.v-main .contents ul:not(.tabset-tabs):not(.contains-task-list)>li:before {
+  content: "•";
+  color: inherit;
+}
+
 /* fix abstract being displayed like a regular blockquote */
 .contents div.abstract blockquote,
 .contents div.abstract blockquote:before {
