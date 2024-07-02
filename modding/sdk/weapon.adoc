@@ -42,11 +42,11 @@ image::/images/sdk/weapon/weapon_railproperties.jpg[weapon_railproperties.jpg,30
 
 These is the minimum list of components that are necessary for a working weapon in GROUND BRANCH:
 
-* link:/modding/sdk/weapon/component-barrel[Barrel] (GBBarrel)
+* link:/modding/sdk/weapon/component-barrel[Barrel] (GBBarrelComponent)
 
-* link:/modding/sdk/weapon/component-magwell[Magwell] (GBInternalMagazine)
+* link:/modding/sdk/weapon/component-magwell[Magwell] (GBExternalMagazineComponent)
 
-* link:/modding/sdk/weapon/component-eject[Ejection port] (GBEject) 
+* link:/modding/sdk/weapon/component-eject[Ejection port] (GBEjectComponent) 
 
 See link:/modding/sdk/weapon/ground-branch-weapon-components[here] for a list of all of the GROUND BRANCH custom weapon blueprint components, including rails, ejection ports, magwells, barrels and (built in) sights.
 
