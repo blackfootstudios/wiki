@@ -20,4 +20,8 @@ First set the model up in stager, then change the background color to R:0 G:255 
 
 Then apply a B&W filter over the picture and add the Brightness/Contrast filter and just change the brightness to 100 or thereabouts, so it looks similar to the other weapon icons.
 
-. *
+. *Other suggestions*
+
+You could use Blender, Photopea or other programs for setting up the model.
+
+It is also possible just to screenshot the item inside the Mod Kit editor, but you might want to apply some post-processing similar to what is described above.
