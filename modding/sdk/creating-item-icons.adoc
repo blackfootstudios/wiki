@@ -1,3 +1,23 @@
-Some suggestions for making icons of in-game items
+### Technical specifications for weapon icons
 
-e.g. weapons
+.Weapon icon for HK416D
+image::/images/sdk/weapon/weapon_icon.jpg[weapon_icon.jpg]
+
+The convention is that your weapon icon is called ICON_<ItemBPName> and loaded into the same directory as your item blueprint.
+
+The icons should be 512x256 resolution, and Compression Settings should be set to UserInterface2D. Texture Group (in Level Of Detail section) should be set to UI.
+
+.Level Of Detail section for HK416D weapon icon
+image::/images/sdk/weapon/weapon_iconlodsettings.jpg[weapon_iconlodsettings.jpg]
+
+### How to make the icons
+
+No program or method is officially endorsed by BlackFoot Studios, but here are some icon creation methods suggested by modders:
+
+. *Substance Stager and Photoshop*
+
+First set the model up in stager, then change the background color to R:0 G:255 B:0, so it's easy to go into Photoshop and magic erase the green screen for the transparent png image.
+
+Then apply a B&W filter over the picture and add the Brightness/Contrast filter and just change the brightness to 100 or thereabouts, so it looks similar to the other weapon icons.
+
+. *
