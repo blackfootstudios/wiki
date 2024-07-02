@@ -1,5 +1,5 @@
 // Lua API
-// enable section numbers
+// enable section numbers.
 :sectnums:
 :toc: macro
 
@@ -175,13 +175,13 @@ local <modulename> = {
 
 require ("<libraryname>")
 -- bring in shared lua library functions
-  
+
 function <modulename>.Function1()
 end
 function <modulename>.Function2()
 end
 ...
-  
+
 return <modulename>
 ----
 
@@ -564,7 +564,7 @@ PlayerScoreTypes = {
         Score = 1,
         OneOff = true,
         Description = "Got last kill of the round",
-    },        
+    },
     InRangeOfKill = {
         Score = 1,
         OneOff = false,
@@ -633,7 +633,7 @@ TeamScoreTypes = {
         Score = -3,
         OneOff = true,
         Description = "A defender was outside range of flag when captured",
-    },    
+    },
 },
 ----
 
@@ -716,11 +716,11 @@ function uplink:PostInit()
     -- Set initial defending & attacking teams.
     self.DefendingTeam = self.PlayerTeams.Red
     self.AttackingTeam = self.PlayerTeams.Blue
-    
+
     gamemode.SetPlayerTeamRole(self.DefendingTeam.TeamId, "Defending")
     gamemode.SetPlayerTeamRole(self.AttackingTeam.TeamId, "Attacking")
 end
-        
+
 ----
 
 In this example, team roles (attacking / defending) are set up at the start of the game.
@@ -746,13 +746,13 @@ function intelretrieval:OnRoundStageSet(RoundStage)
             self:RandomiseObjectives()
         end
         self.CompletedARound = false
-    
+
     elseif RoundStage == "PreRoundWait" then
-        self:SpawnOpFor()                
+        self:SpawnOpFor()
         gamemode.SetDefaultRoundStageTime("InProgress", self.Settings.RoundTime.Value)
         -- need to update this as ops board setting may have changed
         -- have to do this before RoundStage InProgress to be effective
-        
+
         -- set up watch stuff
         if self.Settings.ProximityAlert.Value == 1 and self.RandomLaptopIndex ~= nil then
             --print("Setting up watch proximity alert data")
@@ -765,9 +765,9 @@ function intelretrieval:OnRoundStageSet(RoundStage)
         end
         -- watch is set up to create a proximity alert when within
         -- <LaptopProximityAlertRadius> m of the laptop
-        
+
     elseif RoundStage == "PostRoundWait" then
-        self.CompletedARound = true    
+        self.CompletedARound = true
     end
 end
 ----
@@ -836,7 +836,7 @@ function intelretrieval:PlayerReadyStatusChanged(PlayerState, ReadyStatus)
     if ReadyStatus ~= "DeclaredReady" then
         timer.Set("CheckReadyDown", self, self.CheckReadyDownTimer, 0.1, false)
     end
-    
+
     if ReadyStatus == "WaitingToReadyUp"
     and gamemode.GetRoundStage() == "PreRoundWait"
     and gamemode.PrepLatecomer(PlayerState) then
@@ -867,7 +867,7 @@ function intelretrieval:PlayerReadyStatusChanged(PlayerState, ReadyStatus)
     if ReadyStatus ~= "DeclaredReady" then
         timer.Set("CheckReadyDown", self, self.CheckReadyDownTimer, 0.1, false)
     end
-    
+
     if ReadyStatus == "WaitingToReadyUp"
     and gamemode.GetRoundStage() == "PreRoundWait"
     and gamemode.PrepLatecomer(PlayerState) then
@@ -877,9 +877,9 @@ end
 function intelretrieval:CheckReadyUpTimer()
     if gamemode.GetRoundStage() == "WaitingForReady" or gamemode.GetRoundStage() == "ReadyCountdown" then
         local ReadyPlayerTeamCounts = gamemode.GetReadyPlayerTeamCounts(true)
-    
+
         local BluForReady = ReadyPlayerTeamCounts[self.PlayerTeams.BluFor.TeamId]
-    
+
         if BluForReady >= gamemode.GetPlayerCount(true) then
             gamemode.SetRoundStage("PreRoundWait")
         elseif BluForReady > 0 then
@@ -890,7 +890,7 @@ end
 function intelretrieval:CheckReadyDownTimer()
     if gamemode.GetRoundStage() == "ReadyCountdown" then
         local ReadyPlayerTeamCounts = gamemode.GetReadyPlayerTeamCounts(true)
-    
+
         if ReadyPlayerTeamCounts[self.PlayerTeams.BluFor.TeamId] < 1 then
             gamemode.SetRoundStage("WaitingForReady")
         end
@@ -913,7 +913,7 @@ function teamelimination:PlayerReadyStatusChanged(PlayerState, ReadyStatus)
     if ReadyStatus ~= "DeclaredReady" then
         timer.Set("CheckReadyDown", self, self.CheckReadyDownTimer, 0.1, false)
     end
-    
+
     if ReadyStatus == "WaitingToReadyUp"
     and gamemode.GetRoundStage() == "PreRoundWait"
     and gamemode.PrepLatecomer(PlayerState) then
@@ -1019,15 +1019,15 @@ end
 function deathmatch:GetBestSpawn()
     local StartsToConsider = {}
     local BestStart = nil
-    
+
     for i, PlayerStart in ipairs(self.PlayerStarts) do
         if not self:WasRecentlyUsed(PlayerStart) then
             table.insert(StartsToConsider, PlayerStart)
         end
     end
-    
+
     local BestScore = 0
-    
+
     for i = 1, #StartsToConsider do
         local Score = self:RateStart(StartsToConsider[i])
         if Score > BestScore then
@@ -1035,18 +1035,18 @@ function deathmatch:GetBestSpawn()
             BestStart = StartsToConsider[i]
         end
     end
-    
+
     if BestStart == nil then
         BestStart = StartsToConsider[umath.random(#StartsToConsider)]
     end
-    
+
     if BestStart ~= nil then
         table.insert(self.RecentlyUsedPlayerStarts, BestStart)
         if #self.RecentlyUsedPlayerStarts > self.MaxRecentlyUsedPlayerStarts then
             table.remove(self.RecentlyUsedPlayerStarts, 1)
         end
     end
-    
+
     return BestStart
 end
 ----
@@ -1086,7 +1086,7 @@ function uplink:OnCharacterDied(Character, CharacterController, KillerController
     or gamemode.GetRoundStage() == "RedDefenderSetup" then
         if CharacterController ~= nil then
             player.SetLives(CharacterController, player.GetLives(CharacterController) - 1)
-            
+
             local PlayersWithLives = gamemode.GetPlayerListByLives(255, 1, false)
             if #PlayersWithLives == 0 then
                 self:CheckEndRoundTimer()
@@ -1104,7 +1104,7 @@ In this case, as is typical, the actual checks for round end are deferred with a
 ----
 function uplink:CheckEndRoundTimer()
     local AttackersWithLives = gamemode.GetPlayerListByLives(self.AttackingTeam.TeamId, 1, false)
-    
+
     if #AttackersWithLives == 0 then
         local DefendersWithLives = gamemode.GetPlayerListByLives(self.DefendingTeam.TeamId, 1, false)
         if #DefendersWithLives > 0 then
@@ -1231,7 +1231,7 @@ It returns a table (which may be empty, indicating no errors detected) with a li
 function intelretrievalvalidate:ValidateLevel()
     -- new feature to help mission editor validate levels
     local ErrorsFound = {}
-    
+
     local AllSpawns = gameplaystatics.GetAllActorsOfClass('GroundBranch.GBAISpawnPoint')
     if #AllSpawns == 0 then
         table.insert(ErrorsFound, "No AI spawns found")
@@ -1261,7 +1261,7 @@ if self.CurrentHostage ~= nil and PlayerState == self.CurrentHostage and self.Ap
      self.ApplyHostageLoadout = false
 return "Hostage"
 end
-    
+
 -- use team based loadout
 return nil
 end
@@ -1720,7 +1720,7 @@ In this following extract from the DTAS game mode, when the custom round stage `
 ----
 elseif RoundStage == "DTASSetup" then
     self:SetupRoundDTAS()
-    -- ...        
+    -- ...
     gamemode.SetRoundStageTime(self.Settings.FlagPlacementTime.Value + 2.0)
         -- add a bit to the time as a bit gets eaten up
     gamemode.SetDefaultRoundStageTime("InProgress", self.Settings.RoundTime.Value)
@@ -1781,7 +1781,7 @@ Example from the Uplink game mode:
 [source,lua]
 ----
 function uplink:PlayerReadyStatusChanged(PlayerState, ReadyStatus)
-    -- ...    
+    -- ...
     if ReadyStatus == "WaitingToReadyUp" and gamemode.GetRoundStage() == "PreRoundWait" then
         if actor.GetTeamId(PlayerState) == self.DefendingTeam.TeamId then
             if self.RandomDefenderInsertionPoint ~= nil then
@@ -1835,12 +1835,12 @@ Example from the Uplink game mode, sending all players an appropriate message ab
 ----
     if self.ShowAutoSwapMessage == true then
         self.ShowAutoSwapMessage = false
-        
+
         local Attackers = gamemode.GetPlayerList(self.AttackingTeam.TeamId, false)
         for i = 1, #Attackers do
             player.ShowGameMessage(Attackers[i], "SwapAttacking", "Center", 10.0)
         end
-        
+
         local Defenders = gamemode.GetPlayerList(self.DefendingTeam.TeamId, false)
         for i = 1, #Defenders do
             player.ShowGameMessage(Defenders[i], "SwapDefending", "Center", 10.0)
@@ -1889,7 +1889,7 @@ function intelretrieval:PlayerReadyStatusChanged(PlayerState, ReadyStatus)
     if ReadyStatus ~= "DeclaredReady" then
         timer.Set("CheckReadyDown", self, self.CheckReadyDownTimer, 0.1, false)
     end
-    
+
     if ReadyStatus == "WaitingToReadyUp"
     and gamemode.GetRoundStage() == "PreRoundWait"
     and gamemode.PrepLatecomer(PlayerState) then
@@ -1963,7 +1963,7 @@ for i = 1, #self.ExtractionPoints do
     local Location = actor.GetLocation(self.ExtractionPoints[i])
     local ExtractionMarkerName = self:GetModifierTextForObjective( self.ExtractionPoints[i] ) .. "EXTRACTION"
     -- allow the possibility of down chevrons, up chevrons, level numbers, etc
-                
+
     self.ExtractionPointMarkers[i] = gamemode.AddObjectiveMarker(Location, self.PlayerTeams.BluFor.TeamId, ExtractionMarkerName, "Extraction", false)
 end
 ----
@@ -2127,13 +2127,13 @@ Here is a complicated example from the DTAS game mode of awarding team and playe
 if KillerTeam ~= KilledTeam then
     self:AwardPlayerScore( KillerPlayerState, "Killed" )
     self:AwardTeamScore( KillerTeam, "Killed" )
-                        
+
     -- award score to everyone in proximity of killer
     local KillerTeamList = gamemode.GetPlayerListByLives(KillerTeam, 1, true)
     -- list of player states
-                        
+
     local SomeoneWasInRange = false
-                        
+
     for _, Player in ipairs(KillerTeamList) do
         if Player ~= KillerPlayerState then
             if self:GetDistanceBetweenPlayers(Player, KillerPlayerState, false) <= self.ScoringKillProximity then
@@ -2142,11 +2142,11 @@ if KillerTeam ~= KilledTeam then
             end
         end
     end
-                        
+
     if SomeoneWasInRange then
         self:AwardTeamScore( KillerTeam, "InRangeOfKill" )
     end
-            
+
     self.LastKiller = KillerPlayerState
 else
     -- suicides count as TKs
@@ -2193,7 +2193,7 @@ if self.CompletedARound and self.Settings.AutoSwap.Value ~= 0 then
         self.DefendingTeam = self.PlayerTeams.Blue
         self.AttackingTeam = self.PlayerTeams.Red
     end
-    
+
     gamemode.SetPlayerTeamRole(self.DefendingTeam.TeamId, "Defending")
     gamemode.SetPlayerTeamRole(self.AttackingTeam.TeamId, "Attacking")
     -- ...
@@ -2227,7 +2227,7 @@ FormatTable.FormatString = "XKilledY"
 FormatTable.killername = KillerName
 FormatTable.killedname = KilledName
 local KilledText = gamemode.FormatString(FormatTable)
-        
+
 gamemode.BroadcastGameMessage(KilledText, "Lower", 3.0)
 ----
 
@@ -2410,7 +2410,7 @@ for i = 1, #LivingPlayers do
     if DistSq < self.TooCloseSq then
         return -10.0
     end
-    
+
     if DistSq < ClosestDistSq then
         ClosestDistSq = DistSq
     end
@@ -2486,7 +2486,7 @@ for _,GuardPoint in ipairs(AllGuardPoints) do
         if GuardPointNames[GuardPointName] == nil then
             GuardPointNames[GuardPointName] = false
             GuardPointCount = GuardPointCount + 1
-        end    
+        end
     end
 end
 ----
@@ -2560,7 +2560,7 @@ if TotalPlayers < self.Settings.MinimumPlayerCount.Value and self.NumAIToSpawn>0
     local SpawnTransform = {}
     SpawnTransform.Location = actor.GetLocation( BestPlayerStart )
     SpawnTransform.Rotation = actor.GetRotation( BestPlayerStart )
-    
+
     local VirtualAISpawnPoint = self.AISpawnPoints[ self.NextSpawnIndex ]
     self.NextSpawnIndex = self.NextSpawnIndex + 1
     if self.NextSpawnIndex > #self.AISpawnPoints then
@@ -2860,17 +2860,17 @@ An example from the Deathmatch game mode, which tracks how many kills a player h
 local NumberKills = player.GetPlayerStat(KillerPlayerState, "Kills")
 if NumberKills ~= nil then
     local ActualFragLimit = self.FragLimitValues[ (self.Settings.FragLimit.Value)+1 ]
-                        
+
     if NumberKills >= ActualFragLimit then
         timer.Clear("DisplayFrags")
         self:DisplayFragsTimer()
         -- update with final kill score
-    
+
         gamemode.AddGameStat("Result=Team" .. self.PlayerTeams.Deathmatch.TeamId)
         gamemode.AddGameStat("Summary=ReachedFragLimit")
         gamemode.AddGameStat("CompleteObjectives=KillEveryone")
         gamemode.SetRoundStage("PostRoundWait")
-        
+
         player.AwardPlayerScore( KillerPlayerState, "WonRound", 1 )
     end
 end
@@ -3007,7 +3007,7 @@ if #self.DefenderInsertionPoints > 1 then
     while (NewDefenderIndex == self.DefenderIndex) do
         NewDefenderIndex = umath.random(#self.DefenderInsertionPoints)
     end
-    
+
     self.DefenderIndex = NewDefenderIndex
 else
     self.DefenderIndex = 1
@@ -3063,13 +3063,13 @@ inventory.RemoveItemTypesFromLoadoutTable(ItemsToRemove, Loadout, SplitItemField
 -- set hostage pants, boots and shirt from custom kit - replace kit defaults
 local ClothingKit = inventory.GetCustomKitAsTable("hostage", SplitItemField)
 -- this searches game CustomKit folder in current mod then base game
-    
+
 if ClothingKit.Data ~= nil then
     local MoreItemsToRemove = { "Pants", "Shirt", "Footwear" }
     inventory.RemoveItemTypesFromLoadoutTable(MoreItemsToRemove, Loadout, SplitItemField)
     inventory.AddCustomKitTableToLoadoutTable(ClothingKit, Loadout, SplitItemField)
 end
-    
+
 -- now add flexcuffs:
 local Cuffs = { ItemType = "Equipment", ItemValue = "BP_Restraints_FlexCuffs" }
 table.insert(Loadout.Data, Cuffs)
