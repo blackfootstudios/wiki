@@ -126,8 +126,10 @@ image::/images/sdk/weapon/weapon_mesh_properties.jpg[Screenshot,60%]
 
 The more specific weapon blueprints listed link:/modding/sdk/master-bps-weapons[here] will usually have a more detailed component list. Regardless, the firearm components that you can add (and in some cases have to add) to a custom blueprint include:
 
-- `GBBarrel` ('Barrel') component: link:/modding/sdk/weapon/component-barrel[barrel component]
-- `GBExternalMagazine` ('MagWell') component: link:/modding/sdk/weapon/component-magwell[magwell component]
-- `GBEject` ('EjectionPort') component: link:/modding/sdk/weapon/component-eject[eject component]
-- `GBSight` ('Sight') component: link:/modding/sdk/weapon/component-sight[sight component]
-- `GBRail` ('Rail') component: link:/modding/sdk/weapon/component-rail[rail component]
+- `GBBarrelComponent` ('Barrel'): link:/modding/sdk/weapon/component-barrel[barrel component]
+- `GBExternalMagazineComponent` ('MagWell'): link:/modding/sdk/weapon/component-magwell[magwell component]
+- `GBInternalMagazineComponent`: @
+- `GBEjectComponent` ('EjectionPort'): link:/modding/sdk/weapon/component-eject[eject component]
+- `GBSightComponent` ('Sight'): link:/modding/sdk/weapon/component-sight[sight component]
+- `GBRailComponent` ('Rail'): link:/modding/sdk/weapon/component-rail[rail component]
+
