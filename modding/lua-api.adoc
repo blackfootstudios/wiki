@@ -138,7 +138,7 @@ You can see that game mode scripts refer to their '`member variables`' (defined 
 ----
 math.sin() / math.cos() -- trig operations are in radians
 math.deg() / math.rad()
-math.pi
+math.pi()
 math.min() / math.max()
 math.abs()
 math.floor()
@@ -311,6 +311,7 @@ local defuse = {
     UseReadyRoom = true,
     UseRounds = true,
     -- ...
+}
 ----
 
 Default server game rules are usually defined in the `+Server.ini+` server config file:
@@ -396,7 +397,7 @@ Each game mode may provide a description of itself for display on the Lone Wolf 
 The current convention is to have a prefix of `+[Solo/Co-op]+` for PvE/co-op modes, and `+[PvP]+` for PvP modes.
 This text is now located in the game mode string table (see above), using the keyword `+gamemode_description_<GameModeName>+`, e.g. in GameMode.csv:
 
-[source,lua]
+[source,csv]
 ----
 "gamemode_deathmatch","Deathmatch",""
 "gamemode_description_deathmatch","[PvP] Fight for the most kills in a free-for-all battle with unlimited respawns.",""
@@ -1200,7 +1201,7 @@ function intelretrieval:OnMissionSettingsChanged(ChangedSettingsTable)
 end
 ----
 
-=== *OnRandomiseObjectives ()* [.new]#New in v1034#
+=== OnRandomiseObjectives () [.new]#New in v1034#
 
 This function is called when a player clicks the new randomise objectives button on the Ops Board, and requests that the game mode re-roll the random settings (such as intel locations, team spawns, and so on).
 
@@ -1596,6 +1597,7 @@ These functions typically reproduce various Blueprint nodes in UE4.
 
 Function list:
 
+[#gameplaystaticsGetAllActorsOfClass]
 ==== gameplaystatics.GetAllActorsOfClass ( Class )
 
 Returns an array of pointers to actors (`+AActor*+`) of class [.var]#Class#.
@@ -1609,6 +1611,7 @@ Example:
 local AllInsertionPoints = gameplaystatics.GetAllActorsOfClass('GroundBranch.GBInsertionPoint')
 ----
 
+[#gameplaystaticsGetAllActorsWithTag]
 ==== gameplaystatics.GetAllActorsWithTag ( Tag )
 
 Returns an array of pointers to actors (`+AActor*+`) having a tag equal to [.var]#Tag#.
@@ -1616,17 +1619,20 @@ Returns an array of pointers to actors (`+AActor*+`) having a tag equal to [.var
 Tags may be of the form "`Defenders`" or "`Attackers`", for example.
 They are often used to label/identify particular spawns or other game objects within the same class of object.
 
+[#gameplaystaticsGetAllActorsOfClassWithTag]
 ==== gameplaystatics.GetAllActorsOfClassWithTag ( Class, Tag )
 
 Returns an array of pointers to actors (`+AActor*+`) of class [.var]#Class# and having a tag equal to [.var]#Tag#.
 
 This is essentially a combination of GetAllActorsOfClass() and GetAllActorsWithTag() – see above.
 
+[#gameplaystaticsGetValidatedSpawnLocation]
 ==== gameplaystatics.GetValidatedSpawnLocation ( SpawnLocation, CapsuleHalfHeight, CapsuleRadius )
 
 This function tries to find a validated spawn location based on a proposed spawn location [.var]#SpawnLocation#. It returns a table with two fields: `+bValid+` (`+true+` if a valid location was found, `+false+` otherwise) and `+ValidatedSpawnLocation+` with the location for the spawn.
 This validated location can be used in conjunction with the `+GetSpawnInfo()+` function (see section 3.10 above).
 
+[#gameplaystaticsPlaceItemAt]
 ==== gameplaystatics.PlaceItemAt ( ItemClass, Location, Rotation )
 
 This function places an item of class [.var]#ItemClass# at the specified location and rotation. `+Location+` is expected to be a table containing fields `+x+`, `+y+`, `+z+`, and `+Rotation+` is expected to be a table containing fields `+yaw+`, `+pitch+` and `+roll+`. This function is really a special case for placing the flag at the end of the initial flag placement round in the DTAS game mode.
@@ -1634,6 +1640,7 @@ This function places an item of class [.var]#ItemClass# at the specified locatio
 Otherwise there does not exist a mechanism for tracking and removing any items placed with this function, so it is of limited/no current use for other game modes.
 Certainly, some actions/items currently work using this function, but it is not advised and may not remain backwards-compatible.
 
+[#gameplaystaticsTraceVisible]
 ==== gameplaystatics.TraceVisible( StartLocation, EndLocation, IgnoreActors, Debug ) [.new]#New in v1034#
 
 This function does a simple visibility trace from one point to another.
@@ -1641,16 +1648,19 @@ It returns a USERDATA reference to any actor that was hit (if the trace fails), 
 It is currently used by game mode mission editor validation functions.
 You should take care not to run traces too often, or performance may be significantly impacted.
 
+[#gameplaystaticsGetPatrolRouteLinkedActors]
 ==== gameplaystatics.GetPatrolRouteLinkedActors( PatrolRouteActor ) [.new]#New in v1034#
 
 This function returns a Table of USERDATA references to patrol route actors that are linked to by the specified patrol route actor.
 It is used by game mode validators to check visibility between adjacent patrol routes and suchlike.
 
+[#gameplaystaticsDisplayDebugSphere]
 ==== gameplaystatics.DisplayDebugSphere( Location, Radius, Duration ) [.new]#New in v1034#
 
 This function draws a debug sphere with the specified radius at the specified location for the specified duration (in seconds). It is used to debug game modes.
 It is not intended to be used in release versions of game modes.
 
+[#gameplaystaticsDisplayDebugLine]
 ==== gameplaystatics.DisplayDebugLine( StartLocation, EndLocation, Duration ) [.new]#New in v1034#
 
 This function draws a debug line from the specified start location to the specified end location for the specified duration.
@@ -1661,6 +1671,7 @@ This library handles interactions between the game mode script and the GROUND BR
 
 Function list:
 
+[#gamemodeGetScript]
 ==== gamemode.GetScript ()
 
 Returns a reference to the current game mode script (which is a Lua _table_ type). This is typically used in scripts for game items that may be present in a game mode (but are not part of it), such as capturable laptops.
@@ -1673,6 +1684,7 @@ if actor.HasTag(self.Object, gamemode.GetScript().LaptopTag) then
 Result.Equip = true
 ----
 
+[#gamemodeGetRoundStage]
 ==== gamemode.GetRoundStage ()
 
 Returns a string describing the current round stage.
@@ -1686,6 +1698,7 @@ if gamemode.GetRoundStage() == "WaitingForReady" or gamemode.GetRoundStage() == 
     local ReadyPlayerTeamCounts = gamemode.GetReadyPlayerTeamCounts(false)
 ----
 
+[#gamemodeSetRoundStage]
 ==== gamemode.SetRoundStage ( RoundStageName )
 
 Sets the current round stage to the supplied string.
@@ -1699,16 +1712,19 @@ Example:
 gamemode.SetRoundStage("WaitingForReady")
 ----
 
+[#gamemodeGetRoundStageTime]
 ==== gamemode.GetRoundStageTime ()
 
 Returns a (float) time equal to the number of seconds remaining in a round stage.
 This timer is typically used for the ready up countdown after a player selects a spawn point (typically 60 seconds), and also for the round timer (typically many minutes) during the game proper.
 
+[#gamemodeSetRoundStageTime]
 ==== gamemode.SetRoundStageTime ( RoundStageTime )
 
 Sets the round stage time to the supplied number of seconds, and begins the timer.
 This works for custom round stages, but for standard round stages (in particular `+PreRoundWait+` and `+InProgress+` stages) you will need to use the SetDefaultRoundStageTime() function below, before the start of the relevant round stage.
 
+[#gamemodeSetDefaultRoundStageTime]
 ==== gamemode.SetDefaultRoundStageTime ( RoundStageName, NewTimeLimit )
 
 This function sets the default length of the specified round stage (for standard round stages). All of the stages have limits specified in seconds, except for the InProgress stage which has a time set in minutes.
@@ -1726,11 +1742,13 @@ elseif RoundStage == "DTASSetup" then
     gamemode.SetDefaultRoundStageTime("InProgress", self.Settings.RoundTime.Value)
 ----
 
+[#gamemodeClearRoundStageTime]
 ==== gamemode.ClearRoundStageTime ()
 
 This function resets the round stage time to zero, and prevents the OnRoundStageTimerElapsed() function from being called.
 The timer can be restarted (with a specified new time) using the SetRoundStageTime() function.
 
+[#gamemodeSetTeamAttitude]
 ==== gamemode.SetTeamAttitude ( Team, OtherTeam, Attitude )
 
 This function sets the attitude of one (AI) team [.var]#Team# towards another team [.var]#OtherTeam# (e.g. a player team). The attitude parameter [.var]#Attitude# is a string selected from `+Friendly+`, `+Neutral+` and `+Hostile+`. AI characters and AI teams default to hostile towards individual players and player teams.
@@ -1738,6 +1756,7 @@ Reportedly the function is not case sensitive and these exact strings must be us
 This only takes effect before AI is spawned; it does not (it is believed) currently affect existing AI.
 It may not work terribly well in any case - it is not really used by official modes and is not well tested.
 
+[#gamemodeBroadcastGameMessage]
 ==== gamemode.BroadcastGameMessage ( GameMessageId, Type, Duration )
 
 This function sends the message [.var]#GameMessageId# to every human player alive in the play area.
@@ -1750,26 +1769,31 @@ Possible [.var]#Types# (corresponding to screen locations) are: `+Engine+` (top 
 
 `+Player.ShowGameMessage()+` can be used to send messages to individual players (see section 6.5.13 below).
 
+[#gamemodeSendEveryoneToReadyRoom]
 ==== gamemode.SendEveryoneToReadyRoom ()
 
 This function does what it says on the tin.
 It is not usually called, because the default game mode handling will send everyone to the ready room at the end of the round after the After Action Report.
 
+[#gamemodeMakeEveryoneSpectate]
 ==== gamemode.MakeEveryoneSpectate ()
 
 This function makes all players enter spectate mode.
 It is only currently used for game modes which do not use a ready room, which is to say none of them (officially anyway).
 
+[#gamemodeSendEveryoneToPlayArea]
 ==== gamemode.SendEveryoneToPlayArea ()
 
 This function sends all players who have a DeclaredReady or WaitingToReadyUp status (see section 2.2.1 above) to the play area (typically, to start a round). It is not normally required to be called, because this happens during the normal game mode processing, when the `+PreRoundWait+` round stage is initiated.
 
+[#gamemodeEnterReadyRoom]
 ==== gamemode.EnterReadyRoom ( Target )
 
 This function sends a specified player to the Ready Room.
 The target [.var]#Target# is a player state.
 A player state can be obtained from player.GetPlayerState() (see Section 6.5.7 below).
 
+[#gamemodeEnterPlayArea]
 ==== gamemode.EnterPlayArea ( Target )
 
 This function sends a specified player to the play area.
@@ -1795,6 +1819,7 @@ function uplink:PlayerReadyStatusChanged(PlayerState, ReadyStatus)
 end
 ----
 
+[#gamemodeGetPlayerCount]
 ==== gamemode.GetPlayerCount ( ExcludeBots )
 
 This function returns an integer equal to the number of players on the server (excluding bots or not, in dependence on the Boolean [.var]#ExcludeBots#). It is typically used to determine when all players have readied up (in which case the countdown is aborted and everyone proceeds directly to the round proper). Please note that bots are not currently used (except via console command) and AI (enemies) are distinct from bots and not included in this count.
@@ -1811,6 +1836,7 @@ if DefendersReady > 0 and AttackersReady > 0 then
 end
 ----
 
+[#gamemodeGetReadyPlayerTeamCounts]
 ==== gamemode.GetReadyPlayerTeamCounts ( ExcludeBots )
 
 This function returns a table (array) including totals of ready players in each team excluding bots or not in dependence on the Boolean [.var]#ExcludeBots#. Typically if all team entries are non-zero (that is, at least one person from each team has selected an insertion point), the pre-round countdown will begin.
@@ -1824,6 +1850,7 @@ local DefendersReady = ReadyPlayerTeamCounts[self.DefendingTeamId]
 local AttackersReady = ReadyPlayerTeamCounts[self.AttackingTeamId]
 ----
 
+[#gamemodeGetPlayerList]
 ==== gamemode.GetPlayerList ( TeamId, ExcludeBots )
 
 This function returns a table (array) of players (corresponding to C++ type `+AGBPlayerState*+`) matching the criteria of team Id [.var]#TeamId# and human or not [.var]#ExcludeBots#. *This selects all players on a team, whether or not in the play area* (excepting spectators). This is not usually what you want in game modes.
@@ -1848,6 +1875,7 @@ Example from the Uplink game mode, sending all players an appropriate message ab
     end
 ----
 
+[#gamemodeGetPlayerListByLives]
 ==== gamemode.GetPlayerListByLives ( TeamId, MinLives, ExcludeBots )
 
 This function returns a table (array) of players (corresponding to C++ type `+AGBPlayerState*+`) matching the criteria of team Id [.var]#TeamId# and human or not [.var]#ExcludeBots#, and having a minimum number of lives [.var]#MinLives#. This selects all players on a team, also filtering out to select only players with a Readied-up status of `+DeclaredReady+`, only players with Ready Room status of `+InPlayArea+`, and only non-spectators.
@@ -1869,11 +1897,13 @@ function intelretrieval:CheckBluForCountTimer()
 end
 ----
 
+[#gamemodeGetBestLateComerInsertionPoint]
 ==== gamemode.GetBestLateComerInsertionPoint ( Target )
 
 Returns the insertion point (equivalent to C++ type `+AGBInsertionPoint*+`) that is most appropriate for a late-joining player.
 Typically players can only join a round in progress during the initial seconds in the `+PreRoundWait+` period.
 
+[#gamemodePrepLatecomer]
 ==== gamemode.PrepLatecomer ( Target )
 
 This function should be called before sending a late-joining player into the play area.
@@ -1898,6 +1928,7 @@ function intelretrieval:PlayerReadyStatusChanged(PlayerState, ReadyStatus)
 end
 ----
 
+[#gamemodeAddGameObjective]
 ==== gamemode.AddGameObjective ( TeamId, Name, Type )
 
 This function adds a game objective having description [.var]#Name# (typically looked up in the string table) for the team specified with numeric Id [.var]#TeamId#. The type [.var]#Type# is set to 1 if the objective is a primary objective.
@@ -1931,20 +1962,24 @@ These objectives have the following entries in the `+intel.csv+` string table:
 .screenshot
 image::/images/lua-api/csv2.png[screenshot]
 
+[#gamemodeClearGameObjectives]
 ==== gamemode.ClearGameObjectives ()
 
 This function clears all current game objectives.
 The uplink game mode, for example, calls this function before each round, as the game objectives swap round each round for each team.
 
+[#gamemodeAddSearchLocation]
 ==== gamemode.AddSearchLocation ( TeamId, Name, Type )
 
 This function adds a text search location (e.g. "`Red House`", "`Deck 3`"), for modes similar to Intel Retrieval, to be displayed typically in conjunction with graphical search markers set using gamemode.AddObjectiveMarker below.
 The search location text is supplied as [.var]#Name# and the [.var]#Type# is 1 for primary, or 2 for secondary.
 
+[#gamemodeClearSearchLocations]
 ==== gamemode.ClearSearchLocations ()
 
 This function clears all currently set text search locations.
 
+[#gamemodeAddObjectiveMarker]
 ==== gamemode.AddObjectiveMarker ( Location, TeamId, Name, MarkerType, Active ) [.new]##
 
 This function creates an objective marker, which has no physical presence in the map but which marks a location for use with other functions such as `+player.ShowWorldPrompt()+` (see section 6.5.10 below). The location [.var]#Location# is a vector (a Lua _table_ type containing fields `+x+`, `+y+` and `+z+`). The team Id [.var]#TeamId# identifies the team that the marker is intended for (for example as an exfiltration marker), though all teams will see the marker.
@@ -1983,6 +2018,7 @@ end
 The extraction marker name can be '`[.underline]#marked up#`' with a special prefix to cause a special symbol to be displayed on the marker.
 Currently up and down arrows can be added with the prefixes `+(U)+` and `+(D)+`. Up and down staircase icons can be added with `+(u)+` and `+(d)+`, and floor/deck numbers can be added with `+(0)+` to `+(9)+` and special characters `+(-)+` and `+(=)+` for floor/decks -1 and -2.
 
+[#gamemodeAddGameStat]
 ==== gamemode.AddGameStat ( GameStat )
 
 This function adds a statistic for the After Action Report displayed at the end of a round. *You should only call this function once for each game stat, otherwise the result is at best undefined*.
@@ -2017,11 +2053,13 @@ function uplink:TargetCaptured()
 end
 ----
 
+[#gamemodeClearGameStats]
 ==== gamemode.ClearGameStats ()
 
 This function clears all set game statistics.
 It is not normally called by a game mode script as it is normally handled automatically.
 
+[#gamemodeGetInsertionPointName]
 ==== gamemode.GetInsertionPointName ( InsertionPoint )
 
 Returns the name of the specified insertion point.
@@ -2036,6 +2074,7 @@ local PossibleLaptops = self.GroupedLaptops[InsertionPointName]
 self.RandomLaptop = PossibleLaptops[umath.random(#PossibleLaptops)]
 ----
 
+[#gamemodeSetWatchMode]
 ==== gamemode.SetWatchMode ( WatchMode, DisplayBearing, DisplayDistance, DisplayUpDown, Measure2D )
 
 See section 2.9 above for an overview of the different watch modes.
@@ -2058,11 +2097,13 @@ gamemode.SetCaptureZone( 0, 0, 0, false )
 In this game mode, an approximate distance to the asset ("`Fox`") is shown, but no indication of whether the asset is higher or lower than the player, and no compass bearing is shown.
 The watch will have a blank display until the game mode starts providing intermittent asset locations using gamemode.SetObjectiveLocation() (see below at 6.2.32).
 
+[#gamemodeResetWatch]
 ==== gamemode.ResetWatch ()
 
 See section 2.9 above for an overview of the different watch modes.
 This function clears the current objective location (if appropriate) and clears any current alert level.
 
+[#gamemodeSetCaptureZone]
 ==== gamemode.SetCaptureZone ( CaptureRadius, CaptureHeight, DefenderTeamId, ZoneIsSpherical )
 
 This function sets the properties of the capture zone which is used by tactical watch to display in-range alerts.
@@ -2087,15 +2128,18 @@ if self.Settings.ProximityAlert.Value == 1 and self.RandomLaptopIndex ~= nil the
 end
 ----
 
+[#gamemodeSetObjectiveLocation]
 ==== gamemode.SetObjectiveLocation ( ObjectiveLocation )
 
 [.var]#ObjectiveLocation# is a vector (a Lua _table_ type containing fields `+x+`, `+y+` and `+z+`) which defines the location of an arbitrary thing (such as a static object, or a player, in which case repeated calls to SetObjectiveLocation will be required). This location is used by the tactical watch to determine ranges, bearings, and whether in-range alerts should be generated.
 Any updates to the objective location should be done sparingly (typically on a generous timer) so as not to generate too much network traffic keeping player watches updated.
 
+[#gamemodeSetCaptureState]
 ==== gamemode.SetCaptureState( IsCapturing )
 
 [.var]#IsCapturing# lets the tactical watch know whether any players who are in-range of the objective location (as set with gamemode.SetObjectiveLocation() above) should be given a Capturing alert (yes if `+true+`, no if `+false+`).
 
+[#gamemodeSetTeamScoreTypes]
 ==== gamemode.SetTeamScoreTypes( ScoreTypeTable )
 
 This function sets up scoring for teams, based on the supplied table.
@@ -2103,19 +2147,23 @@ See section 2.8 for an illustration of the team score table format (see also the
 A game mode can have team scores without player scores, or vice versa.
 Appropriate tabs on the After Action Report will be displayed only if relevant scores exist.
 
+[#gamemodeSetPlayerScoreTypes]
 ==== gamemode.SetPlayerScoreTypes ( ScoreTypeTable )
 
 This function sets up scoring for players, based on the supplied table.
 See section 2.7 for an illustration of the player score table format (see also the DTAS game mode). This must be done when a game mode initialises, and before any player scores are awarded.
 
+[#gamemodeResetTeamScores]
 ==== gamemode.ResetTeamScores ()
 
 This function sets all team scores to zero (but does not erase the score structure set by gamemode.SetTeamScoreTypes() ).
 
+[#gamemodeResetPlayerScores]
 ==== gamemode.ResetPlayerScores ()
 
 This function sets all player scores to zero (but does not erase the score structure set by gamemode.SetPlayerScoreTypes() ).
 
+[#gamemodeAwardTeamScore]
 ==== gamemode.AwardTeamScore ( TeamId, ScoreName, ScoreMultiple )
 
 This function awards [.var]#ScoreMultiple# times the score type [.var]#ScoreName# to the team with Id [.var]#TeamId#. The [.var]#ScoreMultiple# parameter is ignored if the `+OneOff+` property for the specified score type is `+true+`.
@@ -2155,6 +2203,7 @@ else
 end
 ----
 
+[#gamemodeSetGameModeName]
 ==== gamemode.SetGameModeName ( GameModeName )
 
 This function is a special case that informs the game of a change in the current game mode name.
@@ -2176,6 +2225,7 @@ gamemode.SetGameModeName(self.CurrentDTASGameMode)
 
 In this case the game mode name is set either to `+DTAS+` or `+FoxHunt+`, and the localisation file (see section 2.6 above) expands that to the proper full game mode name.
 
+[#gamemodeSetPlayerTeamRole]
 ==== gamemode.SetPlayerTeamRole ( TeamId, NewRole )
 
 This function is used to inform the game of the role of the specified team.
@@ -2199,10 +2249,12 @@ if self.CompletedARound and self.Settings.AutoSwap.Value ~= 0 then
     -- ...
 ----
 
+[#gamemodeSetRoundIsTemporaryGameMode]
 ==== gamemode.SetRoundIsTemporaryGameMode ( IsTemporary )
 
 This is another special case function which allows a game mode to specify that the current round is a '`temporary`' game mode and that the match stats for the '`normal`' game mode should not be updated as a result of the round (instead a simple win/loss is displayed on the After Action Report). This is used to allow DTAS to intersperse DTAS rounds with Fox Hunt rounds when numbers are low without affecting the match overall.
 
+[#gamemodeFormatString]
 ==== gamemode.FormatString ( FormatTable )
 
 The FormatString() function provides a temporary way to create customised/dynamic text using the string table localisation.
@@ -2231,24 +2283,29 @@ local KilledText = gamemode.FormatString(FormatTable)
 gamemode.BroadcastGameMessage(KilledText, "Lower", 3.0)
 ----
 
+[#gamemodeAddBots]
 ==== gamemode.AddBots ( Count, TeamId )
 
 This function adds the `+number+` type [.var]#Count# of bots to the play area (with total number of bots currently capped at 16) and places them in team [.var]#TeamId#. By default, bots are friendly towards members of their own team, and hostile towards others.
 The available bots are defined within the mission editor.
 Note the distinction between AI players (using AI spawns and not having player states associated with them) and Bots (essentially computer-controlled replicas of player pawns, which show up in player team lists and so on).
 
+[#gamemodeRemoveBots]
 ==== gamemode.RemoveBots ( Count, TeamId)
 
 This function removes the `+number+` type [.var]#Count# of bots from team [.var]#TeamId#, if possible.
 
+[#gamemodeFreezeBots]
 ==== gamemode.FreezeBots ( TeamId )
 
 This function freezes all bots in team [.var]#TeamId#.
 
+[#gamemodeUnFreezeBots]
 ==== gamemode.UnFreezeBots ( TeamId )
 
 This function unfreezes all bots in team [.var]#TeamId#.
 
+[#gamemodeBalanceTeams]
 ==== gamemode.BalanceTeams ( AttackingTeamId, DefendingTeamId, IdealTeamSizeDifference, BalancingAggression )
 
 This function centralises and expands the team balancing function previously included in the DTAS game mode.
@@ -2270,6 +2327,7 @@ Localisation tokens '`MovedToAttackTeam`', '`MovedToDefendTeam`', '`PlayersMoved
 
 Player movements between teams are tracked so that the algorithm will attempt to select players to move who have not recently been moved.
 
+[#gamemodeResetBalanceTeams]
 ==== gamemode.ResetBalanceTeams ( NewNumberOfMovementsToTrack, NewAutoBalanceLightTouchSetting )
 
 This function should be called before using the BalanceTeams() function (see above) to clear the past movements table, and set a couple of parameters that the balancing algorithm will use.
@@ -2278,33 +2336,39 @@ The `+NewAutoBalanceLightTouchSetting+` `+number+` (float) type specifies the ma
 
 Default values of `+6+` and `+0.19+` are recommended for the parameters.
 
+[#gamemodeClearVolunteerStatuses]
 ==== gamemode.ClearVolunteerStatuses () [.new]#New in v1034#
 
 This call clears all volunteer status for all players.
 Volunteer statuses can be set by players or admins in the player roster (accessed by the Escape key) by clicking on the hand up/hand down icon.
 See section for an overview of the volunteering function.
 
+[#gamemodeGetVolunteerList]
 ==== gamemode.GetVolunteerList ( TeamId, ExcludeBots ) [.new]#New in v1034#
 
 This call returns a list (can be zero length) of PlayerIDs of players who have volunteered, e.g. to be flag carrier.
 It checks all players on team [.var]#TeamId# (a TeamId of 255 will check all teams). This call doesn’t care about lives or whether the player is in the play area, because it is typically called before round start.
 Bots can be volunteered by admins.
 
+[#gamemodeGetVolunteerListByLives]
 ==== gamemode.GetVolunteerListByLives ( TeamId, MinLives, ExcludeBots ) [.new]#New in v1034#
 
 This is an analogue of GetPlayerListByLives() (see section 6.2.18) for volunteers.
 
+[#gamemodeGetVolunteerListByStatus]
 ==== gamemode.GetVolunteerListByStatus ( TeamId, ReadyStatus, ExcludeBots ) [.new]#New in v1034#
 
 This function returns a list of players of team [.var]#TeamId# (or 255 for all teams) having the specified ready status.
 See section 6.5.18 for a list of possible ready statuses.
 
+[#gamemodeGetCurrentMissionTags]
 ==== gamemode.GetCurrentMissionTags () [.new]#New in v1034#
 
 This function returns the current mission tags (e.g. '`PVP`', '`Coop`') for the currently loaded mission, as set in the mission editor.
 This is currently used for validating missions in the editor.
 It returns a Table including items of type String, e.g. \{ "`Pvp`", "`Coop`" }
 
+[#gamemodeSpawnEffectAtLocation]
 ==== gamemode.SpawnEffectAtLocation ( EffectClass, Location ) [.new]#New in v1034#
 
 This is an experimental function that was being used for the Defuse bomb effects, amongst other things.
@@ -2316,6 +2380,7 @@ This library provides a wrapper around/interface to a UE4 Actor (essentially any
 
 Function list:
 
+[#actorHasTag]
 ==== actor.HasTag ( Actor, Tag )
 
 Returns a Boolean that is _true_ if the specified actor [.var]#Actor# has the specified tag [.var]#Tag#, _false_ otherwise.
@@ -2333,6 +2398,7 @@ elseif actor.HasTag(InsertionPoint, "Attackers") then
 end
 ----
 
+[#actorAddTag]
 ==== actor.AddTag ( Actor, Tag )
 
 Adds the tag [.var]#Tag# to the actor [.var]#Actor#.
@@ -2352,21 +2418,25 @@ for i = 1, #self.Laptops do
 end
 ----
 
+[#actorRemoveTag]
 ==== actor.RemoveTag ( Actor, Tag )
 
 Removes the tag [.var]#Tag# from the actor [.var]#Actor#. Does nothing if tag not present.
 See AddTag() above for an example.
 
+[#actorGetTags]
 ==== actor.GetTags ( Actor )
 
 Returns a table (array) of strings corresponding to all of the gameplay tags associated with actor [.var]#Actor#.
 
+[#actorGetTag]
 ==== actor.GetTag ( Actor, Index )
 
 Returns the [.var]##Index##th gameplay tag associated with actor [.var]#Actor#. The return result is `+nil+` if the index is invalid.
 
 At this time, it appears that the mission editor starts indexing tags for some types of actors at index 0, and for other types of actors at index 1. It is hoped to fix this in due course, but for now please check how the tags are indexed for particular types of actors.
 
+[#actorGetTeamId]
 ==== actor.GetTeamId ( Actor )
 
 Returns the Team ID associated with the actor [.var]#Actor# as a number in the range 0-255. By convention, AI is assigned Team ID 100. Team ID 255 is a wildcard (that is: any query based on Team ID will match all teams if Team ID is set to 255).
@@ -2379,6 +2449,7 @@ function uplink:PlayerEnteredPlayArea(PlayerState)
     if actor.GetTeamId(PlayerState) == self.AttackingTeamId then
 ----
 
+[#actorSetTeamId]
 ==== actor.SetTeamId ( Actor, TeamId )
 
 Sets the team Id for actor [.var]#Actor# to [.var]#TeamId#. Actors other than players can have a Team Id associated with them, such as spawn protection volumes.
@@ -2395,6 +2466,7 @@ for i, SpawnProtectionVolume in ipairs(self.SpawnProtectionVolumes) do
 end
 ----
 
+[#actorGetLocation]
 ==== actor.GetLocation ( Actor )
 
 Returns a vector (a Lua _table_ type having fields `+x+`, `+y+`, `+z+`) corresponding to the specified actor [.var]#Actor#’s world location.
@@ -2417,19 +2489,23 @@ for i = 1, #LivingPlayers do
 end
 ----
 
+[#actorGetRotation]
 ==== actor.GetRotation ( Actor )
 
 Returns a rotator (a Lua _table_ type having fields `+yaw+`, `+pitch+` and `+roll)+` corresponding to the specified actor [.var]#Actor#’s world rotation.
 
+[#actorSetHidden]
 ==== actor.SetHidden ( Actor, Hidden )
 
 Sets the actor [.var]#Actor# to be hidden or not depending on the Boolean value [.var]#Hidden#. Spectators are normally hidden, for example, as well as having collision turned off.
 Game objects may also need to be hidden or unhidden during the course of a round.
 
+[#actorSetEnableCollision]
 ==== actor.SetEnableCollision ( Actor, Enabled )
 
 This function enables or disables player collisions depending on the value of [.var]#Enabled# (for example to allow free spectate, or spectate bounded by geometry).
 
+[#actorIsActive]
 ==== actor.IsActive ( Actor )
 
 Returns Boolean to indicate whether the specified actor [.var]#Actor# is active.
@@ -2437,6 +2513,7 @@ GROUND BRANCH objects have an `+active+` property which can be read via this fun
 Certain objects implement certain behaviours depending on whether or not they are active.
 Extraction point markers, for example, will spawn smoke (only) when active.
 
+[#actorSetActive]
 ==== actor.SetActive ( Actor, NewActive )
 
 This function sets the active property of a GROUND BRANCH game object actor [.var]#Actor# to Boolean value [.var]#Active#.
@@ -2453,10 +2530,12 @@ for i = 1, #self.ExtractionPoints do
 end
 ----
 
+[#actorIsOverlapping]
 ==== actor.IsOverlapping ( Actor, OtherActor )
 
 Returns a Boolean value indicating whether or not the first actor [.var]#Actor# is overlapping the second actor [.var]#OtherActor#.
 
+[#actorGetOverlaps]
 ==== actor.GetOverlaps ( Actor, Class )
 
 Returns a table (array) of all actors of class [.var]#Class# that are overlapped by actor [.var]#Actor#.
@@ -2470,6 +2549,7 @@ for j = 1, #Overlaps do
 -- ...
 ----
 
+[#actorGetName]
 ==== actor.GetName ( Actor )
 
 Returns a string corresponding to the actor’s name in the level (e.g. SomeClass_3).
@@ -2491,6 +2571,7 @@ for _,GuardPoint in ipairs(AllGuardPoints) do
 end
 ----
 
+[#actorIsColliding]
 ==== actor.IsColliding ( Actor ) [.new]#New in v1034#
 
 This call performs a box trace (volumetric trace) to determine if the specified actor is colliding with anything else in the level.
@@ -2504,9 +2585,10 @@ This library provides a set of functions for controlling the GROUND BRANCH AI.
 
 Function list:
 
+[#aiCleanUp]
 ==== AI.CleanUp ( AIControllerTag )
 
-This function deletes all AI having the AI controller tag [.var]#AIControllerTag#. Typically this function is called on entry to the `+WaitingForReady+` round stage, which is typically the first round stage reached after the end of a previous round.
+This function deletes all AI having the AI controller tag [.var]#aiControllerTag#. Typically this function is called on entry to the `+WaitingForReady+` round stage, which is typically the first round stage reached after the end of a previous round.
 
 Example:
 
@@ -2518,10 +2600,12 @@ function intel:OnRoundStageSet(RoundStage)
         ai.CleanUp(self.OpForTeamTag)
 ----
 
+[#aiCreate]
 ==== AI.Create ( SpawnPoint, AIControllerTag, FreezeTime )
 
-This function spawns an AI character at the spawnpoint [.var]#SpawnPoint# with the attached AI controller tag [.var]#AIControllerTag# and with an initial freeze time of [.var]#FreezeTime#.
+This function spawns an AI character at the spawnpoint [.var]#SpawnPoint# with the attached AI controller tag [.var]#aiControllerTag# and with an initial freeze time of [.var]#FreezeTime#.
 
+[#aiCreateOverDuration]
 ==== AI.CreateOverDuration ( Duration, Count, OrderedSpawnPoints, AIControllerTag )
 
 This function spawns a number [.var]#Count# of AI characters at the spawn points [.var]#OrderedSpawnPoints# over the course of the duration [.var]#Duration# seconds.
@@ -2544,6 +2628,7 @@ function intel:SpawnOpFor()
 end
 ----
 
+[#aiCreateWithTransform]
 ==== AI.CreateWithTransform ( VirtualSpawnPoint, SpawnTransform, AIControllerTag, FreezeTime )
 
 This is a variant of AI.Create which uses a virtual AI spawn point to provide the properties of the AI (such as loadout, orders, and so on) but spawns the AI at the specified location and rotation in [.var]#SpawnTransform#. To use this function, a number of prototype AI spawns need to be provided.
@@ -2578,10 +2663,12 @@ else
 end
 ----
 
+[#aiGetControllers]
 ==== AI.GetControllers ( Class, Tag, TeamId, SquadId )
 
 Returns a table (array) of AI controller object pointers (of type `+AGBAIController*+`) matching the specified AI controller class [.var]#Class#, AI controller tag [.var]#Tag#, Team Id [.var]#TeamId# and Squad Id [.var]#SquadId#.
 
+[#aiGetMaxCount]
 ==== AI.GetMaxCount ()
 
 Returns a number equal to the max AI count, which is currently set on the ops board (number of enemies, or similar). This is typically a number in the range 1 to 30.
@@ -2602,6 +2689,7 @@ end
 self.MaxOpforCount = math.min(ai.GetMaxCount(), self.MaxOpforCount)
 ----
 
+[#aiCheckLocationReachable]
 ==== AI.CheckLocationReachable ( StartLocation, EndLocation ) [.new]#Changed in v1034#
 
 This function tests whether vector [.var]#EndLocation# is reachable from vector [.var]#StartLocation# via the navmesh in the level.
@@ -2609,64 +2697,78 @@ The function returns `+true+` if the location is reachable, and `+false+` otherw
 The [.var]#IsPartialOk# parameter has been removed in v1034 as it is not meaningful after the update to Kythera AI middleware.
 This function is used by DTAS to determine if a candidate spawn location is reachable from a regular spawn point (if not, this is suggestive that it is out of bounds of the level in some way). This function should be used sparingly as it can take a while to run a query.
 
+[#aiGetRandomReachablePointInRadius]
 ==== AI.GetRandomReachablePointInRadius ( Origin, Radius )
 
 This function is essentially a wrapper for the UE4 function which finds a random point on the navmesh within [.var]#Radius# distance (measured in cm) from the vector Origin (a Lua _table_ type having fields `+x+`, `+y+`, `+z)+`. This is used for finding locations close to team mates in Team Elimination respawn modes, for example.
 
+[#aiProjectPointToNavigation]
 ==== AI.ProjectPointToNavigation ( Point, QueryExtent )
 
 This is another specialised function used by DTAS, which projects a point in space to the nearest bit of navmesh.
 
+[#aiKillAI]
 ==== AI.KillAI ( AIController )
 
 This function allows a specific AI controller to be killed on demand.
 
+[#aiGetSpawnPointInfo]
 ==== AI.GetSpawnPointInfo ( SpawnPoint )
 
 This function returns information about a specified AI spawn point, primarily for the purpose of validating a level.
 Currently it returns a table containing two fields: `+SquadId+` corresponding to the AI squad Id, and `+SquadOrders+` containing a text string corresponding to the squad orders (currently one of `+Guard+`, `+Patrol+` and `+Idle+`).
 
+[#aiGetGuardPointName]
 ==== AI.GetGuardPointName ( GuardPoint )
 
 This function returns the name property of the specified guard point.
 Primarily for the purpose of validating levels.
 
+[#aiGetSquadId]
 ==== AI.GetSquadId ( AIController )
 
 This function returns the current squad number for the specified `+AIController+` reference, as set in the mission editor.
 
+[#aiGetSquadOrders]
 ==== AI.GetSquadOrders ( ( AIController )
 
 This function returns the current squad orders for the specified `+AIController+`. As of v1033, these orders should be one of `+Guard+`, `+Idle+`, `+Patrol+` or `+Search+`. Orders may also be `+None+` or (`+nil+`) if none are set.
 When an AI is in search mode, they will move to and look around the location defined as the search target (see below). Other orders will be known from the mission editor.
 
+[#aiSetSquadOrders]
 ==== AI.SetSquadOrders ( Class, Tag, TeamId, SquadId, SquadOrders )
 
 This function sets the squad orders (one of `+Guard+`, `+Idle+`, `+Patrol+` and `+Search+`) for the squad [.var]#SquadId# in team [.var]#TeamId# (usually 100 for AI) for AI controllers of class [.var]#Class# (usually `+GroundBranch.GBAIController+`) with the AI controller tag [.var]#Tag# (`+nil+` for all/any).
 
+[#aiSetSquadOrdersForAIController]
 ==== AI.SetSquadOrdersForAIController ( AIController, SquadOrders )
 
-This function sets the squad orders for the single AI controller identified by the [.var]#AIController# reference.
+This function sets the squad orders for the single AI controller identified by the [.var]#aiController# reference.
 
+[#aiSetSearchTarget]
 ==== AI.SetSearchTarget ( AIController, TargetLocation, SearchTime )
 
-This function sets the current search target for the AI controller [.var]#AIController# to the location [.var]#TargetLocation#, for a search time of [.var]#SearchTime# seconds.
+This function sets the current search target for the AI controller [.var]#aiController# to the location [.var]#TargetLocation#, for a search time of [.var]#SearchTime# seconds.
 This will only take effect if the AI controller has `+Search+` orders, for example set by AI.SetSquadOrders() and so on.
 If the AI is not near the search region, it will move towards it, subject to any navigation pathing issues, and so on.
 
+[#aiSetSquadSearchTarget]
 ==== AI.SetSquadSearchTarget ( Class, Tag, TeamId, SquadId, TargetLocation, SearchTime )
 
 This function sets the search target for an AI squad identified by [.var]#Class#, [.var]#Tag# and [.var]#SquadId#.
 
+[#aiIsSpawnPointInHotspot]
 ==== AI.IsSpawnPointInHotspot ( AISpawnPoint, AIHotspot )
 
-This function returns `+true+` if the AI spawn point referenced by [.var]#AISpawnPoint# is within the AI hotspot references by [.var]#AIHotspot#, and `+false+` otherwise.
+This function returns `+true+` if the AI spawn point referenced by [.var]#aiSpawnPoint# is within the AI hotspot references by [.var]#aiHotspot#, and `+false+` otherwise.
 Returns `+nil+` if there is an error with the parameters.
 
+[#aiGetAIHotspotName]
 ==== AI.GetAIHotspotName ( AIHotspot )
 
-This function returns the name of the AI hotspot referenced by [.var]#AIHotspot#, or `+nil+` if not found.
+This function returns the name of the AI hotspot referenced by [.var]#aiHotspot#, or `+nil+` if not found.
 
+[#aiIsAI]
 ==== AI.IsAI ( AIController, AIControllerTag ) [.new]#New in v1034#
 
 Returns TRUE if the specified controller is an AI controller in the current play session, optionally also checking that the AI entity has the specified AI controller tag (if the tag is not `+nil+`).
@@ -2680,10 +2782,12 @@ A list of current players can be obtained for example using the `+gamemode.GetPl
 
 Function list:
 
+[#playerGetLives]
 ==== player.GetLives ( Player )
 
 Returns the number of lives a player has (in normal GROUND BRANCH, this will be one or zero).
 
+[#playerSetLives]
 ==== player.SetLives ( Player, NewLives )
 
 Sets the number of lives that a player has.
@@ -2705,27 +2809,33 @@ or gamemode.GetRoundStage() == "RedDefenderSetup" then
 end
 ----
 
+[#playerSetAllowedToRestart]
 ==== player.SetAllowedToRestart ( Player, Allowed )
 
 This function sets whether or not a player is allowed to restart a round (after leaving an active round and returning to the Ready Room).
 
+[#playerGetInsertionPoint]
 ==== player.GetInsertionPoint ( Player )
 
 This function returns the insertion point selected by the player, as a _userdata_ object that can be passed to other library functions as needed (but not directly accessed within Lua).
 
+[#playerSetInsertionPoint]
 ==== player.SetInsertionPoint ( Player, NewInsertionPoint )
 
 This function sets a new insertion point for the player using the given Insertion Point object [.var]#NewInsertionPoint#.
 
+[#playerFreezePlayer]
 ==== player.FreezePlayer ( Player, Duration )
 
 This function freezes the player in place for [.var]#Duration# seconds.
 Usually this is called just after players are spawned into the play area at the start of the `+PreRoundWait+` game round.
 
+[#playerGetPlayerState]
 ==== player.GetPlayerState ( Player )
 
 Returns a GB Player State object (which cannot be directly manipulated in the Lua script but can be passed as a parameter to further calls).
 
+[#playerGetCharacter]
 ==== player.GetCharacter ( Player )
 
 Returns a reference to a character pawn corresponding to the specified player.
@@ -2748,10 +2858,12 @@ for i = 1, #LivingPlayers do
 end
 ----
 
+[#playerIsAlive]
 ==== player.IsAlive ( Player )
 
 Returns a Boolean which is `+true+` if the player is alive, `+false+` if dead (or spectating).
 
+[#playerShowWorldPrompt]
 ==== player.ShowWorldPrompt ( Player, Location, Tag, Duration )
 
 This function causes an object to become visible for [.var]#Duration# seconds, with the supplied text tag (which will be looked up in the string table in the usual way) displayed on screen in the appropriate place (regardless of whether the location is visible from the player’s position). This is used in the Uplink game mode, for example, to
@@ -2765,11 +2877,13 @@ elseif actor.GetTeamId(PlayerState) == self.DefendingTeamId then
     player.ShowWorldPrompt(PlayerState, LaptopLocation, "DefendTarget", self.DefenderSetupTime - 2)
 ----
 
+[#playerGetInventory]
 ==== player.GetInventory ( Player )
 
 Returns a table of inventory items.
 The items cannot be directly manipulated within Lua but can be processed using other library functions.
 
+[#playerHasItemWithTag]
 ==== player.HasItemWithTag ( Player, Tag )
 
 Returns a Boolean which is `+true+` if the player [.var]#Player# possesses an item with the gameplay tag [.var]#Tag#, and `+false+` otherwise.
@@ -2790,6 +2904,7 @@ if player.HasItemWithTag(Character, self.LaptopTag) == true then
 end
 ----
 
+[#playerShowGameMessage]
 ==== player.ShowGameMessage ( Player, Message, Type, Duration )
 
 This function displays a message on the player [.var]#Player#’s screen, with the specified message [.var]#Message#, for the specified duration [.var]#Duration#. The message [.var]#Message# is looked up in the string table(s) using the format `+“gamemessage_”+` + [.var]#Message#.
@@ -2811,44 +2926,54 @@ end
 
 See gamemode.BroadcastGameMessage (see 6.2.9 above) for more info on the [.var]#Type# and [.var]#Duration# parameters.
 
+[#playerGiveItem]
 ==== player.GiveItem ( Player, ItemClass, bEquip )
 
 This is a specialist function for giving a player a flag in DTAS.
 
+[#playerAddIgnoreUseInputReason]
 ==== player.AddIgnoreUseInputReason ( Player, Reason )
 
 This call prevents a user using weapons for a given reason [.var]#Reason# that is an identifier used to allow multiple overlapping restrictions if need be.
 This is used by DTAS to prevent either team shooting (but not moving/running) during the flag placement phase at the start of a round.
 
+[#playerRemoveIgnoreUseInputReason]
 ==== player.RemoveIgnoreUseInputReason ( Player, Reason )
 
 This call removes the restriction for reason [.var]#Reason# imposed by player.AddIgnoreUseInputReason().
 
+[#playerClearAllIgnoreUseInputReasons]
 ==== player.ClearAllIgnoreUseInputReasons ( Player )
 
 This call removes all current use restrictions on a player.
 
+[#playerGetReadyStatus]
 ==== player.GetReadyStatus ( Player )
 
 This function returns a player’s Readied-up status (see section 2.2.1).
 
+[#playerSetReadyStatus]
 ==== player.SetReadyStatus ( Player, NewStatus )
 
 This function sets a player’s Readied-up status (see section 2.2.1). The possible statuses (in name/string format) are `+DeclaredReady+`, `+WaitingToReadyUp+`, and `+NotReady+`.
 
+[#playerGetName]
 ==== player.GetName ( Player )
 
 This function returns the current player name as a string.
 There may be issues with special characters, if used.
 
+[#playerAwardPlayerScore]
 ==== player.AwardPlayerScore ( Player, ScoreName, ScoreMultiple )
 
 This function awards the specified score type [.var]#ScoreName# a multiple [.var]#ScoreMultiple# of times (unless the relevant score type has a OneOff property of `+true+`). Player scores must have been set up via gamemode.SetPlayerScoreTypes() first (see 6.2.35 above).
 
+[#playerResetPlayerScores]
 ==== player.ResetPlayerScores ( Player )
 
 This function zeroes all player scores but keeps the scoring structure intact.
 
+[#playerGetPlayerStat]
 ==== player.GetPlayerStat ( Player, Key )
 
 This function returns the current value of the player stat [.var]#Key#.
@@ -2876,32 +3001,39 @@ if NumberKills ~= nil then
 end
 ----
 
+[#playerShowHint]
 ==== player.ShowHint ( Player, HintName, WidgetName )
 
 (This is an internal call for now, as specific widgets need to be created for specific hints.
 It is planned to make a more general version of this function.)
 
+[#playerValidatePlayer]
 ==== player.ValidatePlayer ( Player )
 
 This function returns `+true+` if the player reference is still valid (i.e. the player is still in the session), otherwise `+false+`. Since v1033, it is much less fatal to retain invalid references to players (they are now `+number+` type rather than `+userdata+`), but you may still want to clean out old references from time to time.
 
+[#playerGetCallSign]
 ==== player.GetCallSign ( Player )
 
 Returns a `+string+` type containing the referenced player’s (usually 3 letter) callsign.
 
+[#playerCheckCallSignProfanity]
 ==== player.CheckCallSignProfanity ( CallSign )
 
 Returns `+true+` if the supplied [.var]#CallSign# `+string+` type is considered to correspond to a profanity (or thereabouts).
 
+[#playerIsABot]
 ==== player.IsABot ( Player )
 
 Returns `+true+` if the referenced player is a bot (as opposed to AI).
 
+[#playerTeleport]
 ==== player.Teleport ( Player, Location, Rotation )
 
 An experimental feature that may be broken.
 Use with caution.
 
+[#playerHasGameplayTag]
 ==== player.HasGameplayTag ( Player, TagName )
 
 Returns `+true+` if the referenced player has the specified [.var]#TagName# gameplay tag.
@@ -2909,20 +3041,24 @@ Used in Hostage Rescue currently.
 The gameplay tag is not the same thing as an actor tag.
 It is an internal token that can indicate various player statuses.
 
+[#playerGetVolunteerStatus]
 ==== player.GetVolunteerStatus( PlayerIdOrObject ) [.new]#New in v1034#
 
 Returns TRUE if the specified player has an active volunteer status (hand up), FALSE otherwise.
 See section 2.5.6 for an overview of volunteering.
 
+[#playerSetVolunteerStatus]
 ==== player.SetVolunteerStatus ( PlayerIdOrObject, Volunteered ) [.new]#New in v1034#
 
 Sets the volunteer status of the specified player to TRUE or FALSE.
 
+[#playerKill]
 ==== player.Kill ( PlayerIdOrObject ) [.new]#New in v1034#
 
 This function will kill the specified player (if alive), bypassing any and all damage reduction/prevention.
 The call will fail if the player is in the Ready Room.
 
+[#playerDamage]
 ==== player.Damage (PlayerIdOrObject, DamageAmount, DamageType ) [.new]#New in v1034#
 
 This function will damage the specified player by the specified [.var]#DamageAmount# of [.var]#DamageType# damage.
@@ -2930,6 +3066,7 @@ This will not bypass damage reduction/prevention; for example, players who are f
 Players usually start with 100 health.
 Damage type is not currently supported and can take any String value.
 
+[#playerSpawnEffectAtPlayer]
 ==== player.SpawnEffectAtPlayer( PlayerIdOrObject, EffectClass) [.new]#New in v1034#
 
 This function is experimental, and will spawn an effect of the specified effect class locally to the player.
@@ -2942,6 +3079,7 @@ The timer is typically used to monitor the game state intermittently (instead of
 
 Function list:
 
+[#timerSet]
 ==== timer.Set ( InTimerHandle, InTable, InFunction, InRate, InLoop )
 
 This function sets up a timer with handle [.var]#InTimerHandle# to call the function [.var]#InFunction# in table (module/class) [.var]#InTable# after [.var]#InRate# seconds have elapsed.
@@ -2957,6 +3095,7 @@ if self.Settings.TeamExfil.Value == 1 then
     timer.Set("CheckOpForExfil", self, self.CheckOpForExfilTimer, 1.0, true)
 ----
 
+[#timerClear]
 ==== timer.Clear ( InTimerHandle )
 
 This function clears any timer associated with the handle [.var]#InTimerHandle#.
@@ -2974,6 +3113,7 @@ if bLaptopSecure then
          gamemode.SetRoundStage("PostRoundWait")
 ----
 
+[#timerClearAll]
 ==== timer.ClearAll ()
 
 This function clears all currently set timers (not just for the game mode).
@@ -2984,7 +3124,10 @@ Example from Intel game mode:
 ----
 if RoundStage == "WaitingForReady" then
     timer.ClearAll()
+    -- ...
+end
 ----
+
 
 === UMath (UGBLuaMathPackage.h)
 
@@ -2992,6 +3135,7 @@ This library provides a couple of functions to provide random numbers using the 
 
 Function list:
 
+[#umathrandom]
 ==== umath.random ( Max )
 
 If [.var]#Max# is an integer, returns a random integer between 1 and [.var]#Max#.
@@ -3014,6 +3158,7 @@ else
 end
 ----
 
+[#umathrandomrange]
 ==== umath.randomrange ( Min, Max )
 
 If [.var]#Max# is an integer, returns a random integer between [.var]#Min# and [.var]#Max#.
@@ -3029,18 +3174,22 @@ Vectors have X, Y and Z coordinates, and may represent 3D or 2D (ignores Z) vect
 
 Function list:
 
+[#vectorSize]
 ==== vector.Size ( A )
 
 Returns the vector size (length) in 3D, which is equivalent to the square root of X^2 + Y^2 + Z^2.
 
+[#vectorSizeSq]
 ==== vector.SizeSq ( A )
 
 Returns the vector size squared in 3D, i.e. X^2 + Y^2 + Z^2.
 
+[#vectorSize2D]
 ==== vector.Size2D ( A )
 
 Returns the vector size (length) in 2D, which is equivalent to the square root of X^2 + Y^2.
 
+[#vectorSizeSq2D]
 ==== vector.SizeSq2D ( A )
 
 Returns the vector size squared in 2D, i.e. X^2 + Y^2.
@@ -3080,6 +3229,7 @@ inventory.CreateLoadoutFromTable(PlayerState, "Hostage", Loadout, SplitItemField
 
 Function list:
 
+[#inventoryGetPlayerLoadoutAsTable]
 ==== inventory.GetPlayerLoadoutAsTable (Player, LoadoutName, SplitItemField )
 
 This function retrieves the previously stored/set up player loadout in lua `+table+` format, with sub-tables where appropriate corresponding to `+child+` items.
@@ -3090,7 +3240,7 @@ See the functions in the InventoryManagement mutator for examples of usage.
 If `+SplitItemField+` is `+true+`, then `+Item+` fields are split into `+ItemType+` and `+ItemValue+` fields in the lua table.
 For example, if an Item field in JSON is (for example):
 
-[source,json]
+[source]
 ----
 "Item": "Magazine:BP_PMAG556_Magazine"
 ----
@@ -3099,6 +3249,7 @@ then the function will return table entries `+[ItemType]+` = `+"Magazine"+` and 
 
 After a loadout has been manipulated in lua form, it can be converted back to JSON and re-imported into the game using the CreateLoadoutFromTable() call (see Section 6.9.6 below).
 
+[#inventoryGetCustomKitAsTable]
 ==== inventory.GetCustomKitAsTable (KitFileName, SplitItemField )
 
 The function attempts to load the file with name [.var]#KitFileName# from the GroundBranch/CustomKit folder, and returns the result as a lua table encoding the stored kit, in the same format as the returned table in GetPlayerLoadoutAsTable (Section 6.9.1 above). If `+SplitItemField+` is true, then `+Item+` fields will be returned as separate `+ItemType+` and `+ItemValue+` fields, as above.
@@ -3108,20 +3259,24 @@ The purpose of custom kits is to allow the loading in of loadout fragments or wh
 For example, in the Hostage Rescue mode, a hostage loadout is loaded in and merged with other aspects of a player loadout.
 In practice, this applies player head types and patches and so on to the stored hostage kit.
 
+[#inventoryGetItemDisplayName]
 ==== inventory.GetItemDisplayName ( ItemType, ItemAssetPath )
 
 This function returns as `+string+` type the display name for the referenced asset. [.var]#ItemType# is the asset type, corresponding to the ItemType field returned by GetPlayerLoadoutAsTable() and the like (e.g. "`PrimaryFirearm`", "`Sidearm`", "`Scope`", etc). The [.var]#ItemAssetPath# field is misleading named, as it is the asset file name (not full path), which is usually the internal name of the relevant blueprint (i.e. "`BP_PMAG556_Magazine`"). So a call with [.var]#ItemType# of "``+Magazine+``" and [.var]#ItemAssetPath# of "``+BP_PMAG556_Magazine+``" would return the string "``+PMAG 30rd [5.56 NATO]+``". The display names are defined internally and cannot be modified externally.
 
+[#inventoryRemoveItemTypesFromLoadoutTable]
 ==== inventory.RemoveItemTypesFromLoadoutTable ( ItemTypesToRemove, LoadoutTable, SplitItemField )
 
 This function is essentially a shortcut to remove particular item types from a lua table version of a loadout. [.var]#NewItemTypesToRemove# may be a table of strings, and each of those strings corresponds to an item type that is removed. [.var]#NewItemTypesToRemove# may alternatively be a `+string+` type, and that single item type is then removed.
 The value for [.var]#SplitItemField# should be the same as that used to generate the table in the first place.
 
+[#inventoryAddCustomKitTableToLoadoutTable]
 ==== inventory.AddCustomKitTableToLoadoutTable ( CustomKitTable, LoadoutTable )
 
 This function takes a custom kit list, such as would be returned by GetCustomKitAsTable() (see Section 6.9.2 above), and merges it with the lua loadout table referenced by [.var]#LoadoutTable#. If an item type in the custom kit list already exists in the loadout, the custom kit item will be added rather than replace the loadout version.
 This will probably break most things.
 
+[#inventoryCreateLoadoutFromTable]
 ==== inventory.CreateLoadoutFromTable ( Player, LoadoutName, LoadoutTable, SplitItemField )
 
 This function carries out the reverse process of GetPlayerLoadoutAsTable() (see Section 6.9.1 above) and creates a JSON version of the kit list in the [.var]#LoadoutTable# lua table, and then stores that as a new or amended loadout for the player [.var]#Player#, using loadout name [.var]#LoadoutName#. The value of [.var]#SplitItemField# should be the same as that used originally to generate the lua table.
@@ -3129,6 +3284,7 @@ This function carries out the reverse process of GetPlayerLoadoutAsTable() (see 
 The default loadout names are "`NoTeam`" for PvE, and "`Blue`" and "`Red`" for PvP.
 The Hostage Rescue game mode creates a new loadout with name "`Hostage`", for example, to hold the hostage version of the loadout for all players.
 
+[#inventoryVerifyLoadoutExists]
 ==== inventory.VerifyLoadoutExists ( Player, LoadoutName )
 
 This function returns `+true+` if a loadout by the name [.var]#LoadoutName# exists already for the player [.var]#Player#, and `+false+` otherwise.
@@ -3136,11 +3292,13 @@ This function returns `+true+` if a loadout by the name [.var]#LoadoutName# exis
 The next two functions operate on Loadout Reference Objects which are USERDATA references that are unique parameters for the OnPreLoadoutChanged() function described in Section 5.4.6 above.
 In essence, these objects are edited on the c++ side rather than converted into tables and edited on the lua side (to avoid lots of inventory conversions that are rarely needed):
 
+[#inventoryClearItemField]
 ==== inventory.ClearItemField ( LoadoutReferenceObject, ItemType )
 
 The present function clears out any items of type [.var]#ItemType# from the selected loadout.
 This function is used by the WeaponRestriction mutator, for example, to remove primaries or secondaries from loadouts (i.e. for '`pistols only`' rounds).
 
+[#inventoryLimitSupplies]
 ==== inventory.LimitSupplies ( LoadoutReferenceObject, FragsLimit, SmokesLimit, FlashbangsLimit, BreachChargeLimit )
 
 This function cycles through the loadout referenced by [.var]#LoadoutReferenceObject# (as passed to OnPreLoadoutChanged() ) and removes as many items as necessary to comply with the specified item count.
