@@ -5,13 +5,13 @@ The most useful/pertinent properties of the barrel blueprint component are liste
 .Various properties of GBBarrelComponent
 image::/images/sdk/weapon/weapon_barrelgenproperties.jpg[weapon_barrelgenproperties.jpg]
 
-* `Velocity Modifier`
+* `Velocity Modifier` This modifies the base velocity of all/any rounds shot by this weapon. Usually leave at 1.0.
 
-* `Muzzle Device Thread` The name of the socket on the weapon skeletal mesh to which the suppressor should be attached. See link:/modding/sdk/weapon/setting-up-weapon-skeletal-mesh####Skeletal_mesh_view_(SK_xxx)[setting up weapon skeletal mesh].
+* `Muzzle Device Thread` The name of the socket on the weapon skeletal mesh to which the suppressor should be attached. See +<SuppressorSocketName>+ in link:/modding/sdk/weapon/setting-up-weapon-skeletal-mesh####Skeletal_mesh_view_(SK_xxx)[setting up weapon skeletal mesh].
 
-* `Flash Offset`
-* `Attached Flash`
-* `Looped Flash`
+* `Flash Offset`	@ distance away from the barrel end, in UE units?
+* `Attached Flash` @ spawn the flash attached to the weapon or have it stay where it was spawned?
+* `Looped Flash` @ ?
 
 .AI section of GBBarrelComponent
 image::/images/sdk/weapon/weapon_barrelaiproperties.jpg[weapon_barrelaiproperties.jpg]
