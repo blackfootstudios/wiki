@@ -64,6 +64,10 @@ With all the weapon features now defined in your blueprint, you may need to add 
 
 You should also create a link:/modding/sdk/weapon/creating-default-item-loadout[default item build] for your weapon, at least to add a magazine as a default item.
 
+### Weapon icon
+
+You will need to make an icon for your weapon also. See here for some ideas of how to do that: link:/modding/sdk/creating-item-icons[creating item icons].
+
 ### Setup complete
 
 Congratulations! At this point, your weapon should be set up. Go package and upload it, and have a test.
