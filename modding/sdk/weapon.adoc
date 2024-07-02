@@ -109,3 +109,7 @@ There's a lot that can go wrong when making a weapon mod, and weapon setups are 
 **I have made the same gun as someone else, but mine/theirs does not show up in the list of weapons in the character editor**
 
 -> You may have used the same blueprint name as the game / the other mod. If you have used the same name, you will also have used the same primary asset ID (e.g. `PrimaryFirearm:BP_MyGun`), and this will break a ton of stuff. Consider having some kind of unique reference in your weapon blueprint names, e.g. your modding handle, to avoid name clashes with the game and also (more importantly perhaps) other mods.
+
+**I can't attach sights to my top rail**
+
+-> Make sure the top rail blueprint component has SightsOnly checked, is set to Direct rail, and that the rail component is sticking out of the physics elements. See link:/modding/sdk/weapon/skinning-weapon-models[skinning weapon models].
