@@ -1,3 +1,12 @@
-GBBarrel
+## Properties of GBBarrelComponent
 
-properties
+The most useful/pertinent properties of the barrel blueprint component are listed below:
+
+.AI section of GBBarrelComponent
+image::/images/sdk/weapon/weapon_barrelaiproperties.jpg[weapon_barrelaiproperties.jpg]
+
+* `Audio Signal Radius` This is the base distance in UE4 units (cm) representing how far away your shots will be heard by AI. In this case, AI within 70m will be alerted by your gunfire. However, particular maps may apply a modifier (larger maps tend to have extended hearing ranges, and vice versa for smaller levels). Muzzle devices (suppressors) specify an audio signal radius that will override the base barrel value if attached.
+
+* `Suppressor Switch Value` Essentially either `Unsuppressed` or `Suppressed`, depending on whether the barrel has an integral suppressor (like the MP5SD6 and so on). This affects the specific sounds that will be chosen to play when you shoot. (It may, now or in future, affect the AI perception also.)
+
+* `Light Level Key` This is essentially a tag indicating 
