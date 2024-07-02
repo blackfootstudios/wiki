@@ -10,17 +10,17 @@ The icons should be 512x256 resolution, and Compression Settings should be set t
 .Level Of Detail section for HK416D weapon icon
 image::/images/sdk/weapon/weapon_iconlodsettings.jpg[weapon_iconlodsettings.jpg]
 
-### How to make the icons
+### Suggestions for how to make the icon
 
 No program or method is officially endorsed by BlackFoot Studios, but here are some icon creation methods suggested by modders:
 
-. *Substance Stager and Photoshop*
+#### Substance Stager and Photoshop
 
 First set the model up in stager, then change the background color to R:0 G:255 B:0, so it's easy to go into Photoshop and magic erase the green screen for the transparent png image.
 
 Then apply a B&W filter over the picture and add the Brightness/Contrast filter and just change the brightness to 100 or thereabouts, so it looks similar to the other weapon icons.
 
-. *Other suggestions*
+#### Other suggestions
 
 You could use Blender, Photopea or other programs for setting up the model.
 
