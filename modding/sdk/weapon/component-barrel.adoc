@@ -7,7 +7,7 @@ image::/images/sdk/weapon/weapon_barrelgenproperties.jpg[weapon_barrelgenpropert
 
 * `Velocity Modifier`
 
-* `Muzzle Device Thread` The name of the socket on the weapon skeletal mesh to which the suppressor should be attached. See link:/modding/sdk/weapon#Skeletal_mesh_view_(SK_xxx)[weapon modding].
+* `Muzzle Device Thread` The name of the socket on the weapon skeletal mesh to which the suppressor should be attached. See link:/modding/sdk/weapon/setting-up-weapon-skeletal-mesh####Skeletal_mesh_view_(SK_xxx)[setting up weapon skeletal mesh].
 
 * `Flash Offset`
 * `Attached Flash`
