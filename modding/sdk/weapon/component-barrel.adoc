@@ -9,4 +9,8 @@ image::/images/sdk/weapon/weapon_barrelaiproperties.jpg[weapon_barrelaipropertie
 
 * `Suppressor Switch Value` Essentially either `Unsuppressed` or `Suppressed`, depending on whether the barrel has an integral suppressor (like the MP5SD6 and so on). This affects the specific sounds that will be chosen to play when you shoot. (It may, now or in future, affect the AI perception also.)
 
-* `Light Level Key` This is essentially a tag indicating 
+The following properties relate to the AI light detection feature. It is used to allow AI to be alerted to light-related events such as muzzle flashes, flashlights, and so on:
+
+* `Light Level Key` This is essentially a tag indicating the type of light event (for debugging)
+* `Light Level Alpha` This is a measure of how bright the event is, from 0.0 (nothing) to 1.0 (full brightness)
+* `Light Level Time` This is how long the event lasts (approximately), in seconds.
