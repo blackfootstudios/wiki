@@ -2,6 +2,9 @@
 
 The most useful/pertinent properties of the barrel blueprint component are listed below:
 
+.Various properties of GBBarrelComponent
+image::/images/sdk/weapon/weapon_barrelgenproperties.jpg[weapon_barrelgenproperties.jpg]
+
 .AI section of GBBarrelComponent
 image::/images/sdk/weapon/weapon_barrelaiproperties.jpg[weapon_barrelaiproperties.jpg]
 
