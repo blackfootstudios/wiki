@@ -51,3 +51,10 @@ The `Caliber` and `Material` properties are redundant on the Unreal Engine 4 sid
 .Code within the BP_BrassImpact_Master blueprint which passes on the Caliber and Material switches to Wwise
 image::/images/sdk/sl_setswitches.jpg[sl_setswitches.jpg]
 
+## Adding your own Surface Links
+
+It is not advised to add any additional Physical Materials to GROUND BRANCH, but if you do, you will need to add a set of Surface Links for all sorts of things (footstep sounds, casing sounds, etc) if you want anything other than the default settings for your new physical material.
+
+More commonly you might add a new type of a particular `Type` of Surface Link system, for example for a new custom caliber (though again this is not highly recommended due to the amount that needs to be set up). You may then need to provide another set of Surface Links in an appropriate directory.
+
+Surface Links do not need to be placed anywhere in particular (though modded content should always go into your mod plugin folder). They are Unreal Engine assets and therefore they will be found wherever they are. All you need to do is set the correct Type and then a reasonable set of physical materials and a reasonable set of classes that are looked up.
