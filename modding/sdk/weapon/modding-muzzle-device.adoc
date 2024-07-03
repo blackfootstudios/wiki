@@ -1,0 +1,3 @@
+See link:/modding/sdk/weapon/skinning-weapon-models[skinning weapon models] for details on creating an appropriate suppressor mesh socket.
+
+@
