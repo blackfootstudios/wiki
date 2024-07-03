@@ -1,1 +1,2 @@
-External magazine component
+.Custom properties of GBExternalMagazineComponent
+image::/images/sdk/weapon/weapon_magwell_properties.jpg[weapon_magwell_properties.jpg]
