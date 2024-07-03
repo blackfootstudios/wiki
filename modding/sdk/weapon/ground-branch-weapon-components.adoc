@@ -2,7 +2,8 @@ This is a brief list of the custom blueprint components in GROUND BRANCH for def
 
 - `GBBarrelComponent` ('Barrel'): link:/modding/sdk/weapon/component-barrel[barrel component]
 - `GBExternalMagazineComponent` ('MagWell'): link:/modding/sdk/weapon/component-magwell[magwell component]
-- `GBInternalMagazineComponent`: @
+- `GBInternalMagazineComponent` ('InternalMagazine'): link:/modding/sdk/weapon/component-internalmagazine[internal magazine component]
+- `GBTubeMagComponent` ('TubeMag'): link:/modding/sdk/weapon/component-tubemag[tube mag component]
 - `GBEjectComponent` ('EjectionPort'): link:/modding/sdk/weapon/component-eject[eject component]
 - `GBSightComponent` ('Sight'): link:/modding/sdk/weapon/component-sight[sight component]
 - `GBRailComponent` ('Rail'): link:/modding/sdk/weapon/component-rail[rail component]
