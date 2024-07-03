@@ -1,8 +1,11 @@
-## Overview of 'Physmats'
+## Overview of physical materials
 
-An understanding of 'physmats' in Unreal Engine 4 is assumed, but in essence they are categories of surfaces that can be assigned to materials within the engine. This is your way of telling the engine that M_MyMat3 is closest to a concrete style material, or metal, or wood, and so on. There are a number of inbuilt physical materials in UE4, and a few more defined specifically by GROUND BRANCH for specific purposes.
+An understanding of 'physmats' in Unreal Engine 4 is assumed, but in essence they are categories of surfaces that can be assigned to materials within the engine. This is your way of telling the engine that M_MyMat3 is closest in nature to concrete, metal, or wood, and so on. There are a number of inbuilt physical materials in UE4, and a few more defined specifically by GROUND BRANCH for specific purposes.
 
-A large part of the selection of available physical materials relates to their properties as regards bullet penetration. So there might be sheet metal, for example, which has different acoustic and penetration properties to bulk metal, and so on.
+.An example physical material definition in the Mod Kit
+image::/images/sdk/modkit_physmat.jpg[modkit_physmat.jpg]
+
+A large part of the selection of available physical materials relates to their properties as regards bullet penetration. So there might be sheet metal, for example, which has different acoustic and penetration properties to bulk metal, and so on. They are also used by the physics engine, to help items interact with surfaces in more realistic ways.
 
 A part of the process of making a map or converting a map into use by GROUND BRANCH is to make sure that all materials used have sensible physical materials assigned to them. This means that appropriate bullet impact effects, footstep sounds, and so on will be used when players interact with your level or your item (e.g. weapon).
 
@@ -10,10 +13,58 @@ For you convenience, we list here the stock physical materials used in GROUND BR
 
 Surface Links are a native GROUND BRANCH system for linking physical materials to particular kinds of things, like bullet impact effects or footstep sounds. They are described in more detail in  link:/modding/sdk/surfacelink[GROUND BRANCH Surface Link system]. 
 
-## Stock Unreal Engine 4 physical materials
+You would be well advised to stick to the more common/simple physical materials unless there is a particular quality you are seeking, such as wooden but bulletproof walls (PM_KillhouseWall).
 
-@
+A list of all GROUND BRANCH physical materials follows:
 
 ## Custom GROUND BRANCH physical materials
 
-@
+[width="100%",cols="34%,66%",options="header",]
+|===
+|Physical material |Notes
+|`PM_Asphalt` |
+|`PM_Brick` |
+|`PM_Cardboard` |
+|`PM_Carpet` |
+|`PM_Cinderblock` |
+|`PM_Cloth` |
+|`PM_Concrete` |
+|`PM_Dirt` |
+|`PM_Electronics` |
+|`PM_FirearmMetal` | Only use on weapon skins
+|`PM_FirearmPlastic` | Only use on weapon skins
+|`PM_Flesh` |
+|`PM_Floor` |
+|`PM_Glass` |
+|`PM_Glass_Shattered` |
+|`PM_Grass` |
+|`PM_Grass_Tall` |
+|`PM_Gravel` |
+|`PM_IgnoreAllProjectiles` | Special PM to confer bulletproof effect on surface
+|`PM_IgnoreBullets` | Special PM to confer bulletproof effect on surface
+|`PM_KillhouseWall` | Special PM for kill house walls with wood effects but also bulletproof
+|`PM_Leaves` |
+|`PM_Metal` |
+|`PM_Metal_Bars` |
+|`PM_Metal_Box` |
+|`PM_Metal_Deck` |
+|`PM_Metal_Grate` |
+|`PM_Metal_Pipe` |
+|`PM_Metal_Target` | Lots of sparks and noise
+|`PM_Metal_Target_Badguy` | Very specific, do not use
+|`PM_Metal_Target_Friendly` | Very specific, do not use
+|`PM_Metal_Thick` |
+|`PM_MetalVeryThin` | Very good penetration properties
+|`PM_Mud` |
+|`PM_Plastic` |
+|`PM_Sand` |
+|`PM_Sandbag` |
+|`PM_Sheetrock` |
+|`PM_Stone` |
+|`PM_Tire` |
+|`PM_Vehicle_Light_Metal` |
+|`PM_Water` |
+|`PM_Wood` |
+|`PM_Wood_Thick` |
+|`PM_Wood_Thin` |
+|`PM_Wood_Thin_Hollow` |
