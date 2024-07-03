@@ -9,9 +9,9 @@ image::/images/sdk/weapon/weapon_barrelgenproperties.jpg[weapon_barrelgenpropert
 
 * `Muzzle Device Thread` The name of the socket on the weapon skeletal mesh to which the suppressor should be attached. See +<SuppressorSocketName>+ in link:/modding/sdk/weapon/setting-up-weapon-skeletal-mesh####Skeletal_mesh_view_(SK_xxx)[setting up weapon skeletal mesh].
 
-* `Flash Offset`	Distance away from the barrel end to spawn the flash VX, in UE units (cm).
+* `Flash Offset`	Distance away from the barrel end to spawn the flash VFX, in UE units (cm).
 * `Attached Flash` Whether to spawn the flash attached to the weapon or have it stay where it was spawned.
-* `Looped Flash` If true, the flash VX will be manually deactivated when appropriate.
+* `Looped Flash` If true, the flash VFX will be manually deactivated when appropriate.
 
 .AI section of GBBarrelComponent
 image::/images/sdk/weapon/weapon_barrelaiproperties.jpg[weapon_barrelaiproperties.jpg]
