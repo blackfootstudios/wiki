@@ -1,3 +1,2 @@
-== header
-
-content
+.Properties of GBSightComponent
+image::/images/sdk/weapon/weapon_sightproperties.jpg[weapon_sightproperties.jpg]
