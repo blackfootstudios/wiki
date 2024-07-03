@@ -1,3 +1,2 @@
-== header
-
-content
+.Properties of GBRailComponent
+image::/images/sdk/weapon/weapon_railproperties.jpg[weapon_railproperties.jpg]
