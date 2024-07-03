@@ -1,3 +1,5 @@
-Surface link
+## Overview of the Surface Link system
 
-Oh boy
+The Surface Link system is a custom GROUND BRANCH system which provides a convenient way to map surface materials/physics materials to specific classes. It is a database of sorts.
+
+One example of the Surface Link system is mapping footsteps to particular footstep sounds. 
