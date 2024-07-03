@@ -32,7 +32,7 @@ The properties in the Surface Link include:
 * `Type` A keyword for filtering particular groups of Surface Links for look-ups.
 * `Physical Material` The physical material 'key' for the look-up.
 * `Linked Class` The 'value' for the look-up, being any arbitrary class appropriate for the particular kind of look-up.
-* `Cosmetic Only` @
+* `Cosmetic Only` This tells GROUND BRANCH that the Surface Links only apply to items on clients (like sound and graphics) and the Surface Links will not be loaded on dedicated servers.
 
 To make a new Surface Link look-up, you can use the content browser right-click menu to select a new Surface Link object in the normal way:
 
