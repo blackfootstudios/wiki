@@ -6,21 +6,48 @@ One example of the Surface Link system is mapping footsteps to particular footst
 
 Another example of the Surface Link system is playing the correct impact sound when a spent shell hits a floor or other surface.
 
-The beginning of the story here is the `Shell Impact Type` property of a GBEjectComponent weapon blueprint component (representing the ejection port of a wepaon). In the following example, a type of `BrassCase_556` is used. This tells GROUND BRANCH that it needs to look for surface link definitions 
+The beginning of the story here is the `Shell Impact Type` property of a GBEjectComponent weapon blueprint component (representing the ejection port of a wepaon). See link:/modding/sdk/weapon/component-eject[GBEjectComponent blueprint component] for more details.
+
+## Ejected casing sound example
+
+In the following example of a GBEjectComponent configuration, a type of `BrassCase_556` is used. This tells GROUND BRANCH that it needs to look for surface link definitions having a `Type` property matching this name.
 
 .A set of properties of the GBEjectComponent blueprint component, showing the Shell Impact Type property
 image::/images/sdk/weapon/weapon_ejectproperties.jpg[weapon_ejectproperties.jpg]
 
-link:/modding/sdk/weapon/component-eject[GBEjectComponent blueprint component]
+Typically, a set of surface links for a particular purpose and for a particular class of items are stored in a single folder. In the screenshot below, it can be seen that the BrassCase/Impacts/BrassCase_556 folder contains a complete set of surface links for type BrassCase_556, as referenced by the ejection port component shown above.
+
+Also in the folder are the end-points of the surface link look-up, namely all defined different impact sounds for the 556 brass cases. Due to practical limitations, only a small number of possible sounds are provided as 'best case' matches for particular physical materials, but Concrete, Wood and Dirt provide a reasonable range of appropriate sounds for all collisions.
 
 .Overview of Surface Link look-ups and impact sound blueprints for the BrassCase_556 Surface Link type
 image::/images/sdk/sl_brasscasefolder.jpg[sl_brasscasefolder.jpg]
 
+If we take a look at a single one of those Surface Link files, we can see that each Surface Link file has properties allowing it to make a connection between Physical Material and a Linked Class:
+
 .Surface Link look-up for PM_Brick physical material, specifying concrete impact FX as best match
 image::/images/sdk/sl_brasscasebrick.jpg[sl_brasscasebrick.jpg]
+
+The properties in the Surface Link include:
+
+* `Type` A keyword for filtering particular groups of Surface Links for look-ups.
+* `Physical Material` The physical material 'key' for the look-up.
+* `Linked Class` The 'value' for the look-up, being any arbitrary class appropriate for the particular kind of look-up.
+* `Cosmetic Only` @
+
+To make a new Surface Link look-up, you can use the content browser right-click menu to select a new Surface Link object in the normal way:
+
+.Creating a new Surface Link object using the right-click menu in the content browser
+image::/images/sdk/sl_newsl.jpg[sl_newsl.jpg]
+
+Whatever is carrying out the look-up will have a particular class in mind for the look-up target. In this case, the impact sound code will be looking for a class derived from `BP_CasingImpact_Master`. These are the properties of one such class, `BP_BrassImpact_556_Concrete`:
 
 .BrassImpact blueprint defining the sound to play for 556 calibre concrete collisions
 image::/images/sdk/sl_bpbrassimpact_556_concrete.jpg[sl_bpbrassimpact_556_concrete.jpg]
 
+The details of this blueprint are not important to this example, but it can be seen that the blueprint encodes a particular sound to play (a Wwise event), `Ww_ShellCasings_Event`.
+
+The `Caliber` and `Material` properties are redundant on the Unreal Engine 4 side, but it can be seen that they are passed to Wwise to allow Wwise to make a more informed decision about what sound event or optionally what additional filters to apply, if any, and suchlike:
+
 .Code within the BP_BrassImpact_Master blueprint which passes on the Caliber and Material switches to Wwise
 image::/images/sdk/sl_setswitches.jpg[sl_setswitches.jpg]
+
