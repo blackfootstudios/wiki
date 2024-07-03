@@ -2,7 +2,7 @@
 
 The Surface Link system is a custom GROUND BRANCH system which provides a convenient way to map physical materials to specific classes of things. It is a database of sorts.
 
-One example of the Surface Link system is mapping footsteps to particular footstep sounds. It provides a way to organise the playing of different footstep events (wwise sounds) depending on the physical material that is walked on. Physical materials are set for each material, to provide information about what kind of thing that arbitrarily named materials relate to. See 
+One example of the Surface Link system is mapping footsteps to particular footstep sounds. It provides a way to organise the playing of different footstep events (wwise sounds) depending on the physical material that is walked on. Physical materials are set for each material, to provide information about what kind of thing that arbitrarily named materials relate to. See link:/modding/sdk/ground-branch-physmats[GROUND BRANCH physical materials] for more information on those.
 
 Another example of the Surface Link system is playing the correct impact sound when a spent shell hits a floor or other surface.
 
@@ -13,10 +13,14 @@ image::/images/sdk/weapon/weapon_ejectproperties.jpg[weapon_ejectproperties.jpg]
 
 link:/modding/sdk/weapon/component-eject[GBEjectComponent blueprint component]
 
+.Overview of Surface Link look-ups and impact sound blueprints for the BrassCase_556 Surface Link type
 image::/images/sdk/sl_brasscasefolder.jpg[sl_brasscasefolder.jpg]
 
+.Surface Link look-up for PM_Brick physical material, specifying concrete impact FX as best match
 image::/images/sdk/sl_brasscasebrick.jpg[sl_brasscasebrick.jpg]
 
+.BrassImpact blueprint defining the sound to play for 556 calibre concrete collisions
 image::/images/sdk/sl_bpbrassimpact_556_concrete.jpg[sl_bpbrassimpact_556_concrete.jpg]
 
+.Code within the BP_BrassImpact_Master blueprint which passes on the Caliber and Material switches to Wwise
 image::/images/sdk/sl_setswitches.jpg[sl_setswitches.jpg]
