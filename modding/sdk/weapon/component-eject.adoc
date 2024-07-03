@@ -5,10 +5,8 @@ The most useful/pertinent properties of the eject blueprint component are listed
 .Properties of GBEjectComponent
 image::/images/sdk/weapon/weapon_ejectproperties.jpg[weapon_ejectproperties.jpg]
 
-* `Attached Smoke` @
-* `Looped Smoke` If checked, the smoke animation will be manually stopped @when
-* `Attached Shell` @
-* `Looped Shell` If checked, the shell animation will be manually stopped @when
+* `Attached Smoke` If checked, the smoke FX is attached to the ejection port and will move with the weapon.
+* `Attached Shell` If checked, the shell FX is attached to the ejection port and will move with the weapon.
 * `Manual Ejection` If checked, then smoke and shell FX will not be started or stopped automatically. This might be checked for manual bolt action rifles, for example. 
 * `Shell Impact Type` This is a key to use in surfacelink look-ups when finding effect types for specific types of surfaces. See link:/modding/sdk/surfacelink[the surfacelink system].
 * `Min Shell Impact Speed Squared` Shells having a speed greater than the square root of this value will create impact effects on surfaces they hit.
