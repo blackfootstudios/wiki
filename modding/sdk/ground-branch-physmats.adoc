@@ -1,0 +1,19 @@
+## Overview of 'Physmats'
+
+An understanding of 'physmats' in Unreal Engine 4 is assumed, but in essence they are categories of surfaces that can be assigned to materials within the engine. This is your way of telling the engine that M_MyMat3 is closest to a concrete style material, or metal, or wood, and so on. There are a number of inbuilt physical materials in UE4, and a few more defined specifically by GROUND BRANCH for specific purposes.
+
+A large part of the selection of available physical materials relates to their properties as regards bullet penetration. So there might be sheet metal, for example, which has different acoustic and penetration properties to bulk metal, and so on.
+
+A part of the process of making a map or converting a map into use by GROUND BRANCH is to make sure that all materials used have sensible physical materials assigned to them. This means that appropriate bullet impact effects, footstep sounds, and so on will be used when players interact with your level or your item (e.g. weapon).
+
+For you convenience, we list here the stock physical materials used in GROUND BRANCH, as well as some stock default physical materials used in the engine. You can add your own physical materials, but you will need to define appropriate Surface Links for them.
+
+Surface Links are a native GROUND BRANCH system for linking physical materials to particular kinds of things, like bullet impact effects or footstep sounds. They are described in more detail in  link:/modding/sdk/surfacelink[GROUND BRANCH Surface Link system]. 
+
+## Stock Unreal Engine 4 physical materials
+
+@
+
+## Custom GROUND BRANCH physical materials
+
+@
