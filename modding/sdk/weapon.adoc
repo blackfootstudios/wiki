@@ -56,6 +56,8 @@ See link:/modding/sdk/weapon/ground-branch-weapon-components[here] for a list of
 
 You may need to make your own custom magazine. See link:/modding/sdk/magazine-modding[modding magazines].
 
+You may also need to make a custom suppressor. See link:/modding/sdk/weapon/modding-muzzle-device[modding muzzle devices].
+
 If you wish to use your own custom sounds, see link:/modding/sdk/wwise[adding sounds with Wwise].
 
 ### Custom blueprint code
