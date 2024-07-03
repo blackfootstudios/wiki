@@ -1,5 +1,22 @@
 ## Overview of the Surface Link system
 
-The Surface Link system is a custom GROUND BRANCH system which provides a convenient way to map surface materials/physics materials to specific classes. It is a database of sorts.
+The Surface Link system is a custom GROUND BRANCH system which provides a convenient way to map physical materials to specific classes of things. It is a database of sorts.
 
-One example of the Surface Link system is mapping footsteps to particular footstep sounds. 
+One example of the Surface Link system is mapping footsteps to particular footstep sounds. It provides a way to organise the playing of different footstep events (wwise sounds) depending on the physical material that is walked on. Physical materials are set for each material, to provide information about what kind of thing that arbitrarily named materials relate to. See 
+
+Another example of the Surface Link system is playing the correct impact sound when a spent shell hits a floor or other surface.
+
+The beginning of the story here is the `Shell Impact Type` property of a GBEjectComponent weapon blueprint component (representing the ejection port of a wepaon). In the following example, a type of `BrassCase_556` is used. This tells GROUND BRANCH that it needs to look for surface link definitions 
+
+.A set of properties of the GBEjectComponent blueprint component, showing the Shell Impact Type property
+image::/images/sdk/weapon/weapon_ejectproperties.jpg[weapon_ejectproperties.jpg]
+
+link:/modding/sdk/weapon/component-eject[GBEjectComponent blueprint component]
+
+image::/images/sdk/sl_brasscasefolder.jpg[sl_brasscasefolder.jpg]
+
+image::/images/sdk/sl_brasscasebrick.jpg[sl_brasscasebrick.jpg]
+
+image::/images/sdk/sl_bpbrassimpact_556_concrete.jpg[sl_bpbrassimpact_556_concrete.jpg]
+
+image::/images/sdk/sl_setswitches.jpg[sl_setswitches.jpg]
