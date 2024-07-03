@@ -1,1 +1,3 @@
-Ejection port
+.Properties of GBEjectComponent
+image::/images/sdk/weapon/weapon_ejectproperties.jpg[weapon_ejectproperties.jpg]
+
