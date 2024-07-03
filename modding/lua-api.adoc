@@ -2,6 +2,8 @@
 // enable section numbers.
 :sectnums:
 :toc: macro
+:xrefstyle: short
+//:toclevels: 3
 
 [abstract]
 --
@@ -668,9 +670,9 @@ image:/images/lua-api/watch2.jpeg[Screenshot] image:/images/lua-api/watch3.jpeg[
 
 image:/images/lua-api/watch1.jpeg[Screenshot] image:/images/lua-api/watch7.jpeg[Screenshot]
 
-The watch modes are configured using the gamemode.SetWatchMode() function (see 6.2.29 below) and SetCaptureZone() function (see 6.2.31 below).
+The watch modes are configured using the gamemode.SetWatchMode() function (see <<gamemodeSetWatchMode>> bellow) and SetCaptureZone() function (see <<gamemodeSetCaptureZone>> below).
 
-In ObjectiveFinder and IntelRetrieval modes, an objective location is set via gamemode.SetObjectiveLocation() (see 6.2.32 below), and a capture state (capturing/not capturing) can be set via gamemode.SetCaptureState() (see 6.2.33 below).
+In ObjectiveFinder and IntelRetrieval modes, an objective location is set via gamemode.SetObjectiveLocation() (see <<gamemodeSetObjectiveLocation>> below), and a capture state (capturing/not capturing) can be set via gamemode.SetCaptureState() (see <<gamemodeSetCaptureState>> below).
 
 Everything else is handled client-side by the watch, which displays an alert status, alert message and plays an alert sound as dictated by the defined capture zone and capture state.
 
@@ -697,11 +699,13 @@ This is perhaps the most opaque part of game mode modding in GROUND BRANCH, as t
 
 Typically you will need to use a fair few of these functions, but none are strictly mandatory:
 
+[#preInit]
 === PreInit ()
 
 This function is called when the game mode script is loaded, giving the game mode a chance to find particular actors and update settings based on these before actors are replicated via the game state.
 If you’re reading that and not sure what it means, you should probably just use PostInit().
 
+[#postInit]
 === PostInit ()
 
 This function is called after PreInit() has been called and after some further initialisation of the game mode.
@@ -729,6 +733,7 @@ In this example, team roles (attacking / defending) are set up at the start of t
 *Do not spawn enemy AI or reset the level in PostInit()*, because PostInit() is not called each round, but only when the level and game mode load up the first time.
 You need to do your level initialisation in OnRoundStageSet() (see below), usually at the start of the `+PreRoundWait+` stage (when players are spawned into level but play is frozen for a few seconds).
 
+[#onRoundStageSet]
 === OnRoundStageSet ()
 
 You will recall the default set of round stages listed in Section 2.1 above.
@@ -780,6 +785,7 @@ Some additional processing is done in `+PreRoundWait+` (when players are spawned
 (Also it is possible for the round stage to move to `+ReadyCountdown+` and then back to `+WaitingForReady+`, for example if all players cancel their spawn or leave the ops room, and so on.
 To avoid all the mission objectives resetting, the `+self.CompletedARound+` variable is used, as can be seen in the `+WaitingForReady+` and `+PostRoundWait+` sections)
 
+[#onRoundStageTimeElapsed]
 === OnRoundStageTimeElapsed ( RoundStage )
 
 This function is called when a round stage timer has elapsed.
@@ -806,6 +812,7 @@ function uplink:OnRoundStageTimeElapsed(RoundStage)
 end
 ----
 
+[#playerInsertionPointChanged]
 === PlayerInsertionPointChanged ( PlayerState, InsertionPoint )
 
 This function is called when a player selects or changes an insertion point on the ops board.
@@ -827,6 +834,7 @@ end
 
 It has been noted that GetInsertionPoint() doesn’t work until a player has been spawned in, so this can provide a way to find a player’s spawn point before then.
 
+[#playerReadyStatusChanged]
 === PlayerReadyStatusChanged ( PlayerState, InsertionPoint )
 
 This function is called when a player’s readied-up status changes
@@ -947,6 +955,7 @@ function teamelimination:CheckReadyDownTimer()
 end
 ----
 
+[#shouldCheckForTeamKills]
 === ShouldCheckForTeamKills ()
 
 This function is called to determine if the game should check for team kills.
@@ -966,6 +975,7 @@ end
 
 Current behaviour is that team kills have no consequence in the final seconds of the game (in the `+PostRoundWait+` stage). If you would rather that they did, you can add a check for that round stage here.
 
+[#playerGameModeRequest]
 === PlayerGameModeRequest ( PlayerState, Request )
 
 This is a very specialist function which is called with Request name '`join`' when a player clicks on the Ops Board for a deathmatch-style game (with a "`Mission Area: Click To Deploy`") message on it.
@@ -982,6 +992,7 @@ function deathmatch:PlayerGameModeRequest(PlayerState, Request)
 end
 ----
 
+[#playerCanEnterPlayArea]
 === PlayerCanEnterPlayArea ( PlayerState )
 
 This function is called to determine if a player can enter the play area.
@@ -1001,6 +1012,7 @@ end
 
 This ensures that a player will have a valid insertion point before being sent to the play area.
 
+[#getSpawnInfo]
 === GetSpawnInfo( PlayerState )
 
 This function is called when the game is looking for a player start for a player, to spawn the player into the play area at the start of a round (or on a respawn, if appropriate). If this function is provided, a custom spawn location can be supplied to override the normal process of selecting a player start corresponding to an insertion point selected by the player.
@@ -1052,6 +1064,7 @@ function deathmatch:GetBestSpawn()
 end
 ----
 
+[#playerEnteredPlayArea]
 === PlayerEnteredPlayArea ( PlayerState )
 
 This function is called when a player enters a play area.
@@ -1071,6 +1084,7 @@ function uplink:PlayerEnteredPlayArea(PlayerState)
 end
 ----
 
+[#onCharacterDied]
 === OnCharacterDied ( Character, CharacterController, KillerController )
 
 This function is called whenever a character dies (human or AI). Typically you might use this to determine game mode win/lose conditions.
@@ -1126,6 +1140,7 @@ function uplink:CheckEndRoundTimer()
 end
 ----
 
+[#onGameTriggerBeginOverlap]
 === OnGameTriggerBeginOverlap ( GameTrigger, Character )
 
 This function is called whenever a character (player or AI) enters a trigger area, as defined in the mission editor (or otherwise). For this feature to work, the TeamId for the trigger needs to be set correctly in the mission editor (or conceivably via actor.SetTeamId(), see section 6.3.7 below), and the trigger needs to be set active (via actor.SetActive(), see section 6.3.13 below) in order for it to be triggerable by a player.
@@ -1150,11 +1165,13 @@ function intel:OnGameTriggerBeginOverlap(GameTrigger, Character)
 end
 ----
 
+[#onGameTriggeEndOverlap]
 === OnGameTriggeEndOverlap ( GameTrigger, Character )
 
 This function is called whenever a character (player or AI) leaves a trigger area.
 This is the companion function to OnGameTriggerBeginOverlap() mentioned above.
 
+[#onTargetCaptured]
 === OnTargetCaptured ()
 
 This function is called whenever a capturable laptop or similar has been captured.
@@ -1177,11 +1194,13 @@ function uplink:TargetCaptured()
 end
 ----
 
+[#onLaptopPickedUp]
 === OnLaptopPickedUp ()
 
 This function is called when the laptop is picked up, including after the laptop is dropped (not just when first picked up). It is experimental and may not work correctly.
 Usually it suffices to use the OnTargetCaptured() function.
 
+[#onMissionSettingsChanged]
 === OnMissionSettingsChanged ( ChangedSettingsTable )
 
 This function is called when a setting on the Ops Board is changed. [.underline]#It replaces the old OnMissionSettingChanged() function#. It allows mission data to be re-randomised if a relevant mission setting has been changed, for example.
@@ -1201,10 +1220,12 @@ function intelretrieval:OnMissionSettingsChanged(ChangedSettingsTable)
 end
 ----
 
+[#onRandomiseObjectives]
 === OnRandomiseObjectives () [.new]#New in v1034#
 
 This function is called when a player clicks the new randomise objectives button on the Ops Board, and requests that the game mode re-roll the random settings (such as intel locations, team spawns, and so on).
 
+[#logOut]
 === LogOut ( Exiting )
 
 This function is called when a player is logging out of a game.
@@ -1221,6 +1242,7 @@ function intel:LogOut(Exiting)
 end
 ----
 
+[#validateLevel]
 === ValidateLevel ()
 
 This is a special function provided by a <GameMode>Validate.Lua file.
@@ -1242,11 +1264,13 @@ function intelretrievalvalidate:ValidateLevel()
 end
 ----
 
+[#postLoadoutCreated]
 === PostLoadoutCreated ( PlayerState, LoadoutName )
 
 This function is called when a player has created or updated the loadout of name [.var]#LoadoutName#. The Hostage Rescue game mode uses this as a cue to create a Hostage variant of the loadout, if it doesn’t already exist, for example.
 See Section 4 and Section 6.9 below for more information.
 
+[#getPlayerLoadoutName]
 === GetPlayerLoadoutName ( PlayerState )
 
 This function is called whenever a player is spawned into the level or into the ready room.
@@ -1543,12 +1567,14 @@ pistols)
 
 The following functions are provided for use by mutators only (they are not called in game modes):
 
+[#generateCustomCallSigns]
 ==== GenerateCustomCallSigns ( PlayerName )
 
 This function is called when the player enters a new player name, and provides a suggested list of call signs for that name.
 Currently a random entry is picked.
 PlayerName may potentially be nil (this is an error state). The function returns a table of suggested (3 letter) call signs (each one a string), or nil to pass and let the base function decide.
 
+[#validatePlayerCallSign]
 ==== ValidatePlayerCallSign ( PlayerPreferredCallSign, Player, PlayerElement, PlayerElementNumber, bUseElementCallSign )
 
 This function is called on servers to ensure everyone’s callsign is appropriate for that server and to avoid clashes. `+PlayerPreferredCallSign+` is a custom three letter call sign provided by the player (`+string+` type), or `+nil+` if one is not specified. `+Player+` is a player state identifier, which could be nil (if we’re at the main menu and the player info is not yet properly defined). `+PlayerElement+` is a `+string+` type indicating the player’s current element ("`A`" - "`D`", could be `+nil+` if not yet defined). `+PlayerElementNumber+` is a (theoretically) guaranteed unique index of the player within that element (starting at 1), and could also be `+nil+`. If `+bUseElementCallSign+` is true, the player element and element number should always be used as the basis for the callsign.
@@ -1556,20 +1582,24 @@ The precise formatting of the callsign is up to the mutator.
 
 The function should return a callsign `+string+` type of ideally no more than 4 letters (it will probably be capped at 4 or 5 characters regardless). If the function returns `+nil+`, the default callsign will be used.
 
+[#validatePlayerName]
 ==== ValidatePlayerName ( PlayerName )
 
 This function is not usually of interest except where the name is blank or generic. `+PlayerName+` is a `+string+` type.
 Returning a `+string+` will override the name with the suggestion, otherwise return `+nil+` for no action.
 The player name may be `+nil+`.
 
+[#assignPlayerElement]
 ==== AssignPlayerElement ( Player )
 
 This function returns the default team element for the player (generally Alpha). This is only called when a player joins a server or starts a game (_may be currently inoperational_). Return a `+string+` type "``+A+``", "``+B+``", "``+C+``", "``+D+``", or return `+nil+` to pass on this opportunity.
 
+[#onMutatorSettingChanged]
 ==== OnMutatorSettingChanged ( OptionName, NewValue )
 
 This function is called when a player has changed a mutator option - take care not to set any new mutator options here.
 
+[#onPreLoadoutChanged]
 ==== OnPreLoadoutChanged ( LoadoutReferenceObject )
 
 This function allows the modification of a player loadout _before_ it is applied.
@@ -1578,6 +1608,7 @@ A different approach is required if you want to change inventory more dynamicall
 In that case, you need to define fallback loadouts in advance and switch between them and the normal loadout as appropriate.
 See Section 6.9 and the inbuilt WeaponRestriction mutator for more details.
 
+[#getItemBuildName]
 ==== GetItemBuildName(ItemType, ItemBuildTable, JsonHash)
 
 This function is called by the character editor when editing an item build, either from scratch or editing an existing build. `+ItemType+` is a `+string+` containing item type, "`e.g. `+PrimaryFirearm+``". `+ItemBuildTable+` is a lua table containing a parallel structure to the loadout Json, but contains only key fields from it: e.g. `+TypeName+` and `+TypeValue+` (expanded from the original `+Type+` field) and `+Children+`. `+JsonHash+` is a hash `+string+` type made from the original loadout Json that can be used to create unique build names (a `+string+` is used rather than `+number+` because it is a very large number).
@@ -1590,6 +1621,7 @@ GROUND BRANCH provides a number of utility functions, hooks, and so on to game m
 These libraries may be changed or added to at any time.
 Proceed with caution.
 
+[#gameplayStatics]
 === GameplayStatics (GBLuaGameplayStaticsPackage.h)
 
 This Lua library clones various functions in UGameplayStatics relating to the UE4 world.
@@ -1665,6 +1697,7 @@ It is not intended to be used in release versions of game modes.
 
 This function draws a debug line from the specified start location to the specified end location for the specified duration.
 
+[#gamemode]
 === GameMode (GBLuaGameModePackage.h)
 
 This library handles interactions between the game mode script and the GROUND BRANCH code.
@@ -1881,7 +1914,7 @@ Example from the Uplink game mode, sending all players an appropriate message ab
 This function returns a table (array) of players (corresponding to C++ type `+AGBPlayerState*+`) matching the criteria of team Id [.var]#TeamId# and human or not [.var]#ExcludeBots#, and having a minimum number of lives [.var]#MinLives#. This selects all players on a team, also filtering out to select only players with a Readied-up status of `+DeclaredReady+`, only players with Ready Room status of `+InPlayArea+`, and only non-spectators.
 This is usually the starting point of processing players in play.
 
-If you need to get a list of AI in a level, you have to use AI.GetControllers() instead (see 6.4.5 below).
+If you need to get a list of AI in a level, you have to use AI.GetControllers() instead (see <<aiGetControllers>> below).
 
 Example from the Intel Retrieval game mode of using GetPlayerListByLives() to determine if any players remain alive (otherwise it’s round over):
 
@@ -2374,6 +2407,7 @@ It returns a Table including items of type String, e.g. \{ "`Pvp`", "`Coop`" }
 This is an experimental function that was being used for the Defuse bomb effects, amongst other things.
 It will spawn the named effect class at the specified location.
 
+[#actor]
 === Actor (GBLuaActorPackage.h)
 
 This library provides a wrapper around/interface to a UE4 Actor (essentially anything within the game level is an actor). It should be noted that syntactically `+Function(Actor, Parameter1, Parameter2, …)+` is equivalent in Lua to `+Actor.Function(Parameter1, Parameter2, …)+`
@@ -2579,6 +2613,7 @@ Tests against normal sorts of things (other objects, players, and so on) but may
 Experimental.
 Used by game mode validators.
 
+[#ai]
 === AI (GBLuaAIPackage.h)
 
 This library provides a set of functions for controlling the GROUND BRANCH AI.
@@ -2773,6 +2808,7 @@ This function returns the name of the AI hotspot referenced by [.var]#aiHotspot#
 
 Returns TRUE if the specified controller is an AI controller in the current play session, optionally also checking that the AI entity has the specified AI controller tag (if the tag is not `+nil+`).
 
+[#player]
 === Player (GBLuaPlayerPackage.h)
 
 This library provides a set of functions for manipulating and getting information on the player pawns and controllers.
@@ -2924,7 +2960,7 @@ elseif not self.TeamExfilWarning then
 end
 ----
 
-See gamemode.BroadcastGameMessage (see 6.2.9 above) for more info on the [.var]#Type# and [.var]#Duration# parameters.
+See gamemode.BroadcastGameMessage (see <<gamemodeBroadcastGameMessage>> above) for more info on the [.var]#Type# and [.var]#Duration# parameters.
 
 [#playerGiveItem]
 ==== player.GiveItem ( Player, ItemClass, bEquip )
@@ -2966,7 +3002,7 @@ There may be issues with special characters, if used.
 [#playerAwardPlayerScore]
 ==== player.AwardPlayerScore ( Player, ScoreName, ScoreMultiple )
 
-This function awards the specified score type [.var]#ScoreName# a multiple [.var]#ScoreMultiple# of times (unless the relevant score type has a OneOff property of `+true+`). Player scores must have been set up via gamemode.SetPlayerScoreTypes() first (see 6.2.35 above).
+This function awards the specified score type [.var]#ScoreName# a multiple [.var]#ScoreMultiple# of times (unless the relevant score type has a OneOff property of `+true+`). Player scores must have been set up via gamemode.SetPlayerScoreTypes() first (see <<gamemodeSetPlayerScoreTypes>> above).
 
 [#playerResetPlayerScores]
 ==== player.ResetPlayerScores ( Player )
@@ -3072,6 +3108,7 @@ Damage type is not currently supported and can take any String value.
 This function is experimental, and will spawn an effect of the specified effect class locally to the player.
 See also gamemode.SpawnEffectAtLocation() (see Section 6.2.54).
 
+[#timer]
 === Timer (GBLuaTimerPackage.h)
 
 This library provides a compact set of functions for setting and clearing the UE4 timer.
@@ -3129,6 +3166,7 @@ end
 ----
 
 
+[#umath]
 === UMath (UGBLuaMathPackage.h)
 
 This library provides a couple of functions to provide random numbers using the UE4 random number system.
@@ -3165,6 +3203,7 @@ If [.var]#Max# is an integer, returns a random integer between [.var]#Min# and [
 
 If [.var]#Max# is a float, returns a random float between [.var]#Min# and [.var]#Max#.
 
+[#vector]
 === Vector (GBLuaVectorPackage.h)
 
 This library provides a set of functions for handling (geometric) vectors, and implements various mathematical operators.
@@ -3194,6 +3233,7 @@ Returns the vector size (length) in 2D, which is equivalent to the square root o
 
 Returns the vector size squared in 2D, i.e. X^2 + Y^2.
 
+[#inventory]
 === Inventory (GBLuaInventoryPackage.h)
 
 This library provides a set of functions for handling inventory (player loadouts, custom builds, and so on). See Section 4 for more information on the inventory system.
