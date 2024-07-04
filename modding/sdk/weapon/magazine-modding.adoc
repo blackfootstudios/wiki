@@ -22,7 +22,7 @@ Properties of the magazine base class that you are most likely to need to deal w
 
 === Bullet calibers
 
-You will ordinarily want to use one of the in-game link:/modding/sdk/weapon/calibers[bullet calibers] as the basis for your custom magazine.
+You will ordinarily want to use one of the in-game link:/modding/sdk/weapon/calibers[projectile classes] as the basis for your custom magazine.
 
 === Child components (visible bullets)
 
