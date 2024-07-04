@@ -3,7 +3,8 @@
 :sectnums:
 :toc: macro
 :xrefstyle: short
-//:toclevels: 3
+:section-refsig: section
+:toclevels: 3
 
 [abstract]
 --
@@ -485,7 +486,7 @@ VolunteersAllowed = true,
 ----
 
 [#localisation]
-=== Localisation files(.csv)
+=== Localisation files (.csv)
 
 It is desired that all game mode text (in-game messages, option names, option settings, and so on) be localisable into different languages and locales/dialects.
 Thus, nearly every bit of text used in a game mode script is looked up in a corresponding game mode localisation table (.csv file), stored (originally) in the location `+\Content\Localization\GroundBranch\en+` (or other codes in place of `+en+` for other languages/locales).
