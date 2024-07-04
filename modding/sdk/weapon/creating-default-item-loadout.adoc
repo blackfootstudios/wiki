@@ -2,6 +2,11 @@
 
 You will need to make a default item build for every weapon you add in the Mod Kit (and similarly for certain other types of items). You will need to go outside the Mod Kit to do this. You need to save a special .kit file in the same place as the item the default item build is for, using the same leaf name (that is, the same file name, minus the path).
 
+To easily get to a particular asset folder in Windows Explorer, right-click an asset in that folder and select `Show in Explorer`:
+
+.Short-cut to asset folder in Windows Explorer
+image::/images/sdk/modkit_showinexplorer.jpg[modkit_showinexplorer.jpg]
+
 The default item build file tells GROUND BRANCH what accessories should be spawned with your item by default. In the case of weapons, this will always include a default magazine type. Some weapons also add default sights and maybe grips, and so on. It is up to you to ensure that the included extra attachments are validly selected and placed.
 
 ### Example default item build (Mk23 mod) 
