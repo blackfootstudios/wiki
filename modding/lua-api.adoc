@@ -5,7 +5,7 @@
 :xrefstyle: short
 :section-refsig: section
 :toclevels: 3
-:imagesdir: /images/lua-api/
+:imagedir: /images/lua-api/
 
 [abstract]
 --
