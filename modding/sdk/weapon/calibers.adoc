@@ -1,4 +1,4 @@
-## Bullet (caliber) classes
+## Bullet classes
 
 The following is a list of the in-game bullet calibers which are used in GROUND BRANCH:
 
