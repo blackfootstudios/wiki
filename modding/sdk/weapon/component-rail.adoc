@@ -1,15 +1,36 @@
 ## Properties of GBRailComponent
+
+Rail components are manually placed in weapon blueprints to represent attachment points (specifically picatinny rails) on the weapon. They can be placed on the top, bottom or sides of a weapon, and more than one rail can be placed in any particular orientation if desired/required:
+
+.Placement of rails on the M16A4 in-game weapon
+image::/images/sdk/weapon/waepon_railplacements.jpg[waepon_railplacements.jpg]
+
+Rails are colour-coded according to the detected orientation:
+
+[width="100%",cols="50%,50%",options="header",]
+|===
+|Orientation |Colour
+|Top |[blue]#Blue#
+|Side |[green]#Green#
+|Bottom |[orange]#Orange#
+|===
+
+NOTE: If a rail does not have the expected colour, the rotation is probably incorrect. Make sure that the pivot point/origin of the rail is towards the rear of the weapon, and try swapping 90 and -90, or similar, until you get the expected colour and orientation.
+
 The most useful/pertinent properties of the rail blueprint component are listed below:
 
 .Properties of GBRailComponent
 image::/images/sdk/weapon/weapon_railproperties.jpg[weapon_railproperties.jpg]
 
 * `Recoil Slots` How many attachment points on the rail
-* `Sight Only` Should be checked for top rails that sights can be placed on
-* `Single Parent Only` @
-* `Low Clearance` @
-* `Rail Directness` @
-* `Manual Rail Face` @
+* `Sight Only` Attachments cannot use this rail unless they are a sight or sight related attachment.
+* `Single Parent Only` Attachments cannot use this rail unless it is the only rail the are mounted on. This is pertinent to two-top-rail setups, like on the M16 (see above), where a sight could conceivable span the two rails.
+* `Low Clearance` This rail may lack clearance for certain attachments and require the use of a riser. For example, the front sight post on a flat top M16 will obscure the view from some optics.
+* `Rail Directness` How this rail is treated when being considered by a rail attachment that needs to attach directly to the firearm (this can safely be ignored if this rail is part of the firearm):
+**	`NotDirect`	- Never considered (e.g. a rail on top of a sight)
+**	`Indirect` - Considered if owner is attached to a direct rail (e.g. a 45 degree riser that is attached to a firearms rail)
+**	`Direct` - Always considered (e.g. Rails included on in the firearm or special rail adapter)
+* `Manual Rail Face` You can override the auto-detected rail orientation, but it would be advised not to do this unless you are very certain that you need to.
 
 NOTE: When rotating the rail to fit it to the weapon, it needs to be oriented in a specific way. The origin/pivot point of the rail component should be placed at the REAR of the weapon relative to the rest of the rail, as shown in the following image (the colour should also change to indicate a correct placement):
 
