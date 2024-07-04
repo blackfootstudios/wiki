@@ -112,7 +112,11 @@ There's a lot that can go wrong when making a weapon mod, and weapon setups are 
 
 **I am not sure how to add a suppressor**
 
--> You need to add the mesh and make a blueprint for it, then setup the socket on the weapon and match the naming conventions. It's called Muzzle Device Thread in the suppressor BP. Just add the name of the socket that you created on the mesh there and it should work.
+-> You need to add the mesh and make a blueprint for it, then setup the socket on the weapon and match the naming conventions, and set the name in the barrel component. It's called Muzzle Device Thread in the suppressor BP. Just add the name of the socket that you created on the mesh there and it should work.
+
+**I cannot see my new custom suppressor in the weapon editing screen / I only see the standard suppressor**
+
+-> See above. You need to do all of (a) create a custom mesh socket on the skeletal mesh, (b) enter the same socket name in the custom suppressor (MuzzleDevice), and (c) enter the same socket name in the barrel component of the weapon. Otherwise, you will not see the suppressor in the weapon editor accessory list.
 
 **I have made the same gun as someone else, but mine/theirs does not show up in the list of weapons in the character editor**
 
