@@ -45,3 +45,5 @@ image::/images/sdk/weapon/weapon_mk16_physics.jpg[weapon_mk16_physics.jpg]
 This view allows you to define a simplified physics representation of the weapon, principally used for (but not limited to) defining collision for the weapon. Physics collisions are comprised of simple (as simple as possible, in fact) primitive shapes such as capsules, boxes and spheres.
 
 NOTE: All sight rails (that is, rails to which sights can be attached) must be 'poking out' of the physics collision elements. If they are within the physics elements, it will not be possible to attach any sights. See the top rail in the picture above.
+
+TIP: Make sure your component rails are attached in the correct orientation (origin/pivot point at rear of weapon) or you may have a problem that looks like incorrect physics element placement, but isn't.
