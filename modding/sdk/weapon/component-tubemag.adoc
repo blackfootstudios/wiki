@@ -5,6 +5,13 @@ The most useful/pertinent properties of the tubemag component are listed below:
 .Relevant properties in GBTubeMagComponent blueprint component
 image::/images/sdk/weapon/weapon_tubemag_properties.jpg[weapon_tubemag_properties.jpg]
 
+* `Round Type` This defines the class of projectile (the caliber) accepted by the magazine 
+* `Capacity` This defines how many projectiles (e.g. shells) can be loaded into the weapon.
+* `Base Bullet Item Class` This is the default projectile class that is loaded. Other projectile types can be used so long as they are of the correct round type and a subclass/child class of the base bullet item class.
+* `Start Plus One` Start with a projectile chambered in addition to a fully loaded tube.
+* `Stay Open on Last Round` 
+* `Is Firing from Open Bolt`
+
 ## See also
 
 You may need to use a different magazine types depending on the type of weapon:
