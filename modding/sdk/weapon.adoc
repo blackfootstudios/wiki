@@ -30,7 +30,7 @@ You will need to make sure you have properly link:/modding/sdk/weapon/setting-up
 
 When making your materials/skins for the weapon, you may wish to use existing link:/modding/sdk/ground-branch-master-materials[GROUND BRANCH master materials] for ease of use and consistency with existing in-game assets.
 
-You will also want to make sure any new materials have appropriate link:/modding/sdk/ground-branch-physmats[physical materials] set, typicaly an appropriate mix of `PM_FirearmMetal` and `PM_FirearmPlastic`.
+You will also want to make sure any new materials have appropriate link:/modding/sdk/ground-branch-physmats[physical materials] set, typically an appropriate mix of `PM_FirearmMetal` and `PM_FirearmPlastic`.
 
 ### Setting up blueprint components
 
