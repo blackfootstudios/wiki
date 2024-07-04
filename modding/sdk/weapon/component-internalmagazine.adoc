@@ -1,15 +1,17 @@
 ## Component properties
 
-The internal magazine component is very similar in structure to a magazine blueprint (whereas the external magazine component merely defines the interface to magazines).
+The internal magazine component is very similar in structure to a magazine blueprint (whereas the external magazine component merely defines the interface to magazines). It represents the capacity of some weapons to load multiple bullets directly into the weapon in lieu of bullets being fed by an external magazine. 
+
+The M24 sniper rifle is one example of a weapon having an internal magazine.
 
 The most useful/pertinent properties of the internal magazine component are listed below:
 
 .Relevant properties of the GBInternalMagazineComponent blueprint component
 image::/images/sdk/weapon/weapon_internalmagazineproperties.jpg[weapon_internalmagazineproperties.jpg]
 
-* `Round Type`
-* `Capacity`
-* `Base Bullet Item Class`
+* `Round Type` This defines the class of projectile (the caliber) accepted by the magazine 
+* `Capacity` This defines how many bullets can be loaded into the weapon.
+* `Base Bullet Item Class` This is the default projectile class that is loaded. Other projectile types can be used so long as they are of the correct round type and a subclass/child class of the base bullet item class.
 * `Start Plus One`
 * `Stay Open on Last Round`
 * `Is Firing from Open Bolt`
