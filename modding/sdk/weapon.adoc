@@ -18,6 +18,8 @@ image::/images/sdk/weapon/weapon_m16files.jpg[weapon_m16files.jpg,20%]
 
 Please see link:/modding/sdk/weapon/weapon-blueprint-properties[here] for a run-down of (nearly) all of the properties in your new custom firearm blueprint.
 
+Also see here for a list of available in-game bullet calibers: link:/modding/sdk/weapon/calibers[bullet calibers in GROUND BRANCH].
+
 ### Setting up the skeletal mesh
 
 First of all, you will most likely start by putting in a new firearm model (skeletal mesh) and skin (material) into the `+Firearm Mesh Component+` properties.
@@ -46,7 +48,7 @@ These is the minimum list of components that are necessary for a working weapon 
 
 * link:/modding/sdk/weapon/component-barrel[Barrel] (GBBarrelComponent)
 
-* link:/modding/sdk/weapon/component-magwell[Magwell] (GBExternalMagazineComponent)
+* link:/modding/sdk/weapon/component-magwell[Magwell] (GBExternalMagazineComponent) or TubeMag or InternalMagazine equivalent.
 
 * link:/modding/sdk/weapon/component-eject[Ejection port] (GBEjectComponent) 
 
