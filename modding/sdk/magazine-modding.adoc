@@ -13,7 +13,7 @@ image::/images/sdk/modkit_magazine_stanagproperties.jpg[modkit_magazine_stanagpr
 Properties of the magazine base class that you are most likely to need to deal with include:
 
 * `Capacity` This is how many bullets the magazine holds when full
-* `Initial Count` How many bullets the magazine starts out with (-1 -> full magazine)
+* `Initial Count` How many bullets the magazine starts out with (-1 meaning full magazine)
 * `Bullet Item Class` The class of the bullet loaded in the magazine. Loadouts and default item builds and suchlike may be able to override the bullet type, but for now just put your preferred bullet class here.
 * `Base Bullet Item Class` Just set this to the same as Bullet Item Class
 * `Tracer Item Class` The bullet class to use if/when a tracer is fired
