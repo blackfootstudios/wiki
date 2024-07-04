@@ -11,7 +11,7 @@ image::/images/sdk/weapon/weapon_railproperties.jpg[weapon_railproperties.jpg]
 * `Rail Directness` @
 * `Manual Rail Face` @
 
-NOTE: When rotating the rail to fit it to the weapon, it needs to be oriented in a specific way. The origin/pivot point of the rail component should be placed at the REAR of the weapon relative to the rest of the rail, as shown in the following image:
+NOTE: When rotating the rail to fit it to the weapon, it needs to be oriented in a specific way. The origin/pivot point of the rail component should be placed at the REAR of the weapon relative to the rest of the rail, as shown in the following image (the colour should also change to indicate a correct placement):
 
 .Correct orientation of rail component (component origin at rear of weapon)
 image::/images/sdk/weapon/weapon_railorientation.jpg[weapon_railorientation.jpg]
