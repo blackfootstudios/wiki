@@ -45,4 +45,6 @@ Rather than list all possible permutations of item types and syntax here, we wou
 
 TIP: It is usually easiest to manually edit an existing default item build `.kit` file, but you may want to validate the JSON before saving with a JSON validator. Many different JSON validators exist, and this is just one example: https://codebeautify.org/jsonvalidator
 
+TIP: Item builds that you create in-game can be found in your personal documents folder (e.g. "My Documents") under `GroundBranch/ItemBuilds`
+
 TIP: If a default item build fails to spawn, there may be no error given in-game, but you may find an explanation of any fault in the game log. If a default item build fails to load, very often it may be an issue with a missing (or extra) comma, or bracket of any appropriate type.
