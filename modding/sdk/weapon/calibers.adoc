@@ -1,8 +1,10 @@
-The following is a list of the bullet calibers which are used in GROUND BRANCH and available to you to use as weapon modders:
+## Bullet (caliber) classes
+
+The following is a list of the in-game bullet calibers which are used in GROUND BRANCH:
 
 [width="100%",cols="33%,33%,34%",options="header",]
 |===
-|Caliber |Variety |Blueprint Name 
+|Bullet type |Variety |Blueprint Name 
 |.300 AAC Blackout (7.62x35mm) |Full Metal Jacket |`BP_300Blkt_FMJ` 
 |40 cal (10.2x22mm) |Full Metal Jacket |`BP_40calFMJ`
 |45 ACP (11.43x23mm) |Full Metal Jacket |`BP_45ACPFMJ`
@@ -33,6 +35,46 @@ The following is a list of the bullet calibers which are used in GROUND BRANCH a
 | |Tracer (orange) |`BP_9x19mm_FMJ_Tracer_Orange`
 | |Tracer (red) |`BP_9x19mm_FMJ_Tracer_Red`
 | 9x39mm |Full Metal Jacket |`BP_9x39mm_FMJ`
+|===
+
+However, you will likely be more interested in projectile classes, which includes anything you will put into a magazine or directly into a weapon. These include additional types of projectile including shotgun shells:
+
+## Projectile classes
+
+[width="100%",cols="33%,33%,34%",options="header",]
+|===
+|Projectile type |Variety |Blueprint Name 
+|12-Gauge 00 Buckshot |Buckshot |`BP_12Gauge_00Buck_PROJ`
+|.300 AAC Blackout (7.62x35mm) |Full Metal Jacket |`BP_300Blkt_FMJ_PROJ` 
+|40 cal (10.2x22mm) |Full Metal Jacket |`BP_40calFMJ_PROJ`
+|45 ACP (11.43x23mm) |Full Metal Jacket |`BP_45ACPFMJ_PROJ`
+| |Tracer (green) |`BP_45ACPFMJ_Tracer_Green_PROJ`
+| |Tracer (orange) |`BP_45ACPFMJ_Tracer_Orange_PROJ`
+| |Tracer (red) |`BP_45ACPFMJ_Tracer_Red_PROJ`
+| 46x30mm |Full Metal Jacket |`BP_46x30mm_FMJ_PROJ`
+| 545x39mm |Full Metal Jacket |`BP_545x39mm_FMJ_PROJ`
+| |Tracer (green) |`BP_545x39mm_FMJ_Tracer_Green_PROJ`
+| |Tracer (orange) |`BP_545x39mm_FMJ_Tracer_Orange_PROJ`
+| |Tracer (red) |`BP_545x39mm_FMJ_Tracer_Red_PROJ`
+| 556x45mm NATO |Full Metal Jacket |`BP_556x45mmNATO_FMJ_PROJ`
+| |Tracer (green) |`BP_556x45mmNATO_FMJ_Tracer_Green_PROJ`
+| |Tracer (orange) |`BP_556x45mmNATO_FMJ_Tracer_Orange_PROJ`
+| |Tracer (red) |`BP_556x45mmNATO_FMJ_Tracer_Red_PROJ`
+| 762x39mm |Full Metal Jacket |`BP_762x39mm_FMJ_PROJ`
+| |Tracer (green) |`BP_762x39mm_FMJ_Tracer_Green_PROJ`
+| |Tracer (orange) |`BP_762x39mm_FMJ_Tracer_Orange_PROJ`
+| |Tracer (red) |`BP_762x39mm_FMJ_Tracer_Red_PROJ`
+| 762x51mm NATO |Full Metal Jacket |`BP_762x51mmNATO_FMJ_PROJ`
+| |Tracer (green) |`BP_762x51mmNATO_FMJ_Tracer_Green_PROJ`
+| |Tracer (orange) |`BP_762x51mmNATO_FMJ_Tracer_Orange_PROJ`
+| |Tracer (red) |`BP_762x51mmNATO_FMJ_Tracer_Red_PROJ`
+| 762x52mmR |Full Metal Jacket |`BP_762x52mmR_PROJ`
+| |Tracer (red) |`BP_762x52mmR_Trace_Red_PROJ`
+| 9x19mm |Full Metal Jacket |`BP_9x19mm_FMJ_PROJ`
+| |Tracer (green) |`BP_9x19mm_FMJ_Tracer_Green_PROJ`
+| |Tracer (orange) |`BP_9x19mm_FMJ_Tracer_Orange_PROJ`
+| |Tracer (red) |`BP_9x19mm_FMJ_Tracer_Red_PROJ`
+| 9x39mm |Full Metal Jacket |`BP_9x39mm_FMJ_PROJ`
 |===
 
 You will need to refer to one of these calibers when setting up link:/modding/sdk/magazine-modding[modded magazines], link:/modding/sdk/weapon/component-internalmagazine[internal magazine components] or link:/modding/sdk/weapon/component-tubemag[tubemag components].
