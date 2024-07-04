@@ -20,6 +20,10 @@ Properties of the magazine base class that you are most likely to need to deal w
 * `Start Tracer Count` When tracers should start being used (-1 for immediate). For example, a value of 10 would begin creating tracers once the magazine count reached 10 or lower.
 * `Tracer Frequency` How often tracers should be used (0 to disable). For example, a value of 3 would create a tracer on every third round.
 
+=== Bullet calibers
+
+You will ordinarily want to use one of the in-game link:/modding/sdk/weapon/calibers[bullet calibers] as the basis for your custom magazine.
+
 === Child components (visible bullets)
 
 There is a particular treatment of child blueprint components in magazine blueprints: the magazine master blueprint assumes that all child components are bullet meshes. In particular, the master blueprint assumes that the first child component is the top-most bullet, the second component is the second-most bullet, and so on.
