@@ -1,1 +1,22 @@
-M24
+## Component properties
+
+The internal magazine component is very similar in structure to a magazine blueprint (whereas the external magazine component merely defines the interface to magazines).
+
+The most useful/pertinent properties of the internal magazine component are listed below:
+
+.Relevant properties of the GBInternalMagazineComponent blueprint component
+image::/images/sdk/weapon/weapon_internalmagazineproperties.jpg[weapon_internalmagazineproperties.jpg]
+
+* `Round Type`
+* `Capacity`
+* `Base Bullet Item Class`
+* `Start Plus One`
+* `Stay Open on Last Round`
+* `Is Firing from Open Bolt`
+
+## See also
+
+You may need to use a different magazine types depending on the type of weapon:
+
+* External magazine ('magwell'): link:/modding/sdk/weapon/component-magwell[GBExternalMagazineComponent] (for the vast majority of weapons)
+* Tube magazine: link:/modding/sdk/weapon/component-tubemag[GBTubeMagComponent] (for shotguns and suchlike)
