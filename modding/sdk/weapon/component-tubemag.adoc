@@ -1,2 +1,13 @@
-shotguns
-M1014
+## Component properties
+
+The most useful/pertinent properties of the tubemag component are listed below:
+
+.Relevant properties in GBTubeMagComponent blueprint component
+image::/images/sdk/weapon/weapon_tubemag_properties.jpg[weapon_tubemag_properties.jpg]
+
+## See also
+
+You may need to use a different magazine types depending on the type of weapon:
+
+* External magazine ('magwell'): link:/modding/sdk/weapon/component-magwell[GBExternalMagazineComponent] (for the vast majority of weapons)
+* Internal magazine: link:/modding/sdk/weapon/component-internalmagazine[GBInternalMagazineComponent] (for certain sniper rifles)
