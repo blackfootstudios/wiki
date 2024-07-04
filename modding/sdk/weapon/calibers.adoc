@@ -1,0 +1,7 @@
+The following is a list of the bullet calibers which are used in GROUND BRANCH and available to you to use as weapon modders:
+
+[width="100%",cols="34%,33%,33%",options="header",]
+|===
+|Caliber |In-game name |Notes
+|
+|===
