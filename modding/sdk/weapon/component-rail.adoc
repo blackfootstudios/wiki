@@ -1,2 +1,17 @@
+## Properties of GBRailComponent
+The most useful/pertinent properties of the rail blueprint component are listed below:
+
 .Properties of GBRailComponent
 image::/images/sdk/weapon/weapon_railproperties.jpg[weapon_railproperties.jpg]
+
+* `Recoil Slots` How many attachment points on the rail
+* `Sight Only` Should be checked for top rails that sights can be placed on
+* `Single Parent Only`
+* `Low Clearance`
+* `Rail Directness`
+* `Manual Rail Face`
+
+NOTE: When rotating the rail to fit it to the weapon, it needs to be oriented in a specific way. The origin/pivot point of the rail component should be placed at the REAR of the weapon relative to the rest of the rail, as shown in the following image:
+
+.Correct orientation of rail component (component origin at rear of weapon)
+image::/images/sdk/weapon/weapon_railorientation.jpg[weapon_railorientation.jpg]
