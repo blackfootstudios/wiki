@@ -51,5 +51,5 @@ These are currently supported GROUND BRANCH content types for modding; more exis
 |Asset type |Description |Master blueprint(s) |Modding
 |Primary |Primary weapon, e.g. rifle, shotgun, LMG, sniper rifle |link:/modding/sdk/master-bps-weapons[Primary master BP list] |link:/modding/sdk/weapon[Weapon modding]
 |Sidearm |Sidearm, e.g. pistol |`+BP_Handgun_Master+` |link:/modding/sdk/weapon[Weapon modding]
-|Magazine |Holds bullets |`+BP_Magazine_Master+` |link:/modding/sdk/magazine-modding[Magazine modding]
+|Magazine |Holds bullets |`+BP_Magazine_Master+` |link:/modding/sdk/weapon/magazine-modding[Magazine modding]
 |===
