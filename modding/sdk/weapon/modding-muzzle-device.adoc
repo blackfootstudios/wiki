@@ -12,6 +12,11 @@ image::/images/sdk/weapon/weapon_muzzledevice_properties.jpg[weapon_muzzledevice
 * `Suppressor Switch Value` This is the switch to pass to Wwise in connection with gunshots. It should be `Suppressed` for suppressed shots, and `Unsuppressed` otherwise. You will probably want to use the former\...
 * `Light Level Key` et al. These values in the `AI` section will override any similar values in the Barrel component (see link:/modding/sdk/weapon/component-barrel[barrel component]).
 
+You will also need to set an appropriate static mesh for the `SuppressorS01` static mesh component of your custom muzzle device:
+
+.The SuppressorS01 static mesh component of the in-game AAC_MG suppressor
+image::/images/sdk/weapon/weapon_muzzledevice_viewport.jpg[weapon_muzzledevice_viewport.jpg]
+
 ### Related tasks
 
 See link:/modding/sdk/weapon/skinning-weapon-models[skinning weapon models] for details on creating an appropriate suppressor mesh socket on the weapon skeletal mesh.
