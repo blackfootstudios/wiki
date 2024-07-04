@@ -56,7 +56,7 @@ See link:/modding/sdk/weapon/ground-branch-weapon-components[here] for a list of
 
 ### Ancillary items
 
-You may need to make your own custom magazine. See link:/modding/sdk/magazine-modding[modding magazines].
+You may need to make your own custom magazine. See link:/modding/sdk/weapon/magazine-modding[modding magazines].
 
 You may also need to make a custom suppressor. See link:/modding/sdk/weapon/modding-muzzle-device[modding muzzle devices].
 
