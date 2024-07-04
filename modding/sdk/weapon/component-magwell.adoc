@@ -1,2 +1,19 @@
+## Component properties
+
+The most useful/pertinent properties of the magwell component are listed below:
+
 .Custom properties of GBExternalMagazineComponent
 image::/images/sdk/weapon/weapon_magwell_properties.jpg[weapon_magwell_properties.jpg]
+
+* `Magazine Type` This is the unique name for the magazine type. The name must match the name set on associated magazine(s). See link:/modding/sdk/magazine-modding[modding magazines].
+* `Default Magazine Class` This is the preferred magazine type. Other magazines having the same Magazine Type can be fitted in the weapon editor, if available.
+* `Start Plus One` When initially chambering a round, don't remove a round from the magazine.
+* `Stay Open on Last Round` When the magazine is empty, keep the bolt open.
+* `Is Firing from Open Bolt` If true, a round does not need to be chambered to fire (e.g for Uzi, MAC-10, M249). This can be changed mid-game for hybrid/adaptive firearms.
+
+## See also
+
+You may need to use a different magazine types depending on the type of weapon:
+
+* Tube magazine: link:/modding/sdk/weapon/component-tubemag[GBTubeMagComponent] (for shotguns and suchlike)
+* Internal magazine: link:/modding/sdk/weapon/component-internalmagazine[GBInternalMagazineComponent] (for certain sniper rifles)
