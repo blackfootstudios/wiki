@@ -77,4 +77,4 @@ However, you will likely be more interested in projectile classes, which include
 | 9x39mm |Full Metal Jacket |`BP_9x39mm_FMJ_PROJ`
 |===
 
-You will need to refer to one of these calibers when setting up link:/modding/sdk/magazine-modding[modded magazines], link:/modding/sdk/weapon/component-internalmagazine[internal magazine components] or link:/modding/sdk/weapon/component-tubemag[tubemag components].
+You will need to refer to one of these calibers when setting up link:/modding/sdk/weapon/magazine-modding[modded magazines], link:/modding/sdk/weapon/component-internalmagazine[internal magazine components] or link:/modding/sdk/weapon/component-tubemag[tubemag components].
