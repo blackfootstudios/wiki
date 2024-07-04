@@ -110,7 +110,7 @@ There's a lot that can go wrong when making a weapon mod, and weapon setups are 
 
 **The top rail works, but only for attachments**
 
--> You need to set the SightOnly property to TRUE in the Rail component properties
+-> Check that the relevant rail component is not contained within a physics collision element. A bit of the rail needs to stick out from the physics element.
 
 **I am not sure how to add a suppressor**
 
