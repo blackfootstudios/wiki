@@ -125,3 +125,6 @@ There's a lot that can go wrong when making a weapon mod, and weapon setups are 
 **I can't attach sights to my top rail**
 
 -> Make sure the top rail blueprint component has SightsOnly checked, is set to Direct rail, and that the rail component is sticking out of the physics elements. See link:/modding/sdk/weapon/skinning-weapon-models[skinning weapon models].
+
+-> Make sure the top rail has the correct orientation. The component origin/pivot point should be at the rear of the weapon relative to the rest of the rail. See link:/modding/sdk/weapon/component-rail[rail component].
+
