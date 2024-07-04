@@ -34,3 +34,5 @@ The following is a list of the bullet calibers which are used in GROUND BRANCH a
 | |Tracer (red) |`BP_9x19mm_FMJ_Tracer_Red`
 | 9x39mm |Full Metal Jacket |`BP_9x39mm_FMJ`
 |===
+
+You will need to refer to one of these calibers when setting up link:/modding/sdk/magazine-modding[modded magazines], link:/modding/sdk/weapon/component-internalmagazine[internal magazine components] or link:/modding/sdk/weapon/component-tubemag[tubemag components].
