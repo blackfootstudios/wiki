@@ -275,7 +275,7 @@ Only players with status of InPlayArea are shown as blips on the map tablet, for
 
 ==== IsSpectator
 
-This status is TRUE if a player is spectating a match.
+This status is `true` if a player is spectating a match.
 Thus players can have an InPlayArea status but not be playing (if they are spectators).
 
 [#gamerules]
@@ -2820,7 +2820,7 @@ This function returns the name of the AI hotspot referenced by [.var]#aiHotspot#
 [#aiIsAI]
 ==== AI.IsAI( AIController, AIControllerTag ) [.new]#New in v1034#
 
-Returns TRUE if the specified controller is an AI controller in the current play session, optionally also checking that the AI entity has the specified AI controller tag (if the tag is not `+nil+`).
+Returns `true` if the specified controller is an AI controller in the current play session, optionally also checking that the AI entity has the specified AI controller tag (if the tag is not `+nil+`).
 
 [#player]
 === Player (GBLuaPlayerPackage.h)
@@ -3094,13 +3094,13 @@ It is an internal token that can indicate various player statuses.
 [#playerGetVolunteerStatus]
 ==== player.GetVolunteerStatus( PlayerIdOrObject ) [.new]#New in v1034#
 
-Returns TRUE if the specified player has an active volunteer status (hand up), FALSE otherwise.
+Returns `true` if the specified player has an active volunteer status (hand up), `false` otherwise.
 See <<volunteersallowed>> for an overview of volunteering.
 
 [#playerSetVolunteerStatus]
 ==== player.SetVolunteerStatus( PlayerIdOrObject, Volunteered ) [.new]#New in v1034#
 
-Sets the volunteer status of the specified player to TRUE or FALSE.
+Sets the volunteer status of the specified player to `true` or `false`.
 
 [#playerKill]
 ==== player.Kill( PlayerIdOrObject ) [.new]#New in v1034#
