@@ -1,3 +1,19 @@
-See link:/modding/sdk/weapon/skinning-weapon-models[skinning weapon models] for details on creating an appropriate suppressor mesh socket.
+### Muzzle Device blueprint
 
-@
+To make a custom magazine, make a child blueprint of the master blueprint as usual (`BP_MuzzleDevice_Master`).
+
+The main properties of a custom muzzle device (suppressor) include:
+
+.Pertinent properties of a custom Muzzle Device
+image::/images/sdk/weapon/weapon_muzzledevice_properties.jpg[weapon_muzzledevice_properties.jpg]
+
+* `Muzzle Device Thread` This is a socket name to use for the suppressor. This must be present as a socket mesh on the weapon skeletal mesh, and also must be set up on the Barrel component (see link:/modding/sdk/weapon/component-barrel[barrel component]).
+* `Flash FXNiagara` This is the Niagara effect to use for the suppressor in place of the default flash effect for the unsuppressed weapon (as set in the barrel component). See the barrel component for an explanation of the other `Effects` properties.
+* `Suppressor Switch Value` This is the switch to pass to Wwise in connection with gunshots. It should be `Suppressed` for suppressed shots, and `Unsuppressed` otherwise. You will probably want to use the former\...
+* `Light Level Key` et al. These values in the `AI` section will override any similar values in the Barrel component (see link:/modding/sdk/weapon/component-barrel[barrel component]).
+
+### Related tasks
+
+See link:/modding/sdk/weapon/skinning-weapon-models[skinning weapon models] for details on creating an appropriate suppressor mesh socket on the weapon skeletal mesh.
+
+See see link:/modding/sdk/weapon/component-barrel[barrel component] for details on setting the muzzle socket name in that component also.
