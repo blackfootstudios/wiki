@@ -4,6 +4,8 @@ The internal magazine component is very similar in structure to a magazine bluep
 
 The M24 sniper rifle is one example of a weapon having an internal magazine.
 
+For a shotgun, you may want/need to use a tube magazine instead. See link:/modding/sdk/weapon/component-tubemag[GBTubeMagComponent].
+
 The most useful/pertinent properties of the internal magazine component are listed below:
 
 .Relevant properties of the GBInternalMagazineComponent blueprint component
