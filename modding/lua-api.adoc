@@ -5,6 +5,7 @@
 :xrefstyle: short
 :section-refsig: section
 :toclevels: 3
+:imagesdir: /images/lua-api/
 
 [abstract]
 --
@@ -199,7 +200,7 @@ When a lua script is first run, the `+package.path+` global variable is set so t
 Each game mode is provided in the form of a single Lua script stored in the GroundBranch/GameMode folder within the GROUND BRANCH content directory:
 
 .Screenshot
-image::/images/lua-api/folder.png[Screenshot]
+image::folder.png[Screenshot]
 
 Game mode scripts need to implement a number of standard functions that are called by the main GROUND BRANCH program at certain times, in order to set up the game mode functionality.
 An example of such a function is `+PostInit()+`. There are also now optional Validation functions for each game mode, called `+<GameMode>Validate.lua+`. These are called by the mission editor when validating a level.
@@ -666,7 +667,7 @@ Currently there are three modes:
 *Time of day / Compass orientation)*
 
 .Screenshot
-image::/images/lua-api/watch1.jpeg[Screenshot]
+image::watch1.jpeg[Screenshot]
 
 This watch mode is selected by default.
 
@@ -674,13 +675,13 @@ This watch mode is selected by default.
 
 *Range / Height difference / Bearing / Compass orientation / In-range indicators*
 
-image:/images/lua-api/watch2.jpeg[Screenshot] image:/images/lua-api/watch3.jpeg[Screenshot] image:/images/lua-api/watch4.jpeg[Screenshot] image:/images/lua-api/watch5.jpeg[Screenshot] image:/images/lua-api/watch6.jpeg[Screenshot]
+image:watch2.jpeg[Screenshot] image:watch3.jpeg[Screenshot] image:watch4.jpeg[Screenshot] image:watch5.jpeg[Screenshot] image:watch6.jpeg[Screenshot]
 
 ==== "`IntelRetrieval`" watch mode
 
 *(time of day / compass orientation / proximity alert)*
 
-image:/images/lua-api/watch1.jpeg[Screenshot] image:/images/lua-api/watch7.jpeg[Screenshot]
+image:watch1.jpeg[Screenshot] image:watch7.jpeg[Screenshot]
 
 The watch modes are configured using the gamemode.SetWatchMode() function (see <<gamemodeSetWatchMode>> bellow) and SetCaptureZone() function (see <<gamemodeSetCaptureZone>> below).
 
@@ -1987,7 +1988,7 @@ Secondary objectives can be completed for the purpose of bragging rights, scorin
 As also explained in <<localisation>> above, the objective description is looked up in the string table using the format `+“objective_”+` + [.var]#Name#. The Uplink game mode, for example, has objectives DefendObjective and CaptureObjective, which are stored as follows in the `+Uplink.csv+` string table:
 
 .screenshot
-image::/images/lua-api/csv1.png[screenshot]
+image::csv1.png[screenshot]
 
 The `+uplink:SetupRound()+` function includes the following code:
 
@@ -2008,7 +2009,7 @@ gamemode.AddGameObjective(self.PlayerTeams.BluFor.TeamId, "ExfiltrateBluFor", 1)
 These objectives have the following entries in the `+intel.csv+` string table:
 
 .screenshot
-image::/images/lua-api/csv2.png[screenshot]
+image::csv2.png[screenshot]
 
 [#gamemodeClearGameObjectives]
 ==== gamemode.ClearGameObjectives()
@@ -2963,7 +2964,7 @@ This function displays a message on the player [.var]#Player#’s screen, with t
 For example, the message "`TeamExfil`" in the Intel game mode matches the following entry in the Intel.csv string table:
 
 .screenshot
-image::/images/lua-api/csv3.png[screenshot]
+image::csv3.png[screenshot]
 
 As used in this part of the Intel game mode script:
 
