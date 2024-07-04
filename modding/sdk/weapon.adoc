@@ -130,3 +130,6 @@ There's a lot that can go wrong when making a weapon mod, and weapon setups are 
 
 -> Make sure the top rail has the correct orientation. The component origin/pivot point should be at the rear of the weapon relative to the rest of the rail. See link:/modding/sdk/weapon/component-rail[rail component].
 
+**The master version of my weapon did not have a burst mode, and did not have burst mode sound effects. I plugged in a burst sound effect from a different weapon master, but it sounds horrible**
+
+-> It may work if you re-use the auto event (the `PLoop Event SFX` property) in the burst fire event property (`PBurst Event SFX`). Then your sounds will be more consistent.
