@@ -78,3 +78,18 @@ span.new {
   padding: 1px 4px
 }
 
+span.text-red {
+  color: #EE0000;
+}
+
+span.text-green {
+  color: #1ac61a;
+}
+
+span.text-blue {
+  color: #0001FB;
+}
+
+span.text-orange {
+  color: #EA9F16;
+}
