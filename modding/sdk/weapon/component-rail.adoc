@@ -10,9 +10,9 @@ Rails are colour-coded according to the detected orientation:
 [width="100%",cols="50%,50%",options="header",]
 |===
 |Orientation |Colour
-|Top |[blue]#Blue#
-|Side |[green]#Green#
-|Bottom |[orange]#Orange#
+|Top |+++<span style="color: #0001FB;">Blue</span>+++
+|Side |+++<span style="color: #1FE61F;">Green</span>+++
+|Bottom |+++<span style="color: #EA9F16;">Orange</span>+++
 |===
 
 NOTE: If a rail does not have the expected colour, the rotation is probably incorrect. Make sure that the pivot point/origin of the rail is towards the rear of the weapon, and try swapping 90 and -90, or similar, until you get the expected colour and orientation.
