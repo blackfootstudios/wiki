@@ -1,6 +1,6 @@
 ### Muzzle Device blueprint
 
-To make a custom magazine, make a child blueprint of the master blueprint as usual (`BP_MuzzleDevice_Master`).
+To make a custom magazine, make a child blueprint of the master blueprint as usual (`BP_Suppressor_Master`).
 
 The main properties of a custom muzzle device (suppressor) include:
 
