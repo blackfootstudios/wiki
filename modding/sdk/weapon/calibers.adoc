@@ -11,24 +11,24 @@ The following is a list of the in-game bullet calibers which are used in GROUND 
 | |Tracer (green) |`BP_45ACPFMJ_Tracer_Green`
 | |Tracer (orange) |`BP_45ACPFMJ_Tracer_Orange`
 | |Tracer (red) |`BP_45ACPFMJ_Tracer_Red`
-| 46x30mm |Full Metal Jacket |`BP_46x30mm_FMJ`
-| 545x39mm |Full Metal Jacket |`BP_545x39mm_FMJ`
+| 4.6x30mm |Full Metal Jacket |`BP_46x30mm_FMJ`
+| 5.45x39mm |Full Metal Jacket |`BP_545x39mm_FMJ`
 | |Tracer (green) |`BP_545x39mm_FMJ_Tracer_Green`
 | |Tracer (orange) |`BP_545x39mm_FMJ_Tracer_Orange`
 | |Tracer (red) |`BP_545x39mm_FMJ_Tracer_Red`
-| 556x45mm NATO |Full Metal Jacket |`BP_556x45mmNATO_FMJ`
+| 5.56x45mm NATO |Full Metal Jacket |`BP_556x45mmNATO_FMJ`
 | |Tracer (green) |`BP_556x45mmNATO_FMJ_Tracer_Green`
 | |Tracer (orange) |`BP_556x45mmNATO_FMJ_Tracer_Orange`
 | |Tracer (red) |`BP_556x45mmNATO_FMJ_Tracer_Red`
-| 762x39mm |Full Metal Jacket |`BP_762x39mm_FMJ`
+| 7.62x39mm |Full Metal Jacket |`BP_762x39mm_FMJ`
 | |Tracer (green) |`BP_762x39mm_FMJ_Tracer_Green`
 | |Tracer (orange) |`BP_762x39mm_FMJ_Tracer_Orange`
 | |Tracer (red) |`BP_762x39mm_FMJ_Tracer_Red`
-| 762x51mm NATO |Full Metal Jacket |`BP_762x51mmNATO_FMJ`
+| 7.62x51mm NATO |Full Metal Jacket |`BP_762x51mmNATO_FMJ`
 | |Tracer (green) |`BP_762x51mmNATO_FMJ_Tracer_Green`
 | |Tracer (orange) |`BP_762x51mmNATO_FMJ_Tracer_Orange`
 | |Tracer (red) |`BP_762x51mmNATO_FMJ_Tracer_Red`
-| 762x52mmR |Full Metal Jacket |`BP_762x52mmR`
+| 7.62x52mmR |Full Metal Jacket |`BP_762x52mmR`
 | |Tracer (red) |`BP_762x52mmR_Trace_Red`
 | 9x19mm |Full Metal Jacket |`BP_9x19mm_FMJ`
 | |Tracer (green) |`BP_9x19mm_FMJ_Tracer_Green`
@@ -51,24 +51,24 @@ However, you will likely be more interested in projectile classes, which include
 | |Tracer (green) |`BP_45ACPFMJ_Tracer_Green_PROJ`
 | |Tracer (orange) |`BP_45ACPFMJ_Tracer_Orange_PROJ`
 | |Tracer (red) |`BP_45ACPFMJ_Tracer_Red_PROJ`
-| 46x30mm |Full Metal Jacket |`BP_46x30mm_FMJ_PROJ`
-| 545x39mm |Full Metal Jacket |`BP_545x39mm_FMJ_PROJ`
+| 4.6x30mm |Full Metal Jacket |`BP_46x30mm_FMJ_PROJ`
+| 5.45x39mm |Full Metal Jacket |`BP_545x39mm_FMJ_PROJ`
 | |Tracer (green) |`BP_545x39mm_FMJ_Tracer_Green_PROJ`
 | |Tracer (orange) |`BP_545x39mm_FMJ_Tracer_Orange_PROJ`
 | |Tracer (red) |`BP_545x39mm_FMJ_Tracer_Red_PROJ`
-| 556x45mm NATO |Full Metal Jacket |`BP_556x45mmNATO_FMJ_PROJ`
+| 5.56x45mm NATO |Full Metal Jacket |`BP_556x45mmNATO_FMJ_PROJ`
 | |Tracer (green) |`BP_556x45mmNATO_FMJ_Tracer_Green_PROJ`
 | |Tracer (orange) |`BP_556x45mmNATO_FMJ_Tracer_Orange_PROJ`
 | |Tracer (red) |`BP_556x45mmNATO_FMJ_Tracer_Red_PROJ`
-| 762x39mm |Full Metal Jacket |`BP_762x39mm_FMJ_PROJ`
+| 7.62x39mm |Full Metal Jacket |`BP_762x39mm_FMJ_PROJ`
 | |Tracer (green) |`BP_762x39mm_FMJ_Tracer_Green_PROJ`
 | |Tracer (orange) |`BP_762x39mm_FMJ_Tracer_Orange_PROJ`
 | |Tracer (red) |`BP_762x39mm_FMJ_Tracer_Red_PROJ`
-| 762x51mm NATO |Full Metal Jacket |`BP_762x51mmNATO_FMJ_PROJ`
+| 7.62x51mm NATO |Full Metal Jacket |`BP_762x51mmNATO_FMJ_PROJ`
 | |Tracer (green) |`BP_762x51mmNATO_FMJ_Tracer_Green_PROJ`
 | |Tracer (orange) |`BP_762x51mmNATO_FMJ_Tracer_Orange_PROJ`
 | |Tracer (red) |`BP_762x51mmNATO_FMJ_Tracer_Red_PROJ`
-| 762x52mmR |Full Metal Jacket |`BP_762x52mmR_PROJ`
+| 7.62x52mmR |Full Metal Jacket |`BP_762x52mmR_PROJ`
 | |Tracer (red) |`BP_762x52mmR_Trace_Red_PROJ`
 | 9x19mm |Full Metal Jacket |`BP_9x19mm_FMJ_PROJ`
 | |Tracer (green) |`BP_9x19mm_FMJ_Tracer_Green_PROJ`
