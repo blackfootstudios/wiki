@@ -1,4 +1,4 @@
-These are the suppressor socket names for suppressors of compatible calibers. There may be one or more suppressors that are able to connect to generic socket names:
+These are suppressor socket names used in-game. Bear in mind that a suppressor may match the calibre of your weapon, but may nevertheless not be an appropriate suppressor for that gun.
 
 [width="100%",cols="25%,25%,25%,25%",options="header",]
 |===
