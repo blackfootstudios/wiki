@@ -22,3 +22,5 @@ image::/images/sdk/weapon/weapon_muzzledevice_viewport.jpg[weapon_muzzledevice_v
 See link:/modding/sdk/weapon/skinning-weapon-models[skinning weapon models] for details on creating an appropriate suppressor mesh socket on the weapon skeletal mesh.
 
 See see link:/modding/sdk/weapon/component-barrel[barrel component] for details on setting the muzzle socket name in that component also.
+
+For a list of existing in-game suppressors and associated socket names, see link:/modding/sdk/weapon/suppressor-types[GROUND BRANCH suppressors].
