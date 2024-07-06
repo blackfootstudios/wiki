@@ -21,8 +21,9 @@ This view allows you to preview the mesh that you have imported and to add mesh 
 There are some sockets that you need to add:
 
 - `SelfieCam` The viewpoint for the 'selfie cam' spectator view. The selfie camera points from this socket towards the operator eyes. Every weapon mesh should have one of these.
+
 - `<SuppressorSocketName>` A socket name to define where a suppressor attaches
-, if applicable (not all weapons take suppressors). This socket name needs to be filled in also in the Muzzle Device Thread field in the GBBarrel component of a weapon. The same socket name is used to determine which suppressors (if any) are compatible with a particular barrel (and thus weapon). For a list of in-game suppressor types, see link:/modding/sdk/weapon/suppressor-types[GROUND BRANCH suppressors].
+, if applicable (not all weapons take suppressors). This socket name needs to be filled in also in the Muzzle Device Thread field in the GBBarrel component of a weapon. The same socket name is used to determine which suppressors (if any) are compatible with a particular barrel (and thus weapon). For a list of in-game suppressor types and associated socket names, see link:/modding/sdk/weapon/suppressor-types[GROUND BRANCH suppressors].
 
 - `CollisionTraceEnd` For the purpose of collision checking, it is assumed that the end of the barrel component is at the end of the mesh. If not, such as on the M16, you will need to manually create a CollisionTraceEnd socket to define the very end of the weapon/barrel.
 
