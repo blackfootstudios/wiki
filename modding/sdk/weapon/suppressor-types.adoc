@@ -10,7 +10,7 @@ These are suppressor socket names used in-game. Bear in mind that a suppressor m
 |`MDT_BR_762` |7.62x51mm NATO |FAL | Black
 |`MDT_AAC_SD` |7.62x51mm NATO |G3A3, M24 | Black
 |`MDT_M110`		|7.62x51mm NATO |M110 | Black
-|`MDT_M110K1` |7.62x51mm NATO |M110 | Black
+|`MDT_M110K1` |7.62x51mm NATO |M110 K1 | Black
 |`MDT_EBR`		|7.62x51mm NATO |M14 EBR | Black
 |`MDT_FN_QD701` |7.62x51mm NATO |MK17 SCAR | FDE, Black
 |`MDT_EBR` |7.62x51mm NATO |SA58 | FDE, Black
