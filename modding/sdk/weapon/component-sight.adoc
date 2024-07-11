@@ -29,3 +29,7 @@ image::/images/sdk/weapon/weapon_sightproperties.jpg[weapon_sightproperties.jpg]
 * `First Person Material` Higher quality material to use when directly focused on this sight in first person mode. If valid, the game will use this in place of the normal material on the mesh at `Material Index` material index.
 * `Reticle Brightness Name` The name of the scalar parameter in the reticle material which controls the reticle brightness in the material.
 * `Reticle Brightness Scale` The value to multiply the reticle brightness by when setting the `Reticle Brightness Name` scalar parameter
+
+## Zeroing a sight
+
+When a sight is applied to a weapon, it will be automatically zeroed using the properties specified above. An adjustment will be calculated to the front sight post in order to achieve the desired zeroing, and this will be passed on to the weapon to implement via the animation blueprint.
