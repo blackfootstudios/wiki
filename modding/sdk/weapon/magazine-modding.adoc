@@ -12,13 +12,29 @@ image::/images/sdk/modkit_magazine_stanagproperties.jpg[modkit_magazine_stanagpr
 
 Properties of the magazine base class that you are most likely to need to deal with include:
 
+#### External magazine
+
+* `Magazine Type` As noted above, this must match the type specified in the GBExternalMagazine class.
+
+#### Magazine
+
 * `Capacity` This is how many bullets the magazine holds when full
 * `Initial Count` How many bullets the magazine starts out with (-1 meaning full magazine)
+
+#### Bullet
+
 * `Bullet Item Class` The class of the bullet loaded in the magazine. Loadouts and default item builds and suchlike may be able to override the bullet type, but for now just put your preferred bullet class here.
 * `Base Bullet Item Class` Just set this to the same as Bullet Item Class
+
+#### Tracer
+
 * `Tracer Item Class` The bullet class to use if/when a tracer is fired
 * `Start Tracer Count` When tracers should start being used (-1 for immediate). For example, a value of 10 would begin creating tracers once the magazine count reached 10 or lower.
 * `Tracer Frequency` How often tracers should be used (0 to disable). For example, a value of 3 would create a tracer on every third round.
+
+#### Inventory
+
+* `Default Pouch Type` A name identifying the pouch type for the magazine, for the automatically created pouches in the inventory system. See link:/modding/sdk/weapon/ammo-pouches[ammo pouch types].
 
 === Selecting a projectile type
 
