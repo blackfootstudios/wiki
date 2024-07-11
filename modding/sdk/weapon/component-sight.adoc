@@ -18,7 +18,7 @@ image::/images/sdk/weapon/weapon_sightproperties.jpg[weapon_sightproperties.jpg]
 ** `Post Modifier` An optical or other device placed in front of a sight to modify the sight picture. For example, the AN-PVS22 night vision sight.
 ** `Pre Modifier` An optical or other device placed behind a sight to modify the sight picture. For example, the G33 magnifier.
 * `Default Zero Distance` The default zero distance in metres
-* `Optic Radius` @
+* `Optic Radius` If you don't know what this is, you probably don't need to use it
 * `Min Offset` The minimum amount the sight can be offset for zeroing
 * `Max Offset` The maximum amount the sight can be offset for zeroing
 * `Min Magnification Level` The minimum magnification (for adjustable optical sights)
