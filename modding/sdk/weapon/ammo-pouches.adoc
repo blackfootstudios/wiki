@@ -1,0 +1,11 @@
+## Ammo pouch types
+
+Ammo pouches are automatically added to your loadout based on the projectile type used in the magazine of your primary weapon and sidearm. (They can be added manually also.)
+
+To enable this to happen, you need to use one of the following pouch names in any custom magazines that you make, in the `Default Pouch Type` field. See link:/modding/sdk/weapon/magazine-modding[modding magazines].
+
+[width="100%",cols="33%,33%,34%",options="header",]
+|===
+|Bullet type |Variety |Blueprint Name 
+|.300 AAC Blackout (7.62x35mm) |Full Metal Jacket |`BP_300Blkt_FMJ` 
+|40 cal (10.2x22mm) |Full Metal Jacket |`BP_40calFMJ`
