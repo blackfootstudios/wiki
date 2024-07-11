@@ -33,3 +33,5 @@ image::/images/sdk/weapon/weapon_sightproperties.jpg[weapon_sightproperties.jpg]
 ## Zeroing a sight
 
 When a sight is applied to a weapon, it will be automatically zeroed using the properties specified above. An adjustment will be calculated to the front sight post in order to achieve the desired zeroing, and this will be passed on to the weapon to implement via the animation blueprint.
+
+See the latter examples in link:/modding/sdk/weapon/example-blueprint-code[weapon blueprint code examples].
