@@ -13,14 +13,14 @@ Other kinds of inventory items can also have pouches and default pouch types. Th
 [width="100%",cols="25%,25%,25%,25%",options="header",]
 |===
 |Default Pouch Type |Description |Pouch blueprints |Used by magazines
-|MagAR |Assault rifle ammo pouch |`+BP_Pouch_Ammo_AR-15_PMAG+`, `BP_Pouch_Ammo_AR-15_x2` |`BP_AK545_xxx`, `BP_AK762_Magazine`, `BP_AKM_Magazine`, `BP_FAL_Magazine`, `BP_G3A3_Magazine`, `BP_Galil_xxx`
-|MagAK |AK ammo pouch |`BP_Pouch_Ammo_AK`, `BP_Pouch_Ammo_AK_x2` |AK 7.62x39mm
-|Ammo762x51 | |`BP_Pouch_Ammo_762x51` | @
-|MagLMG |LMG ammo box |`BP_Pouch_Ammo_LMG` | `BP_MK46_Magazine`
-|MagMarksman |Marksman rifle ammo |`BP_Pouch_Ammo_Marksman` |`BP_M14_Magazine`
-|MagSMG |Submachine gun ammo |`BP_Pouch_Ammo_SubmachineGun` |`BP_MP5_9mm_Magazine`
+|MagAR |Assault rifle ammo pouch |`+BP_Pouch_Ammo_AR-15_PMAG+`, `BP_Pouch_Ammo_AR-15_x2` |`BP_AK545_xxx`, `BP_AK762_Magazine`, `BP_AKM_Magazine`, `BP_FAL_Magazine`, `BP_G3A3_Magazine`, `BP_Galil_xxx`, `BP_PMAG556_xxx`, `BP_SA58_20_Magazine`, `BP_SCAR_H_Magazine_xxx`, `BP_STANAG556_Magazine`, `BP_STANAG_20_556_Magazine`
+|MagAK |AK ammo pouch |`BP_Pouch_Ammo_AK`, `BP_Pouch_Ammo_AK_x2` |
+|Ammo762x51 | |`BP_Pouch_Ammo_762x51` | 
+|MagLMG |LMG ammo box |`BP_Pouch_Ammo_LMG` | `BP_MK46_Magazine`, `BP_PKM_Magazine`
+|MagMarksman |Marksman rifle ammo |`BP_Pouch_Ammo_Marksman` |`BP_M14_Magazine`, `BP_SR25_M110_Magazine`, `BP_SVD762_Magazine`
+|MagSMG |Submachine gun ammo |`BP_Pouch_Ammo_SubmachineGun` |`BP_MP5_9mm_Magazine`, `BP_MP7_Magazine`, `BP_MPX_9mm_Magazine`, `BP_UMP45_Magazine`
 |Ammo12Gauge |12 gauge shotgun ammo |`BP_Pouch_Ammo_12Gauge` |M1014 internal
-|MagHandgun | Handgun ammo |`BP_Pouch_Ammo_Handgun` |`BP_G19_xxx`, `BP_M17_xxx`, `BP_M1911_xxx`, `BP_M9A3_xxx`, `BP_MK25_xxx`, 
+|MagHandgun | Handgun ammo |`BP_Pouch_Ammo_Handgun` |`BP_G19_xxx`, `BP_M17_xxx`, `BP_M1911_xxx`, `BP_M9A3_xxx`, `BP_MK25_xxx`, `BP_PMM_Magazine`
 |GrenadeFlash |Flashbangs |`BP_Pouch_Grenade_Flash` |
 |GrenadeSmoke |Smoke grenades |`BP_Pouch_Grenade_Smoke` |
 |GrenadeSquat |Frag grenades |`BP_Pouch_Grenade_Squat` |
