@@ -10,16 +10,22 @@ The most useful/pertinent properties of the sight blueprint component are listed
 .Properties of GBSightComponent
 image::/images/sdk/weapon/weapon_sightproperties.jpg[weapon_sightproperties.jpg]
 
-* `Sight Type`
-* `Default Zero Distance`
-* `Optic Radius`
-* `Min Offset`
-* `Max Offset`
-* `Min Magnification Level`
-* `Max Magnification Level`
-* `Default Magnification Level`
-* `Stat Key`
-* `Material Index`
-* `First Person Material`
-* `Reticle Brightness Name`
-* `Reticle Brightness Scale`
+* `Sight Type` Possible sight types are:
+** `Fail Safe` Folded down and not in normal use. Essentially a cosmetic item in Ground Branch.
+** `Iron Sight` A mesh providing a sight picture in conjunction with a front sight post. Usually inbuilt.
+** `Red Dot` A non-magnified projection-based/holographic sight
+** `Optical` A simulated optical sight (implemented using scene captures).
+** `Post Modifier` An optical or other device placed in front of a sight to modify the sight picture. For example, the AN-PVS22 night vision sight.
+** `Pre Modifier` An optical or other device placed behind a sight to modify the sight picture. For example, the G33 magnifier.
+* `Default Zero Distance` The default zero distance in metres
+* `Optic Radius` @
+* `Min Offset` The minimum amount the sight can be offset for zeroing
+* `Max Offset` The maximum amount the sight can be offset for zeroing
+* `Min Magnification Level` The minimum magnification (for adjustable optical sights)
+* `Max Magnification Level` The maximum magnification (for adjustable optical sights)
+* `Default Magnification Level` The default magnification (1.0 for iron sights, and so on)
+* `Stat Key` Currently unused
+* `Material Index` See `First Person Material` below.
+* `First Person Material` Higher quality material to use when directly focused on this sight in first person mode. If valid, the game will use this in place of the normal material on the mesh at `Material Index` material index.
+* `Reticle Brightness Name` The name of the scalar parameter in the reticle material which controls the reticle brightness in the material.
+* `Reticle Brightness Scale` The value to multiply the reticle brightness by when setting the `Reticle Brightness Name` scalar parameter
