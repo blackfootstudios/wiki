@@ -29,13 +29,15 @@ image::/images/sdk/weapon/weapon_bpexample_setsafetyalpha.jpg[weapon_bpexample_s
 
 image::/images/sdk/weapon/weapon_bpexample_onsetzero.jpg[weapon_bpexample_onsetzero.jpg]
 
-`On Sight Zeroing (<Component>)` allows the specific weapon blueprint to set an appropriate Rear Sight rotation based on the input zeroing. @better explanation
+`On Sight Zeroing (<Component>)` allows the specific weapon blueprint to set an appropriate Rear Sight rotation based on the input zeroing.
 
 ==== Set front sight post offset
 
 image::/images/sdk/weapon/weapon_bpexample_setfrontsightpostoffset.jpg[weapon_bpexample_setfrontsightpostoffset.jpg]
 
-`On Set Front Sight Post Height Offset <SightComponent>` is called when @
+`On Set Front Sight Post Height Offset <SightComponent>` is called when a sight is zeroed (automatically, when the weapon is initialised or when a new sight is placed).
+
+See link:/modding/sdk/weapon/component-sight[sight component] properties for more details.
 
 ==== Update the visibility of bullets loaded in the weapon
 
