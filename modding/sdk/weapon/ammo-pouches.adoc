@@ -13,20 +13,27 @@ Other kinds of inventory items can also have pouches and default pouch types. Th
 [width="100%",cols="25%,25%,25%,25%",options="header",]
 |===
 |Default Pouch Type |Description |Pouch blueprints |Used by magazines
-|MagAR |Assault rifle ammo pouch |`+BP_Pouch_Ammo_AR-15_PMAG+`, `BP_Pouch_Ammo_AR-15_x2` |AK 5.45x39mm, 
+|MagAR |Assault rifle ammo pouch |`+BP_Pouch_Ammo_AR-15_PMAG+`, `BP_Pouch_Ammo_AR-15_x2` |`BP_AK545_xxx`, `BP_AK762_Magazine`, `BP_AKM_Magazine`, `BP_FAL_Magazine`, `BP_G3A3_Magazine`, `BP_Galil_xxx`
 |MagAK |AK ammo pouch |`BP_Pouch_Ammo_AK`, `BP_Pouch_Ammo_AK_x2` |AK 7.62x39mm
 |Ammo762x51 | |`BP_Pouch_Ammo_762x51` | @
-|MagLMG |LMG ammo box |`BP_Pouch_Ammo_LMG` | @
-|MagMarksman |Marksman rifle ammo |`BP_Pouch_Ammo_Marksman` |@
-|MagSMG |Submachine gun ammo |`BP_Pouch_Ammo_SubmachineGun` |@
+|MagLMG |LMG ammo box |`BP_Pouch_Ammo_LMG` | `BP_MK46_Magazine`
+|MagMarksman |Marksman rifle ammo |`BP_Pouch_Ammo_Marksman` |`BP_M14_Magazine`
+|MagSMG |Submachine gun ammo |`BP_Pouch_Ammo_SubmachineGun` |`BP_MP5_9mm_Magazine`
 |Ammo12Gauge |12 gauge shotgun ammo |`BP_Pouch_Ammo_12Gauge` |M1014 internal
-|MagHandgun | Handgun ammo |`BP_Pouch_Ammo_Handgun` |All pistol magazines
+|MagHandgun | Handgun ammo |`BP_Pouch_Ammo_Handgun` |`BP_G19_xxx`, `BP_M17_xxx`, `BP_M1911_xxx`, `BP_M9A3_xxx`, `BP_MK25_xxx`, 
+|GrenadeFlash |Flashbangs |`BP_Pouch_Grenade_Flash` |
+|GrenadeSmoke |Smoke grenades |`BP_Pouch_Grenade_Smoke` |
+|GrenadeSquat |Frag grenades |`BP_Pouch_Grenade_Squat` |
 |None |Special |`BP_Dump_Pouch` |None
 |===
 
 ### Other pouches
 
-[width="100%",cols="25%,25%,25%,25%",options="header",]
+[width="100%",cols="34%,33%,33%",options="header",]
 |===
-|Binoculars | | |
+|Default Pouch Type |Used by |Pouch blueprints 
+|Binoculars |Binoculars and range finder |`BP_Pouch_Binocular` 
+|BreachingCharge |Breaching charge |`BP_Pouch_BreachingCharge` 
+|Radio |Radio unit |`BP_Pouch_Radio`
+
 |===
