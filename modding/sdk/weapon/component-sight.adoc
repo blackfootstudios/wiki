@@ -1,2 +1,25 @@
+## Overview
+
+Sight components are an integral part of any sight, whether internal or attachable. Attachable sights are of class GBDirectSight, but will include a GBSightComponent blueprint component.
+
+You may want or need to have internal sights, and these also use the GBSightComponent blueprint component. A lot of the standard sight properties will be irrelevant (for example relating to magnification).
+
+## Properties of GBSightComponent
+The most useful/pertinent properties of the sight blueprint component are listed below:
+
 .Properties of GBSightComponent
 image::/images/sdk/weapon/weapon_sightproperties.jpg[weapon_sightproperties.jpg]
+
+* `Sight Type`
+* `Default Zero Distance`
+* `Optic Radius`
+* `Min Offset`
+* `Max Offset`
+* `Min Magnification Level`
+* `Max Magnification Level`
+* `Default Magnification Level`
+* `Stat Key`
+* `Material Index`
+* `First Person Material`
+* `Reticle Brightness Name`
+* `Reticle Brightness Scale`
