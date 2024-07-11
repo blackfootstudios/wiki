@@ -1,18 +1,21 @@
-NOTE: to do
+Weapon skins generally use one of the Ground Branch master materials as their base. This provides greater consistency and interoperability. You may wish to do the same.
 
 The switch parameters refer to various things you can have in your Combo texture. Since they are greyscale, we pack the Ambient Occlusion, Roughness and Metallic maps into one texture. 
 
 There are generally 2 ways people pack them based on the color channel:
-RMA
-Red - Roughness
-Green - Metallic
-Blue - AO
 
-ORM (Standard for UE4)
-Red - AO
-Green - Roughness
-Blue - Metallic
+* `RMA`:
+
+** Red - Roughness
+** Green - Metallic
+** Blue - Ambient Occlusion
+
+* `ORM` (Standard for UE4):
+
+** Red - Ambient Occlusion
+** Green - Roughness
+** Blue - Metallic
 
 If you don't have a combo texture, or just want to approximate things, you can leave a channel unchecked and use the scalars above. 
 
-DiffuseRedAsSpecMap will use the red channdel of the BaseColor map to approximate specularity. Otherwise it uses the scalar above.
+DiffuseRedAsSpecMap will use the red channel of the BaseColor map to approximate specularity. Otherwise it uses the scalar above.
