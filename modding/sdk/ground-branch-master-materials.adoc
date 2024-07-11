@@ -1,4 +1,10 @@
+### Overview
+
 Weapon skins generally use one of the Ground Branch master materials as their base. This provides greater consistency and interoperability. You may wish to do the same.
+
+One considerable benefit is that your materials will be 'future-proofed', for example in the event that we add weather effects. This means that your materials may show accumulations of raindrops or snow even, without you having to change a thing.
+
+### Material Instance properties
 
 The switch parameters refer to various things you can have in your Combo texture. Since they are greyscale, we pack the Ambient Occlusion, Roughness and Metallic maps into one texture. 
 
