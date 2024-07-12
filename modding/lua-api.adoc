@@ -2424,7 +2424,7 @@ This is an experimental function that was being used for the Defuse bomb effects
 It will spawn the named effect class at the specified location.
 
 [#gamemodeGetCurrentTime]
-==== gamemode.GetCurrentTimeOfDay() [.new]#New in v1034#
+==== gamemode.GetTimeOfDay() [.new]#New in v1034#
 
 This function returns a table containing the following entries relating to the current time of day:
 
