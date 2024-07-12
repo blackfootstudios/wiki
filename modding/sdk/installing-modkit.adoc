@@ -2,9 +2,8 @@ The GROUND BRANCH Mod Kit is available (only) via the Epic game launcher _(becau
 
 Search for GROUND BRANCH and you should be able to find the Mod Kit, shown here in a player library:
 
-.Mod Kit installed in your library (placeholder icon)
-image::/images/sdk/modkit_fakelibraryicon.jpg[Screenshot,20%]
-
+.Mod Kit installed in your library
+image::/images/sdk/modkit_reallibraryicon.jpg[modkit_reallibraryicon.jpg,20%]
 Once you '`buy`' the Mod Kit (it is free), it should start downloading to your Epic game library.
 It is launched via the Epic game library in the usual fashion.
 
