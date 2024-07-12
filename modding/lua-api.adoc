@@ -2437,7 +2437,7 @@ This function returns a table containing the following entries relating to the c
 * `Time` (Number): Real world hour (0.0 to 23.99). Take care that 5pm at the Arctic Circle in Winter looks quite different to 5pm at the Equator, for example.
 * `InitialTime` (Number): Real world hour (0.0 to 23.99) when the mission started.
 * `StandardTime` (Number): Standard Time hour (0.0 to 23.99...). In Standard Time, the actual time is remapped such that Sunrise is at 6am (6.0) and Sunset is at 6pm (18.0). This allows events to occur at consistent astronomical times of day without having to make adjustments for latitude and date, and so on.
-* `TimeSpan` (String): one of { Night, Dawn, Day, Dusk }
+* `TimeSpan` (String): one of { "Night", "Dawn", "Day", "Dusk" }
 * `SunlightStrength` (Number): a floating point Number between 0 and 1 indicating relative strength of sunlight (1 = midday, 0 = no sun)
 * `MoonlightStrength` (Number): a floating point Number between 0 and 1 indicating relative strength of moonlight, taking moon phase into account (1 = full moon illumination, 0 = no moon)
 
