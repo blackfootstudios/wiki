@@ -2428,16 +2428,22 @@ It will spawn the named effect class at the specified location.
 
 This function returns a table containing the following entries relating to the current time of day:
 
-* `Hour` Real world hour. See `TimeElapsed` for limitations.
-* `Minute` Real world minute. See `TimeElapsed` for limitations.
-* `TimeElapsed` Total minutes elapsed in real world time, from 0 to 1439. You might want to use this for reporting time of day, but not for determining day/night cycles and suchlike; 5pm at the Arctic Circle in Winter looks quite different to 5pm at the Equator, for example.
-* `StandardTimeElapsed` Total minutes elapsed in Standard Time. In Standard Time, the actual time is remapped such that Sunrise is at 0600 (6*60 minutes) and Sunset is at 1800 (18*60 minutes). This allows events to occur at consistent astronomical times of day without having to make adjustments for latitude and date, and so on.
-* `TimeSpan` returns a `String` which is one of { Night, Dawn, Day, Dusk }
-* `SunLightLevel` is a floating point `Number` between 0 and 1 indicating relative strength of sunlight (1 = midday, 0 = no sun)
-* `MoonLightLevel` is a floating point `Number` between 0 and 1 indicating relative strength of moonlight (1 = full illumination, 0 = moon is not risen)
-* `MoonPhase` is a floating point `Number` between 0 and 1 indicating moon phase (0 = new moon, 1 = full moon)
+* `Hours` (Integer): Real world hour (0-23). See TimeElapsed for limitations.
+* `Minutes` (Integer): Real world minute (0-59). See TimeElapsed for limitations.
+* `Seconds` (Integer): Real world seconds (0-59). Not very reliable.
+* `Year` (Integer): Year (e.g. 2014, ...)
+* `Month` (Integer): Month (1-12)
+* `Day` (Integer): Day (1-31)
+* `Time` (Number): Real world hour (0.0 to 23.99). Take care that 5pm at the Arctic Circle in Winter looks quite different to 5pm at the Equator, for example.
+* `InitialTime` (Number): Real world hour (0.0 to 23.99) when the mission started.
+* `StandardTime` (Number): Standard Time hour (0.0 to 23.99...). In Standard Time, the actual time is remapped such that Sunrise is at 6am (6.0) and Sunset is at 6pm (18.0). This allows events to occur at consistent astronomical times of day without having to make adjustments for latitude and date, and so on.
+* `TimeSpan` (String): one of { Night, Dawn, Day, Dusk }
+* `SunlightStrength` (Number): a floating point Number between 0 and 1 indicating relative strength of sunlight (1 = midday, 0 = no sun)
+* `MoonlightStrength` (Number): a floating point Number between 0 and 1 indicating relative strength of moonlight, taking moon phase into account (1 = full moon illumination, 0 = no moon)
 
 To determine moonlight illumination levels you may want to multiply the last two values together, for example.
+
+This function will (somewhat unusually) return a nil value if Sky Actor cannot be found, or if there is any other error, so you should check for a nil return value.
 
 [#actor]
 === Actor (GBLuaActorPackage.h)
