@@ -2423,6 +2423,17 @@ It returns a Table including items of type String, e.g. \{ "`Pvp`", "`Coop`" }
 This is an experimental function that was being used for the Defuse bomb effects, amongst other things.
 It will spawn the named effect class at the specified location.
 
+[#gamemodeGetCurrentTime]
+==== gamemode.GetCurrentTime() [.new]#New in v1034#
+
+This function returns a `Number` containing the number of minutes elapsed in the day. You might want to use this for reporting time of day, but you should not rely on this time when determining if it is daytime or nighttime. Use gamemode.GetCurrentStandardTime() instead.
+
+[#gamemodeGetCurrentTime]
+==== gamemode.GetCurrentStandardTime() [.new]#New in v1034#
+
+This function returns a `Number` containing the number of minutes elapsed in the day, in terms of the Standard Time. In Standard Time, the actual time is remapped such that Sunrise is at 0600 (6*60 minutes) and Sunset is at 1800 (18*60 minutes). This means that you can get an idea of light levels without having to know the latitude and date, and so on.
+
+
 [#actor]
 === Actor (GBLuaActorPackage.h)
 
