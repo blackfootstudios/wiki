@@ -2443,6 +2443,19 @@ This function returns a table containing the following entries relating to the c
 
 This function will (somewhat unusually) return a nil value if Sky Actor cannot be found, or if there is any other error, so you should check for a nil return value.
 
+NOTE: This function will not return reliable time of day results (except possibly for InitialTime) until play has begun, or after play has finished. You should not rely on this when players are still all in the Ready Room.
+
+[source,lua]
+----
+local TODTable = gamemode.GetTimeOfDay()
+if TODTable ~= nil then
+	print("The time is " .. TODTable.Hours .. ":" .. TODTable.Minutes .. ":" .. TODTable.Seconds .. "(" .. TODTable.TimeSpan .. ")")
+	print("The date is " .. TODTable.Day .. "/" .. TODTable.Month .. "/" .. TODTable.Year)
+	print("Real world hour = " .. TODTable.Time .. ", Standard hour = " .. TODTable.StandardTime .. ", Mission started at hour " .. TODTable.InitialTime) 
+	print("Sun strength = " .. TODTable.SunlightStrength .. ", Moonlight strength = " .. TODTable.MoonlightStrength)
+end
+----
+
 [#actor]
 === Actor (GBLuaActorPackage.h)
 
