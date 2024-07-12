@@ -2424,15 +2424,20 @@ This is an experimental function that was being used for the Defuse bomb effects
 It will spawn the named effect class at the specified location.
 
 [#gamemodeGetCurrentTime]
-==== gamemode.GetCurrentTime() [.new]#New in v1034#
+==== gamemode.GetCurrentTimeOfDay() [.new]#New in v1034#
 
-This function returns a `Number` containing the number of minutes elapsed in the day. You might want to use this for reporting time of day, but you should not rely on this time when determining if it is daytime or nighttime. Use gamemode.GetCurrentStandardTime() instead.
+This function returns a table containing the following entries relating to the current time of day:
 
-[#gamemodeGetCurrentTime]
-==== gamemode.GetCurrentStandardTime() [.new]#New in v1034#
+* `Hour` Real world hour. See `TimeElapsed` for limitations.
+* `Minute` Real world minute. See `TimeElapsed` for limitations.
+* `TimeElapsed` Total minutes elapsed in real world time, from 0 to 1439. You might want to use this for reporting time of day, but not for determining day/night cycles and suchlike; 5pm at the Arctic Circle in Winter looks quite different to 5pm at the Equator, for example.
+* `StandardTimeElapsed` Total minutes elapsed in Standard Time. In Standard Time, the actual time is remapped such that Sunrise is at 0600 (6*60 minutes) and Sunset is at 1800 (18*60 minutes). This allows events to occur at consistent astronomical times of day without having to make adjustments for latitude and date, and so on.
+* `TimeSpan` returns a `String` which is one of { Night, Dawn, Day, Dusk }
+* `SunLightLevel` is a floating point `Number` between 0 and 1 indicating relative strength of sunlight (1 = midday, 0 = no sun)
+* `MoonLightLevel` is a floating point `Number` between 0 and 1 indicating relative strength of moonlight (1 = full illumination, 0 = moon is not risen)
+* `MoonPhase` is a floating point `Number` between 0 and 1 indicating moon phase (0 = new moon, 1 = full moon)
 
-This function returns a `Number` containing the number of minutes elapsed in the day, in terms of the Standard Time. In Standard Time, the actual time is remapped such that Sunrise is at 0600 (6*60 minutes) and Sunset is at 1800 (18*60 minutes). This means that you can get an idea of light levels without having to know the latitude and date, and so on.
-
+To determine moonlight illumination levels you may want to multiply the last two values together, for example.
 
 [#actor]
 === Actor (GBLuaActorPackage.h)
