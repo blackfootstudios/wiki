@@ -2441,8 +2441,6 @@ This function returns a table containing the following entries relating to the c
 * `SunlightStrength` (Number): a floating point Number between 0 and 1 indicating relative strength of sunlight (1 = midday, 0 = no sun)
 * `MoonlightStrength` (Number): a floating point Number between 0 and 1 indicating relative strength of moonlight, taking moon phase into account (1 = full moon illumination, 0 = no moon)
 
-To determine moonlight illumination levels you may want to multiply the last two values together, for example.
-
 This function will (somewhat unusually) return a nil value if Sky Actor cannot be found, or if there is any other error, so you should check for a nil return value.
 
 [#actor]
