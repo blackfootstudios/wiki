@@ -31,7 +31,7 @@ There's a few things that can go wrong when uploading a mod. Here are some issue
 
 -> You need to provide a link to a normal image file, not an asset (a .uasset Unreal Engine file that is created when importing an image into the Mod Kit). e.g. `(...)/Thumbnail_MyMod.jpg`. Ordinary image files are not visible within the Mod Kit. Use the default operating system file explorer to set up the thumbnail image file.
 
-**I try uploading my mod but it fails immediately with Error code 9
+**I try uploading my mod but it fails immediately with Error code 9**
 
 -> Make sure that your WorkshopItem data is properly set, including Mod ID
 
