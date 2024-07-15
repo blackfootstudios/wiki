@@ -55,11 +55,7 @@ These properties are common to every '`GB Item`' in game, and define inventory p
 .ABP Animation properties
 image::/images/sdk/weapon/weapon_properties_abpvariable.jpg[Screenshot,60%]
 
-* `Dust Cover Open` @
-* `Front Sight Post Offset` @
-* `Rear Sight Vec` @
-* `Rear Sight Rot` @
-* `Safety Alpha` @
+These properties are set at runtime and are used to convey information from Ground Branch and the weapon blueprint to the animation blueprint.
 
 .AI Config properties
 image::/images/sdk/weapon/weapon_properties_aiconfig.jpg[Screenshot,50%]
@@ -94,9 +90,8 @@ image::/images/sdk/weapon/weapon_properties_effects.jpg[Screenshot,60%]
 .Recoil properties
 image::/images/sdk/weapon/weapon_properties_recoil.jpg[Screenshot,50%]
 
-* `Recoil Impulse Time` @
-* `Recoil Recovery Time` @
-
+* `Recoil Impulse Time` This variable doesn't have a very well defined physical meaning. A higher value means recoil will be more severe.
+* `Recoil Recovery Time` This variable doesn't have a very well defined physical meaning. A higher value means recoil will be more severe.
 * `Recoil per shot` These properties define the extent of the deflection (up and down) caused by each shot, in degrees, and in engaged position (Engaged Recoil Per Shot) and otherwise (Recoil Per Shot). A random value for the pitch and yaw is chosen within the specified ranges on each shot.
 
 .Sound properties
