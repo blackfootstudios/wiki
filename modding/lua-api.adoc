@@ -11,7 +11,7 @@
 --
 Lua Function Library For GameMode and Mutator Modding
 
-Revision date: 12 July 2024 (game version 1034.5)
+Revision date: 15 July 2024 (game version 1034.5)
 --
 
 toc::[]
