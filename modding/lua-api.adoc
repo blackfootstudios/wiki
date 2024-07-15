@@ -23,7 +23,7 @@ New or modified game modes can now be '`modded into`' GROUND BRANCH.
 This is a guide to the functions and coding conventions you will need to know in order to start modding your own game modes into GROUND BRANCH.
 You will also probably want to look at the link:/modding/mission-editor[GROUND BRANCH Mission Editor guide].
 
-Game modes are now implemented using Lua script, which is an interpreted language that is executed substantially in real time (as opposed to languages like {cpp} which must be compiled before being executed). This has some advantages, such as being able to debug and modify Lua code while the game is running (and indeed, within the game itself). This guide assumes an at least basic knowledge of Lua.
+Game modes are now implemented using Lua script, which is an interpreted language that is executed substantially in real time (as opposed to languages like C++ which must be compiled before being executed). This has some advantages, such as being able to debug and modify Lua code while the game is running (and indeed, within the game itself). This guide assumes an at least basic knowledge of Lua.
 Typically only a few basic features of Lua are needed to implement the game modes.
 For more information, see http://www.lua.org/.
 
@@ -43,7 +43,7 @@ This is a potentially large source of unexpected/unwanted behaviour in your game
 * If you access an invalid _userdata_ type (for example because the underlying data has been destroyed or garbage-collected), you will get an error.
 There is no test (so far as I am aware) for an invalid _userdata_ reference.
 So you’d better get rid of any _userdata_ types that are about to become invalid via the LogOut call (for example)…
-* Lua’s most distinctive feature, and arguably its strength, is its handling of arrays (called _tables_ in Lua, but they are referred to frequently as arrays in this document, because the author is a lazy, confused squirrel). Tables can be used in the normal {cpp}/Blueprint sense, but essentially they just map a number of keys to values (and both the keys and the values, as explained above, can represent any type of thing, including further tables). In their native form, tables are defined as a series of key-value pairs, e.g.
+* Lua’s most distinctive feature, and arguably its strength, is its handling of arrays (called _tables_ in Lua, but they are referred to frequently as arrays in this document, because the author is a lazy, confused squirrel). Tables can be used in the normal c++/Blueprint sense, but essentially they just map a number of keys to values (and both the keys and the values, as explained above, can represent any type of thing, including further tables). In their native form, tables are defined as a series of key-value pairs, e.g.
 
 `+NewArray = { {"Row10", true}, {"Row11", true}, … }+`
 
@@ -96,7 +96,7 @@ end
 
 * As mentioned above, Lua has a _function_ data type which is treated as any other type.
 Lua functions are defined as function data elements in a container table.
-You may recall from above that a.x is treated as a["`x`"]. So functions in Lua can have the surface appearance of {cpp} object oriented shenanigans, but they are not really the same.
+You may recall from above that a.x is treated as a["`x`"]. So functions in Lua can have the surface appearance of C++ object oriented shenanigans, but they are not really the same.
 So you will see game mode scripts begin with something of the form…
 
 [source,lua]
@@ -133,7 +133,7 @@ local uplink = {
 }
 ----
 
-…which defines the table (which we would regard as a class) `+uplink+` and some of the table elements contained within it (which we would regard as member variables in a {cpp} context, though these are usually called _globals_ in lua). So function definitions such as `+function uplink:PostInit() { ... }+` are actually just inserting a function element into the container table, and references to `+uplink.PostInit()+` are actually references to `+uplink[“PostInit”]+`, and so on.
+…which defines the table (which we would regard as a class) `+uplink+` and some of the table elements contained within it (which we would regard as member variables in a C++ context, though these are usually called _globals_ in lua). So function definitions such as `+function uplink:PostInit() { ... }+` are actually just inserting a function element into the container table, and references to `+uplink.PostInit()+` are actually references to `+uplink[“PostInit”]+`, and so on.
 You can see that game mode scripts refer to their '`member variables`' (defined in this section at the top of the file) using the `+self.variable+` notation.
 
 * There are some built in Lua libraries available to use, such as `+math+`, which includes functions such as:
@@ -152,7 +152,7 @@ math.modf()
 
 There are also some useful functions in the `+string+` and `+table+` library, amongst others, which you can look up at your leisure (see, for example, `+table.insert+`). See also `+umath.random()+`.
 
-The `+require()+` keyword is approximately equivalent to the #include keyword in C/{cpp}, and loads a shared library if it has not already been loaded.
+The `+require()+` keyword is approximately equivalent to the #include keyword in C/C++, and loads a shared library if it has not already been loaded.
 See for example the use of the ValidationFunctions library in game mode validators:
 
 [source,lua]
@@ -200,7 +200,7 @@ When a lua script is first run, the `+package.path+` global variable is set so t
 Each game mode is provided in the form of a single Lua script stored in the GroundBranch/GameMode folder within the GROUND BRANCH content directory:
 
 .Screenshot
-image::folder.png[Screenshot]
+image::/images/lua-api/folder.png[Screenshot]
 
 Game mode scripts need to implement a number of standard functions that are called by the main GROUND BRANCH program at certain times, in order to set up the game mode functionality.
 An example of such a function is `+PostInit()+`. There are also now optional Validation functions for each game mode, called `+<GameMode>Validate.lua+`. These are called by the mission editor when validating a level.
@@ -374,7 +374,8 @@ the Min and Max properties define the minimum and maximum values of the setting,
 All settings are numeric, but can be mapped to text options using localisation features (via the game mode .csv file - see below). The AdvancedSetting option is optional, and defines whether or not the game setting is initially hidden in the Lone Wolf and Host Game mission selection screens.
 
 Some standard game settings which are used include `+opforcount+`, `+difficulty+` and `+roundtime+`. It is good to use these standard settings if possible, rather than custom settings, not just for consistency but also because various default strings are defined for these settings and common parameter values for them.
-The `+timeofday+` setting is provided by default and does not need to be added.
+
+The `+timeofday+` setting is provided by default and does not need to be added. As of version 1034.5, various time of day properties can now be read by the game mode script via gamemode.GetTimeOfDay(). See <<gamemodeGetCurrentTime>>.
 
 The game will do its best to turn mission setting names into proper English text (for example by inserting spaces before capital letters) but this is not consistently done, and it is best always to create localisations/look-ups for the setting names anyway (see <<localisation>> below). *Mission setting names must not contain underscores (`+_+`) because this will interfere with the localisation/look-ups.*
 
@@ -666,22 +667,26 @@ Currently there are three modes:
 
 *Time of day / Compass orientation)*
 
-.Screenshot
-image::watch1.jpeg[Screenshot]
-
+.In-game watch in 'Time' mode
+image::/images/lua-api/watch1.jpeg[watch1.jpeg]
 This watch mode is selected by default.
 
 ==== "`ObjectiveFinder`" watch mode
 
 *Range / Height difference / Bearing / Compass orientation / In-range indicators*
 
-image:watch2.jpeg[Screenshot] image:watch3.jpeg[Screenshot] image:watch4.jpeg[Screenshot] image:watch5.jpeg[Screenshot] image:watch6.jpeg[Screenshot]
+image:/images/lua-api/watch2.jpeg[Screenshot] 
+image:/images/lua-api/watch3.jpeg[Screenshot] 
+image:/images/lua-api/watch4.jpeg[Screenshot]
+image:/images/lua-api/watch5.jpeg[Screenshot]
+image:/images/lua-api/watch6.jpeg[Screenshot]
 
 ==== "`IntelRetrieval`" watch mode
 
 *(time of day / compass orientation / proximity alert)*
 
-image:watch1.jpeg[Screenshot] image:watch7.jpeg[Screenshot]
+image:/images/lua-api/watch1.jpeg[Screenshot]
+image:/images/lua-api/watch7.jpeg[Screenshot]
 
 The watch modes are configured using the gamemode.SetWatchMode() function (see <<gamemodeSetWatchMode>> bellow) and SetCaptureZone() function (see <<gamemodeSetCaptureZone>> below).
 
@@ -708,7 +713,7 @@ Some limited manipulation of player patches may be possible via the inventory sy
 == Standard game mode functions
 
 There are a number of functions in game mode scripts that are referenced (and called) directly from the GROUND BRANCH code.
-This is perhaps the most opaque part of game mode modding in GROUND BRANCH, as there is no central list of these functions maintained anywhere (except possibly here); any blueprint or {cpp} routine in GROUND BRANCH is able to call any part of the current game mode script as it pleases.
+This is perhaps the most opaque part of game mode modding in GROUND BRANCH, as there is no central list of these functions maintained anywhere (except possibly here); any blueprint or c++ routine in GROUND BRANCH is able to call any part of the current game mode script as it pleases.
 
 Typically you will need to use a fair few of these functions, but none are strictly mandatory:
 
@@ -722,7 +727,7 @@ If you’re reading that and not sure what it means, you should probably just us
 === PostInit()
 
 This function is called after PreInit() has been called and after some further initialisation of the game mode.
-In the context of a game mode, it is essentially an initialisation function approximately equivalent to a {cpp} constructor.
+In the context of a game mode, it is essentially an initialisation function approximately equivalent to a c++ constructor.
 The purpose of `+PostInit()+` is to set up the properties of the game mode and inform the GROUND BRANCH code of the same.
 Activities like spawning enemies and setting up the level for a new round occurs later, typically via the `+OnRoundStageSet()+` function (see below).
 
@@ -986,7 +991,7 @@ function intel:ShouldCheckForTeamKills()
 end
 ----
 
-Current behaviour is that team kills have no consequence in the final seconds of the game (in the `+PostRoundWait+` stage). If you would rather that they did, you can add a check for that round stage here.
+Current behaviour is that team kills have no consequence in the final seconds of the game (in the `+PostRoundWait+` stage). When the PostRoundWait round stage is started, player use of weapons is now disabled, so TKs should no longer be possible after the round end.
 
 [#playerGameModeRequest]
 === PlayerGameModeRequest( PlayerState, Request )
@@ -1237,6 +1242,21 @@ end
 === OnRandomiseObjectives() [.new]#New in v1034#
 
 This function is called when a player clicks the new randomise objectives button on the Ops Board, and requests that the game mode re-roll the random settings (such as intel locations, team spawns, and so on).
+
+[#canRandomiseObjectives]
+=== CanRandomiseObjectives() [.new]#New in v1034#
+
+This function returns TRUE if the randomise objectives feature is supported, and FALSE if it is not. If FALSE, then the randomise objectives button (circular arrow) will be hidden.
+
+This function is called whenever a game setting is changed, so that a game mode can allow randomisation of objectives in certain circumstances only, for example.
+
+[source,lua]
+----
+function terroristhunt:CanRandomiseObjectives()
+	-- allow randomisation if we have a variety of hotspots and the use of hotspots is enabled
+	return (#self.AllAIHotspots > 1) and (self.Settings.UseAIHotspots.Value == 1)
+end
+----
 
 [#logOut]
 === LogOut( Exiting )
@@ -1650,7 +1670,7 @@ Function list:
 
 Returns an array of pointers to actors (`+AActor*+`) of class [.var]#Class#.
 
-[.var]#Class# should be a string of the form '`GroundBranch.GBInsertionPoint`' (for {cpp}-originating classes) or of the form `+'/Game/GroundBranch/Props/Electronics/MilitaryLaptop/BP_Laptop_Usable.BP_Laptop_Usable_C'+` for UE4 blueprint classes and other UE4 assets.
+[.var]#Class# should be a string of the form '`GroundBranch.GBInsertionPoint`' (for C++-originating classes) or of the form `+'/Game/GroundBranch/Props/Electronics/MilitaryLaptop/BP_Laptop_Usable.BP_Laptop_Usable_C'+` for UE4 blueprint classes and other UE4 assets.
 
 Example:
 
@@ -1902,7 +1922,7 @@ local AttackersReady = ReadyPlayerTeamCounts[self.AttackingTeamId]
 [#gamemodeGetPlayerList]
 ==== gamemode.GetPlayerList( TeamId, ExcludeBots )
 
-This function returns a table (array) of players (corresponding to {cpp} type `+AGBPlayerState*+`) matching the criteria of team Id [.var]#TeamId# and human or not [.var]#ExcludeBots#. *This selects all players on a team, whether or not in the play area* (excepting spectators). This is not usually what you want in game modes.
+This function returns a table (array) of players (corresponding to C++ type `+AGBPlayerState*+`) matching the criteria of team Id [.var]#TeamId# and human or not [.var]#ExcludeBots#. *This selects all players on a team, whether or not in the play area* (excepting spectators). This is not usually what you want in game modes.
 To select all players actually in play, see the function gamemode.GetPlayerListWithLives() below.
 
 Example from the Uplink game mode, sending all players an appropriate message about swapping roles:
@@ -1927,7 +1947,7 @@ Example from the Uplink game mode, sending all players an appropriate message ab
 [#gamemodeGetPlayerListByLives]
 ==== gamemode.GetPlayerListByLives( TeamId, MinLives, ExcludeBots )
 
-This function returns a table (array) of players (corresponding to {cpp} type `+AGBPlayerState*+`) matching the criteria of team Id [.var]#TeamId# and human or not [.var]#ExcludeBots#, and having a minimum number of lives [.var]#MinLives#. This selects all players on a team, also filtering out to select only players with a Readied-up status of `+DeclaredReady+`, only players with Ready Room status of `+InPlayArea+`, and only non-spectators.
+This function returns a table (array) of players (corresponding to C++ type `+AGBPlayerState*+`) matching the criteria of team Id [.var]#TeamId# and human or not [.var]#ExcludeBots#, and having a minimum number of lives [.var]#MinLives#. This selects all players on a team, also filtering out to select only players with a Readied-up status of `+DeclaredReady+`, only players with Ready Room status of `+InPlayArea+`, and only non-spectators.
 This is usually the starting point of processing players in play.
 
 If you need to get a list of AI in a level, you have to use AI.GetControllers() instead (see <<aiGetControllers>> below).
@@ -1949,7 +1969,7 @@ end
 [#gamemodeGetBestLateComerInsertionPoint]
 ==== gamemode.GetBestLateComerInsertionPoint( Target )
 
-Returns the insertion point (equivalent to {cpp} type `+AGBInsertionPoint*+`) that is most appropriate for a late-joining player.
+Returns the insertion point (equivalent to C++ type `+AGBInsertionPoint*+`) that is most appropriate for a late-joining player.
 Typically players can only join a round in progress during the initial seconds in the `+PreRoundWait+` period.
 
 [#gamemodePrepLatecomer]
@@ -1987,8 +2007,8 @@ Secondary objectives can be completed for the purpose of bragging rights, scorin
 
 As also explained in <<localisation>> above, the objective description is looked up in the string table using the format `+“objective_”+` + [.var]#Name#. The Uplink game mode, for example, has objectives DefendObjective and CaptureObjective, which are stored as follows in the `+Uplink.csv+` string table:
 
-.screenshot
-image::csv1.png[screenshot]
+.Text look-up for game mode objectives
+image::/images/lua-api/csv1.png[screenshot]
 
 The `+uplink:SetupRound()+` function includes the following code:
 
@@ -2008,8 +2028,8 @@ gamemode.AddGameObjective(self.PlayerTeams.BluFor.TeamId, "ExfiltrateBluFor", 1)
 
 These objectives have the following entries in the `+intel.csv+` string table:
 
-.screenshot
-image::csv2.png[screenshot]
+.Example objectives in Intel Retrieval text look-up .csv file
+image::/images/lua-api/csv2.png[screenshot]
 
 [#gamemodeClearGameObjectives]
 ==== gamemode.ClearGameObjectives()
@@ -2064,7 +2084,7 @@ for i = 1, #self.ExtractionPoints do
 end
 ----
 
-The extraction marker name can be '[.underline]#marked up#' with a special prefix to cause a special symbol to be displayed on the marker.
+The extraction marker name can be marked up with a special prefix to cause a special symbol to be displayed on the marker.
 Currently up and down arrows can be added with the prefixes `+(U)+` and `+(D)+`. Up and down staircase icons can be added with `+(u)+` and `+(d)+`, and floor/deck numbers can be added with `+(0)+` to `+(9)+` and special characters `+(-)+` and `+(=)+` for floor/decks -1 and -2.
 
 [#gamemodeAddGameStat]
@@ -2310,9 +2330,9 @@ The FormatString() function provides a temporary way to create customised/dynami
 It works in lone wolf, and if client and server are in the same locale.
 Further refinements are needed and will be introduced in later versions, to ensure correct localisation always at the client.
 
-The `+FormatTable+` table must include a `+FormatString+` field, which is usually a token that will be looked up in the relevant localisation string table (the .csv file), in the form "``+format_<FormatString>+``".
+The `+FormatTable+` table must include a `+FormatString+` field, which is usually a token that will be looked up in the relevant localisation string table (the .csv file), in the form "`+format_<FormatString>+`".
 
-For example, the "``+XKilledY+``" format string is defined in the Deathmatch.csv string table:
+For example, the "`+XKilledY+`" format string is defined in the Deathmatch.csv string table:
 
 [source,lua]
 ----
@@ -3379,7 +3399,7 @@ The Hostage Rescue game mode creates a new loadout with name "`Hostage`", for ex
 This function returns `+true+` if a loadout by the name [.var]#LoadoutName# exists already for the player [.var]#Player#, and `+false+` otherwise.
 
 The next two functions operate on Loadout Reference Objects which are USERDATA references that are unique parameters for the OnPreLoadoutChanged() function described in <<onPreLoadoutChanged>> above.
-In essence, these objects are edited on the {cpp} side rather than converted into tables and edited on the lua side (to avoid lots of inventory conversions that are rarely needed):
+In essence, these objects are edited on the c++ side rather than converted into tables and edited on the lua side (to avoid lots of inventory conversions that are rarely needed):
 
 [#inventoryClearItemField]
 ==== inventory.ClearItemField( LoadoutReferenceObject, ItemType )
