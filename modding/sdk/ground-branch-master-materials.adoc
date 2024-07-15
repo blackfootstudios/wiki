@@ -1,24 +1,38 @@
-### Overview
+## Overview
 
-Weapon skins generally use one of the Ground Branch master materials as their base. This provides greater consistency and interoperability. You may wish to do the same.
+Almost all item materials in Ground Branch (that is, the materials that are mapped to item models using UVs) use a master material, or specific children of the master material(s). For convenience and consistency, we would recommend that you do the same.
 
 One considerable benefit is that your materials will be 'future-proofed', for example in the event that we add weather effects. This means that your materials may show accumulations of raindrops or snow even, without you having to change a thing.
 
-### Material Instance properties
+The preferred way to use the master materials is by making a Material Instance of a master material, and plugging in your specific textures and parameters. An example material instance used for part of the HK416 rifle model is shown below: 
+
+.An example weapon skin material instance
+image::/images/sdk/weapon/weapon_materialinstance_example.jpg[weapon_materialinstance_example.jpg]
+
+.General properties of the example material instance shown above
+image::/images/sdk/weapon/weapon_materialinstance_example2.jpg[weapon_materialinstance_example2.jpg]
+
+In this example, you can see that the weapon skin is derived from the M_WeaponBase_Master material. There are other master materials for other kinds of items. You can find all of the master materials in GBCore/MaterialLibrary.
+
+The Ground Branch master materials all work in more or less the same way, which you should be fairly familiar with if you are up to speed on the Unreal Engine 4 editor. There are three textures that are normally plugged in:
+
+* `BaseColor` This is the underlying color data for the model. Green parts of this texture correspond to green parts of the item, and so on. 
+* `ComboTexture` This is a texture combining roughness, metallic and ambient occlusion information in a single texture, in a way that is determined by the switches on the material instance (see below).
+* `Normal` This is the normal map for the model. It defines the orientation of the surface of the model at different points. This is a very standard concept in Unreal Engine and elsewhere, and it is assumed that you are familiar with what they are.
+
+#### Combo texture parameters
 
 The switch parameters refer to various things you can have in your Combo texture. Since they are greyscale, we pack the Ambient Occlusion, Roughness and Metallic maps into one texture. 
 
 There are generally 2 ways people pack them based on the color channel:
 
-* `RMA`:
-
+* `RMA`
 ** Red - Roughness
 ** Green - Metallic
-** Blue - Ambient Occlusion
+** Blue - AO
 
-* `ORM` (Standard for UE4):
-
-** Red - Ambient Occlusion
+* `ORM` (Standard for UE4)
+** Red - AO
 ** Green - Roughness
 ** Blue - Metallic
 
