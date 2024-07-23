@@ -15,9 +15,9 @@ These are suppressor socket names used in-game. Bear in mind that a suppressor m
 |`MDT_FN_QD701` |7.62x51mm NATO |MK17 SCAR |FDE, Black
 |`MDT_EBR` |7.62x51mm NATO |SA58 |FDE, Black
 |`MDT_Pistol_9mm` |9x19mm |G19, M9A3, M17, MK25 |Black
-|`MDT_Pistol_45mm` |45 ACP |M1911 |Black
 |`MDT_SMG_9mm` |9x19mm |MP5 |Black
 |`MDT_MPX` |9x19mm |MPX |Black
 |`MDT_MP7` |4.6x30mm |MP7 |Black
 |`MDT_SMG_45` |45 ACP |UMP45 |Black
+|`MDT_Pistol_45mm` |45 ACP |M1911 |Black
 |===
