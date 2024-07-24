@@ -1,0 +1,10 @@
+== Overview
+
+The GROUND BRANCH skin system allows automatic display and selection of different 'skins' for items (including gear, clothing and weapons, and potentially ... anything?). You will be familiar with skins from the character customisation screen and potentially also the kit restrictions admin menu:
+
+.Skin selection menu for Platform item in character customisation menu
+image::/images/sdk/skin_selection.jpg[skin_selection.jpg]
+
+.Kit Restrictions admin menu, showing a wide array of skins which can be specifically allowed or prohibited on a server
+image::/images/sdk/skins_kitrestrictionmenu.jpg[skins_kitrestrictionmenu.jpg]
+
