@@ -8,3 +8,9 @@ image::/images/sdk/skin_selection.jpg[skin_selection.jpg]
 .Kit Restrictions admin menu, showing a wide array of skins which can be specifically allowed or prohibited on a server
 image::/images/sdk/skins_kitrestrictionmenu.jpg[skins_kitrestrictionmenu.jpg]
 
+A 'skin' is a material (in UE4 parlance) which is applied to a 3D model. Many items have only one skin (in which case, a skin selection menu is not usually shown), but many items have a selection of skins which can be used, typically corresponding to a particular plain colour or camouflage pattern. Typically unique materials must be used for different items because of how textures are mapped onto models. So two items which are both 'OCP' skin will typically use two separate OCP materials, using separate sets of textures.
+
+All equippable items (weapons, clothing, gear, and so on) are derived from the GBItem class, which defines a skin prefix. A set of skin types/names are defined globally in skin asset files. Adding one of those defined skin types for a particular item is relatively straightforward: if a material is added with the name MI_<SkinPrefix>_<SkinName>, it will automatically be offered as a selectable skin for the item in the character customisation menu, and it will automatically be applied to the item if/when specified in the loadout.
+
+It is possible to add a new skin type/name via a new skin definition file, but this should be avoided if at all possible due to ensuing complexities.
+
