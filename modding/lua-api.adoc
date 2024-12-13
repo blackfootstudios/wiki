@@ -1834,7 +1834,7 @@ Messages will normally be queued.
 Alternatively, specifying a negative duration will cause all current messages to be flushed.
 Specifying a duration of 0 will display the message indefinitely (until another message flushes the display, or the round stage ends).
 
-Possible [.var]#Types# (corresponding to screen locations) are: `+Engine+` (top left, small orange text), `+Upper+`, `+Centre+`, `+Lower+`.
+Possible [.var]#Types# (corresponding to screen locations) are: `+Engine+` (top left, small orange text), `+Upper+`, `+Center+`, `+Lower+`.
 
 `+Player.ShowGameMessage()+` can be used to send messages to individual players (see <<playerShowGameMessage>> below).
 
