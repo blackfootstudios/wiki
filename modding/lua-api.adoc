@@ -3135,8 +3135,24 @@ Returns `+true+` if the referenced player is a bot (as opposed to AI).
 [#playerTeleport]
 ==== player.Teleport( Player, Location, Rotation )
 
+Example, teleport player to another Actor's coords
+
+[source,lua]
+----
+local DestPos = actor.GetLocation(MyActor)
+local Players = gamemode.GetPlayerList(self.PlayerTeams.BluFor.TeamId, true)
+for i = 1, #Players do
+	local Character = player.GetCharacter(Player)
+	local PlayerRot = actor.GetRotation(Character)
+
+	player.Teleport(Player, DestPos, PlayerRot)
+end
+----
+
+Player will be teleported to designated location. During teleportation, a black screen with the "DEPLOYING..." label will be displayed.
+
 An experimental feature that may be broken.
-Use with caution.
+*Use with caution.*
 
 [#playerHasGameplayTag]
 ==== player.HasGameplayTag( Player, TagName )
